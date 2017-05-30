@@ -78,7 +78,7 @@ class Icon extends Component {
 
   render() {
     return (
-      <ActionIcon className={(this.props.icon.macroInfo) ? 'macro' : ''}>
+      <ActionIcon className={(this.props.icon && this.props.icon.macroInfo) ? 'macro' : ''}>
         {(this.props.icon) ? this.renderIcon(this.props.icon) : this.renderEmpty()}
       </ActionIcon>
     );

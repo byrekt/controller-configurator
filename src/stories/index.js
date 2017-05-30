@@ -14,6 +14,7 @@ import CharacterSet from '../components/CharacterSet';
 import ActionList from '../mocks/actions';
 import Jobs from '../mocks/jobs';
 import BardSet from '../mocks/bardSet';
+import AstrologianSet from '../mocks/astrologianSet';
 
 const wandererMinuet = ActionList.filter((action => action.id === 3559))[0];
 const magesBallad = ActionList.filter((action => action.id === 114))[0];
@@ -53,6 +54,7 @@ storiesOf('CrossBar', module)
   .add('Single Regular Sized Cross Bar', () => <CrossBar name={BardSet.crossBars[0].name} crosses={BardSet.crossBars[0].crosses}/>)
   .add('Single Small Cross Bar', () => <CrossBar name={BardSet.crossBars[1].name} crosses={BardSet.crossBars[1].crosses}/>)
   .add('Single Mini Cross Bar', () => <CrossBar name={BardSet.crossBars[2].name} crosses={BardSet.crossBars[2].crosses}/>)
-console.log(BardSet);
+
 storiesOf('CharacterSet', module)
   .add('Bard Set', () => <CharacterSet name={BardSet.name} crossBars={BardSet.crossBars}/>)
+  .add('The Astrologian', () => <CharacterSet name={AstrologianSet.name} crossBars={AstrologianSet.crossBars}/>)
