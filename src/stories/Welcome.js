@@ -57,6 +57,7 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <div style={styles.main}>
+
         <h1>Welcome to STORYBOOK</h1>
         <p>
           This is a UI component dev environment for your app.
