@@ -1,8 +1,10 @@
 const AstrologianSet = {
   name: 'The Astrologian',
+  description: 'My favorite job',
   crossBars: [
     {
       name: 'Set 1 - Heals',
+      description: 'Primarily used for healing',
       crosses: [
         {
           topIcon: {

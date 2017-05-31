@@ -62,7 +62,7 @@ class Icon extends Component {
     return (
       <OverlayTrigger placement="right" trigger={['hover', 'focus']}
         overlay={this.getPopover(icon)}>
-        <img src={iconUrl} />
+        <img src={iconUrl} alt=""/>
       </OverlayTrigger>
     )
   }
@@ -90,7 +90,10 @@ Icon.propTypes = {
     icon: PropTypes.number,
     id: PropTypes.number,
     name: PropTypes.string,
-    macroInfo: PropTypes.arrayOf(PropTypes.string)
+    macroInfo: PropTypes.shape({
+      name: PropTypes.string,
+      macroSteps: PropTypes.arrayOf(PropTypes.string)
+    })
   }).isRequired
 }
 
