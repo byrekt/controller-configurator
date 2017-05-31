@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CharacterSet from '../components/CharacterSet';
 import AstrologianSet from '../mocks/astrologianSet';
 
-class Main extends Component {
+class Astrologian extends Component {
   render() {
     return (
       <section id="astrologian-guide">
@@ -12,4 +12,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Astrologian;

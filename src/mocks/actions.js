@@ -1027,6 +1027,12 @@ const ActionList = [
 "classjob": 26
 },
 {
+"id": 3579,
+"name": "Ruin III",
+"icon": 2682,
+"classjob": 27
+},
+{
 "id": 172,
 "name": "Ruin II",
 "icon": 502,

@@ -18,6 +18,9 @@ const Header = () => (
           <LinkContainer to="/astrologian">
             <MenuItem eventKey={2.1}>The Astrologian</MenuItem>
           </LinkContainer>
+          <LinkContainer to="/summoner">
+            <MenuItem eventKey={2.2}>The Summoner</MenuItem>
+          </LinkContainer>
         </NavDropdown>
       </Nav>
     </Navbar>
