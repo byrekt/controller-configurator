@@ -5,12 +5,9 @@ import { getAllCharacterSets, getAllJobs, getAllActions } from '../actions';
 import Header from '../components/Header';
 import Main from '../components/Main';
 
-// Gets data from "API"s and stores them in the redux store using the 
+// Gets data from "API"s and stores them in the redux store using the
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  };
 
   componentDidMount() {
     const dispatch = this.props.dispatch;
@@ -21,7 +18,7 @@ class App extends Component {
   };
 
   render() {
-    const { characterSets, actionsList, jobList} = this.props;
+    //const { characterSets, actionsList, jobList} = this.props;
 
     return (
       <div>
