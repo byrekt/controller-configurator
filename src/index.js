@@ -1,10 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-import Main from './Main';
+
 import { BrowserRouter } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { createLogger } from 'redux-logger';
+import thunk from 'redux-thunk';
+import reducer from './reducers';
+import { getAllCharacterSets, getAllJobs, getAllActions } from './actions';
+
 import registerServiceWorker from './registerServiceWorker';
+import Main from './Main';
 import './index.css';
 
 const Header = () => (
@@ -34,8 +42,23 @@ const Application = () => (
   </div>
 )
 
+const middleware = [ thunk ]
+
+  middleware.push(createLogger())
+
+
+const store = createStore(
+  reducer,
+  applyMiddleware(...middleware)
+);
+
+store.dispatch(getAllCharacterSets());
+store.dispatch(getAllJobs());
+store.dispatch(getAllActions());
 ReactDOM.render((
-  <BrowserRouter>
-    <Application />
-  </BrowserRouter>), document.getElementById('root'));
+  <Provider store={store}>
+    <BrowserRouter>
+      <Application />
+    </BrowserRouter>
+  </Provider>), document.getElementById('root'));
 registerServiceWorker();

@@ -1,4 +1,5 @@
 const AstrologianSet = {
+  id: 1,
   name: 'The Astrologian',
   description: 'My favorite job',
   crossBars: [

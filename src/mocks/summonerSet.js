@@ -1,4 +1,5 @@
 const SummonerSet = {
+  id: 3,
   name: 'The Summoner',
   description: 'My favorite caster DPS',
   crossBars: [

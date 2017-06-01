@@ -1,4 +1,5 @@
 const BardSet = {
+  id: 2,
   name: 'Bard',
   crossBars: [
     {
