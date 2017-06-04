@@ -17,7 +17,7 @@ const PaletteContainer = styled('section') `
 const getJobPalette = function (job) {
   if (job && job.actions) {
     return job.actions.map((action) => {
-      return <Icon key={action.id} icon={action} />
+      return <Icon draggable="true" key={action.id} icon={action} />
     });
   }
 };

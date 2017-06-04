@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid } from 'react-bootstrap'; 
 import Palette from '../containers/Palette';
+import Cross from '../components/Cross';
 
 class Home extends Component {
   render() {
@@ -9,6 +10,7 @@ class Home extends Component {
         Home page content
 
         <Palette />
+        <Cross />
       </Grid>
     );
   }

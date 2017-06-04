@@ -28,15 +28,15 @@ class Cross extends Component {
     return (
       <CrossContainer className="cross">
         <div className="left-icon">
-          <Icon icon={this.props.leftIcon}/>
+          <Icon icon={this.props.leftIcon} isReplaceable={true}/>
         </div>
         <div className="middle-icons">
-          <Icon icon={this.props.topIcon}/>
-          <Icon icon={this.props.bottomIcon}/>
+          <Icon icon={this.props.topIcon} isReplaceable={true}/>
+          <Icon icon={this.props.bottomIcon} isReplaceable={true}/>
 
         </div>
         <div className="right-icon">
-          <Icon icon={this.props.rightIcon}/>
+          <Icon icon={this.props.rightIcon} isReplaceable={true}/>
         </div>
       </CrossContainer>
     );
