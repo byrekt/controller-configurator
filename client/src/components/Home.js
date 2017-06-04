@@ -8,9 +8,9 @@ class Home extends Component {
     return (
       <Grid>
         Home page content
-
+{/*
         <Palette />
-        <Cross />
+        <Cross />*/}
       </Grid>
     );
   }

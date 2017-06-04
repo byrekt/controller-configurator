@@ -9,8 +9,8 @@ class Main extends Component {
       <main>
         <Switch>
           <Route exact={true} path='/' component={Home}/>
-          <Route path='/astrologian' component={Astrologian} />
-          <Route path='/summoner' component={Summoner}/>
+          {/*<Route path='/astrologian' component={Astrologian} />
+          <Route path='/summoner' component={Summoner}/>*/}
         </Switch>
       </main>
     );

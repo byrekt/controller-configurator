@@ -4,6 +4,7 @@ import { RECEIVE_JOB_DATA } from '../constants/ActionTypes';
  * the RECEIVE_JOB_DATA action is dispatched.
  */
 const jobData = (state = [], action) => {
+  console.log(action);
   switch (action.type) {
     case RECEIVE_JOB_DATA:
       return action.jobData
