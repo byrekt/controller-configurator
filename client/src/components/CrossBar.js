@@ -35,7 +35,11 @@ class CrossBar extends Component {
         <Row>
           <Col xs={12}>
             <CrossContainer>
-              {this.props.crosses.map((cross, index) => <Cross key={`cross-${index}`} topIcon={cross.topIcon} rightIcon={cross.rightIcon} bottomIcon={cross.bottomIcon} leftIcon={cross.leftIcon} />)}
+              <Cross/>
+              <Cross/>
+              <Cross/>
+              <Cross/>
+              {/*{this.props.crosses.map((cross, index) => <Cross key={`cross-${index}`} topIcon={cross.topIcon} rightIcon={cross.rightIcon} bottomIcon={cross.bottomIcon} leftIcon={cross.leftIcon} />)}*/}
             </CrossContainer>
           </Col>
         </Row>

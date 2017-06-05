@@ -2817,6 +2817,7 @@
   "sets": {
     "1": {
       "name": "The Astrologian",
+      "description": "It's my astrologian set!",
       "crossBars": [
         {
           "setNumber": 1,
@@ -2895,12 +2896,17 @@
   ],
   "macros": [],
   "jobs": {
-    "warrior": {
-      "name": "Warrior",
+    "other_actions": {
+      "name": "Other Actions",
       "relatedActionGroupIds": [
         "general",
         "main_menu",
-        "pvp",
+        "pvp"
+      ]
+    },
+    "warrior": {
+      "name": "Warrior",
+      "relatedActionGroupIds": [
         "marauder",
         "warrior",
         "tank"
@@ -2909,9 +2915,6 @@
     "paladin": {
       "name": "Paladin",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "gladiator",
         "paladin",
         "tank"
@@ -2920,9 +2923,6 @@
     "monk": {
       "name": "Monk",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "pugilist",
         "monk",
         "melee_dps"
@@ -2931,9 +2931,6 @@
     "dragoon": {
       "name": "Dragoon",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "lancer",
         "dragoon",
         "melee_dps"
@@ -2942,9 +2939,6 @@
     "bard": {
       "name": "Bard",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "archer",
         "bard",
         "ranged_dps"
@@ -2953,9 +2947,6 @@
     "white_mage": {
       "name": "White Mage",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "conjurer",
         "white_mage",
         "healer"
@@ -2964,9 +2955,6 @@
     "black_mage": {
       "name": "Black Mage",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "thaumaturge",
         "black_mage",
         "caster_dps"
@@ -2975,9 +2963,6 @@
     "summoner": {
       "name": "Summoner",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "arcanist",
         "summoner",
         "garuda-egi",
@@ -2990,9 +2975,6 @@
     "scholar": {
       "name": "Scholar",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "arcanist",
         "scholar",
         "eos",
@@ -3004,9 +2986,6 @@
     "ninja": {
       "name": "Ninja",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "rogue",
         "ninja",
         "melee_dps"
@@ -3015,19 +2994,13 @@
     "dark_knight": {
       "name": "Dark Knight",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
-        "dark_night",
+        "dark_knight",
         "tank"
       ]
     },
     "astrologian": {
       "name": "Astrologian",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "astrologian",
         "healer"
       ]
@@ -3036,9 +3009,6 @@
       "id": 12,
       "name": "Machinist",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "machinist",
         "ranged_dps"
       ]
@@ -3046,9 +3016,6 @@
     "red_mage": {
       "name": "Red Mage",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "red_mage",
         "caster_dps"
       ]
@@ -3056,9 +3023,6 @@
     "samurai": {
       "name": "Samurai",
       "relatedActionGroupIds": [
-        "general",
-        "main_menu",
-        "pvp",
         "samurai",
         "melee_dps"
       ]

@@ -1,15 +1,24 @@
 import { connect } from 'react-redux';
 import Palette from '../components/Palette';
+import { getJobActions } from '../actions';
 
 // Gets data from "API"s and stores them in the redux store using the
 
 function mapStateToProps(state) {
-  const { jobData } = state;
+  const { jobData, jobActions } = state;
 
   return {
-    jobMappings: jobData.jobMappings,
-    jobs: jobData.jobs
+    jobs: jobData,
+    jobActions: jobActions
   }
 }
 
-export default connect(mapStateToProps)(Palette);
+function mapDispatchToProps(dispatch) {
+  return {
+    onJobChange: (job) => {
+      dispatch(getJobActions(job));
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Palette);

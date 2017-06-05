@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getJobData} from '../actions';
+import { getJobData, getActions, getJobActions } from '../actions';
 import Header from '../components/Header';
 import Main from '../components/Main';
 
@@ -13,11 +13,11 @@ class App extends Component {
     const dispatch = this.props.dispatch;
 
     dispatch(getJobData());
-    //dispatch(getJobActions())
+    dispatch(getActions());
+    dispatch(getJobActions('astrologian'));
   };
 
   render() {
-    //const { characterSets, actionsList, jobList} = this.props;
     return (
       <div>
         <Header />
@@ -29,14 +29,18 @@ class App extends Component {
 
 App.propTypes = {
   jobData: PropTypes.object,
+  actionData: PropTypes.object,
+  jobActions: PropTypes.object,
   dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
-  const { jobData } = state;
+  const { jobData, actionData, jobActions } = state;
 
   return {
-    jobData
+    jobData,
+    actionData,
+    jobActions
   }
 }
 

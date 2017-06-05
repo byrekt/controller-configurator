@@ -4,23 +4,30 @@ import Icon from './Icon';
 import PropTypes from 'prop-types';
 
 const PaletteContainer = styled('section') `
+
+  border: 1px solid black;
+  padding: 1rem;
+  max-width: 25rem;
   .palette-actions-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 16rem;
-    >div {
-      margin: 5px;
+    max-width: 25rem;
+    clear: right;
+
+    .group-container {
+      text-align: center;
+      .palette-content {
+        display: flex;
+        flex-wrap: wrap;
+        width: 24rem;
+
+        
+        >div {
+          margin: 5px 5px 5px 0;
+        }
+      }
     }
   }
 `;
 
-const getJobPalette = function (job) {
-  if (job && job.actions) {
-    return job.actions.map((action) => {
-      return <Icon draggable="true" key={action.id} icon={action} />
-    });
-  }
-};
 class Palette extends Component {
 
   constructor(props) {
@@ -32,10 +39,31 @@ class Palette extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  getJobPalette(actions) {
+    return actions.map((action) => {
+      return <Icon draggable="true" key={action.id} icon={action} />
+    });
+  };
+  getPalettes() {
 
+    return Object.keys(this.props.jobActions).map((group) => {
+      // Only show the group if there are actions in it.
+      if(this.props.jobActions[group].length) {
+        return (
+          <section className="group-container">
+            <h3>{group}</h3>
+            <div className="palette-content">
+              {this.getJobPalette(this.props.jobActions[group])}
+            </div>
+          </section>
+        )
+      }
+    });
+  }
 
   handleChange(event) {
     this.setState({ selectedPaletteId: event.target.value });
+    this.props.onJobChange(event.target.value);
   }
 
   render() {
@@ -48,7 +76,7 @@ class Palette extends Component {
         </select>
 
         <section className="palette-actions-container">
-          {getJobPalette(this.props.jobs[this.state.selectedPaletteId])}
+          {this.getPalettes()}
         </section>
       </PaletteContainer>
     );
@@ -57,12 +85,13 @@ class Palette extends Component {
 
 
 Palette.propTypes = {
-  jobMappings: PropTypes.object,
-  jobs: PropTypes.object
+  jobs: PropTypes.object,
+  jobActions: PropTypes.object,
+  onJobChange: PropTypes.func.isRequired
 };
 Palette.defaultProps = {
   jobs: {},
-  jobMappings: {}
+  jobActions: []
 }
 
 export default Palette;

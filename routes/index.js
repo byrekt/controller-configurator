@@ -42,7 +42,31 @@ router.get('/jobDataDetails', function (req, res, next) {
 
 router.get('/allActions', function (req, res, next) {
   res.json(actions);
-})
+});
+
+router.get('/actions/:job', function (req, res, next) {
+  let jobActions = {};
+  const job = req.params.job;
+  let relatedGroupIds = jobs[job].relatedActionGroupIds;
+
+  relatedGroupIds.forEach((group) => {
+    let groupActions = [];
+    for (let action in actions) {
+      if (actions[action].jobName === group) {
+
+        const jobAction = actions[action];
+        jobAction.id = action;
+        groupActions.push(jobAction);
+      }
+    };
+    groupActions.sort((a, b) => {
+      return parseInt(a.level) - parseInt(b.level);
+    });
+    jobActions[group] = groupActions;
+  });
+
+  res.json(jobActions);
+});
 
 router.get('/getActionCategories', function (req, res, next) {
   res.json(actionCategories);

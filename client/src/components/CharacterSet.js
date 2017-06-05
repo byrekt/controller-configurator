@@ -4,38 +4,57 @@ import CrossBar from './CrossBar';
 import PropTypes from 'prop-types';
 
 class CharacterSet extends Component {
-  render() {
-    let description = null;
-    if (this.props.description) {
-      description =
-        <Row>
-          <Col xs={12}>
-            {this.props.description}
-          </Col>
-        </Row>;
+
+  componentDidMount() {
+    this.props.onSetChange(this.props.setId);
+  }
+
+  renderCrossBars() {
+    if (this.props.characterSet.crossBars) {
+      return this.props.characterSet.crossBars.map((bar) => <CrossBar key={bar.setNumber} description={bar.description} name={bar.setNumber} crosses={bar.crossBars} />);
     }
-    return (
-      <Grid>
-        <Row>
-          <Col xs={12}>
-            {this.props.name}
-          </Col>
-        </Row>
-        {description}
-        <Row>
-          <Col xs={12}>
-            {this.props.crossBars.map((bar) => <CrossBar key={bar.name} description={bar.description} name={bar.name} crosses={bar.crosses} />)}
-          </Col>
-        </Row>
-      </Grid>
-    );
+  }
+  render() {
+    if (this.props.characterSet) {
+      let description = null;
+      if (this.props.characterSet.description) {
+        description =
+          <Row>
+            <Col xs={12}>
+              {this.props.characterSet.description}
+            </Col>
+          </Row>;
+      }
+      return (
+        <Grid>
+          <Row>
+            <Col xs={12}>
+              {this.props.characterSet.name}
+            </Col>
+          </Row>
+          {description}
+          <Row>
+            <Col xs={12}>
+              {this.renderCrossBars()}
+            </Col>
+          </Row>
+        </Grid>
+      );
+    } else {
+      return (<div></div>)
+    }
   }
 }
 
 CharacterSet.propTypes = {
-  name: PropTypes.string,
-  description: PropTypes.string,
-  crossBars: PropTypes.arrayOf(Object)
+  setId: PropTypes.number,
+  characterSet: PropTypes.shape({
+    name: PropTypes.string,
+    description: PropTypes.string,
+    setId: PropTypes.number,
+    crossBars: PropTypes.arrayOf(Object),
+  }),
+  onSetChange: PropTypes.func.isRequired
 }
 
 export default CharacterSet;

@@ -1,5 +1,4 @@
 import * as types from '../constants/ActionTypes';
-import jobData from '../utils/jobData';
 
 // const receiveJobList = jobList => ({
 //   type: types.RECEIVE_JOB_LIST,
@@ -45,9 +44,51 @@ const receiveJobData = jobData => ({
 });
 
 export const getJobData = () => dispatch => {
-return fetch('/api/jobData/')
-   .then(response => response.json())
-      .then(json => {
-        dispatch(receiveJobData(json));
-      });
+  return fetch('/api/jobData/')
+    .then(response => response.json())
+    .then(json => {
+      dispatch(receiveJobData(json));
+    });
+};
+
+// Action creator for action data
+const receiveActionData = actionData => ({
+  type: types.RECEIVE_ACTION_DATA,
+  actionData: actionData
+});
+
+export const getActions = () => dispatch => {
+  return fetch('/api/allActions/')
+    .then(response => response.json())
+    .then(json => {
+      dispatch(receiveActionData(json));
+    });
+};
+
+// Action creator for action data
+const receiveJobActions = jobActions => ({
+  type: types.RECEIVE_JOB_ACTIONS,
+  jobActions: jobActions
+});
+
+export const getJobActions = (job) => dispatch => {
+  return fetch(`/api/actions/${job}`)
+    .then(response => response.json())
+    .then(json => {
+      dispatch(receiveJobActions(json));
+    });
+};
+
+// Action creator for action data
+const receiveCharacterSet = characterSet => ({
+  type: types.RECEIVE_CHARACTER_SET,
+  characterSet: characterSet
+});
+
+export const getCharacterSet = (id) => dispatch => {
+  return fetch(`/api/getSet/${id}`)
+    .then(response => response.json())
+    .then(json => {
+      dispatch(receiveCharacterSet(json));
+    });
 };
