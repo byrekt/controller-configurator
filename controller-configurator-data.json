@@ -2829,19 +2829,19 @@
             "id": "draw"
           },
           "LDR": {
-            "id": "redraw"
+            "id": "shuffle"
           },
           "LDD": {
             "id": "royal_road"
           },
           "LAL": {
-            "id": "aspected_benefit"
+            "id": "aspected_benefic"
           },
           "LAU": {
             "id": "essential_dignity"
           },
           "LAR": {
-            "id": "benefit_ii"
+            "id": "benefic_ii"
           },
           "LAD": {
             "id": "benefic"
@@ -2870,6 +2870,7 @@
             "id": "aspected_helios"
           },
           "RAU": {
+            "id": "cleric_stance",
             "macroInfo": {
               "name": "Switch to Cleric Stance",
               "macroSteps": [

@@ -46,6 +46,12 @@ class Icon extends Component {
     this.preventDefault = this.preventDefault.bind(this);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    this.setState({
+      icon: this.props.icon
+    });
+  }
+
   // Updates the icon in presentation and also I guess updates the state at some point
   preventDefault(event) {
     event.preventDefault();
