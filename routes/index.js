@@ -74,7 +74,7 @@ router.get('/getActionCategories', function (req, res, next) {
 
 router.get('/getSet/:id', function (req, res, next) {
   const setRef = database.ref(`/sets/${req.params.id}`);
-  setRef.on('value', (snapshot) => {
+  setRef.once('value', (snapshot) => {
     res.json(snapshot.val());
   });
 });

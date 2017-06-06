@@ -2816,6 +2816,7 @@
   ],
   "sets": {
     "1": {
+      "readOnly": true,
       "name": "The Astrologian",
       "description": "It's my astrologian set!",
       "crossBars": [

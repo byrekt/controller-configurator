@@ -28,13 +28,39 @@ const CrossContainer = styled('section') `
   }
 `;
 
-const CrossBar = ({ actionsData, set, name, description, LAD, LAL, LAR, LAU, LDD, LDL, LDR, LDU, RAD, RAL, RAR, RAU, RDD, RDL, RDR, RDU }) => (
+/**
+ * Stateless component for rendering a cross hotbar
+ * @param {object} actionsData map of all actions 
+ * @param {number|string} set the # of the bar this corresponds to, sets 1-8
+ * @param {string} name The name of the bar
+ * @param {string} description The description of the cross hotbar
+ * 
+ * @param {string} LAD The id of the action in the LAD position
+ * @param {string} LAL The id of the action in the LAL position
+ * @param {string} LAR The id of the action in the LAR position
+ * @param {string} LAU The id of the action in the LAU position
+ * 
+ * @param {string} LDD The id of the action in the LDD position
+ * @param {string} LDL The id of the action in the LDL position
+ * @param {string} LDR The id of the action in the LDR position
+ * @param {string} LDU The id of the action in the LDU position
+ * 
+ * @param {string} RAD The id of the action in the RAD position
+ * @param {string} RAL The id of the action in the RAL position
+ * @param {string} RAR The id of the action in the RAR position
+ * @param {string} RAU The id of the action in the RAU position
+ * 
+ * @param {string} RDD The id of the action in the RDD position
+ * @param {string} RDL The id of the action in the RDL position
+ * @param {string} RDR The id of the action in the RDR position
+ * @param {string} RDU The id of the action in the RDU position
+ */
+const CrossBar = ({ actionsData, set, description, LAD, LAL, LAR, LAU, LDD, LDL, LDR, LDU, RAD, RAL, RAR, RAU, RDD, RDL, RDR, RDU }) => (
   <div>
-    test
     <Row>
       <Col xs={12} className="center-block">
         <h4>
-          {name}
+          Set {set + 1}
         </h4>
       </Col>
     </Row>
@@ -52,7 +78,6 @@ const CrossBar = ({ actionsData, set, name, description, LAD, LAL, LAR, LAU, LDD
             <Cross set={set} pos={"LA"} down={actionsData[LAD.id]} left={actionsData[LAL.id]} right={actionsData[LAR.id]} up={actionsData[LAU.id]} />
             <Cross set={set} pos={"RD"} down={actionsData[RDD.id]} left={actionsData[RDL.id]} right={actionsData[RDR.id]} up={actionsData[RDU.id]} />
             <Cross set={set} pos={"RA"} down={actionsData[RAD.id]} left={actionsData[RAL.id]} right={actionsData[RAR.id]} up={actionsData[RAU.id]} />
-            {/*{this.props.crosses.map((cross, index) => <Cross key={`cross-${index}`} topIcon={cross.topIcon} rightIcon={cross.rightIcon} bottomIcon={cross.bottomIcon} leftIcon={cross.leftIcon} />)}*/}
           </CrossContainer>
         }
       </Col>
@@ -84,11 +109,6 @@ class CharacterSet extends Component {
     this.props.onSetChange(this.props.setId);
   }
 
-  componentWillUpdate(nextProps, nextState) {
-    console.log('nextProps', nextProps);
-    console.log('nextState', nextState);
-  }
-
   render() {
     if (this.props.characterSet) {
       let description = null;
@@ -115,7 +135,6 @@ class CharacterSet extends Component {
                   actionsData={this.props.actionsData}
                   set={index}
                   description={bar.description}
-                  name={bar.setNumber}
                   LAD={bar.LAD}
                   LAL={bar.LAL}
                   LAR={bar.LAR}
@@ -151,6 +170,7 @@ CharacterSet.propTypes = {
     description: PropTypes.string,
     setId: PropTypes.number,
     crossBars: PropTypes.arrayOf(Object),
+    readOnly: PropTypes.bool
   }),
   actionsData: PropTypes.object,
   onSetChange: PropTypes.func.isRequired
