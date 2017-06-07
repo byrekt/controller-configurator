@@ -68,3 +68,22 @@ export const getCharacterSet = (id) => dispatch => {
       dispatch(receiveCharacterSet(json));
     });
 };
+
+// Action creator for character set data
+const receiveSets = sets => ({
+  type: types.RECEIVE_SETS,
+  sets: sets
+});
+/**
+ * Retrieves the array of character sets for use on the browse page.
+ * @param {string} job the optional job filter
+ */
+export const getSets = (id) => dispatch => {
+  console.log("MAKING A CALL TO GET SETS");
+  return fetch(`/api/getSetsDetails/${(id) ? id : ''}`)
+    .then(response => response.json())
+    .then(json => {
+      console.log(json);
+      dispatch(receiveSets(json));
+    });
+};
