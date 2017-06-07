@@ -162,7 +162,10 @@ class CharacterSet extends Component {
               </Grid>
             </Col>
             <Col xs={4}>
-              {this.props.characterSet.job && <Palette defaultPaletteId={this.props.characterSet.job}/>}
+              {this.props.characterSet.job &&
+                this.props.characterSet.editable &&
+                <Palette defaultPaletteId={this.props.characterSet.job} />
+              }
             </Col>
           </Row>
         </Grid>
