@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
-import Astrologian from '../guides/Astrologian';
-import Summoner from '../guides/Summoner';
 class Main extends Component {
   render() {
     return (

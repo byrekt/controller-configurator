@@ -100,7 +100,7 @@ module.exports = {
             let displayedActionName = actionName.replace(/_/g, ' ').toUpperCase();
             console.log(actionName, displayedActionName);
             actionsObject[actionName] = {
-              iconPath: action,
+              iconPath: `images/jobs/action/${jobName}/${level}/${action}`,
               jobName: jobName,
               name: displayedActionName,
               level: level,

@@ -55,7 +55,7 @@ const CrossContainer = styled('section') `
  * @param {string} RDR The id of the action in the RDR position
  * @param {string} RDU The id of the action in the RDU position
  */
-const CrossBar = ({ actionsData, set, description, LAD, LAL, LAR, LAU, LDD, LDL, LDR, LDU, RAD, RAL, RAR, RAU, RDD, RDL, RDR, RDU }) => (
+const CrossBar = ({ actionsData, set, description, editable, LAD, LAL, LAR, LAU, LDD, LDL, LDR, LDU, RAD, RAL, RAR, RAU, RDD, RDL, RDR, RDU }) => (
   <div>
     <Row>
       <Col xs={12} className="center-block">
@@ -71,13 +71,12 @@ const CrossBar = ({ actionsData, set, description, LAD, LAL, LAR, LAU, LDD, LDL,
     </Row>}
     <Row>
       <Col xs={12}>
-        {console.log('actions: ', actionsData, LAD)}
         {actionsData &&
           <CrossContainer>
-            <Cross set={set} pos={"LD"} down={actionsData[LDD.id]} left={actionsData[LDL.id]} right={actionsData[LDR.id]} up={actionsData[LDU.id]} />
-            <Cross set={set} pos={"LA"} down={actionsData[LAD.id]} left={actionsData[LAL.id]} right={actionsData[LAR.id]} up={actionsData[LAU.id]} />
-            <Cross set={set} pos={"RD"} down={actionsData[RDD.id]} left={actionsData[RDL.id]} right={actionsData[RDR.id]} up={actionsData[RDU.id]} />
-            <Cross set={set} pos={"RA"} down={actionsData[RAD.id]} left={actionsData[RAL.id]} right={actionsData[RAR.id]} up={actionsData[RAU.id]} />
+            <Cross actionsData={actionsData} set={set} editable={editable} pos={"LD"} down={LDD} left={LDL} right={LDR} up={LDU} />
+            <Cross actionsData={actionsData} set={set} editable={editable} pos={"LA"} down={LAD} left={LAL} right={LAR} up={LAU} />
+            <Cross actionsData={actionsData} set={set} editable={editable} pos={"RD"} down={RDD} left={RDL} right={RDR} up={RDU} />
+            <Cross actionsData={actionsData} set={set} editable={editable} pos={"RA"} down={RAD} left={RAL} right={RAR} up={RAU} />
           </CrossContainer>
         }
       </Col>
@@ -85,23 +84,22 @@ const CrossBar = ({ actionsData, set, description, LAD, LAL, LAR, LAU, LDD, LDL,
   </div>
 );
 
-const Cross = ({ set, pos, down, left, right, up }) => (
+const Cross = ({ actionsData, set, editable, pos, down, left, right, up }) => {
+  return (
   <div className="cross">
-    
-        {console.log('set: ', set, 'pos:', pos, 'left:', left)}
     <div className="left-icon">
-      <Icon icon={left} isReplaceable={true} />
+      <Icon icon={actionsData[left.id]} macroInfo={left.macroInfo} isReplaceable={editable} />
     </div>
     <div className="middle-icons">
-      <Icon icon={up} isReplaceable={true} />
-      <Icon icon={down} isReplaceable={true} />
+      <Icon icon={actionsData[up.id]} macroInfo={up.macroInfo} isReplaceable={!editable} />
+      <Icon icon={actionsData[down.id]} macroInfo={down.macroInfo} isReplaceable={!editable} />
 
     </div>
     <div className="right-icon">
-      <Icon icon={right} isReplaceable={true} />
+      <Icon icon={actionsData[right.id]} macroInfo={right.macroInfo} isReplaceable={!editable} />
     </div>
   </div>
-)
+)}
 
 class CharacterSet extends Component {
 
@@ -135,6 +133,7 @@ class CharacterSet extends Component {
                   actionsData={this.props.actionsData}
                   set={index}
                   description={bar.description}
+                  editable={this.props.characterSet.editable}
                   LAD={bar.LAD}
                   LAL={bar.LAL}
                   LAR={bar.LAR}
@@ -170,7 +169,7 @@ CharacterSet.propTypes = {
     description: PropTypes.string,
     setId: PropTypes.number,
     crossBars: PropTypes.arrayOf(Object),
-    readOnly: PropTypes.bool
+    editable: PropTypes.bool
   }),
   actionsData: PropTypes.object,
   onSetChange: PropTypes.func.isRequired

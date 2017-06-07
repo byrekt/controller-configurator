@@ -53,10 +53,7 @@ router.get('/actions/:job', function (req, res, next) {
     let groupActions = [];
     for (let action in actions) {
       if (actions[action].jobName === group) {
-
-        const jobAction = actions[action];
-        jobAction.id = action;
-        groupActions.push(jobAction);
+        groupActions.push(actions[action]);
       }
     };
     groupActions.sort((a, b) => {

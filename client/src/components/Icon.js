@@ -46,18 +46,13 @@ class Icon extends Component {
     this.preventDefault = this.preventDefault.bind(this);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    this.setState({
-      icon: this.props.icon
-    });
-  }
-
   // Updates the icon in presentation and also I guess updates the state at some point
   preventDefault(event) {
     event.preventDefault();
   };
 
   updateIcon(ev) {
+    console.log(ev);
     ev.preventDefault();
     if (this.props.isReplaceable || !this.state.icon) {
       const icon = JSON.parse(ev.dataTransfer.getData('text'));
@@ -81,7 +76,6 @@ class Icon extends Component {
   }
 
   renderIcon(icon) {
-
     return (
       <OverlayTrigger placement="right" trigger={['hover', 'focus']}
         overlay={this.getPopover(icon)}>

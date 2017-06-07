@@ -41,14 +41,14 @@ class Palette extends Component {
 
   getJobPalette(actions) {
     return actions.map((action) => {
-      return <Icon draggable="true" key={action.id} icon={action} />
+      return <Icon key={action.id} icon={action} />
     });
   };
   getPalettes() {
 
     return Object.keys(this.props.jobActions).map((group) => {
       // Only show the group if there are actions in it.
-      if(this.props.jobActions[group].length) {
+      if (this.props.jobActions[group].length) {
         return (
           <section key={group} className="group-container">
             <h3>{group}</h3>
