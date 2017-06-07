@@ -48,16 +48,14 @@ class Palette extends Component {
 
     return Object.keys(this.props.jobActions).map((group) => {
       // Only show the group if there are actions in it.
-      if (this.props.jobActions[group].length) {
-        return (
-          <section key={group} className="group-container">
-            <h3>{group}</h3>
-            <div className="palette-content">
-              {this.getJobPalette(this.props.jobActions[group])}
-            </div>
-          </section>
-        )
-      }
+      return (
+        <section key={group} className="group-container">
+          <h3>{group}</h3>
+          <div className="palette-content">
+            {this.getJobPalette(this.props.jobActions[group])}
+          </div>
+        </section>
+      )
     });
   }
 
