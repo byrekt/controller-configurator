@@ -3465,7 +3465,8 @@
       "relatedActionGroupIds" : [ "conjurer", "white_mage", "healer" ]
     }
   },
-  "sets" : [ null, {
+  "sets" : [
+    {
     "crossBars" : [ {
       "LAD" : {
         "id" : "benefic"
@@ -3519,7 +3520,7 @@
       "RDU" : {
         "id" : "disable",
         "macroInfo" : {
-          "macroSteps" : [ "/macroicon \"Disable\"", "'/ac \"Disable\" <t>'", "/ac \"Disable\" <tt>" ],
+          "macroSteps" : [ "/macroicon \"Disable\"", "/ac \"Disable\" <t>", "/ac \"Disable\" <tt>" ],
           "name" : "Disable Target's Target"
         }
       },
@@ -3528,6 +3529,8 @@
     } ],
     "description" : "It's my astrologian set!",
     "editable" : false,
+    "job": "astrologian",
+    "stars": 1,
     "name" : "The Astrologian"
   } ]
 }

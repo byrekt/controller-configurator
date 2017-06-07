@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Grid } from 'react-bootstrap'; 
-import Palette from '../containers/Palette';
 import CharacterSet from '../containers/CharacterSet';
 
 class Home extends Component {
@@ -8,8 +7,7 @@ class Home extends Component {
     return (
       <Grid>
         Home page content
-        <Palette />
-        <CharacterSet setId={1}/>
+        <CharacterSet setId={0}/>
       </Grid>
     );
   }

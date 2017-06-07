@@ -38,7 +38,8 @@ class Icon extends Component {
     super(props);
 
     this.state = {
-      icon: this.props.icon
+      icon: this.props.icon,
+      macroInfo: this.props.macroInfo
     }
 
     this.updateIcon = this.updateIcon.bind(this);
@@ -75,19 +76,19 @@ class Icon extends Component {
     return (<EmptyIcon onDragOver={this.preventDefault} onDrop={this.updateIcon}></EmptyIcon>);
   }
 
-  renderIcon(icon) {
+  renderIcon(icon, macroInfo) {
     return (
       <OverlayTrigger placement="right" trigger={['hover', 'focus']}
-        overlay={this.getPopover(icon)}>
+        overlay={this.getPopover(icon, macroInfo)}>
         <img draggable="true" onDragOver={this.preventDefault} onDrop={this.updateIcon} onDragStart={this.dragIcon} src={icon.iconPath} alt="" />
       </OverlayTrigger>
     )
   }
 
-  getPopover(icon) {
+  getPopover(icon, macroInfo) {
     return (
-      <Popover id={icon.id} title={(icon.macroInfo) ? icon.macroInfo.name : ''}>
-        {(icon.macroInfo) ? <pre>{icon.macroInfo.macroSteps.join('\n')}</pre> : `${icon.name} ${(icon.level !== '00') ? `lvl ${icon.level}` : ''}`}
+      <Popover id={icon.id} title={(macroInfo) ? macroInfo.name : ''}>
+        {(macroInfo) ? <pre>{macroInfo.macroSteps.join('\n')}</pre> : `${icon.name} ${(icon.level !== '00') ? `lvl ${icon.level}` : ''}`}
       </Popover>
     )
   }
@@ -95,8 +96,8 @@ class Icon extends Component {
 
   render() {
     return (
-      <ActionIcon className={(this.state.icon && this.state.icon.macroInfo) ? 'macro' : ''}>
-        {(this.state.icon) ? this.renderIcon(this.state.icon) : this.renderEmpty()}
+      <ActionIcon className={(this.state.icon && this.state.macroInfo) ? 'macro' : ''}>
+        {(this.state.icon) ? this.renderIcon(this.state.icon, this.state.macroInfo) : this.renderEmpty()}
       </ActionIcon>
     );
   }

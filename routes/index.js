@@ -80,4 +80,20 @@ router.get('/getActionsFromFileStructure', function (req, res, next) {
   let actions = jobUtils.getActionData();
   res.json(actions);
 });
+/**
+ * :job corresponds to optional job filter
+ */
+router.get('/getSetsDetails/:job?', function (req, res, next) {
+  const setRef = database.ref(`/sets`);
+  setRef.once('value', (snapshot) => {
+    const sets = snapshot.val();
+    let filteredSets = sets;
+    if (req.params.job) {
+      filteredSets = sets.filter((set) => set.job === req.params.job);
+    }
+    filteredSets.sort((a, b) => a.stars - b.stars);
+    res.json(filteredSets);
+  });
+});
+
 module.exports = router;

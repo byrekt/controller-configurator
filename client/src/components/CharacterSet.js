@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-bootstrap';
 import Icon from './Icon';
+import Palette from '../containers/Palette';
 import PropTypes from 'prop-types';
 
 const CrossContainer = styled('section') `
@@ -86,20 +87,21 @@ const CrossBar = ({ actionsData, set, description, editable, LAD, LAL, LAR, LAU,
 
 const Cross = ({ actionsData, set, editable, pos, down, left, right, up }) => {
   return (
-  <div className="cross">
-    <div className="left-icon">
-      <Icon icon={actionsData[left.id]} macroInfo={left.macroInfo} isReplaceable={editable} />
-    </div>
-    <div className="middle-icons">
-      <Icon icon={actionsData[up.id]} macroInfo={up.macroInfo} isReplaceable={!editable} />
-      <Icon icon={actionsData[down.id]} macroInfo={down.macroInfo} isReplaceable={!editable} />
+    <div className="cross">
+      <div className="left-icon">
+        <Icon icon={actionsData[left.id]} macroInfo={left.macroInfo} isReplaceable={editable} />
+      </div>
+      <div className="middle-icons">
+        <Icon icon={actionsData[up.id]} macroInfo={up.macroInfo} isReplaceable={!editable} />
+        <Icon icon={actionsData[down.id]} macroInfo={down.macroInfo} isReplaceable={!editable} />
 
+      </div>
+      <div className="right-icon">
+        <Icon icon={actionsData[right.id]} macroInfo={right.macroInfo} isReplaceable={!editable} />
+      </div>
     </div>
-    <div className="right-icon">
-      <Icon icon={actionsData[right.id]} macroInfo={right.macroInfo} isReplaceable={!editable} />
-    </div>
-  </div>
-)}
+  )
+}
 
 class CharacterSet extends Component {
 
@@ -121,37 +123,46 @@ class CharacterSet extends Component {
       return (
         <Grid>
           <Row>
-            <Col xs={12}>
-              {this.props.characterSet.name}
+            <Col xs={8}>
+              <Grid>
+                <Row>
+                  <Col xs={12}>
+                    {this.props.characterSet.name}
+                  </Col>
+                </Row>
+                {description}
+                <Row>
+                  <Col xs={12}>
+                    {this.props.characterSet && this.props.characterSet.crossBars && this.props.characterSet.crossBars.map((bar, index) => (
+                      <CrossBar key={index}
+                        actionsData={this.props.actionsData}
+                        set={index}
+                        description={bar.description}
+                        editable={this.props.characterSet.editable}
+                        LAD={bar.LAD}
+                        LAL={bar.LAL}
+                        LAR={bar.LAR}
+                        LAU={bar.LAU}
+                        LDD={bar.LDD}
+                        LDL={bar.LDL}
+                        LDR={bar.LDR}
+                        LDU={bar.LDU}
+                        RAD={bar.RAD}
+                        RAL={bar.RAL}
+                        RAR={bar.RAR}
+                        RAU={bar.RAU}
+                        RDD={bar.RDD}
+                        RDL={bar.RDL}
+                        RDR={bar.RDR}
+                        RDU={bar.RDU}
+                      />
+                    ))}
+                  </Col>
+                </Row>
+              </Grid>
             </Col>
-          </Row>
-          {description}
-          <Row>
-            <Col xs={12}>
-              {this.props.characterSet && this.props.characterSet.crossBars && this.props.characterSet.crossBars.map((bar, index) => (
-                <CrossBar key={index}
-                  actionsData={this.props.actionsData}
-                  set={index}
-                  description={bar.description}
-                  editable={this.props.characterSet.editable}
-                  LAD={bar.LAD}
-                  LAL={bar.LAL}
-                  LAR={bar.LAR}
-                  LAU={bar.LAU}
-                  LDD={bar.LDD}
-                  LDL={bar.LDL}
-                  LDR={bar.LDR}
-                  LDU={bar.LDU}
-                  RAD={bar.RAD}
-                  RAL={bar.RAL}
-                  RAR={bar.RAR}
-                  RAU={bar.RAU}
-                  RDD={bar.RDD}
-                  RDL={bar.RDL}
-                  RDR={bar.RDR}
-                  RDU={bar.RDU}
-                />
-              ))}
+            <Col xs={4}>
+              {this.props.characterSet.job && <Palette defaultPaletteId={this.props.characterSet.job}/>}
             </Col>
           </Row>
         </Grid>
@@ -169,6 +180,8 @@ CharacterSet.propTypes = {
     description: PropTypes.string,
     setId: PropTypes.number,
     crossBars: PropTypes.arrayOf(Object),
+    job: PropTypes.string,
+    stars: PropTypes.number,
     editable: PropTypes.bool
   }),
   actionsData: PropTypes.object,

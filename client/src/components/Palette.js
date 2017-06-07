@@ -33,9 +33,10 @@ class Palette extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedPaletteId: 'astrologian'
+      selectedPaletteId: this.props.defaultPaletteId
     }
-
+    console.log(props);
+    this.props.onJobChange(this.props.defaultPaletteId);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -60,6 +61,7 @@ class Palette extends Component {
   }
 
   handleChange(event) {
+    console.log('EVENT', event.target.value);
     this.setState({ selectedPaletteId: event.target.value });
     this.props.onJobChange(event.target.value);
   }
@@ -85,6 +87,7 @@ class Palette extends Component {
 Palette.propTypes = {
   jobs: PropTypes.object,
   jobActions: PropTypes.object,
+  defaultPaletteId: PropTypes.string,
   onJobChange: PropTypes.func.isRequired
 };
 Palette.defaultProps = {

@@ -16,7 +16,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onJobChange: (job) => {
-      dispatch(getJobActions(job));
+      if (job) dispatch(getJobActions(job));
     }
   }
 }
