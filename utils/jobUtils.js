@@ -80,5 +80,36 @@ module.exports = {
       jobsObject[jobName] = job;
     });
     return { jobs: jobsObject, jobMappings: jobAdditionalGroupMap };
+  },
+  getActionData: () => {
+    let actionsObject = {};
+    let folderName = 'public/images/jobs/action';
+    let jobs = fs.readdirSync(folderName);
+    jobs.forEach((jobName, index) => {
+      let jobFolder = `${folderName}/${jobName}`;
+      let jobLevels = fs.readdirSync(jobFolder);
+      jobLevels.forEach((level, index) => {
+        let levelFolder = `${jobFolder}/${level}`;
+        let isDirectory = fs.lstatSync(levelFolder).isDirectory();
+        // If this is an action without a level requirement, build it.
+        if (isDirectory) {
+          // Go down one more level
+          let actions = fs.readdirSync(levelFolder);
+          actions.forEach((action) => {
+            let actionName = action.split('.')[0];
+            let displayedActionName = actionName.replace(/_/g, ' ').toUpperCase();
+            console.log(actionName, displayedActionName);
+            actionsObject[actionName] = {
+              iconPath: action,
+              jobName: jobName,
+              name: displayedActionName,
+              level: level,
+              id: actionName
+            }
+          });
+        }
+      });
+    });
+    return { actions: actionsObject };
   }
 }

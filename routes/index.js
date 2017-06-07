@@ -78,4 +78,9 @@ router.get('/getSet/:id', function (req, res, next) {
     res.json(snapshot.val());
   });
 });
+
+router.get('/getActionsFromFileStructure', function (req, res, next) {
+  let actions = jobUtils.getActionData();
+  res.json(actions);
+});
 module.exports = router;
