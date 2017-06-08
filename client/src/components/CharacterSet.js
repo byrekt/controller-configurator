@@ -106,7 +106,7 @@ const Cross = ({ actionsData, set, editable, pos, down, left, right, up }) => {
 class CharacterSet extends Component {
 
   componentDidMount() {
-    this.props.onSetChange(this.props.setId);
+    this.props.onSetChange(this.props.params.kitId);
   }
 
   render() {
@@ -121,7 +121,7 @@ class CharacterSet extends Component {
           </Row>;
       }
       return (
-        <Grid>
+        <div>
           <Row>
             <Col xs={8}>
               <Grid>
@@ -168,7 +168,7 @@ class CharacterSet extends Component {
               }
             </Col>
           </Row>
-        </Grid>
+        </div>
       );
     } else {
       return (<div></div>)
@@ -177,7 +177,13 @@ class CharacterSet extends Component {
 }
 
 CharacterSet.propTypes = {
-  setId: PropTypes.number,
+  params: PropTypes.shape({
+    kitId: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number
+        ]),
+    user: PropTypes.string
+  }),
   characterSet: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,

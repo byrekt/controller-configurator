@@ -105,7 +105,6 @@ router.get('/getSetsDetails/:job?', function (req, res, next) {
         res.json(sets);
       });
   }
-
 });
 
 module.exports = router;

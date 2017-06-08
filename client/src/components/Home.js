@@ -5,10 +5,10 @@ import CharacterSet from '../containers/CharacterSet';
 class Home extends Component {
   render() {
     return (
-      <Grid>
+      <div>
         Home page content
-        <CharacterSet setId={0}/>
-      </Grid>
+        <CharacterSet params={{kitId:0}}/>
+      </div>
     );
   }
 }
