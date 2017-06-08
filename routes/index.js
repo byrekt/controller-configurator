@@ -70,9 +70,14 @@ router.get('/getActionCategories', function (req, res, next) {
 });
 
 router.get('/getSet/:id', function (req, res, next) {
-  const setRef = database.ref(`/sets/${req.params.id}`);
-  setRef.once('value', (snapshot) => {
-    res.json(snapshot.val());
+  const ref = database.ref(`/sets`);
+
+  ref.child(`setMeta/${req.params.id}`).once('value', (setMeta) => {
+    let kit = setMeta.val();
+    ref.child(`setCrossBars/${req.params.id}`).once('value', (crossBars) => {
+      kit.crossBars = crossBars.val();
+      res.json(kit);
+    });
   });
 });
 
@@ -84,16 +89,23 @@ router.get('/getActionsFromFileStructure', function (req, res, next) {
  * :job corresponds to optional job filter
  */
 router.get('/getSetsDetails/:job?', function (req, res, next) {
-  const setRef = database.ref(`/sets`);
-  setRef.once('value', (snapshot) => {
-    const sets = snapshot.val();
-    let filteredSets = sets;
-    if (req.params.job) {
-      filteredSets = sets.filter((set) => set.job === req.params.job);
-    }
-    filteredSets.sort((a, b) => a.stars - b.stars);
-    res.json(filteredSets);
-  });
+  const setRef = database.ref(`/sets/setMeta`);
+  if (req.params.job) {
+    setRef.orderByChild('job')
+      .startAt(req.params.job)
+      .endAt(req.params.job)
+      .once('value', (snapshot) => {
+        const sets = snapshot.val();
+        res.json(sets.filter(set => set !== null));
+      });
+  } else {
+    setRef
+      .once('value', (snapshot) => {
+        const sets = snapshot.val();
+        res.json(sets);
+      });
+  }
+
 });
 
 module.exports = router;

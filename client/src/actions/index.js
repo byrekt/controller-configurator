@@ -79,11 +79,9 @@ const receiveSets = sets => ({
  * @param {string} job the optional job filter
  */
 export const getSets = (id) => dispatch => {
-  console.log("MAKING A CALL TO GET SETS");
   return fetch(`/api/getSetsDetails/${(id) ? id : ''}`)
     .then(response => response.json())
     .then(json => {
-      console.log(json);
       dispatch(receiveSets(json));
     });
 };
