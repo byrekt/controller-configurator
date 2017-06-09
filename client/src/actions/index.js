@@ -1,4 +1,7 @@
 import * as types from '../constants/ActionTypes';
+import firebase from 'firebase';
+
+const ref = new firebase('https://controller-configurator.firebaseio.com');
 
 // Action creator for job data
 const receiveJobData = jobData => ({
