@@ -258,6 +258,22 @@ firebase@^4.1.1:
     promise-polyfill "^6.0.2"
     xmlhttprequest "^1.8.0"
 
+firebase@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-4.1.2.tgz#b213ab229eb65e31bdbd1d262059b1bb1edfac1f"
+  dependencies:
+    dom-storage "^2.0.2"
+    faye-websocket "0.9.3"
+    jsonwebtoken "^7.3.0"
+    promise-polyfill "^6.0.2"
+    xmlhttprequest "^1.8.0"
+
+firebaseui@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/firebaseui/-/firebaseui-2.1.1.tgz#2138f68945505870c8beb5951933000f9f54b7aa"
+  dependencies:
+    firebase "^4.1.2"
+
 forwarded@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.0.tgz#19ef9874c4ae1c297bcf078fde63a09b66a84363"

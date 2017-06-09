@@ -5,11 +5,12 @@ import { getSets } from '../actions';
 // Gets data from "API"s and stores them in the redux store using the
 
 function mapStateToProps(state) {
-  const { sets, jobData } = state;
+  const { sets, jobData, characterSet } = state;
 
   return {
     sets: sets,
-    jobData: jobData
+    jobData: jobData,
+    characterSet: characterSet
   }
 }
 

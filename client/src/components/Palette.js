@@ -19,7 +19,7 @@ const PaletteContainer = styled('section') `
         flex-wrap: wrap;
         width: 24rem;
 
-        
+
         >div {
           margin: 5px 5px 5px 0;
         }
@@ -35,7 +35,6 @@ class Palette extends Component {
     this.state = {
       selectedPaletteId: this.props.defaultPaletteId
     }
-    console.log(props);
     this.props.onJobChange(this.props.defaultPaletteId);
     this.handleChange = this.handleChange.bind(this);
   }

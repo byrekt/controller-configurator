@@ -57,9 +57,9 @@ const receiveCharacterSet = characterSet => ({
   characterSet: characterSet
 });
 /**
- * Retrieves the object containing all of the cross bars, description, etc for 
+ * Retrieves the object containing all of the cross bars, description, etc for
  * any given character set.
- * @param {number|string} id the ID of the set to retrieve 
+ * @param {number|string} id the ID of the set to retrieve
  */
 export const getCharacterSet = (id) => dispatch => {
   return fetch(`/api/getSet/${id}`)
@@ -67,6 +67,20 @@ export const getCharacterSet = (id) => dispatch => {
     .then(json => {
       dispatch(receiveCharacterSet(json));
     });
+};
+
+// Action creator for removing kit data
+const removeCharacterSet = () => ({
+  type: types.RECEIVE_CHARACTER_SET,
+  characterSet: {}
+});
+/**
+ * Retrieves the object containing all of the cross bars, description, etc for
+ * any given character set.
+ * @param {number|string} id the ID of the set to retrieve
+ */
+export const clearCurrentKit = () => dispatch => {
+    dispatch(removeCharacterSet());
 };
 
 // Action creator for character set data

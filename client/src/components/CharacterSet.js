@@ -31,26 +31,26 @@ const CrossContainer = styled('section') `
 
 /**
  * Stateless component for rendering a cross hotbar
- * @param {object} actionsData map of all actions 
+ * @param {object} actionsData map of all actions
  * @param {number|string} set the # of the bar this corresponds to, sets 1-8
  * @param {string} name The name of the bar
  * @param {string} description The description of the cross hotbar
- * 
+ *
  * @param {string} LAD The id of the action in the LAD position
  * @param {string} LAL The id of the action in the LAL position
  * @param {string} LAR The id of the action in the LAR position
  * @param {string} LAU The id of the action in the LAU position
- * 
+ *
  * @param {string} LDD The id of the action in the LDD position
  * @param {string} LDL The id of the action in the LDL position
  * @param {string} LDR The id of the action in the LDR position
  * @param {string} LDU The id of the action in the LDU position
- * 
+ *
  * @param {string} RAD The id of the action in the RAD position
  * @param {string} RAL The id of the action in the RAL position
  * @param {string} RAR The id of the action in the RAR position
  * @param {string} RAU The id of the action in the RAU position
- * 
+ *
  * @param {string} RDD The id of the action in the RDD position
  * @param {string} RDL The id of the action in the RDL position
  * @param {string} RDR The id of the action in the RDR position
@@ -106,7 +106,13 @@ const Cross = ({ actionsData, set, editable, pos, down, left, right, up }) => {
 class CharacterSet extends Component {
 
   componentDidMount() {
-    this.props.onSetChange(this.props.params.kitId);
+
+    this.props.onSetChange(this.props.match.params.kitId);
+
+  }
+
+  componentWillUnmount() {
+    this.props.clearCurrentKit();
   }
 
   render() {
@@ -163,7 +169,7 @@ class CharacterSet extends Component {
             </Col>
             <Col xs={4}>
               {this.props.characterSet.job &&
-                this.props.characterSet.editable &&
+                //this.props.characterSet.editable &&
                 <Palette defaultPaletteId={this.props.characterSet.job} />
               }
             </Col>
@@ -177,24 +183,34 @@ class CharacterSet extends Component {
 }
 
 CharacterSet.propTypes = {
-  params: PropTypes.shape({
-    kitId: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.number
-        ]),
-    user: PropTypes.string
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      kitId: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+      ]),
+      user: PropTypes.string
+    })
   }),
   characterSet: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,
-    setId: PropTypes.number,
+    kitId: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
     crossBars: PropTypes.arrayOf(Object),
     job: PropTypes.string,
     stars: PropTypes.number,
     editable: PropTypes.bool
   }),
   actionsData: PropTypes.object,
-  onSetChange: PropTypes.func.isRequired
+  onSetChange: PropTypes.func.isRequired,
+  clearCurrentKit: PropTypes.func.isRequired
+}
+
+CharacterSet.defaultProps = {
+  params: {}
 }
 
 export default CharacterSet;

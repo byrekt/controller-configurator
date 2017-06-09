@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid } from 'react-bootstrap'; 
+import { Grid } from 'react-bootstrap';
 import CharacterSet from '../containers/CharacterSet';
 
 class Home extends Component {
@@ -7,7 +7,6 @@ class Home extends Component {
     return (
       <div>
         Home page content
-        <CharacterSet params={{kitId:0}}/>
       </div>
     );
   }

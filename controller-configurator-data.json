@@ -42,3395 +42,3395 @@
   ],
   "actions": {
     "abyssal_drain": {
-      "iconPath": "images/jobs/action/dark_knight/56/abyssal_drain.png",
+      "iconPath": "/images/jobs/action/dark_knight/56/abyssal_drain.png",
       "id": "abyssal_drain",
       "jobName": "dark_knight",
       "level": "56",
       "name": "ABYSSAL DRAIN"
     },
     "achievements": {
-      "iconPath": "images/jobs/action/main_menu/00/achievements.png",
+      "iconPath": "/images/jobs/action/main_menu/00/achievements.png",
       "id": "achievements",
       "jobName": "main_menu",
       "level": "00",
       "name": "ACHIEVEMENTS"
     },
     "actions_&_traits": {
-      "iconPath": "images/jobs/action/main_menu/00/actions_&_traits.png",
+      "iconPath": "/images/jobs/action/main_menu/00/actions_&_traits.png",
       "id": "actions_&_traits",
       "jobName": "main_menu",
       "level": "00",
       "name": "ACTIONS & TRAITS"
     },
     "active_help": {
-      "iconPath": "images/jobs/action/main_menu/00/active_help.png",
+      "iconPath": "/images/jobs/action/main_menu/00/active_help.png",
       "id": "active_help",
       "jobName": "main_menu",
       "level": "00",
       "name": "ACTIVE HELP"
     },
     "adloquium": {
-      "iconPath": "images/jobs/action/scholar/30/adloquium.png",
+      "iconPath": "/images/jobs/action/scholar/30/adloquium.png",
       "id": "adloquium",
       "jobName": "scholar",
       "level": "30",
       "name": "ADLOQUIUM"
     },
     "advanced_materia_melding": {
-      "iconPath": "images/jobs/action/general/00/advanced_materia_melding.png",
+      "iconPath": "/images/jobs/action/general/00/advanced_materia_melding.png",
       "id": "advanced_materia_melding",
       "jobName": "general",
       "level": "00",
       "name": "ADVANCED MATERIA MELDING"
     },
     "aeolian_edge": {
-      "iconPath": "images/jobs/action/rogue/26/aeolian_edge.png",
+      "iconPath": "/images/jobs/action/rogue/26/aeolian_edge.png",
       "id": "aeolian_edge",
       "jobName": "rogue",
       "level": "26",
       "name": "AEOLIAN EDGE"
     },
     "aerial_blast": {
-      "iconPath": "images/jobs/action/garuda-egi/50/aerial_blast.png",
+      "iconPath": "/images/jobs/action/garuda-egi/50/aerial_blast.png",
       "id": "aerial_blast",
       "jobName": "garuda-egi",
       "level": "50",
       "name": "AERIAL BLAST"
     },
     "aerial_slash": {
-      "iconPath": "images/jobs/action/garuda-egi/20/aerial_slash.png",
+      "iconPath": "/images/jobs/action/garuda-egi/20/aerial_slash.png",
       "id": "aerial_slash",
       "jobName": "garuda-egi",
       "level": "20",
       "name": "AERIAL SLASH"
     },
     "aero": {
-      "iconPath": "images/jobs/action/conjurer/04/aero.png",
+      "iconPath": "/images/jobs/action/conjurer/04/aero.png",
       "id": "aero",
       "jobName": "conjurer",
       "level": "04",
       "name": "AERO"
     },
     "aero_ii": {
-      "iconPath": "images/jobs/action/conjurer/46/aero_ii.png",
+      "iconPath": "/images/jobs/action/conjurer/46/aero_ii.png",
       "id": "aero_ii",
       "jobName": "conjurer",
       "level": "46",
       "name": "AERO II"
     },
     "aero_iii": {
-      "iconPath": "images/jobs/action/white_mage/58/aero_iii.png",
+      "iconPath": "/images/jobs/action/white_mage/58/aero_iii.png",
       "id": "aero_iii",
       "jobName": "white_mage",
       "level": "58",
       "name": "AERO III"
     },
     "aetherflow": {
-      "iconPath": "images/jobs/action/arcanist/06/aetherflow.png",
+      "iconPath": "/images/jobs/action/arcanist/06/aetherflow.png",
       "id": "aetherflow",
       "jobName": "arcanist",
       "level": "06",
       "name": "AETHERFLOW"
     },
     "aetherial_manipulation": {
-      "iconPath": "images/jobs/action/thaumaturge/50/aetherial_manipulation.png",
+      "iconPath": "/images/jobs/action/thaumaturge/50/aetherial_manipulation.png",
       "id": "aetherial_manipulation",
       "jobName": "thaumaturge",
       "level": "50",
       "name": "AETHERIAL MANIPULATION"
     },
     "aetheric_burst": {
-      "iconPath": "images/jobs/action/pvp/00/aetheric_burst.png",
+      "iconPath": "/images/jobs/action/pvp/00/aetheric_burst.png",
       "id": "aetheric_burst",
       "jobName": "pvp",
       "level": "00",
       "name": "AETHERIC BURST"
     },
     "apocatastasis": {
-      "iconPath": "images/jobs/action/black_mage/40/apocatastasis.png",
+      "iconPath": "/images/jobs/action/black_mage/40/apocatastasis.png",
       "id": "apocatastasis",
       "jobName": "black_mage",
       "level": "40",
       "name": "APOCATASTASIS"
     },
     "arm_of_the_destroyer": {
-      "iconPath": "images/jobs/action/pugilist/26/arm_of_the_destroyer.png",
+      "iconPath": "/images/jobs/action/pugilist/26/arm_of_the_destroyer.png",
       "id": "arm_of_the_destroyer",
       "jobName": "pugilist",
       "level": "26",
       "name": "ARM OF THE DESTROYER"
     },
     "armor_crush": {
-      "iconPath": "images/jobs/action/ninja/54/armor_crush.png",
+      "iconPath": "/images/jobs/action/ninja/54/armor_crush.png",
       "id": "armor_crush",
       "jobName": "ninja",
       "level": "54",
       "name": "ARMOR CRUSH"
     },
     "armoury_chest": {
-      "iconPath": "images/jobs/action/main_menu/00/armoury_chest.png",
+      "iconPath": "/images/jobs/action/main_menu/00/armoury_chest.png",
       "id": "armoury_chest",
       "jobName": "main_menu",
       "level": "00",
       "name": "ARMOURY CHEST"
     },
     "army's_paeon": {
-      "iconPath": "images/jobs/action/bard/40/army's_paeon.png",
+      "iconPath": "/images/jobs/action/bard/40/army's_paeon.png",
       "id": "army's_paeon",
       "jobName": "bard",
       "level": "40",
       "name": "ARMY'S PAEON"
     },
     "ascend": {
-      "iconPath": "images/jobs/action/astrologian/12/ascend.png",
+      "iconPath": "/images/jobs/action/astrologian/12/ascend.png",
       "id": "ascend",
       "jobName": "astrologian",
       "level": "12",
       "name": "ASCEND"
     },
     "aspected_benefic": {
-      "iconPath": "images/jobs/action/astrologian/34/aspected_benefic.png",
+      "iconPath": "/images/jobs/action/astrologian/34/aspected_benefic.png",
       "id": "aspected_benefic",
       "jobName": "astrologian",
       "level": "34",
       "name": "ASPECTED BENEFIC"
     },
     "aspected_helios": {
-      "iconPath": "images/jobs/action/astrologian/42/aspected_helios.png",
+      "iconPath": "/images/jobs/action/astrologian/42/aspected_helios.png",
       "id": "aspected_helios",
       "jobName": "astrologian",
       "level": "42",
       "name": "ASPECTED HELIOS"
     },
     "assassinate": {
-      "iconPath": "images/jobs/action/rogue/12/assassinate.png",
+      "iconPath": "/images/jobs/action/rogue/12/assassinate.png",
       "id": "assassinate",
       "jobName": "rogue",
       "level": "12",
       "name": "ASSASSINATE"
     },
     "assize": {
-      "iconPath": "images/jobs/action/white_mage/56/assize.png",
+      "iconPath": "/images/jobs/action/white_mage/56/assize.png",
       "id": "assize",
       "jobName": "white_mage",
       "level": "56",
       "name": "ASSIZE"
     },
     "asylum": {
-      "iconPath": "images/jobs/action/white_mage/52/asylum.png",
+      "iconPath": "/images/jobs/action/white_mage/52/asylum.png",
       "id": "asylum",
       "jobName": "white_mage",
       "level": "52",
       "name": "ASYLUM"
     },
     "attacker_stance": {
-      "iconPath": "images/jobs/action/companions/00/attacker_stance.png",
+      "iconPath": "/images/jobs/action/companions/00/attacker_stance.png",
       "id": "attacker_stance",
       "jobName": "companions",
       "level": "00",
       "name": "ATTACKER STANCE"
     },
     "attunement": {
-      "iconPath": "images/jobs/action/pvp/00/attunement.png",
+      "iconPath": "/images/jobs/action/pvp/00/attunement.png",
       "id": "attunement",
       "jobName": "pvp",
       "level": "00",
       "name": "ATTUNEMENT"
     },
     "aura_blast": {
-      "iconPath": "images/jobs/action/pvp/00/aura_blast.png",
+      "iconPath": "/images/jobs/action/pvp/00/aura_blast.png",
       "id": "aura_blast",
       "jobName": "pvp",
       "level": "00",
       "name": "AURA BLAST"
     },
     "auto-attack": {
-      "iconPath": "images/jobs/action/general/00/auto-attack.png",
+      "iconPath": "/images/jobs/action/general/00/auto-attack.png",
       "id": "auto-attack",
       "jobName": "general",
       "level": "00",
       "name": "AUTO-ATTACK"
     },
     "awareness": {
-      "iconPath": "images/jobs/action/gladiator/34/awareness.png",
+      "iconPath": "/images/jobs/action/gladiator/34/awareness.png",
       "id": "awareness",
       "jobName": "gladiator",
       "level": "34",
       "name": "AWARENESS"
     },
     "away": {
-      "iconPath": "images/jobs/action/pets/00/away.png",
+      "iconPath": "/images/jobs/action/pets/00/away.png",
       "id": "away",
       "jobName": "pets",
       "level": "00",
       "name": "AWAY"
     },
     "axe_kick": {
-      "iconPath": "images/jobs/action/pvp/00/axe_kick.png",
+      "iconPath": "/images/jobs/action/pvp/00/axe_kick.png",
       "id": "axe_kick",
       "jobName": "pvp",
       "level": "00",
       "name": "AXE KICK"
     },
     "backdraft": {
-      "iconPath": "images/jobs/action/emerald_carbuncle/01/backdraft.png",
+      "iconPath": "/images/jobs/action/emerald_carbuncle/01/backdraft.png",
       "id": "backdraft",
       "jobName": "emerald_carbuncle",
       "level": "01",
       "name": "BACKDRAFT"
     },
     "bane": {
-      "iconPath": "images/jobs/action/arcanist/30/bane.png",
+      "iconPath": "/images/jobs/action/arcanist/30/bane.png",
       "id": "bane",
       "jobName": "arcanist",
       "level": "30",
       "name": "BANE"
     },
     "barrage": {
-      "iconPath": "images/jobs/action/archer/38/barrage.png",
+      "iconPath": "/images/jobs/action/archer/38/barrage.png",
       "id": "barrage",
       "jobName": "archer",
       "level": "38",
       "name": "BARRAGE"
     },
     "battle_litany": {
-      "iconPath": "images/jobs/action/dragoon/52/battle_litany.png",
+      "iconPath": "/images/jobs/action/dragoon/52/battle_litany.png",
       "id": "battle_litany",
       "jobName": "dragoon",
       "level": "52",
       "name": "BATTLE LITANY"
     },
     "battle_voice": {
-      "iconPath": "images/jobs/action/bard/50/battle_voice.png",
+      "iconPath": "/images/jobs/action/bard/50/battle_voice.png",
       "id": "battle_voice",
       "jobName": "bard",
       "level": "50",
       "name": "BATTLE VOICE"
     },
     "benediction": {
-      "iconPath": "images/jobs/action/white_mage/50/benediction.png",
+      "iconPath": "/images/jobs/action/white_mage/50/benediction.png",
       "id": "benediction",
       "jobName": "white_mage",
       "level": "50",
       "name": "BENEDICTION"
     },
     "benefic": {
-      "iconPath": "images/jobs/action/astrologian/2/benefic.png",
+      "iconPath": "/images/jobs/action/astrologian/2/benefic.png",
       "id": "benefic",
       "jobName": "astrologian",
       "level": "2",
       "name": "BENEFIC"
     },
     "benefic_ii": {
-      "iconPath": "images/jobs/action/astrologian/26/benefic_ii.png",
+      "iconPath": "/images/jobs/action/astrologian/26/benefic_ii.png",
       "id": "benefic_ii",
       "jobName": "astrologian",
       "level": "26",
       "name": "BENEFIC II"
     },
     "berserk": {
-      "iconPath": "images/jobs/action/marauder/22/berserk.png",
+      "iconPath": "/images/jobs/action/marauder/22/berserk.png",
       "id": "berserk",
       "jobName": "marauder",
       "level": "22",
       "name": "BERSERK"
     },
     "bio": {
-      "iconPath": "images/jobs/action/arcanist/02/bio.png",
+      "iconPath": "/images/jobs/action/arcanist/02/bio.png",
       "id": "bio",
       "jobName": "arcanist",
       "level": "02",
       "name": "BIO"
     },
     "bio_ii": {
-      "iconPath": "images/jobs/action/arcanist/26/bio_ii.png",
+      "iconPath": "/images/jobs/action/arcanist/26/bio_ii.png",
       "id": "bio_ii",
       "jobName": "arcanist",
       "level": "26",
       "name": "BIO II"
     },
     "bishop_autoturret": {
-      "iconPath": "images/jobs/action/machinist/50/bishop_autoturret.png",
+      "iconPath": "/images/jobs/action/machinist/50/bishop_autoturret.png",
       "id": "bishop_autoturret",
       "jobName": "machinist",
       "level": "50",
       "name": "BISHOP AUTOTURRET"
     },
     "blacklist": {
-      "iconPath": "images/jobs/action/main_menu/00/blacklist.png",
+      "iconPath": "/images/jobs/action/main_menu/00/blacklist.png",
       "id": "blacklist",
       "jobName": "main_menu",
       "level": "00",
       "name": "BLACKLIST"
     },
     "blank": {
-      "iconPath": "images/jobs/action/machinist/15/blank.png",
+      "iconPath": "/images/jobs/action/machinist/15/blank.png",
       "id": "blank",
       "jobName": "machinist",
       "level": "15",
       "name": "BLANK"
     },
     "blast_shot": {
-      "iconPath": "images/jobs/action/pvp/00/blast_shot.png",
+      "iconPath": "/images/jobs/action/pvp/00/blast_shot.png",
       "id": "blast_shot",
       "jobName": "pvp",
       "level": "00",
       "name": "BLAST SHOT"
     },
     "blizzard": {
-      "iconPath": "images/jobs/action/thaumaturge/01/blizzard.png",
+      "iconPath": "/images/jobs/action/thaumaturge/01/blizzard.png",
       "id": "blizzard",
       "jobName": "thaumaturge",
       "level": "01",
       "name": "BLIZZARD"
     },
     "blizzard_ii": {
-      "iconPath": "images/jobs/action/thaumaturge/12/blizzard_ii.png",
+      "iconPath": "/images/jobs/action/thaumaturge/12/blizzard_ii.png",
       "id": "blizzard_ii",
       "jobName": "thaumaturge",
       "level": "12",
       "name": "BLIZZARD II"
     },
     "blizzard_iii": {
-      "iconPath": "images/jobs/action/thaumaturge/38/blizzard_iii.png",
+      "iconPath": "/images/jobs/action/thaumaturge/38/blizzard_iii.png",
       "id": "blizzard_iii",
       "jobName": "thaumaturge",
       "level": "38",
       "name": "BLIZZARD III"
     },
     "blizzard_iv": {
-      "iconPath": "images/jobs/action/black_mage/58/blizzard_iv.png",
+      "iconPath": "/images/jobs/action/black_mage/58/blizzard_iv.png",
       "id": "blizzard_iv",
       "jobName": "black_mage",
       "level": "58",
       "name": "BLIZZARD IV"
     },
     "blood_for_blood": {
-      "iconPath": "images/jobs/action/lancer/34/blood_for_blood.png",
+      "iconPath": "/images/jobs/action/lancer/34/blood_for_blood.png",
       "id": "blood_for_blood",
       "jobName": "lancer",
       "level": "34",
       "name": "BLOOD FOR BLOOD"
     },
     "blood_of_the_dragon": {
-      "iconPath": "images/jobs/action/dragoon/54/blood_of_the_dragon.png",
+      "iconPath": "/images/jobs/action/dragoon/54/blood_of_the_dragon.png",
       "id": "blood_of_the_dragon",
       "jobName": "dragoon",
       "level": "54",
       "name": "BLOOD OF THE DRAGON"
     },
     "blood_price": {
-      "iconPath": "images/jobs/action/dark_knight/35/blood_price.png",
+      "iconPath": "/images/jobs/action/dark_knight/35/blood_price.png",
       "id": "blood_price",
       "jobName": "dark_knight",
       "level": "35",
       "name": "BLOOD PRICE"
     },
     "blood_weapon": {
-      "iconPath": "images/jobs/action/dark_knight/18/blood_weapon.png",
+      "iconPath": "/images/jobs/action/dark_knight/18/blood_weapon.png",
       "id": "blood_weapon",
       "jobName": "dark_knight",
       "level": "18",
       "name": "BLOOD WEAPON"
     },
     "bloodbath": {
-      "iconPath": "images/jobs/action/marauder/08/bloodbath.png",
+      "iconPath": "/images/jobs/action/marauder/08/bloodbath.png",
       "id": "bloodbath",
       "jobName": "marauder",
       "level": "08",
       "name": "BLOODBATH"
     },
     "bloodletter": {
-      "iconPath": "images/jobs/action/archer/12/bloodletter.png",
+      "iconPath": "/images/jobs/action/archer/12/bloodletter.png",
       "id": "bloodletter",
       "jobName": "archer",
       "level": "12",
       "name": "BLOODLETTER"
     },
     "blunt_arrow": {
-      "iconPath": "images/jobs/action/archer/42/blunt_arrow.png",
+      "iconPath": "/images/jobs/action/archer/42/blunt_arrow.png",
       "id": "blunt_arrow",
       "jobName": "archer",
       "level": "42",
       "name": "BLUNT ARROW"
     },
     "bootshine": {
-      "iconPath": "images/jobs/action/pugilist/01/bootshine.png",
+      "iconPath": "/images/jobs/action/pugilist/01/bootshine.png",
       "id": "bootshine",
       "jobName": "pugilist",
       "level": "01",
       "name": "BOOTSHINE"
     },
     "broil": {
-      "iconPath": "images/jobs/action/scholar/54/broil.png",
+      "iconPath": "/images/jobs/action/scholar/54/broil.png",
       "id": "broil",
       "jobName": "scholar",
       "level": "54",
       "name": "BROIL"
     },
     "brutal_swing": {
-      "iconPath": "images/jobs/action/marauder/10/brutal_swing.png",
+      "iconPath": "/images/jobs/action/marauder/10/brutal_swing.png",
       "id": "brutal_swing",
       "jobName": "marauder",
       "level": "10",
       "name": "BRUTAL SWING"
     },
     "bulwark": {
-      "iconPath": "images/jobs/action/gladiator/46/bulwark.png",
+      "iconPath": "/images/jobs/action/gladiator/46/bulwark.png",
       "id": "bulwark",
       "jobName": "gladiator",
       "level": "46",
       "name": "BULWARK"
     },
     "burning_strike": {
-      "iconPath": "images/jobs/action/ifrit-egi/01/burning_strike.png",
+      "iconPath": "/images/jobs/action/ifrit-egi/01/burning_strike.png",
       "id": "burning_strike",
       "jobName": "ifrit-egi",
       "level": "01",
       "name": "BURNING STRIKE"
     },
     "butcher's_block": {
-      "iconPath": "images/jobs/action/marauder/30/butcher's_block.png",
+      "iconPath": "/images/jobs/action/marauder/30/butcher's_block.png",
       "id": "butcher's_block",
       "jobName": "marauder",
       "level": "30",
       "name": "BUTCHER'S BLOCK"
     },
     "carve_and_spit": {
-      "iconPath": "images/jobs/action/dark_knight/60/carve_and_spit.png",
+      "iconPath": "/images/jobs/action/dark_knight/60/carve_and_spit.png",
       "id": "carve_and_spit",
       "jobName": "dark_knight",
       "level": "60",
       "name": "CARVE AND SPIT"
     },
     "celestial_opposition": {
-      "iconPath": "images/jobs/action/astrologian/60/celestial_opposition.png",
+      "iconPath": "/images/jobs/action/astrologian/60/celestial_opposition.png",
       "id": "celestial_opposition",
       "jobName": "astrologian",
       "level": "60",
       "name": "CELESTIAL OPPOSITION"
     },
     "chaos_thrust": {
-      "iconPath": "images/jobs/action/lancer/50/chaos_thrust.png",
+      "iconPath": "/images/jobs/action/lancer/50/chaos_thrust.png",
       "id": "chaos_thrust",
       "jobName": "lancer",
       "level": "50",
       "name": "CHAOS THRUST"
     },
     "character": {
-      "iconPath": "images/jobs/action/main_menu/00/character.png",
+      "iconPath": "/images/jobs/action/main_menu/00/character.png",
       "id": "character",
       "jobName": "main_menu",
       "level": "00",
       "name": "CHARACTER"
     },
     "character_configuration": {
-      "iconPath": "images/jobs/action/main_menu/00/character_configuration.png",
+      "iconPath": "/images/jobs/action/main_menu/00/character_configuration.png",
       "id": "character_configuration",
       "jobName": "main_menu",
       "level": "00",
       "name": "CHARACTER CONFIGURATION"
     },
     "chi": {
-      "iconPath": "images/jobs/action/ninja/35/chi.png",
+      "iconPath": "/images/jobs/action/ninja/35/chi.png",
       "id": "chi",
       "jobName": "ninja",
       "level": "35",
       "name": "CHI"
     },
     "choco_beak": {
-      "iconPath": "images/jobs/action/companions/00/choco_beak.png",
+      "iconPath": "/images/jobs/action/companions/00/choco_beak.png",
       "id": "choco_beak",
       "jobName": "companions",
       "level": "00",
       "name": "CHOCO BEAK"
     },
     "choco_blast": {
-      "iconPath": "images/jobs/action/companions/00/choco_blast.png",
+      "iconPath": "/images/jobs/action/companions/00/choco_blast.png",
       "id": "choco_blast",
       "jobName": "companions",
       "level": "00",
       "name": "CHOCO BLAST"
     },
     "choco_cure": {
-      "iconPath": "images/jobs/action/companions/00/choco_cure.png",
+      "iconPath": "/images/jobs/action/companions/00/choco_cure.png",
       "id": "choco_cure",
       "jobName": "companions",
       "level": "00",
       "name": "CHOCO CURE"
     },
     "choco_drop": {
-      "iconPath": "images/jobs/action/companions/00/choco_drop.png",
+      "iconPath": "/images/jobs/action/companions/00/choco_drop.png",
       "id": "choco_drop",
       "jobName": "companions",
       "level": "00",
       "name": "CHOCO DROP"
     },
     "choco_guard": {
-      "iconPath": "images/jobs/action/companions/00/choco_guard.png",
+      "iconPath": "/images/jobs/action/companions/00/choco_guard.png",
       "id": "choco_guard",
       "jobName": "companions",
       "level": "00",
       "name": "CHOCO GUARD"
     },
     "choco_kick": {
-      "iconPath": "images/jobs/action/companions/00/choco_kick.png",
+      "iconPath": "/images/jobs/action/companions/00/choco_kick.png",
       "id": "choco_kick",
       "jobName": "companions",
       "level": "00",
       "name": "CHOCO KICK"
     },
     "choco_medica": {
-      "iconPath": "images/jobs/action/companions/00/choco_medica.png",
+      "iconPath": "/images/jobs/action/companions/00/choco_medica.png",
       "id": "choco_medica",
       "jobName": "companions",
       "level": "00",
       "name": "CHOCO MEDICA"
     },
     "choco_regen": {
-      "iconPath": "images/jobs/action/companions/00/choco_regen.png",
+      "iconPath": "/images/jobs/action/companions/00/choco_regen.png",
       "id": "choco_regen",
       "jobName": "companions",
       "level": "00",
       "name": "CHOCO REGEN"
     },
     "choco_rush": {
-      "iconPath": "images/jobs/action/companions/00/choco_rush.png",
+      "iconPath": "/images/jobs/action/companions/00/choco_rush.png",
       "id": "choco_rush",
       "jobName": "companions",
       "level": "00",
       "name": "CHOCO RUSH"
     },
     "choco_slash": {
-      "iconPath": "images/jobs/action/companions/00/choco_slash.png",
+      "iconPath": "/images/jobs/action/companions/00/choco_slash.png",
       "id": "choco_slash",
       "jobName": "companions",
       "level": "00",
       "name": "CHOCO SLASH"
     },
     "choco_strike": {
-      "iconPath": "images/jobs/action/companions/00/choco_strike.png",
+      "iconPath": "/images/jobs/action/companions/00/choco_strike.png",
       "id": "choco_strike",
       "jobName": "companions",
       "level": "00",
       "name": "CHOCO STRIKE"
     },
     "choco_surge": {
-      "iconPath": "images/jobs/action/companions/00/choco_surge.png",
+      "iconPath": "/images/jobs/action/companions/00/choco_surge.png",
       "id": "choco_surge",
       "jobName": "companions",
       "level": "00",
       "name": "CHOCO SURGE"
     },
     "circle_of_scorn": {
-      "iconPath": "images/jobs/action/gladiator/50/circle_of_scorn.png",
+      "iconPath": "/images/jobs/action/gladiator/50/circle_of_scorn.png",
       "id": "circle_of_scorn",
       "jobName": "gladiator",
       "level": "50",
       "name": "CIRCLE OF SCORN"
     },
     "clean_shot": {
-      "iconPath": "images/jobs/action/machinist/35/clean_shot.png",
+      "iconPath": "/images/jobs/action/machinist/35/clean_shot.png",
       "id": "clean_shot",
       "jobName": "machinist",
       "level": "35",
       "name": "CLEAN SHOT"
     },
     "clemency": {
-      "iconPath": "images/jobs/action/paladin/58/clemency.png",
+      "iconPath": "/images/jobs/action/paladin/58/clemency.png",
       "id": "clemency",
       "jobName": "paladin",
       "level": "58",
       "name": "CLEMENCY"
     },
     "cleric_stance": {
-      "iconPath": "images/jobs/action/conjurer/06/cleric_stance.png",
+      "iconPath": "/images/jobs/action/conjurer/06/cleric_stance.png",
       "id": "cleric_stance",
       "jobName": "conjurer",
       "level": "06",
       "name": "CLERIC STANCE"
     },
     "collective_unconscious": {
-      "iconPath": "images/jobs/action/astrologian/58/collective_unconscious.png",
+      "iconPath": "/images/jobs/action/astrologian/58/collective_unconscious.png",
       "id": "collective_unconscious",
       "jobName": "astrologian",
       "level": "58",
       "name": "COLLECTIVE UNCONSCIOUS"
     },
     "combust": {
-      "iconPath": "images/jobs/action/astrologian/4/combust.png",
+      "iconPath": "/images/jobs/action/astrologian/4/combust.png",
       "id": "combust",
       "jobName": "astrologian",
       "level": "4",
       "name": "COMBUST"
     },
     "combust_ii": {
-      "iconPath": "images/jobs/action/astrologian/46/combust_ii.png",
+      "iconPath": "/images/jobs/action/astrologian/46/combust_ii.png",
       "id": "combust_ii",
       "jobName": "astrologian",
       "level": "46",
       "name": "COMBUST II"
     },
     "companions": {
-      "iconPath": "images/jobs/action/main_menu/00/companions.png",
+      "iconPath": "/images/jobs/action/main_menu/00/companions.png",
       "id": "companions",
       "jobName": "main_menu",
       "level": "00",
       "name": "COMPANIONS"
     },
     "contagion": {
-      "iconPath": "images/jobs/action/garuda-egi/40/contagion.png",
+      "iconPath": "/images/jobs/action/garuda-egi/40/contagion.png",
       "id": "contagion",
       "jobName": "garuda-egi",
       "level": "40",
       "name": "CONTAGION"
     },
     "control_settings": {
-      "iconPath": "images/jobs/action/main_menu/00/control_settings.png",
+      "iconPath": "/images/jobs/action/main_menu/00/control_settings.png",
       "id": "control_settings",
       "jobName": "main_menu",
       "level": "00",
       "name": "CONTROL SETTINGS"
     },
     "convalescence": {
-      "iconPath": "images/jobs/action/gladiator/10/convalescence.png",
+      "iconPath": "/images/jobs/action/gladiator/10/convalescence.png",
       "id": "convalescence",
       "jobName": "gladiator",
       "level": "10",
       "name": "CONVALESCENCE"
     },
     "convert": {
-      "iconPath": "images/jobs/action/black_mage/30/convert.png",
+      "iconPath": "/images/jobs/action/black_mage/30/convert.png",
       "id": "convert",
       "jobName": "black_mage",
       "level": "30",
       "name": "CONVERT"
     },
     "cover": {
-      "iconPath": "images/jobs/action/paladin/35/cover.png",
+      "iconPath": "/images/jobs/action/paladin/35/cover.png",
       "id": "cover",
       "jobName": "paladin",
       "level": "35",
       "name": "COVER"
     },
     "crafting_log": {
-      "iconPath": "images/jobs/action/main_menu/00/crafting_log.png",
+      "iconPath": "/images/jobs/action/main_menu/00/crafting_log.png",
       "id": "crafting_log",
       "jobName": "main_menu",
       "level": "00",
       "name": "CRAFTING LOG"
     },
     "crimson_cyclone": {
-      "iconPath": "images/jobs/action/ifrit-egi/01/crimson_cyclone.png",
+      "iconPath": "/images/jobs/action/ifrit-egi/01/crimson_cyclone.png",
       "id": "crimson_cyclone",
       "jobName": "ifrit-egi",
       "level": "01",
       "name": "CRIMSON CYCLONE"
     },
     "cross_hotbar": {
-      "iconPath": "images/jobs/action/main_menu/00/cross_hotbar.png",
+      "iconPath": "/images/jobs/action/main_menu/00/cross_hotbar.png",
       "id": "cross_hotbar",
       "jobName": "main_menu",
       "level": "00",
       "name": "CROSS HOTBAR"
     },
     "cure": {
-      "iconPath": "images/jobs/action/conjurer/02/cure.png",
+      "iconPath": "/images/jobs/action/conjurer/02/cure.png",
       "id": "cure",
       "jobName": "conjurer",
       "level": "02",
       "name": "CURE"
     },
     "cure_ii": {
-      "iconPath": "images/jobs/action/conjurer/30/cure_ii.png",
+      "iconPath": "/images/jobs/action/conjurer/30/cure_ii.png",
       "id": "cure_ii",
       "jobName": "conjurer",
       "level": "30",
       "name": "CURE II"
     },
     "cure_iii": {
-      "iconPath": "images/jobs/action/conjurer/42/cure_iii.png",
+      "iconPath": "/images/jobs/action/conjurer/42/cure_iii.png",
       "id": "cure_iii",
       "jobName": "conjurer",
       "level": "42",
       "name": "CURE III"
     },
     "curl": {
-      "iconPath": "images/jobs/action/topaz_carbuncle/20/curl.png",
+      "iconPath": "/images/jobs/action/topaz_carbuncle/20/curl.png",
       "id": "curl",
       "jobName": "topaz_carbuncle",
       "level": "20",
       "name": "CURL"
     },
     "dancing_edge": {
-      "iconPath": "images/jobs/action/rogue/38/dancing_edge.png",
+      "iconPath": "/images/jobs/action/rogue/38/dancing_edge.png",
       "id": "dancing_edge",
       "jobName": "rogue",
       "level": "38",
       "name": "DANCING EDGE"
     },
     "dark_arts": {
-      "iconPath": "images/jobs/action/dark_knight/45/dark_arts.png",
+      "iconPath": "/images/jobs/action/dark_knight/45/dark_arts.png",
       "id": "dark_arts",
       "jobName": "dark_knight",
       "level": "45",
       "name": "DARK ARTS"
     },
     "dark_dance": {
-      "iconPath": "images/jobs/action/dark_knight/34/dark_dance.png",
+      "iconPath": "/images/jobs/action/dark_knight/34/dark_dance.png",
       "id": "dark_dance",
       "jobName": "dark_knight",
       "level": "34",
       "name": "DARK DANCE"
     },
     "dark_mind": {
-      "iconPath": "images/jobs/action/dark_knight/42/dark_mind.png",
+      "iconPath": "/images/jobs/action/dark_knight/42/dark_mind.png",
       "id": "dark_mind",
       "jobName": "dark_knight",
       "level": "42",
       "name": "DARK MIND"
     },
     "dark_passenger": {
-      "iconPath": "images/jobs/action/dark_knight/40/dark_passenger.png",
+      "iconPath": "/images/jobs/action/dark_knight/40/dark_passenger.png",
       "id": "dark_passenger",
       "jobName": "dark_knight",
       "level": "40",
       "name": "DARK PASSENGER"
     },
     "darkside": {
-      "iconPath": "images/jobs/action/dark_knight/30/darkside.png",
+      "iconPath": "/images/jobs/action/dark_knight/30/darkside.png",
       "id": "darkside",
       "jobName": "dark_knight",
       "level": "30",
       "name": "DARKSIDE"
     },
     "death_blossom": {
-      "iconPath": "images/jobs/action/rogue/42/death_blossom.png",
+      "iconPath": "/images/jobs/action/rogue/42/death_blossom.png",
       "id": "death_blossom",
       "jobName": "rogue",
       "level": "42",
       "name": "DEATH BLOSSOM"
     },
     "deathflare": {
-      "iconPath": "images/jobs/action/summoner/60/deathflare.png",
+      "iconPath": "/images/jobs/action/summoner/60/deathflare.png",
       "id": "deathflare",
       "jobName": "summoner",
       "level": "60",
       "name": "DEATHFLARE"
     },
     "decimate": {
-      "iconPath": "images/jobs/action/warrior/60/decimate.png",
+      "iconPath": "/images/jobs/action/warrior/60/decimate.png",
       "id": "decimate",
       "jobName": "warrior",
       "level": "60",
       "name": "DECIMATE"
     },
     "decipher": {
-      "iconPath": "images/jobs/action/general/00/decipher.png",
+      "iconPath": "/images/jobs/action/general/00/decipher.png",
       "id": "decipher",
       "jobName": "general",
       "level": "00",
       "name": "DECIPHER"
     },
     "defender_stance": {
-      "iconPath": "images/jobs/action/companions/00/defender_stance.png",
+      "iconPath": "/images/jobs/action/companions/00/defender_stance.png",
       "id": "defender_stance",
       "jobName": "companions",
       "level": "00",
       "name": "DEFENDER STANCE"
     },
     "defiance": {
-      "iconPath": "images/jobs/action/warrior/30/defiance.png",
+      "iconPath": "/images/jobs/action/warrior/30/defiance.png",
       "id": "defiance",
       "jobName": "warrior",
       "level": "30",
       "name": "DEFIANCE"
     },
     "delirium": {
-      "iconPath": "images/jobs/action/dark_knight/50/delirium.png",
+      "iconPath": "/images/jobs/action/dark_knight/50/delirium.png",
       "id": "delirium",
       "jobName": "dark_knight",
       "level": "50",
       "name": "DELIRIUM"
     },
     "deliverance": {
-      "iconPath": "images/jobs/action/warrior/52/deliverance.png",
+      "iconPath": "/images/jobs/action/warrior/52/deliverance.png",
       "id": "deliverance",
       "jobName": "warrior",
       "level": "52",
       "name": "DELIVERANCE"
     },
     "demolish": {
-      "iconPath": "images/jobs/action/pugilist/30/demolish.png",
+      "iconPath": "/images/jobs/action/pugilist/30/demolish.png",
       "id": "demolish",
       "jobName": "pugilist",
       "level": "30",
       "name": "DEMOLISH"
     },
     "deployment_tactics": {
-      "iconPath": "images/jobs/action/scholar/56/deployment_tactics.png",
+      "iconPath": "/images/jobs/action/scholar/56/deployment_tactics.png",
       "id": "deployment_tactics",
       "jobName": "scholar",
       "level": "56",
       "name": "DEPLOYMENT TACTICS"
     },
     "dig": {
-      "iconPath": "images/jobs/action/general/00/dig.png",
+      "iconPath": "/images/jobs/action/general/00/dig.png",
       "id": "dig",
       "jobName": "general",
       "level": "00",
       "name": "DIG"
     },
     "disable": {
-      "iconPath": "images/jobs/action/astrologian/38/disable.png",
+      "iconPath": "/images/jobs/action/astrologian/38/disable.png",
       "id": "disable",
       "jobName": "astrologian",
       "level": "38",
       "name": "DISABLE"
     },
     "disembowel": {
-      "iconPath": "images/jobs/action/lancer/38/disembowel.png",
+      "iconPath": "/images/jobs/action/lancer/38/disembowel.png",
       "id": "disembowel",
       "jobName": "lancer",
       "level": "38",
       "name": "DISEMBOWEL"
     },
     "dismantle": {
-      "iconPath": "images/jobs/action/machinist/50/dismantle.png",
+      "iconPath": "/images/jobs/action/machinist/50/dismantle.png",
       "id": "dismantle",
       "jobName": "machinist",
       "level": "50",
       "name": "DISMANTLE"
     },
     "display_name_settings": {
-      "iconPath": "images/jobs/action/main_menu/00/display_name_settings.png",
+      "iconPath": "/images/jobs/action/main_menu/00/display_name_settings.png",
       "id": "display_name_settings",
       "jobName": "main_menu",
       "level": "00",
       "name": "DISPLAY NAME SETTINGS"
     },
     "display_settings": {
-      "iconPath": "images/jobs/action/main_menu/00/display_settings.png",
+      "iconPath": "/images/jobs/action/main_menu/00/display_settings.png",
       "id": "display_settings",
       "jobName": "main_menu",
       "level": "00",
       "name": "DISPLAY SETTINGS"
     },
     "dissipation": {
-      "iconPath": "images/jobs/action/scholar/60/dissipation.png",
+      "iconPath": "/images/jobs/action/scholar/60/dissipation.png",
       "id": "dissipation",
       "jobName": "scholar",
       "level": "60",
       "name": "DISSIPATION"
     },
     "diurnal_sect": {
-      "iconPath": "images/jobs/action/astrologian/30/diurnal_sect.png",
+      "iconPath": "/images/jobs/action/astrologian/30/diurnal_sect.png",
       "id": "diurnal_sect",
       "jobName": "astrologian",
       "level": "30",
       "name": "DIURNAL SECT"
     },
     "divine_breath": {
-      "iconPath": "images/jobs/action/pvp/00/divine_breath.png",
+      "iconPath": "/images/jobs/action/pvp/00/divine_breath.png",
       "id": "divine_breath",
       "jobName": "pvp",
       "level": "00",
       "name": "DIVINE BREATH"
     },
     "divine_seal": {
-      "iconPath": "images/jobs/action/white_mage/40/divine_seal.png",
+      "iconPath": "/images/jobs/action/white_mage/40/divine_seal.png",
       "id": "divine_seal",
       "jobName": "white_mage",
       "level": "40",
       "name": "DIVINE SEAL"
     },
     "divine_veil": {
-      "iconPath": "images/jobs/action/paladin/56/divine_veil.png",
+      "iconPath": "/images/jobs/action/paladin/56/divine_veil.png",
       "id": "divine_veil",
       "jobName": "paladin",
       "level": "56",
       "name": "DIVINE VEIL"
     },
     "doom_spike": {
-      "iconPath": "images/jobs/action/lancer/42/doom_spike.png",
+      "iconPath": "/images/jobs/action/lancer/42/doom_spike.png",
       "id": "doom_spike",
       "jobName": "lancer",
       "level": "42",
       "name": "DOOM SPIKE"
     },
     "downburst": {
-      "iconPath": "images/jobs/action/emerald_carbuncle/20/downburst.png",
+      "iconPath": "/images/jobs/action/emerald_carbuncle/20/downburst.png",
       "id": "downburst",
       "jobName": "emerald_carbuncle",
       "level": "20",
       "name": "DOWNBURST"
     },
     "dragon_kick": {
-      "iconPath": "images/jobs/action/monk/50/dragon_kick.png",
+      "iconPath": "/images/jobs/action/monk/50/dragon_kick.png",
       "id": "dragon_kick",
       "jobName": "monk",
       "level": "50",
       "name": "DRAGON KICK"
     },
     "dragonfire_dive": {
-      "iconPath": "images/jobs/action/dragoon/50/dragonfire_dive.png",
+      "iconPath": "/images/jobs/action/dragoon/50/dragonfire_dive.png",
       "id": "dragonfire_dive",
       "jobName": "dragoon",
       "level": "50",
       "name": "DRAGONFIRE DIVE"
     },
     "draw": {
-      "iconPath": "images/jobs/action/astrologian/30/draw.png",
+      "iconPath": "/images/jobs/action/astrologian/30/draw.png",
       "id": "draw",
       "jobName": "astrologian",
       "level": "30",
       "name": "DRAW"
     },
     "dreadwyrm_trance": {
-      "iconPath": "images/jobs/action/summoner/58/dreadwyrm_trance.png",
+      "iconPath": "/images/jobs/action/summoner/58/dreadwyrm_trance.png",
       "id": "dreadwyrm_trance",
       "jobName": "summoner",
       "level": "58",
       "name": "DREADWYRM TRANCE"
     },
     "dream_within_a_dream": {
-      "iconPath": "images/jobs/action/ninja/60/dream_within_a_dream.png",
+      "iconPath": "/images/jobs/action/ninja/60/dream_within_a_dream.png",
       "id": "dream_within_a_dream",
       "jobName": "ninja",
       "level": "60",
       "name": "DREAM WITHIN A DREAM"
     },
     "duality": {
-      "iconPath": "images/jobs/action/ninja/58/duality.png",
+      "iconPath": "/images/jobs/action/ninja/58/duality.png",
       "id": "duality",
       "jobName": "ninja",
       "level": "58",
       "name": "DUALITY"
     },
     "duty_finder": {
-      "iconPath": "images/jobs/action/main_menu/00/duty_finder.png",
+      "iconPath": "/images/jobs/action/main_menu/00/duty_finder.png",
       "id": "duty_finder",
       "jobName": "main_menu",
       "level": "00",
       "name": "DUTY FINDER"
     },
     "dye": {
-      "iconPath": "images/jobs/action/general/00/dye.png",
+      "iconPath": "/images/jobs/action/general/00/dye.png",
       "id": "dye",
       "jobName": "general",
       "level": "00",
       "name": "DYE"
     },
     "earthen_fury": {
-      "iconPath": "images/jobs/action/titan-egi/50/earthen_fury.png",
+      "iconPath": "/images/jobs/action/titan-egi/50/earthen_fury.png",
       "id": "earthen_fury",
       "jobName": "titan-egi",
       "level": "50",
       "name": "EARTHEN FURY"
     },
     "earthen_ward": {
-      "iconPath": "images/jobs/action/titan-egi/20/earthen_ward.png",
+      "iconPath": "/images/jobs/action/titan-egi/20/earthen_ward.png",
       "id": "earthen_ward",
       "jobName": "titan-egi",
       "level": "20",
       "name": "EARTHEN WARD"
     },
     "elixir_field": {
-      "iconPath": "images/jobs/action/monk/56/elixir_field.png",
+      "iconPath": "/images/jobs/action/monk/56/elixir_field.png",
       "id": "elixir_field",
       "jobName": "monk",
       "level": "56",
       "name": "ELIXIR FIELD"
     },
     "elusive_jump": {
-      "iconPath": "images/jobs/action/dragoon/35/elusive_jump.png",
+      "iconPath": "/images/jobs/action/dragoon/35/elusive_jump.png",
       "id": "elusive_jump",
       "jobName": "dragoon",
       "level": "35",
       "name": "ELUSIVE JUMP"
     },
     "embrace": {
-      "iconPath": "images/jobs/action/selene/01/embrace.png",
+      "iconPath": "/images/jobs/action/selene/01/embrace.png",
       "id": "embrace",
       "jobName": "selene",
       "level": "01",
       "name": "EMBRACE"
     },
     "emergency_tactics": {
-      "iconPath": "images/jobs/action/scholar/58/emergency_tactics.png",
+      "iconPath": "/images/jobs/action/scholar/58/emergency_tactics.png",
       "id": "emergency_tactics",
       "jobName": "scholar",
       "level": "58",
       "name": "EMERGENCY TACTICS"
     },
     "emotes": {
-      "iconPath": "images/jobs/action/main_menu/00/emotes.png",
+      "iconPath": "/images/jobs/action/main_menu/00/emotes.png",
       "id": "emotes",
       "jobName": "main_menu",
       "level": "00",
       "name": "EMOTES"
     },
     "empyreal_arrow": {
-      "iconPath": "images/jobs/action/bard/54/empyreal_arrow.png",
+      "iconPath": "/images/jobs/action/bard/54/empyreal_arrow.png",
       "id": "empyreal_arrow",
       "jobName": "bard",
       "level": "54",
       "name": "EMPYREAL ARROW"
     },
     "energy_drain": {
-      "iconPath": "images/jobs/action/arcanist/08/energy_drain.png",
+      "iconPath": "/images/jobs/action/arcanist/08/energy_drain.png",
       "id": "energy_drain",
       "jobName": "arcanist",
       "level": "08",
       "name": "ENERGY DRAIN"
     },
     "enkindle": {
-      "iconPath": "images/jobs/action/summoner/50/enkindle.png",
+      "iconPath": "/images/jobs/action/summoner/50/enkindle.png",
       "id": "enkindle",
       "jobName": "summoner",
       "level": "50",
       "name": "ENKINDLE"
     },
     "enliven": {
-      "iconPath": "images/jobs/action/pvp/00/enliven.png",
+      "iconPath": "/images/jobs/action/pvp/00/enliven.png",
       "id": "enliven",
       "jobName": "pvp",
       "level": "00",
       "name": "ENLIVEN"
     },
     "enochian": {
-      "iconPath": "images/jobs/action/black_mage/56/enochian.png",
+      "iconPath": "/images/jobs/action/black_mage/56/enochian.png",
       "id": "enochian",
       "jobName": "black_mage",
       "level": "56",
       "name": "ENOCHIAN"
     },
     "equanimity": {
-      "iconPath": "images/jobs/action/pvp/00/equanimity.png",
+      "iconPath": "/images/jobs/action/pvp/00/equanimity.png",
       "id": "equanimity",
       "jobName": "pvp",
       "level": "00",
       "name": "EQUANIMITY"
     },
     "equilibrium": {
-      "iconPath": "images/jobs/action/warrior/58/equilibrium.png",
+      "iconPath": "/images/jobs/action/warrior/58/equilibrium.png",
       "id": "equilibrium",
       "jobName": "warrior",
       "level": "58",
       "name": "EQUILIBRIUM"
     },
     "essential_dignity": {
-      "iconPath": "images/jobs/action/astrologian/15/essential_dignity.png",
+      "iconPath": "/images/jobs/action/astrologian/15/essential_dignity.png",
       "id": "essential_dignity",
       "jobName": "astrologian",
       "level": "15",
       "name": "ESSENTIAL DIGNITY"
     },
     "esuna": {
-      "iconPath": "images/jobs/action/conjurer/18/esuna.png",
+      "iconPath": "/images/jobs/action/conjurer/18/esuna.png",
       "id": "esuna",
       "jobName": "conjurer",
       "level": "18",
       "name": "ESUNA"
     },
     "exalted_detriment": {
-      "iconPath": "images/jobs/action/astrologian/18/exalted_detriment.png",
+      "iconPath": "/images/jobs/action/astrologian/18/exalted_detriment.png",
       "id": "exalted_detriment",
       "jobName": "astrologian",
       "level": "18",
       "name": "EXALTED DETRIMENT"
     },
     "exit_game": {
-      "iconPath": "images/jobs/action/main_menu/00/exit_game.png",
+      "iconPath": "/images/jobs/action/main_menu/00/exit_game.png",
       "id": "exit_game",
       "jobName": "main_menu",
       "level": "00",
       "name": "EXIT GAME"
     },
     "eye_for_an_eye": {
-      "iconPath": "images/jobs/action/arcanist/34/eye_for_an_eye.png",
+      "iconPath": "/images/jobs/action/arcanist/34/eye_for_an_eye.png",
       "id": "eye_for_an_eye",
       "jobName": "arcanist",
       "level": "34",
       "name": "EYE FOR AN EYE"
     },
     "fang_and_claw": {
-      "iconPath": "images/jobs/action/dragoon/56/fang_and_claw.png",
+      "iconPath": "/images/jobs/action/dragoon/56/fang_and_claw.png",
       "id": "fang_and_claw",
       "jobName": "dragoon",
       "level": "56",
       "name": "FANG AND CLAW"
     },
     "farshot": {
-      "iconPath": "images/jobs/action/pvp/00/farshot.png",
+      "iconPath": "/images/jobs/action/pvp/00/farshot.png",
       "id": "farshot",
       "jobName": "pvp",
       "level": "00",
       "name": "FARSHOT"
     },
     "fast_blade": {
-      "iconPath": "images/jobs/action/gladiator/01/fast_blade.png",
+      "iconPath": "/images/jobs/action/gladiator/01/fast_blade.png",
       "id": "fast_blade",
       "jobName": "gladiator",
       "level": "01",
       "name": "FAST BLADE"
     },
     "featherfoot": {
-      "iconPath": "images/jobs/action/pugilist/04/featherfoot.png",
+      "iconPath": "/images/jobs/action/pugilist/04/featherfoot.png",
       "id": "featherfoot",
       "jobName": "pugilist",
       "level": "04",
       "name": "FEATHERFOOT"
     },
     "feint": {
-      "iconPath": "images/jobs/action/lancer/02/feint.png",
+      "iconPath": "/images/jobs/action/lancer/02/feint.png",
       "id": "feint",
       "jobName": "lancer",
       "level": "02",
       "name": "FEINT"
     },
     "fell_cleave": {
-      "iconPath": "images/jobs/action/warrior/54/fell_cleave.png",
+      "iconPath": "/images/jobs/action/warrior/54/fell_cleave.png",
       "id": "fell_cleave",
       "jobName": "warrior",
       "level": "54",
       "name": "FELL CLEAVE"
     },
     "fester": {
-      "iconPath": "images/jobs/action/summoner/35/fester.png",
+      "iconPath": "/images/jobs/action/summoner/35/fester.png",
       "id": "fester",
       "jobName": "summoner",
       "level": "35",
       "name": "FESTER"
     },
     "fetter_ward": {
-      "iconPath": "images/jobs/action/pvp/00/fetter_ward.png",
+      "iconPath": "/images/jobs/action/pvp/00/fetter_ward.png",
       "id": "fetter_ward",
       "jobName": "pvp",
       "level": "00",
       "name": "FETTER WARD"
     },
     "fey_caress": {
-      "iconPath": "images/jobs/action/selene/20/fey_caress.png",
+      "iconPath": "/images/jobs/action/selene/20/fey_caress.png",
       "id": "fey_caress",
       "jobName": "selene",
       "level": "20",
       "name": "FEY CARESS"
     },
     "fey_covenant": {
-      "iconPath": "images/jobs/action/eos/20/fey_covenant.png",
+      "iconPath": "/images/jobs/action/eos/20/fey_covenant.png",
       "id": "fey_covenant",
       "jobName": "eos",
       "level": "20",
       "name": "FEY COVENANT"
     },
     "fey_glow": {
-      "iconPath": "images/jobs/action/selene/20/fey_glow.png",
+      "iconPath": "/images/jobs/action/selene/20/fey_glow.png",
       "id": "fey_glow",
       "jobName": "selene",
       "level": "20",
       "name": "FEY GLOW"
     },
     "fey_illumination": {
-      "iconPath": "images/jobs/action/eos/40/fey_illumination.png",
+      "iconPath": "/images/jobs/action/eos/40/fey_illumination.png",
       "id": "fey_illumination",
       "jobName": "eos",
       "level": "40",
       "name": "FEY ILLUMINATION"
     },
     "fey_light": {
-      "iconPath": "images/jobs/action/selene/40/fey_light.png",
+      "iconPath": "/images/jobs/action/selene/40/fey_light.png",
       "id": "fey_light",
       "jobName": "selene",
       "level": "40",
       "name": "FEY LIGHT"
     },
     "fey_wind": {
-      "iconPath": "images/jobs/action/selene/40/fey_wind.png",
+      "iconPath": "/images/jobs/action/selene/40/fey_wind.png",
       "id": "fey_wind",
       "jobName": "selene",
       "level": "40",
       "name": "FEY WIND"
     },
     "fight_or_flight": {
-      "iconPath": "images/jobs/action/gladiator/06/fight_or_flight.png",
+      "iconPath": "/images/jobs/action/gladiator/06/fight_or_flight.png",
       "id": "fight_or_flight",
       "jobName": "gladiator",
       "level": "06",
       "name": "FIGHT OR FLIGHT"
     },
     "fire": {
-      "iconPath": "images/jobs/action/thaumaturge/02/fire.png",
+      "iconPath": "/images/jobs/action/thaumaturge/02/fire.png",
       "id": "fire",
       "jobName": "thaumaturge",
       "level": "02",
       "name": "FIRE"
     },
     "fire_ii": {
-      "iconPath": "images/jobs/action/thaumaturge/18/fire_ii.png",
+      "iconPath": "/images/jobs/action/thaumaturge/18/fire_ii.png",
       "id": "fire_ii",
       "jobName": "thaumaturge",
       "level": "18",
       "name": "FIRE II"
     },
     "fire_iii": {
-      "iconPath": "images/jobs/action/thaumaturge/34/fire_iii.png",
+      "iconPath": "/images/jobs/action/thaumaturge/34/fire_iii.png",
       "id": "fire_iii",
       "jobName": "thaumaturge",
       "level": "34",
       "name": "FIRE III"
     },
     "fire_iv": {
-      "iconPath": "images/jobs/action/black_mage/60/fire_iv.png",
+      "iconPath": "/images/jobs/action/black_mage/60/fire_iv.png",
       "id": "fire_iv",
       "jobName": "black_mage",
       "level": "60",
       "name": "FIRE IV"
     },
     "fish_guide": {
-      "iconPath": "images/jobs/action/main_menu/00/fish_guide.png",
+      "iconPath": "/images/jobs/action/main_menu/00/fish_guide.png",
       "id": "fish_guide",
       "jobName": "main_menu",
       "level": "00",
       "name": "FISH GUIDE"
     },
     "fishing_log": {
-      "iconPath": "images/jobs/action/main_menu/00/fishing_log.png",
+      "iconPath": "/images/jobs/action/main_menu/00/fishing_log.png",
       "id": "fishing_log",
       "jobName": "main_menu",
       "level": "00",
       "name": "FISHING LOG"
     },
     "fists_of_earth": {
-      "iconPath": "images/jobs/action/pugilist/22/fists_of_earth.png",
+      "iconPath": "/images/jobs/action/pugilist/22/fists_of_earth.png",
       "id": "fists_of_earth",
       "jobName": "pugilist",
       "level": "22",
       "name": "FISTS OF EARTH"
     },
     "fists_of_fire": {
-      "iconPath": "images/jobs/action/monk/40/fists_of_fire.png",
+      "iconPath": "/images/jobs/action/monk/40/fists_of_fire.png",
       "id": "fists_of_fire",
       "jobName": "monk",
       "level": "40",
       "name": "FISTS OF FIRE"
     },
     "fists_of_wind": {
-      "iconPath": "images/jobs/action/pugilist/34/fists_of_wind.png",
+      "iconPath": "/images/jobs/action/pugilist/34/fists_of_wind.png",
       "id": "fists_of_wind",
       "jobName": "pugilist",
       "level": "34",
       "name": "FISTS OF WIND"
     },
     "flaming_arrow": {
-      "iconPath": "images/jobs/action/archer/46/flaming_arrow.png",
+      "iconPath": "/images/jobs/action/archer/46/flaming_arrow.png",
       "id": "flaming_arrow",
       "jobName": "archer",
       "level": "46",
       "name": "FLAMING ARROW"
     },
     "flaming_crush": {
-      "iconPath": "images/jobs/action/ifrit-egi/40/flaming_crush.png",
+      "iconPath": "/images/jobs/action/ifrit-egi/40/flaming_crush.png",
       "id": "flaming_crush",
       "jobName": "ifrit-egi",
       "level": "40",
       "name": "FLAMING CRUSH"
     },
     "flare": {
-      "iconPath": "images/jobs/action/black_mage/50/flare.png",
+      "iconPath": "/images/jobs/action/black_mage/50/flare.png",
       "id": "flare",
       "jobName": "black_mage",
       "level": "50",
       "name": "FLARE"
     },
     "flash": {
-      "iconPath": "images/jobs/action/gladiator/08/flash.png",
+      "iconPath": "/images/jobs/action/gladiator/08/flash.png",
       "id": "flash",
       "jobName": "gladiator",
       "level": "08",
       "name": "FLASH"
     },
     "fleece_butt": {
-      "iconPath": "images/jobs/action/topaz_carbuncle/40/fleece_butt.png",
+      "iconPath": "/images/jobs/action/topaz_carbuncle/40/fleece_butt.png",
       "id": "fleece_butt",
       "jobName": "topaz_carbuncle",
       "level": "40",
       "name": "FLEECE BUTT"
     },
     "fluid_aura": {
-      "iconPath": "images/jobs/action/conjurer/15/fluid_aura.png",
+      "iconPath": "/images/jobs/action/conjurer/15/fluid_aura.png",
       "id": "fluid_aura",
       "jobName": "conjurer",
       "level": "15",
       "name": "FLUID AURA"
     },
     "focalization": {
-      "iconPath": "images/jobs/action/pvp/00/focalization.png",
+      "iconPath": "/images/jobs/action/pvp/00/focalization.png",
       "id": "focalization",
       "jobName": "pvp",
       "level": "00",
       "name": "FOCALIZATION"
     },
     "foe_requiem": {
-      "iconPath": "images/jobs/action/bard/35/foe_requiem.png",
+      "iconPath": "/images/jobs/action/bard/35/foe_requiem.png",
       "id": "foe_requiem",
       "jobName": "bard",
       "level": "35",
       "name": "FOE REQUIEM"
     },
     "foot_graze": {
-      "iconPath": "images/jobs/action/machinist/22/foot_graze.png",
+      "iconPath": "/images/jobs/action/machinist/22/foot_graze.png",
       "id": "foot_graze",
       "jobName": "machinist",
       "level": "22",
       "name": "FOOT GRAZE"
     },
     "foresight": {
-      "iconPath": "images/jobs/action/marauder/02/foresight.png",
+      "iconPath": "/images/jobs/action/marauder/02/foresight.png",
       "id": "foresight",
       "jobName": "marauder",
       "level": "02",
       "name": "FORESIGHT"
     },
     "form_shift": {
-      "iconPath": "images/jobs/action/monk/52/form_shift.png",
+      "iconPath": "/images/jobs/action/monk/52/form_shift.png",
       "id": "form_shift",
       "jobName": "monk",
       "level": "52",
       "name": "FORM SHIFT"
     },
     "fracture": {
-      "iconPath": "images/jobs/action/marauder/06/fracture.png",
+      "iconPath": "/images/jobs/action/marauder/06/fracture.png",
       "id": "fracture",
       "jobName": "marauder",
       "level": "06",
       "name": "FRACTURE"
     },
     "free_company": {
-      "iconPath": "images/jobs/action/main_menu/00/free_company.png",
+      "iconPath": "/images/jobs/action/main_menu/00/free_company.png",
       "id": "free_company",
       "jobName": "main_menu",
       "level": "00",
       "name": "FREE COMPANY"
     },
     "freeze": {
-      "iconPath": "images/jobs/action/black_mage/35/freeze.png",
+      "iconPath": "/images/jobs/action/black_mage/35/freeze.png",
       "id": "freeze",
       "jobName": "black_mage",
       "level": "35",
       "name": "FREEZE"
     },
     "friction": {
-      "iconPath": "images/jobs/action/garuda-egi/01/friction.png",
+      "iconPath": "/images/jobs/action/garuda-egi/01/friction.png",
       "id": "friction",
       "jobName": "garuda-egi",
       "level": "01",
       "name": "FRICTION"
     },
     "friend_list": {
-      "iconPath": "images/jobs/action/main_menu/00/friend_list.png",
+      "iconPath": "/images/jobs/action/main_menu/00/friend_list.png",
       "id": "friend_list",
       "jobName": "main_menu",
       "level": "00",
       "name": "FRIEND LIST"
     },
     "full_swing": {
-      "iconPath": "images/jobs/action/pvp/00/full_swing.png",
+      "iconPath": "/images/jobs/action/pvp/00/full_swing.png",
       "id": "full_swing",
       "jobName": "pvp",
       "level": "00",
       "name": "FULL SWING"
     },
     "full_thrust": {
-      "iconPath": "images/jobs/action/lancer/26/full_thrust.png",
+      "iconPath": "/images/jobs/action/lancer/26/full_thrust.png",
       "id": "full_thrust",
       "jobName": "lancer",
       "level": "26",
       "name": "FULL THRUST"
     },
     "gathering_log": {
-      "iconPath": "images/jobs/action/main_menu/00/gathering_log.png",
+      "iconPath": "/images/jobs/action/main_menu/00/gathering_log.png",
       "id": "gathering_log",
       "jobName": "main_menu",
       "level": "00",
       "name": "GATHERING LOG"
     },
     "gauss_barrel": {
-      "iconPath": "images/jobs/action/machinist/52/gauss_barrel.png",
+      "iconPath": "/images/jobs/action/machinist/52/gauss_barrel.png",
       "id": "gauss_barrel",
       "jobName": "machinist",
       "level": "52",
       "name": "GAUSS BARREL"
     },
     "gauss_round": {
-      "iconPath": "images/jobs/action/machinist/54/gauss_round.png",
+      "iconPath": "/images/jobs/action/machinist/54/gauss_round.png",
       "id": "gauss_round",
       "jobName": "machinist",
       "level": "54",
       "name": "GAUSS ROUND"
     },
     "geirskogul": {
-      "iconPath": "images/jobs/action/dragoon/60/geirskogul.png",
+      "iconPath": "/images/jobs/action/dragoon/60/geirskogul.png",
       "id": "geirskogul",
       "jobName": "dragoon",
       "level": "60",
       "name": "GEIRSKOGUL"
     },
     "glory_slash": {
-      "iconPath": "images/jobs/action/pvp/00/glory_slash.png",
+      "iconPath": "/images/jobs/action/pvp/00/glory_slash.png",
       "id": "glory_slash",
       "jobName": "pvp",
       "level": "00",
       "name": "GLORY SLASH"
     },
     "goad": {
-      "iconPath": "images/jobs/action/rogue/18/goad.png",
+      "iconPath": "/images/jobs/action/rogue/18/goad.png",
       "id": "goad",
       "jobName": "rogue",
       "level": "18",
       "name": "GOAD"
     },
     "goring_blade": {
-      "iconPath": "images/jobs/action/paladin/54/goring_blade.png",
+      "iconPath": "/images/jobs/action/paladin/54/goring_blade.png",
       "id": "goring_blade",
       "jobName": "paladin",
       "level": "54",
       "name": "GORING BLADE"
     },
     "gouge": {
-      "iconPath": "images/jobs/action/topaz_carbuncle/01/gouge.png",
+      "iconPath": "/images/jobs/action/topaz_carbuncle/01/gouge.png",
       "id": "gouge",
       "jobName": "topaz_carbuncle",
       "level": "01",
       "name": "GOUGE"
     },
     "graphics_settings": {
-      "iconPath": "images/jobs/action/main_menu/00/graphics_settings.png",
+      "iconPath": "/images/jobs/action/main_menu/00/graphics_settings.png",
       "id": "graphics_settings",
       "jobName": "main_menu",
       "level": "00",
       "name": "GRAPHICS SETTINGS"
     },
     "gravity": {
-      "iconPath": "images/jobs/action/astrologian/52/gravity.png",
+      "iconPath": "/images/jobs/action/astrologian/52/gravity.png",
       "id": "gravity",
       "jobName": "astrologian",
       "level": "52",
       "name": "GRAVITY"
     },
     "grenado_shot": {
-      "iconPath": "images/jobs/action/machinist/46/grenado_shot.png",
+      "iconPath": "/images/jobs/action/machinist/46/grenado_shot.png",
       "id": "grenado_shot",
       "jobName": "machinist",
       "level": "46",
       "name": "GRENADO SHOT"
     },
     "grit": {
-      "iconPath": "images/jobs/action/dark_knight/30/grit.png",
+      "iconPath": "/images/jobs/action/dark_knight/30/grit.png",
       "id": "grit",
       "jobName": "dark_knight",
       "level": "30",
       "name": "GRIT"
     },
     "guard": {
-      "iconPath": "images/jobs/action/pets/00/guard.png",
+      "iconPath": "/images/jobs/action/pets/00/guard.png",
       "id": "guard",
       "jobName": "pets",
       "level": "00",
       "name": "GUARD"
     },
     "gust": {
-      "iconPath": "images/jobs/action/emerald_carbuncle/01/gust.png",
+      "iconPath": "/images/jobs/action/emerald_carbuncle/01/gust.png",
       "id": "gust",
       "jobName": "emerald_carbuncle",
       "level": "01",
       "name": "GUST"
     },
     "gust_slash": {
-      "iconPath": "images/jobs/action/rogue/4/gust_slash.png",
+      "iconPath": "/images/jobs/action/rogue/4/gust_slash.png",
       "id": "gust_slash",
       "jobName": "rogue",
       "level": "4",
       "name": "GUST SLASH"
     },
     "hallowed_ground": {
-      "iconPath": "images/jobs/action/paladin/50/hallowed_ground.png",
+      "iconPath": "/images/jobs/action/paladin/50/hallowed_ground.png",
       "id": "hallowed_ground",
       "jobName": "paladin",
       "level": "50",
       "name": "HALLOWED GROUND"
     },
     "hard_slash": {
-      "iconPath": "images/jobs/action/dark_knight/1/hard_slash.png",
+      "iconPath": "/images/jobs/action/dark_knight/1/hard_slash.png",
       "id": "hard_slash",
       "jobName": "dark_knight",
       "level": "1",
       "name": "HARD SLASH"
     },
     "hawk's_eye": {
-      "iconPath": "images/jobs/action/archer/26/hawk's_eye.png",
+      "iconPath": "/images/jobs/action/archer/26/hawk's_eye.png",
       "id": "hawk's_eye",
       "jobName": "archer",
       "level": "26",
       "name": "HAWK'S EYE"
     },
     "haymaker": {
-      "iconPath": "images/jobs/action/pugilist/10/haymaker.png",
+      "iconPath": "/images/jobs/action/pugilist/10/haymaker.png",
       "id": "haymaker",
       "jobName": "pugilist",
       "level": "10",
       "name": "HAYMAKER"
     },
     "head_graze": {
-      "iconPath": "images/jobs/action/machinist/34/head_graze.png",
+      "iconPath": "/images/jobs/action/machinist/34/head_graze.png",
       "id": "head_graze",
       "jobName": "machinist",
       "level": "34",
       "name": "HEAD GRAZE"
     },
     "healer_stance": {
-      "iconPath": "images/jobs/action/companions/00/healer_stance.png",
+      "iconPath": "/images/jobs/action/companions/00/healer_stance.png",
       "id": "healer_stance",
       "jobName": "companions",
       "level": "00",
       "name": "HEALER STANCE"
     },
     "heartbreak": {
-      "iconPath": "images/jobs/action/machinist/8/heartbreak.png",
+      "iconPath": "/images/jobs/action/machinist/8/heartbreak.png",
       "id": "heartbreak",
       "jobName": "machinist",
       "level": "8",
       "name": "HEARTBREAK"
     },
     "heavy_shot": {
-      "iconPath": "images/jobs/action/archer/01/heavy_shot.png",
+      "iconPath": "/images/jobs/action/archer/01/heavy_shot.png",
       "id": "heavy_shot",
       "jobName": "archer",
       "level": "01",
       "name": "HEAVY SHOT"
     },
     "heavy_swing": {
-      "iconPath": "images/jobs/action/marauder/01/heavy_swing.png",
+      "iconPath": "/images/jobs/action/marauder/01/heavy_swing.png",
       "id": "heavy_swing",
       "jobName": "marauder",
       "level": "01",
       "name": "HEAVY SWING"
     },
     "heavy_thrust": {
-      "iconPath": "images/jobs/action/lancer/12/heavy_thrust.png",
+      "iconPath": "/images/jobs/action/lancer/12/heavy_thrust.png",
       "id": "heavy_thrust",
       "jobName": "lancer",
       "level": "12",
       "name": "HEAVY THRUST"
     },
     "heel": {
-      "iconPath": "images/jobs/action/pets/00/heel.png",
+      "iconPath": "/images/jobs/action/pets/00/heel.png",
       "id": "heel",
       "jobName": "pets",
       "level": "00",
       "name": "HEEL"
     },
     "helios": {
-      "iconPath": "images/jobs/action/astrologian/10/helios.png",
+      "iconPath": "/images/jobs/action/astrologian/10/helios.png",
       "id": "helios",
       "jobName": "astrologian",
       "level": "10",
       "name": "HELIOS"
     },
     "hellfire": {
-      "iconPath": "images/jobs/action/ifrit-egi/50/hellfire.png",
+      "iconPath": "/images/jobs/action/ifrit-egi/50/hellfire.png",
       "id": "hellfire",
       "jobName": "ifrit-egi",
       "level": "50",
       "name": "HELLFIRE"
     },
     "hide": {
-      "iconPath": "images/jobs/action/rogue/10/hide.png",
+      "iconPath": "/images/jobs/action/rogue/10/hide.png",
       "id": "hide",
       "jobName": "rogue",
       "level": "10",
       "name": "HIDE"
     },
     "holmgang": {
-      "iconPath": "images/jobs/action/marauder/42/holmgang.png",
+      "iconPath": "/images/jobs/action/marauder/42/holmgang.png",
       "id": "holmgang",
       "jobName": "marauder",
       "level": "42",
       "name": "HOLMGANG"
     },
     "holy": {
-      "iconPath": "images/jobs/action/white_mage/45/holy.png",
+      "iconPath": "/images/jobs/action/white_mage/45/holy.png",
       "id": "holy",
       "jobName": "white_mage",
       "level": "45",
       "name": "HOLY"
     },
     "hot_shot": {
-      "iconPath": "images/jobs/action/machinist/30/hot_shot.png",
+      "iconPath": "/images/jobs/action/machinist/30/hot_shot.png",
       "id": "hot_shot",
       "jobName": "machinist",
       "level": "30",
       "name": "HOT SHOT"
     },
     "hotbar_settings": {
-      "iconPath": "images/jobs/action/main_menu/00/hotbar_settings.png",
+      "iconPath": "/images/jobs/action/main_menu/00/hotbar_settings.png",
       "id": "hotbar_settings",
       "jobName": "main_menu",
       "level": "00",
       "name": "HOTBAR SETTINGS"
     },
     "housing": {
-      "iconPath": "images/jobs/action/main_menu/00/housing.png",
+      "iconPath": "/images/jobs/action/main_menu/00/housing.png",
       "id": "housing",
       "jobName": "main_menu",
       "level": "00",
       "name": "HOUSING"
     },
     "howling_fist": {
-      "iconPath": "images/jobs/action/pugilist/46/howling_fist.png",
+      "iconPath": "/images/jobs/action/pugilist/46/howling_fist.png",
       "id": "howling_fist",
       "jobName": "pugilist",
       "level": "46",
       "name": "HOWLING FIST"
     },
     "hud_layout": {
-      "iconPath": "images/jobs/action/main_menu/00/hud_layout.png",
+      "iconPath": "/images/jobs/action/main_menu/00/hud_layout.png",
       "id": "hud_layout",
       "jobName": "main_menu",
       "level": "00",
       "name": "HUD LAYOUT"
     },
     "hunting_log": {
-      "iconPath": "images/jobs/action/main_menu/00/hunting_log.png",
+      "iconPath": "/images/jobs/action/main_menu/00/hunting_log.png",
       "id": "hunting_log",
       "jobName": "main_menu",
       "level": "00",
       "name": "HUNTING LOG"
     },
     "hypercharge": {
-      "iconPath": "images/jobs/action/machinist/58/hypercharge.png",
+      "iconPath": "/images/jobs/action/machinist/58/hypercharge.png",
       "id": "hypercharge",
       "jobName": "machinist",
       "level": "58",
       "name": "HYPERCHARGE"
     },
     "impulse_drive": {
-      "iconPath": "images/jobs/action/lancer/08/impulse_drive.png",
+      "iconPath": "/images/jobs/action/lancer/08/impulse_drive.png",
       "id": "impulse_drive",
       "jobName": "lancer",
       "level": "08",
       "name": "IMPULSE DRIVE"
     },
     "impulse_rush": {
-      "iconPath": "images/jobs/action/pvp/00/impulse_rush.png",
+      "iconPath": "/images/jobs/action/pvp/00/impulse_rush.png",
       "id": "impulse_rush",
       "jobName": "pvp",
       "level": "00",
       "name": "IMPULSE RUSH"
     },
     "indomitability": {
-      "iconPath": "images/jobs/action/scholar/52/indomitability.png",
+      "iconPath": "/images/jobs/action/scholar/52/indomitability.png",
       "id": "indomitability",
       "jobName": "scholar",
       "level": "52",
       "name": "INDOMITABILITY"
     },
     "infuriate": {
-      "iconPath": "images/jobs/action/warrior/50/infuriate.png",
+      "iconPath": "/images/jobs/action/warrior/50/infuriate.png",
       "id": "infuriate",
       "jobName": "warrior",
       "level": "50",
       "name": "INFURIATE"
     },
     "inner_beast": {
-      "iconPath": "images/jobs/action/warrior/35/inner_beast.png",
+      "iconPath": "/images/jobs/action/warrior/35/inner_beast.png",
       "id": "inner_beast",
       "jobName": "warrior",
       "level": "35",
       "name": "INNER BEAST"
     },
     "internal_release": {
-      "iconPath": "images/jobs/action/pugilist/12/internal_release.png",
+      "iconPath": "/images/jobs/action/pugilist/12/internal_release.png",
       "id": "internal_release",
       "jobName": "pugilist",
       "level": "12",
       "name": "INTERNAL RELEASE"
     },
     "inventory": {
-      "iconPath": "images/jobs/action/main_menu/00/inventory.png",
+      "iconPath": "/images/jobs/action/main_menu/00/inventory.png",
       "id": "inventory",
       "jobName": "main_menu",
       "level": "00",
       "name": "INVENTORY"
     },
     "invigorate": {
-      "iconPath": "images/jobs/action/lancer/22/invigorate.png",
+      "iconPath": "/images/jobs/action/lancer/22/invigorate.png",
       "id": "invigorate",
       "jobName": "lancer",
       "level": "22",
       "name": "INVIGORATE"
     },
     "iron_jaws": {
-      "iconPath": "images/jobs/action/bard/56/iron_jaws.png",
+      "iconPath": "/images/jobs/action/bard/56/iron_jaws.png",
       "id": "iron_jaws",
       "jobName": "bard",
       "level": "56",
       "name": "IRON JAWS"
     },
     "jin": {
-      "iconPath": "images/jobs/action/ninja/45/jin.png",
+      "iconPath": "/images/jobs/action/ninja/45/jin.png",
       "id": "jin",
       "jobName": "ninja",
       "level": "45",
       "name": "JIN"
     },
     "journal": {
-      "iconPath": "images/jobs/action/main_menu/00/journal.png",
+      "iconPath": "/images/jobs/action/main_menu/00/journal.png",
       "id": "journal",
       "jobName": "main_menu",
       "level": "00",
       "name": "JOURNAL"
     },
     "jugulate": {
-      "iconPath": "images/jobs/action/rogue/34/jugulate.png",
+      "iconPath": "/images/jobs/action/rogue/34/jugulate.png",
       "id": "jugulate",
       "jobName": "rogue",
       "level": "34",
       "name": "JUGULATE"
     },
     "jump": {
-      "iconPath": "images/jobs/action/general/00/jump.png",
+      "iconPath": "/images/jobs/action/general/00/jump.png",
       "id": "jump",
       "jobName": "general",
       "level": "00",
       "name": "JUMP"
     },
     "kassatsu": {
-      "iconPath": "images/jobs/action/ninja/50/kassatsu.png",
+      "iconPath": "/images/jobs/action/ninja/50/kassatsu.png",
       "id": "kassatsu",
       "jobName": "ninja",
       "level": "50",
       "name": "KASSATSU"
     },
     "keen_flurry": {
-      "iconPath": "images/jobs/action/lancer/06/keen_flurry.png",
+      "iconPath": "/images/jobs/action/lancer/06/keen_flurry.png",
       "id": "keen_flurry",
       "jobName": "lancer",
       "level": "06",
       "name": "KEEN FLURRY"
     },
     "key_items": {
-      "iconPath": "images/jobs/action/main_menu/00/key_items.png",
+      "iconPath": "/images/jobs/action/main_menu/00/key_items.png",
       "id": "key_items",
       "jobName": "main_menu",
       "level": "00",
       "name": "KEY ITEMS"
     },
     "keybind": {
-      "iconPath": "images/jobs/action/main_menu/00/keybind.png",
+      "iconPath": "/images/jobs/action/main_menu/00/keybind.png",
       "id": "keybind",
       "jobName": "main_menu",
       "level": "00",
       "name": "KEYBIND"
     },
     "kiss_of_the_viper": {
-      "iconPath": "images/jobs/action/rogue/30/kiss_of_the_viper.png",
+      "iconPath": "/images/jobs/action/rogue/30/kiss_of_the_viper.png",
       "id": "kiss_of_the_viper",
       "jobName": "rogue",
       "level": "30",
       "name": "KISS OF THE VIPER"
     },
     "kiss_of_the_wasp": {
-      "iconPath": "images/jobs/action/rogue/6/kiss_of_the_wasp.png",
+      "iconPath": "/images/jobs/action/rogue/6/kiss_of_the_wasp.png",
       "id": "kiss_of_the_wasp",
       "jobName": "rogue",
       "level": "6",
       "name": "KISS OF THE WASP"
     },
     "landslide": {
-      "iconPath": "images/jobs/action/titan-egi/40/landslide.png",
+      "iconPath": "/images/jobs/action/titan-egi/40/landslide.png",
       "id": "landslide",
       "jobName": "titan-egi",
       "level": "40",
       "name": "LANDSLIDE"
     },
     "lead_shot": {
-      "iconPath": "images/jobs/action/machinist/6/lead_shot.png",
+      "iconPath": "/images/jobs/action/machinist/6/lead_shot.png",
       "id": "lead_shot",
       "jobName": "machinist",
       "level": "6",
       "name": "LEAD SHOT"
     },
     "leeches": {
-      "iconPath": "images/jobs/action/scholar/40/leeches.png",
+      "iconPath": "/images/jobs/action/scholar/40/leeches.png",
       "id": "leeches",
       "jobName": "scholar",
       "level": "40",
       "name": "LEECHES"
     },
     "leg_graze": {
-      "iconPath": "images/jobs/action/machinist/10/leg_graze.png",
+      "iconPath": "/images/jobs/action/machinist/10/leg_graze.png",
       "id": "leg_graze",
       "jobName": "machinist",
       "level": "10",
       "name": "LEG GRAZE"
     },
     "leg_sweep": {
-      "iconPath": "images/jobs/action/lancer/10/leg_sweep.png",
+      "iconPath": "/images/jobs/action/lancer/10/leg_sweep.png",
       "id": "leg_sweep",
       "jobName": "lancer",
       "level": "10",
       "name": "LEG SWEEP"
     },
     "lethargy": {
-      "iconPath": "images/jobs/action/thaumaturge/42/lethargy.png",
+      "iconPath": "/images/jobs/action/thaumaturge/42/lethargy.png",
       "id": "lethargy",
       "jobName": "thaumaturge",
       "level": "42",
       "name": "LETHARGY"
     },
     "ley_lines": {
-      "iconPath": "images/jobs/action/black_mage/52/ley_lines.png",
+      "iconPath": "/images/jobs/action/black_mage/52/ley_lines.png",
       "id": "ley_lines",
       "jobName": "black_mage",
       "level": "52",
       "name": "LEY LINES"
     },
     "life_surge": {
-      "iconPath": "images/jobs/action/lancer/18/life_surge.png",
+      "iconPath": "/images/jobs/action/lancer/18/life_surge.png",
       "id": "life_surge",
       "jobName": "lancer",
       "level": "18",
       "name": "LIFE SURGE"
     },
     "lightspeed": {
-      "iconPath": "images/jobs/action/astrologian/6/lightspeed.png",
+      "iconPath": "/images/jobs/action/astrologian/6/lightspeed.png",
       "id": "lightspeed",
       "jobName": "astrologian",
       "level": "6",
       "name": "LIGHTSPEED"
     },
     "limit_break": {
-      "iconPath": "images/jobs/action/general/00/limit_break.png",
+      "iconPath": "/images/jobs/action/general/00/limit_break.png",
       "id": "limit_break",
       "jobName": "general",
       "level": "00",
       "name": "LIMIT BREAK"
     },
     "linkshells": {
-      "iconPath": "images/jobs/action/main_menu/00/linkshells.png",
+      "iconPath": "/images/jobs/action/main_menu/00/linkshells.png",
       "id": "linkshells",
       "jobName": "main_menu",
       "level": "00",
       "name": "LINKSHELLS"
     },
     "living_dead": {
-      "iconPath": "images/jobs/action/dark_knight/50/living_dead.png",
+      "iconPath": "/images/jobs/action/dark_knight/50/living_dead.png",
       "id": "living_dead",
       "jobName": "dark_knight",
       "level": "50",
       "name": "LIVING DEAD"
     },
     "log_out": {
-      "iconPath": "images/jobs/action/main_menu/00/log_out.png",
+      "iconPath": "/images/jobs/action/main_menu/00/log_out.png",
       "id": "log_out",
       "jobName": "main_menu",
       "level": "00",
       "name": "LOG OUT"
     },
     "log_window_settings": {
-      "iconPath": "images/jobs/action/main_menu/00/log_window_settings.png",
+      "iconPath": "/images/jobs/action/main_menu/00/log_window_settings.png",
       "id": "log_window_settings",
       "jobName": "main_menu",
       "level": "00",
       "name": "LOG WINDOW SETTINGS"
     },
     "low_blow": {
-      "iconPath": "images/jobs/action/dark_knight/10/low_blow.png",
+      "iconPath": "/images/jobs/action/dark_knight/10/low_blow.png",
       "id": "low_blow",
       "jobName": "dark_knight",
       "level": "10",
       "name": "LOW BLOW"
     },
     "luminiferous_aether": {
-      "iconPath": "images/jobs/action/astrologian/8/luminiferous_aether.png",
+      "iconPath": "/images/jobs/action/astrologian/8/luminiferous_aether.png",
       "id": "luminiferous_aether",
       "jobName": "astrologian",
       "level": "8",
       "name": "LUMINIFEROUS AETHER"
     },
     "lustrate": {
-      "iconPath": "images/jobs/action/scholar/50/lustrate.png",
+      "iconPath": "/images/jobs/action/scholar/50/lustrate.png",
       "id": "lustrate",
       "jobName": "scholar",
       "level": "50",
       "name": "LUSTRATE"
     },
     "mage's_ballad": {
-      "iconPath": "images/jobs/action/bard/30/mage's_ballad.png",
+      "iconPath": "/images/jobs/action/bard/30/mage's_ballad.png",
       "id": "mage's_ballad",
       "jobName": "bard",
       "level": "30",
       "name": "MAGE'S BALLAD"
     },
     "maim": {
-      "iconPath": "images/jobs/action/marauder/18/maim.png",
+      "iconPath": "/images/jobs/action/marauder/18/maim.png",
       "id": "maim",
       "jobName": "marauder",
       "level": "18",
       "name": "MAIM"
     },
     "malefic": {
-      "iconPath": "images/jobs/action/astrologian/1/malefic.png",
+      "iconPath": "/images/jobs/action/astrologian/1/malefic.png",
       "id": "malefic",
       "jobName": "astrologian",
       "level": "1",
       "name": "MALEFIC"
     },
     "malefic_ii": {
-      "iconPath": "images/jobs/action/astrologian/54/malefic_ii.png",
+      "iconPath": "/images/jobs/action/astrologian/54/malefic_ii.png",
       "id": "malefic_ii",
       "jobName": "astrologian",
       "level": "54",
       "name": "MALEFIC II"
     },
     "mana_draw": {
-      "iconPath": "images/jobs/action/pvp/00/mana_draw.png",
+      "iconPath": "/images/jobs/action/pvp/00/mana_draw.png",
       "id": "mana_draw",
       "jobName": "pvp",
       "level": "00",
       "name": "MANA DRAW"
     },
     "manasong": {
-      "iconPath": "images/jobs/action/pvp/00/manasong.png",
+      "iconPath": "/images/jobs/action/pvp/00/manasong.png",
       "id": "manasong",
       "jobName": "pvp",
       "level": "00",
       "name": "MANASONG"
     },
     "manawall": {
-      "iconPath": "images/jobs/action/black_mage/45/manawall.png",
+      "iconPath": "/images/jobs/action/black_mage/45/manawall.png",
       "id": "manawall",
       "jobName": "black_mage",
       "level": "45",
       "name": "MANAWALL"
     },
     "manaward": {
-      "iconPath": "images/jobs/action/thaumaturge/30/manaward.png",
+      "iconPath": "/images/jobs/action/thaumaturge/30/manaward.png",
       "id": "manaward",
       "jobName": "thaumaturge",
       "level": "30",
       "name": "MANAWARD"
     },
     "mantra": {
-      "iconPath": "images/jobs/action/pugilist/42/mantra.png",
+      "iconPath": "/images/jobs/action/pugilist/42/mantra.png",
       "id": "mantra",
       "jobName": "pugilist",
       "level": "42",
       "name": "MANTRA"
     },
     "map": {
-      "iconPath": "images/jobs/action/main_menu/00/map.png",
+      "iconPath": "/images/jobs/action/main_menu/00/map.png",
       "id": "map",
       "jobName": "main_menu",
       "level": "00",
       "name": "MAP"
     },
     "materia_assimilating": {
-      "iconPath": "images/jobs/action/general/00/materia_assimilating.png",
+      "iconPath": "/images/jobs/action/general/00/materia_assimilating.png",
       "id": "materia_assimilating",
       "jobName": "general",
       "level": "00",
       "name": "MATERIA ASSIMILATING"
     },
     "materia_melding": {
-      "iconPath": "images/jobs/action/general/00/materia_melding.png",
+      "iconPath": "/images/jobs/action/general/00/materia_melding.png",
       "id": "materia_melding",
       "jobName": "general",
       "level": "00",
       "name": "MATERIA MELDING"
     },
     "medica": {
-      "iconPath": "images/jobs/action/conjurer/10/medica.png",
+      "iconPath": "/images/jobs/action/conjurer/10/medica.png",
       "id": "medica",
       "jobName": "conjurer",
       "level": "10",
       "name": "MEDICA"
     },
     "medica_ii": {
-      "iconPath": "images/jobs/action/conjurer/50/medica_ii.png",
+      "iconPath": "/images/jobs/action/conjurer/50/medica_ii.png",
       "id": "medica_ii",
       "jobName": "conjurer",
       "level": "50",
       "name": "MEDICA II"
     },
     "meditation": {
-      "iconPath": "images/jobs/action/monk/54/meditation.png",
+      "iconPath": "/images/jobs/action/monk/54/meditation.png",
       "id": "meditation",
       "jobName": "monk",
       "level": "54",
       "name": "MEDITATION"
     },
     "mercy_stroke": {
-      "iconPath": "images/jobs/action/marauder/26/mercy_stroke.png",
+      "iconPath": "/images/jobs/action/marauder/26/mercy_stroke.png",
       "id": "mercy_stroke",
       "jobName": "marauder",
       "level": "26",
       "name": "MERCY STROKE"
     },
     "miasma": {
-      "iconPath": "images/jobs/action/arcanist/10/miasma.png",
+      "iconPath": "/images/jobs/action/arcanist/10/miasma.png",
       "id": "miasma",
       "jobName": "arcanist",
       "level": "10",
       "name": "MIASMA"
     },
     "miasma_ii": {
-      "iconPath": "images/jobs/action/arcanist/46/miasma_ii.png",
+      "iconPath": "/images/jobs/action/arcanist/46/miasma_ii.png",
       "id": "miasma_ii",
       "jobName": "arcanist",
       "level": "46",
       "name": "MIASMA II"
     },
     "misery's_end": {
-      "iconPath": "images/jobs/action/archer/08/misery's_end.png",
+      "iconPath": "/images/jobs/action/archer/08/misery's_end.png",
       "id": "misery's_end",
       "jobName": "archer",
       "level": "08",
       "name": "MISERY'S END"
     },
     "misty_veil": {
-      "iconPath": "images/jobs/action/pvp/00/misty_veil.png",
+      "iconPath": "/images/jobs/action/pvp/00/misty_veil.png",
       "id": "misty_veil",
       "jobName": "pvp",
       "level": "00",
       "name": "MISTY VEIL"
     },
     "mountain_buster": {
-      "iconPath": "images/jobs/action/titan-egi/01/mountain_buster.png",
+      "iconPath": "/images/jobs/action/titan-egi/01/mountain_buster.png",
       "id": "mountain_buster",
       "jobName": "titan-egi",
       "level": "01",
       "name": "MOUNTAIN BUSTER"
     },
     "mouse_settings": {
-      "iconPath": "images/jobs/action/main_menu/00/mouse_settings.png",
+      "iconPath": "/images/jobs/action/main_menu/00/mouse_settings.png",
       "id": "mouse_settings",
       "jobName": "main_menu",
       "level": "00",
       "name": "MOUSE SETTINGS"
     },
     "mug": {
-      "iconPath": "images/jobs/action/rogue/15/mug.png",
+      "iconPath": "/images/jobs/action/rogue/15/mug.png",
       "id": "mug",
       "jobName": "rogue",
       "level": "15",
       "name": "MUG"
     },
     "mutilate": {
-      "iconPath": "images/jobs/action/rogue/8/mutilate.png",
+      "iconPath": "/images/jobs/action/rogue/8/mutilate.png",
       "id": "mutilate",
       "jobName": "rogue",
       "level": "8",
       "name": "MUTILATE"
     },
     "mythril_tempest": {
-      "iconPath": "images/jobs/action/pvp/00/mythril_tempest.png",
+      "iconPath": "/images/jobs/action/pvp/00/mythril_tempest.png",
       "id": "mythril_tempest",
       "jobName": "pvp",
       "level": "00",
       "name": "MYTHRIL TEMPEST"
     },
     "night_wing": {
-      "iconPath": "images/jobs/action/pvp/00/night_wing.png",
+      "iconPath": "/images/jobs/action/pvp/00/night_wing.png",
       "id": "night_wing",
       "jobName": "pvp",
       "level": "00",
       "name": "NIGHT WING"
     },
     "ninjutsu": {
-      "iconPath": "images/jobs/action/ninja/30/ninjutsu.png",
+      "iconPath": "/images/jobs/action/ninja/30/ninjutsu.png",
       "id": "ninjutsu",
       "jobName": "ninja",
       "level": "30",
       "name": "NINJUTSU"
     },
     "nocturnal_sect": {
-      "iconPath": "images/jobs/action/astrologian/50/nocturnal_sect.png",
+      "iconPath": "/images/jobs/action/astrologian/50/nocturnal_sect.png",
       "id": "nocturnal_sect",
       "jobName": "astrologian",
       "level": "50",
       "name": "NOCTURNAL SECT"
     },
     "obey": {
-      "iconPath": "images/jobs/action/pets/00/obey.png",
+      "iconPath": "/images/jobs/action/pets/00/obey.png",
       "id": "obey",
       "jobName": "pets",
       "level": "00",
       "name": "OBEY"
     },
     "one_ilm_punch": {
-      "iconPath": "images/jobs/action/monk/45/one_ilm_punch.png",
+      "iconPath": "/images/jobs/action/monk/45/one_ilm_punch.png",
       "id": "one_ilm_punch",
       "jobName": "monk",
       "level": "45",
       "name": "ONE ILM PUNCH"
     },
     "other_settings": {
-      "iconPath": "images/jobs/action/main_menu/00/other_settings.png",
+      "iconPath": "/images/jobs/action/main_menu/00/other_settings.png",
       "id": "other_settings",
       "jobName": "main_menu",
       "level": "00",
       "name": "OTHER SETTINGS"
     },
     "overpower": {
-      "iconPath": "images/jobs/action/marauder/12/overpower.png",
+      "iconPath": "/images/jobs/action/marauder/12/overpower.png",
       "id": "overpower",
       "jobName": "marauder",
       "level": "12",
       "name": "OVERPOWER"
     },
     "painflare": {
-      "iconPath": "images/jobs/action/summoner/52/painflare.png",
+      "iconPath": "/images/jobs/action/summoner/52/painflare.png",
       "id": "painflare",
       "jobName": "summoner",
       "level": "52",
       "name": "PAINFLARE"
     },
     "party_finder": {
-      "iconPath": "images/jobs/action/main_menu/00/party_finder.png",
+      "iconPath": "/images/jobs/action/main_menu/00/party_finder.png",
       "id": "party_finder",
       "jobName": "main_menu",
       "level": "00",
       "name": "PARTY FINDER"
     },
     "party_members": {
-      "iconPath": "images/jobs/action/main_menu/00/party_members.png",
+      "iconPath": "/images/jobs/action/main_menu/00/party_members.png",
       "id": "party_members",
       "jobName": "main_menu",
       "level": "00",
       "name": "PARTY MEMBERS"
     },
     "perfect_balance": {
-      "iconPath": "images/jobs/action/pugilist/50/perfect_balance.png",
+      "iconPath": "/images/jobs/action/pugilist/50/perfect_balance.png",
       "id": "perfect_balance",
       "jobName": "pugilist",
       "level": "50",
       "name": "PERFECT BALANCE"
     },
     "phantom_dart": {
-      "iconPath": "images/jobs/action/pvp/00/phantom_dart.png",
+      "iconPath": "/images/jobs/action/pvp/00/phantom_dart.png",
       "id": "phantom_dart",
       "jobName": "pvp",
       "level": "00",
       "name": "PHANTOM DART"
     },
     "phlebotomize": {
-      "iconPath": "images/jobs/action/lancer/30/phlebotomize.png",
+      "iconPath": "/images/jobs/action/lancer/30/phlebotomize.png",
       "id": "phlebotomize",
       "jobName": "lancer",
       "level": "30",
       "name": "PHLEBOTOMIZE"
     },
     "physick": {
-      "iconPath": "images/jobs/action/arcanist/04/physick.png",
+      "iconPath": "/images/jobs/action/arcanist/04/physick.png",
       "id": "physick",
       "jobName": "arcanist",
       "level": "04",
       "name": "PHYSICK"
     },
     "piercing_talon": {
-      "iconPath": "images/jobs/action/lancer/15/piercing_talon.png",
+      "iconPath": "/images/jobs/action/lancer/15/piercing_talon.png",
       "id": "piercing_talon",
       "jobName": "lancer",
       "level": "15",
       "name": "PIERCING TALON"
     },
     "place": {
-      "iconPath": "images/jobs/action/pets/00/place.png",
+      "iconPath": "/images/jobs/action/pets/00/place.png",
       "id": "place",
       "jobName": "pets",
       "level": "00",
       "name": "PLACE"
     },
     "player_search": {
-      "iconPath": "images/jobs/action/main_menu/00/player_search.png",
+      "iconPath": "/images/jobs/action/main_menu/00/player_search.png",
       "id": "player_search",
       "jobName": "main_menu",
       "level": "00",
       "name": "PLAYER SEARCH"
     },
     "plunge": {
-      "iconPath": "images/jobs/action/dark_knight/54/plunge.png",
+      "iconPath": "/images/jobs/action/dark_knight/54/plunge.png",
       "id": "plunge",
       "jobName": "dark_knight",
       "level": "54",
       "name": "PLUNGE"
     },
     "power_slash": {
-      "iconPath": "images/jobs/action/dark_knight/26/power_slash.png",
+      "iconPath": "/images/jobs/action/dark_knight/26/power_slash.png",
       "id": "power_slash",
       "jobName": "dark_knight",
       "level": "26",
       "name": "POWER SLASH"
     },
     "power_surge": {
-      "iconPath": "images/jobs/action/dragoon/45/power_surge.png",
+      "iconPath": "/images/jobs/action/dragoon/45/power_surge.png",
       "id": "power_surge",
       "jobName": "dragoon",
       "level": "45",
       "name": "POWER SURGE"
     },
     "presence_of_mind": {
-      "iconPath": "images/jobs/action/white_mage/30/presence_of_mind.png",
+      "iconPath": "/images/jobs/action/white_mage/30/presence_of_mind.png",
       "id": "presence_of_mind",
       "jobName": "white_mage",
       "level": "30",
       "name": "PRESENCE OF MIND"
     },
     "promotion": {
-      "iconPath": "images/jobs/action/machinist/42/promotion.png",
+      "iconPath": "/images/jobs/action/machinist/42/promotion.png",
       "id": "promotion",
       "jobName": "machinist",
       "level": "42",
       "name": "PROMOTION"
     },
     "protect": {
-      "iconPath": "images/jobs/action/conjurer/08/protect.png",
+      "iconPath": "/images/jobs/action/conjurer/08/protect.png",
       "id": "protect",
       "jobName": "conjurer",
       "level": "08",
       "name": "PROTECT"
     },
     "provoke": {
-      "iconPath": "images/jobs/action/gladiator/22/provoke.png",
+      "iconPath": "/images/jobs/action/gladiator/22/provoke.png",
       "id": "provoke",
       "jobName": "gladiator",
       "level": "22",
       "name": "PROVOKE"
     },
     "purification": {
-      "iconPath": "images/jobs/action/monk/58/purification.png",
+      "iconPath": "/images/jobs/action/monk/58/purification.png",
       "id": "purification",
       "jobName": "monk",
       "level": "58",
       "name": "PURIFICATION"
     },
     "purify": {
-      "iconPath": "images/jobs/action/pvp/00/purify.png",
+      "iconPath": "/images/jobs/action/pvp/00/purify.png",
       "id": "purify",
       "jobName": "pvp",
       "level": "00",
       "name": "PURIFY"
     },
     "pvp_profile": {
-      "iconPath": "images/jobs/action/main_menu/00/pvp_profile.png",
+      "iconPath": "/images/jobs/action/main_menu/00/pvp_profile.png",
       "id": "pvp_profile",
       "jobName": "main_menu",
       "level": "00",
       "name": "PVP PROFILE"
     },
     "quelling_strikes": {
-      "iconPath": "images/jobs/action/archer/34/quelling_strikes.png",
+      "iconPath": "/images/jobs/action/archer/34/quelling_strikes.png",
       "id": "quelling_strikes",
       "jobName": "archer",
       "level": "34",
       "name": "QUELLING STRIKES"
     },
     "quick_nock": {
-      "iconPath": "images/jobs/action/archer/18/quick_nock.png",
+      "iconPath": "/images/jobs/action/archer/18/quick_nock.png",
       "id": "quick_nock",
       "jobName": "archer",
       "level": "18",
       "name": "QUICK NOCK"
     },
     "quick_reload": {
-      "iconPath": "images/jobs/action/machinist/26/quick_reload.png",
+      "iconPath": "/images/jobs/action/machinist/26/quick_reload.png",
       "id": "quick_reload",
       "jobName": "machinist",
       "level": "26",
       "name": "QUICK RELOAD"
     },
     "radiant_shield": {
-      "iconPath": "images/jobs/action/ifrit-egi/20/radiant_shield.png",
+      "iconPath": "/images/jobs/action/ifrit-egi/20/radiant_shield.png",
       "id": "radiant_shield",
       "jobName": "ifrit-egi",
       "level": "20",
       "name": "RADIANT SHIELD"
     },
     "rage_of_halone": {
-      "iconPath": "images/jobs/action/gladiator/26/rage_of_halone.png",
+      "iconPath": "/images/jobs/action/gladiator/26/rage_of_halone.png",
       "id": "rage_of_halone",
       "jobName": "gladiator",
       "level": "26",
       "name": "RAGE OF HALONE"
     },
     "raging_strikes": {
-      "iconPath": "images/jobs/action/archer/04/raging_strikes.png",
+      "iconPath": "/images/jobs/action/archer/04/raging_strikes.png",
       "id": "raging_strikes",
       "jobName": "archer",
       "level": "04",
       "name": "RAGING STRIKES"
     },
     "rain_of_death": {
-      "iconPath": "images/jobs/action/bard/45/rain_of_death.png",
+      "iconPath": "/images/jobs/action/bard/45/rain_of_death.png",
       "id": "rain_of_death",
       "jobName": "bard",
       "level": "45",
       "name": "RAIN OF DEATH"
     },
     "raise": {
-      "iconPath": "images/jobs/action/conjurer/12/raise.png",
+      "iconPath": "/images/jobs/action/conjurer/12/raise.png",
       "id": "raise",
       "jobName": "conjurer",
       "level": "12",
       "name": "RAISE"
     },
     "rampart": {
-      "iconPath": "images/jobs/action/gladiator/02/rampart.png",
+      "iconPath": "/images/jobs/action/gladiator/02/rampart.png",
       "id": "rampart",
       "jobName": "gladiator",
       "level": "02",
       "name": "RAMPART"
     },
     "rapid_fire": {
-      "iconPath": "images/jobs/action/machinist/30/rapid_fire.png",
+      "iconPath": "/images/jobs/action/machinist/30/rapid_fire.png",
       "id": "rapid_fire",
       "jobName": "machinist",
       "level": "30",
       "name": "RAPID FIRE"
     },
     "raw_intuition": {
-      "iconPath": "images/jobs/action/warrior/56/raw_intuition.png",
+      "iconPath": "/images/jobs/action/warrior/56/raw_intuition.png",
       "id": "raw_intuition",
       "jobName": "warrior",
       "level": "56",
       "name": "RAW INTUITION"
     },
     "reassemble": {
-      "iconPath": "images/jobs/action/machinist/12/reassemble.png",
+      "iconPath": "/images/jobs/action/machinist/12/reassemble.png",
       "id": "reassemble",
       "jobName": "machinist",
       "level": "12",
       "name": "REASSEMBLE"
     },
     "recommendations": {
-      "iconPath": "images/jobs/action/main_menu/00/recommendations.png",
+      "iconPath": "/images/jobs/action/main_menu/00/recommendations.png",
       "id": "recommendations",
       "jobName": "main_menu",
       "level": "00",
       "name": "RECOMMENDATIONS"
     },
     "regen": {
-      "iconPath": "images/jobs/action/white_mage/35/regen.png",
+      "iconPath": "/images/jobs/action/white_mage/35/regen.png",
       "id": "regen",
       "jobName": "white_mage",
       "level": "35",
       "name": "REGEN"
     },
     "reload": {
-      "iconPath": "images/jobs/action/machinist/4/reload.png",
+      "iconPath": "/images/jobs/action/machinist/4/reload.png",
       "id": "reload",
       "jobName": "machinist",
       "level": "4",
       "name": "RELOAD"
     },
     "rend_mind": {
-      "iconPath": "images/jobs/action/machinist/56/rend_mind.png",
+      "iconPath": "/images/jobs/action/machinist/56/rend_mind.png",
       "id": "rend_mind",
       "jobName": "machinist",
       "level": "56",
       "name": "REND MIND"
     },
     "repair": {
-      "iconPath": "images/jobs/action/general/00/repair.png",
+      "iconPath": "/images/jobs/action/general/00/repair.png",
       "id": "repair",
       "jobName": "general",
       "level": "00",
       "name": "REPAIR"
     },
     "repelling_shot": {
-      "iconPath": "images/jobs/action/archer/15/repelling_shot.png",
+      "iconPath": "/images/jobs/action/archer/15/repelling_shot.png",
       "id": "repelling_shot",
       "jobName": "archer",
       "level": "15",
       "name": "REPELLING SHOT"
     },
     "repose": {
-      "iconPath": "images/jobs/action/conjurer/26/repose.png",
+      "iconPath": "/images/jobs/action/conjurer/26/repose.png",
       "id": "repose",
       "jobName": "conjurer",
       "level": "26",
       "name": "REPOSE"
     },
     "reprisal": {
-      "iconPath": "images/jobs/action/dark_knight/22/reprisal.png",
+      "iconPath": "/images/jobs/action/dark_knight/22/reprisal.png",
       "id": "reprisal",
       "jobName": "dark_knight",
       "level": "22",
       "name": "REPRISAL"
     },
     "resurrection": {
-      "iconPath": "images/jobs/action/arcanist/22/resurrection.png",
+      "iconPath": "/images/jobs/action/arcanist/22/resurrection.png",
       "id": "resurrection",
       "jobName": "arcanist",
       "level": "22",
       "name": "RESURRECTION"
     },
     "return": {
-      "iconPath": "images/jobs/action/general/00/return.png",
+      "iconPath": "/images/jobs/action/general/00/return.png",
       "id": "return",
       "jobName": "general",
       "level": "00",
       "name": "RETURN"
     },
     "ricochet": {
-      "iconPath": "images/jobs/action/machinist/60/ricochet.png",
+      "iconPath": "/images/jobs/action/machinist/60/ricochet.png",
       "id": "ricochet",
       "jobName": "machinist",
       "level": "60",
       "name": "RICOCHET"
     },
     "ring_of_thorns": {
-      "iconPath": "images/jobs/action/lancer/46/ring_of_thorns.png",
+      "iconPath": "/images/jobs/action/lancer/46/ring_of_thorns.png",
       "id": "ring_of_thorns",
       "jobName": "lancer",
       "level": "46",
       "name": "RING OF THORNS"
     },
     "riot_blade": {
-      "iconPath": "images/jobs/action/gladiator/12/riot_blade.png",
+      "iconPath": "/images/jobs/action/gladiator/12/riot_blade.png",
       "id": "riot_blade",
       "jobName": "gladiator",
       "level": "12",
       "name": "RIOT BLADE"
     },
     "rock_buster": {
-      "iconPath": "images/jobs/action/titan-egi/01/rock_buster.png",
+      "iconPath": "/images/jobs/action/titan-egi/01/rock_buster.png",
       "id": "rock_buster",
       "jobName": "titan-egi",
       "level": "01",
       "name": "ROCK BUSTER"
     },
     "rockbreaker": {
-      "iconPath": "images/jobs/action/monk/30/rockbreaker.png",
+      "iconPath": "/images/jobs/action/monk/30/rockbreaker.png",
       "id": "rockbreaker",
       "jobName": "monk",
       "level": "30",
       "name": "ROCKBREAKER"
     },
     "rook_autoturret": {
-      "iconPath": "images/jobs/action/machinist/40/rook_autoturret.png",
+      "iconPath": "/images/jobs/action/machinist/40/rook_autoturret.png",
       "id": "rook_autoturret",
       "jobName": "machinist",
       "level": "40",
       "name": "ROOK AUTOTURRET"
     },
     "rouse": {
-      "iconPath": "images/jobs/action/arcanist/42/rouse.png",
+      "iconPath": "/images/jobs/action/arcanist/42/rouse.png",
       "id": "rouse",
       "jobName": "arcanist",
       "level": "42",
       "name": "ROUSE"
     },
     "royal_authority": {
-      "iconPath": "images/jobs/action/paladin/60/royal_authority.png",
+      "iconPath": "/images/jobs/action/paladin/60/royal_authority.png",
       "id": "royal_authority",
       "jobName": "paladin",
       "level": "60",
       "name": "ROYAL AUTHORITY"
     },
     "royal_road": {
-      "iconPath": "images/jobs/action/astrologian/35/royal_road.png",
+      "iconPath": "/images/jobs/action/astrologian/35/royal_road.png",
       "id": "royal_road",
       "jobName": "astrologian",
       "level": "35",
       "name": "ROYAL ROAD"
     },
     "ruin": {
-      "iconPath": "images/jobs/action/arcanist/01/ruin.png",
+      "iconPath": "/images/jobs/action/arcanist/01/ruin.png",
       "id": "ruin",
       "jobName": "arcanist",
       "level": "01",
       "name": "RUIN"
     },
     "ruin_ii": {
-      "iconPath": "images/jobs/action/arcanist/38/ruin_ii.png",
+      "iconPath": "/images/jobs/action/arcanist/38/ruin_ii.png",
       "id": "ruin_ii",
       "jobName": "arcanist",
       "level": "38",
       "name": "RUIN II"
     },
     "ruin_iii": {
-      "iconPath": "images/jobs/action/summoner/54/ruin_iii.png",
+      "iconPath": "/images/jobs/action/summoner/54/ruin_iii.png",
       "id": "ruin_iii",
       "jobName": "summoner",
       "level": "54",
       "name": "RUIN III"
     },
     "sacred_prism": {
-      "iconPath": "images/jobs/action/pvp/00/sacred_prism.png",
+      "iconPath": "/images/jobs/action/pvp/00/sacred_prism.png",
       "id": "sacred_prism",
       "jobName": "pvp",
       "level": "00",
       "name": "SACRED PRISM"
     },
     "sacred_soil": {
-      "iconPath": "images/jobs/action/scholar/45/sacred_soil.png",
+      "iconPath": "/images/jobs/action/scholar/45/sacred_soil.png",
       "id": "sacred_soil",
       "jobName": "scholar",
       "level": "45",
       "name": "SACRED SOIL"
     },
     "salted_earth": {
-      "iconPath": "images/jobs/action/dark_knight/52/salted_earth.png",
+      "iconPath": "/images/jobs/action/dark_knight/52/salted_earth.png",
       "id": "salted_earth",
       "jobName": "dark_knight",
       "level": "52",
       "name": "SALTED EARTH"
     },
     "savage_blade": {
-      "iconPath": "images/jobs/action/gladiator/04/savage_blade.png",
+      "iconPath": "/images/jobs/action/gladiator/04/savage_blade.png",
       "id": "savage_blade",
       "jobName": "gladiator",
       "level": "04",
       "name": "SAVAGE BLADE"
     },
     "scathe": {
-      "iconPath": "images/jobs/action/thaumaturge/15/scathe.png",
+      "iconPath": "/images/jobs/action/thaumaturge/15/scathe.png",
       "id": "scathe",
       "jobName": "thaumaturge",
       "level": "15",
       "name": "SCATHE"
     },
     "scourge": {
-      "iconPath": "images/jobs/action/dark_knight/6/scourge.png",
+      "iconPath": "/images/jobs/action/dark_knight/6/scourge.png",
       "id": "scourge",
       "jobName": "dark_knight",
       "level": "6",
       "name": "SCOURGE"
     },
     "second_wind": {
-      "iconPath": "images/jobs/action/pugilist/08/second_wind.png",
+      "iconPath": "/images/jobs/action/pugilist/08/second_wind.png",
       "id": "second_wind",
       "jobName": "pugilist",
       "level": "08",
       "name": "SECOND WIND"
     },
     "sentinel": {
-      "iconPath": "images/jobs/action/gladiator/38/sentinel.png",
+      "iconPath": "/images/jobs/action/gladiator/38/sentinel.png",
       "id": "sentinel",
       "jobName": "gladiator",
       "level": "38",
       "name": "SENTINEL"
     },
     "shade_shift": {
-      "iconPath": "images/jobs/action/rogue/2/shade_shift.png",
+      "iconPath": "/images/jobs/action/rogue/2/shade_shift.png",
       "id": "shade_shift",
       "jobName": "rogue",
       "level": "2",
       "name": "SHADE SHIFT"
     },
     "shadewalker": {
-      "iconPath": "images/jobs/action/ninja/56/shadewalker.png",
+      "iconPath": "/images/jobs/action/ninja/56/shadewalker.png",
       "id": "shadewalker",
       "jobName": "ninja",
       "level": "56",
       "name": "SHADEWALKER"
     },
     "shadow_fang": {
-      "iconPath": "images/jobs/action/rogue/46/shadow_fang.png",
+      "iconPath": "/images/jobs/action/rogue/46/shadow_fang.png",
       "id": "shadow_fang",
       "jobName": "rogue",
       "level": "46",
       "name": "SHADOW FANG"
     },
     "shadow_flare": {
-      "iconPath": "images/jobs/action/arcanist/50/shadow_flare.png",
+      "iconPath": "/images/jobs/action/arcanist/50/shadow_flare.png",
       "id": "shadow_flare",
       "jobName": "arcanist",
       "level": "50",
       "name": "SHADOW FLARE"
     },
     "shadow_wall": {
-      "iconPath": "images/jobs/action/dark_knight/46/shadow_wall.png",
+      "iconPath": "/images/jobs/action/dark_knight/46/shadow_wall.png",
       "id": "shadow_wall",
       "jobName": "dark_knight",
       "level": "46",
       "name": "SHADOW WALL"
     },
     "shadowbind": {
-      "iconPath": "images/jobs/action/archer/10/shadowbind.png",
+      "iconPath": "/images/jobs/action/archer/10/shadowbind.png",
       "id": "shadowbind",
       "jobName": "archer",
       "level": "10",
       "name": "SHADOWBIND"
     },
     "shadowskin": {
-      "iconPath": "images/jobs/action/dark_knight/2/shadowskin.png",
+      "iconPath": "/images/jobs/action/dark_knight/2/shadowskin.png",
       "id": "shadowskin",
       "jobName": "dark_knight",
       "level": "2",
       "name": "SHADOWSKIN"
     },
     "sharpcast": {
-      "iconPath": "images/jobs/action/black_mage/54/sharpcast.png",
+      "iconPath": "/images/jobs/action/black_mage/54/sharpcast.png",
       "id": "sharpcast",
       "jobName": "black_mage",
       "level": "54",
       "name": "SHARPCAST"
     },
     "sheltron": {
-      "iconPath": "images/jobs/action/paladin/52/sheltron.png",
+      "iconPath": "/images/jobs/action/paladin/52/sheltron.png",
       "id": "sheltron",
       "jobName": "paladin",
       "level": "52",
       "name": "SHELTRON"
     },
     "shield_bash": {
-      "iconPath": "images/jobs/action/gladiator/18/shield_bash.png",
+      "iconPath": "/images/jobs/action/gladiator/18/shield_bash.png",
       "id": "shield_bash",
       "jobName": "gladiator",
       "level": "18",
       "name": "SHIELD BASH"
     },
     "shield_lob": {
-      "iconPath": "images/jobs/action/gladiator/15/shield_lob.png",
+      "iconPath": "/images/jobs/action/gladiator/15/shield_lob.png",
       "id": "shield_lob",
       "jobName": "gladiator",
       "level": "15",
       "name": "SHIELD LOB"
     },
     "shield_oath": {
-      "iconPath": "images/jobs/action/paladin/40/shield_oath.png",
+      "iconPath": "/images/jobs/action/paladin/40/shield_oath.png",
       "id": "shield_oath",
       "jobName": "paladin",
       "level": "40",
       "name": "SHIELD OATH"
     },
     "shield_swipe": {
-      "iconPath": "images/jobs/action/gladiator/30/shield_swipe.png",
+      "iconPath": "/images/jobs/action/gladiator/30/shield_swipe.png",
       "id": "shield_swipe",
       "jobName": "gladiator",
       "level": "30",
       "name": "SHIELD SWIPE"
     },
     "shining_emerald": {
-      "iconPath": "images/jobs/action/emerald_carbuncle/40/shining_emerald.png",
+      "iconPath": "/images/jobs/action/emerald_carbuncle/40/shining_emerald.png",
       "id": "shining_emerald",
       "jobName": "emerald_carbuncle",
       "level": "40",
       "name": "SHINING EMERALD"
     },
     "shining_topaz": {
-      "iconPath": "images/jobs/action/topaz_carbuncle/01/shining_topaz.png",
+      "iconPath": "/images/jobs/action/topaz_carbuncle/01/shining_topaz.png",
       "id": "shining_topaz",
       "jobName": "topaz_carbuncle",
       "level": "01",
       "name": "SHINING TOPAZ"
     },
     "shockwave": {
-      "iconPath": "images/jobs/action/garuda-egi/01/shockwave.png",
+      "iconPath": "/images/jobs/action/garuda-egi/01/shockwave.png",
       "id": "shockwave",
       "jobName": "garuda-egi",
       "level": "01",
       "name": "SHOCKWAVE"
     },
     "shoulder_tackle": {
-      "iconPath": "images/jobs/action/monk/35/shoulder_tackle.png",
+      "iconPath": "/images/jobs/action/monk/35/shoulder_tackle.png",
       "id": "shoulder_tackle",
       "jobName": "monk",
       "level": "35",
       "name": "SHOULDER TACKLE"
     },
     "shroud_of_saints": {
-      "iconPath": "images/jobs/action/conjurer/38/shroud_of_saints.png",
+      "iconPath": "/images/jobs/action/conjurer/38/shroud_of_saints.png",
       "id": "shroud_of_saints",
       "jobName": "conjurer",
       "level": "38",
       "name": "SHROUD OF SAINTS"
     },
     "shuffle": {
-      "iconPath": "images/jobs/action/astrologian/45/shuffle.png",
+      "iconPath": "/images/jobs/action/astrologian/45/shuffle.png",
       "id": "shuffle",
       "jobName": "astrologian",
       "level": "45",
       "name": "SHUFFLE"
     },
     "shukuchi": {
-      "iconPath": "images/jobs/action/ninja/40/shukuchi.png",
+      "iconPath": "/images/jobs/action/ninja/40/shukuchi.png",
       "id": "shukuchi",
       "jobName": "ninja",
       "level": "40",
       "name": "SHUKUCHI"
     },
     "sic": {
-      "iconPath": "images/jobs/action/pets/00/sic.png",
+      "iconPath": "/images/jobs/action/pets/00/sic.png",
       "id": "sic",
       "jobName": "pets",
       "level": "00",
       "name": "SIC"
     },
     "sidewinder": {
-      "iconPath": "images/jobs/action/bard/60/sidewinder.png",
+      "iconPath": "/images/jobs/action/bard/60/sidewinder.png",
       "id": "sidewinder",
       "jobName": "bard",
       "level": "60",
       "name": "SIDEWINDER"
     },
     "signs": {
-      "iconPath": "images/jobs/action/main_menu/00/signs.png",
+      "iconPath": "/images/jobs/action/main_menu/00/signs.png",
       "id": "signs",
       "jobName": "main_menu",
       "level": "00",
       "name": "SIGNS"
     },
     "silent_dusk": {
-      "iconPath": "images/jobs/action/selene/01/silent_dusk.png",
+      "iconPath": "/images/jobs/action/selene/01/silent_dusk.png",
       "id": "silent_dusk",
       "jobName": "selene",
       "level": "01",
       "name": "SILENT DUSK"
     },
     "skewer": {
-      "iconPath": "images/jobs/action/pvp/00/skewer.png",
+      "iconPath": "/images/jobs/action/pvp/00/skewer.png",
       "id": "skewer",
       "jobName": "pvp",
       "level": "00",
       "name": "SKEWER"
     },
     "skull_sunder": {
-      "iconPath": "images/jobs/action/marauder/04/skull_sunder.png",
+      "iconPath": "/images/jobs/action/marauder/04/skull_sunder.png",
       "id": "skull_sunder",
       "jobName": "marauder",
       "level": "04",
       "name": "SKULL SUNDER"
     },
     "sleep": {
-      "iconPath": "images/jobs/action/thaumaturge/10/sleep.png",
+      "iconPath": "/images/jobs/action/thaumaturge/10/sleep.png",
       "id": "sleep",
       "jobName": "thaumaturge",
       "level": "10",
       "name": "SLEEP"
     },
     "slug_shot": {
-      "iconPath": "images/jobs/action/machinist/2/slug_shot.png",
+      "iconPath": "/images/jobs/action/machinist/2/slug_shot.png",
       "id": "slug_shot",
       "jobName": "machinist",
       "level": "2",
       "name": "SLUG SHOT"
     },
     "smoke_screen": {
-      "iconPath": "images/jobs/action/ninja/52/smoke_screen.png",
+      "iconPath": "/images/jobs/action/ninja/52/smoke_screen.png",
       "id": "smoke_screen",
       "jobName": "ninja",
       "level": "52",
       "name": "SMOKE SCREEN"
     },
     "snap_punch": {
-      "iconPath": "images/jobs/action/pugilist/06/snap_punch.png",
+      "iconPath": "/images/jobs/action/pugilist/06/snap_punch.png",
       "id": "snap_punch",
       "jobName": "pugilist",
       "level": "06",
       "name": "SNAP PUNCH"
     },
     "sneak_attack": {
-      "iconPath": "images/jobs/action/rogue/22/sneak_attack.png",
+      "iconPath": "/images/jobs/action/rogue/22/sneak_attack.png",
       "id": "sneak_attack",
       "jobName": "rogue",
       "level": "22",
       "name": "SNEAK ATTACK"
     },
     "sole_survivor": {
-      "iconPath": "images/jobs/action/dark_knight/58/sole_survivor.png",
+      "iconPath": "/images/jobs/action/dark_knight/58/sole_survivor.png",
       "id": "sole_survivor",
       "jobName": "dark_knight",
       "level": "58",
       "name": "SOLE SURVIVOR"
     },
     "somersault": {
-      "iconPath": "images/jobs/action/pvp/00/somersault.png",
+      "iconPath": "/images/jobs/action/pvp/00/somersault.png",
       "id": "somersault",
       "jobName": "pvp",
       "level": "00",
       "name": "SOMERSAULT"
     },
     "souleater": {
-      "iconPath": "images/jobs/action/dark_knight/38/souleater.png",
+      "iconPath": "/images/jobs/action/dark_knight/38/souleater.png",
       "id": "souleater",
       "jobName": "dark_knight",
       "level": "38",
       "name": "SOULEATER"
     },
     "sound_settings": {
-      "iconPath": "images/jobs/action/main_menu/00/sound_settings.png",
+      "iconPath": "/images/jobs/action/main_menu/00/sound_settings.png",
       "id": "sound_settings",
       "jobName": "main_menu",
       "level": "00",
       "name": "SOUND SETTINGS"
     },
     "spineshatter_dive": {
-      "iconPath": "images/jobs/action/dragoon/40/spineshatter_dive.png",
+      "iconPath": "/images/jobs/action/dragoon/40/spineshatter_dive.png",
       "id": "spineshatter_dive",
       "jobName": "dragoon",
       "level": "40",
       "name": "SPINESHATTER DIVE"
     },
     "spinning_edge": {
-      "iconPath": "images/jobs/action/rogue/1/spinning_edge.png",
+      "iconPath": "/images/jobs/action/rogue/1/spinning_edge.png",
       "id": "spinning_edge",
       "jobName": "rogue",
       "level": "1",
       "name": "SPINNING EDGE"
     },
     "spinning_slash": {
-      "iconPath": "images/jobs/action/dark_knight/4/spinning_slash.png",
+      "iconPath": "/images/jobs/action/dark_knight/4/spinning_slash.png",
       "id": "spinning_slash",
       "jobName": "dark_knight",
       "level": "4",
       "name": "SPINNING SLASH"
     },
     "spirits_within": {
-      "iconPath": "images/jobs/action/paladin/45/spirits_within.png",
+      "iconPath": "/images/jobs/action/paladin/45/spirits_within.png",
       "id": "spirits_within",
       "jobName": "paladin",
       "level": "45",
       "name": "SPIRITS WITHIN"
     },
     "split_shot": {
-      "iconPath": "images/jobs/action/machinist/1/split_shot.png",
+      "iconPath": "/images/jobs/action/machinist/1/split_shot.png",
       "id": "split_shot",
       "jobName": "machinist",
       "level": "1",
       "name": "SPLIT SHOT"
     },
     "spread": {
-      "iconPath": "images/jobs/action/astrologian/40/spread.png",
+      "iconPath": "/images/jobs/action/astrologian/40/spread.png",
       "id": "spread",
       "jobName": "astrologian",
       "level": "40",
       "name": "SPREAD"
     },
     "spread_shot": {
-      "iconPath": "images/jobs/action/machinist/18/spread_shot.png",
+      "iconPath": "/images/jobs/action/machinist/18/spread_shot.png",
       "id": "spread_shot",
       "jobName": "machinist",
       "level": "18",
       "name": "SPREAD SHOT"
     },
     "sprint": {
-      "iconPath": "images/jobs/action/general/00/sprint.png",
+      "iconPath": "/images/jobs/action/general/00/sprint.png",
       "id": "sprint",
       "jobName": "general",
       "level": "00",
       "name": "SPRINT"
     },
     "spur": {
-      "iconPath": "images/jobs/action/summoner/45/spur.png",
+      "iconPath": "/images/jobs/action/summoner/45/spur.png",
       "id": "spur",
       "jobName": "summoner",
       "level": "45",
       "name": "SPUR"
     },
     "stance": {
-      "iconPath": "images/jobs/action/main_menu/00/stance.png",
+      "iconPath": "/images/jobs/action/main_menu/00/stance.png",
       "id": "stance",
       "jobName": "main_menu",
       "level": "00",
       "name": "STANCE"
     },
     "stay": {
-      "iconPath": "images/jobs/action/pets/00/stay.png",
+      "iconPath": "/images/jobs/action/pets/00/stay.png",
       "id": "stay",
       "jobName": "pets",
       "level": "00",
       "name": "STAY"
     },
     "steady": {
-      "iconPath": "images/jobs/action/pets/00/steady.png",
+      "iconPath": "/images/jobs/action/pets/00/steady.png",
       "id": "steady",
       "jobName": "pets",
       "level": "00",
       "name": "STEADY"
     },
     "steel_cyclone": {
-      "iconPath": "images/jobs/action/warrior/45/steel_cyclone.png",
+      "iconPath": "/images/jobs/action/warrior/45/steel_cyclone.png",
       "id": "steel_cyclone",
       "jobName": "warrior",
       "level": "45",
       "name": "STEEL CYCLONE"
     },
     "steel_peak": {
-      "iconPath": "images/jobs/action/pugilist/38/steel_peak.png",
+      "iconPath": "/images/jobs/action/pugilist/38/steel_peak.png",
       "id": "steel_peak",
       "jobName": "pugilist",
       "level": "38",
       "name": "STEEL PEAK"
     },
     "stella": {
-      "iconPath": "images/jobs/action/astrologian/22/stella.png",
+      "iconPath": "/images/jobs/action/astrologian/22/stella.png",
       "id": "stella",
       "jobName": "astrologian",
       "level": "22",
       "name": "STELLA"
     },
     "stone": {
-      "iconPath": "images/jobs/action/conjurer/01/stone.png",
+      "iconPath": "/images/jobs/action/conjurer/01/stone.png",
       "id": "stone",
       "jobName": "conjurer",
       "level": "01",
       "name": "STONE"
     },
     "stone_ii": {
-      "iconPath": "images/jobs/action/conjurer/22/stone_ii.png",
+      "iconPath": "/images/jobs/action/conjurer/22/stone_ii.png",
       "id": "stone_ii",
       "jobName": "conjurer",
       "level": "22",
       "name": "STONE II"
     },
     "stone_iii": {
-      "iconPath": "images/jobs/action/white_mage/54/stone_iii.png",
+      "iconPath": "/images/jobs/action/white_mage/54/stone_iii.png",
       "id": "stone_iii",
       "jobName": "white_mage",
       "level": "54",
       "name": "STONE III"
     },
     "stoneskin": {
-      "iconPath": "images/jobs/action/conjurer/34/stoneskin.png",
+      "iconPath": "/images/jobs/action/conjurer/34/stoneskin.png",
       "id": "stoneskin",
       "jobName": "conjurer",
       "level": "34",
       "name": "STONESKIN"
     },
     "stoneskin_ii": {
-      "iconPath": "images/jobs/action/conjurer/50/stoneskin_ii.png",
+      "iconPath": "/images/jobs/action/conjurer/50/stoneskin_ii.png",
       "id": "stoneskin_ii",
       "jobName": "conjurer",
       "level": "50",
       "name": "STONESKIN II"
     },
     "storm's_eye": {
-      "iconPath": "images/jobs/action/marauder/50/storm's_eye.png",
+      "iconPath": "/images/jobs/action/marauder/50/storm's_eye.png",
       "id": "storm's_eye",
       "jobName": "marauder",
       "level": "50",
       "name": "STORM'S EYE"
     },
     "storm's_path": {
-      "iconPath": "images/jobs/action/marauder/38/storm's_path.png",
+      "iconPath": "/images/jobs/action/marauder/38/storm's_path.png",
       "id": "storm's_path",
       "jobName": "marauder",
       "level": "38",
       "name": "STORM'S PATH"
     },
     "straight_shot": {
-      "iconPath": "images/jobs/action/archer/02/straight_shot.png",
+      "iconPath": "/images/jobs/action/archer/02/straight_shot.png",
       "id": "straight_shot",
       "jobName": "archer",
       "level": "02",
       "name": "STRAIGHT SHOT"
     },
     "succor": {
-      "iconPath": "images/jobs/action/scholar/35/succor.png",
+      "iconPath": "/images/jobs/action/scholar/35/succor.png",
       "id": "succor",
       "jobName": "scholar",
       "level": "35",
       "name": "SUCCOR"
     },
     "summon": {
-      "iconPath": "images/jobs/action/arcanist/04/summon.png",
+      "iconPath": "/images/jobs/action/arcanist/04/summon.png",
       "id": "summon",
       "jobName": "arcanist",
       "level": "04",
       "name": "SUMMON"
     },
     "summon_ii": {
-      "iconPath": "images/jobs/action/arcanist/15/summon_ii.png",
+      "iconPath": "/images/jobs/action/arcanist/15/summon_ii.png",
       "id": "summon_ii",
       "jobName": "arcanist",
       "level": "15",
       "name": "SUMMON II"
     },
     "summon_iii": {
-      "iconPath": "images/jobs/action/summoner/30/summon_iii.png",
+      "iconPath": "/images/jobs/action/summoner/30/summon_iii.png",
       "id": "summon_iii",
       "jobName": "summoner",
       "level": "30",
       "name": "SUMMON III"
     },
     "support_desk": {
-      "iconPath": "images/jobs/action/main_menu/00/support_desk.png",
+      "iconPath": "/images/jobs/action/main_menu/00/support_desk.png",
       "id": "support_desk",
       "jobName": "main_menu",
       "level": "00",
       "name": "SUPPORT DESK"
     },
     "suppressive_fire": {
-      "iconPath": "images/jobs/action/machinist/45/suppressive_fire.png",
+      "iconPath": "/images/jobs/action/machinist/45/suppressive_fire.png",
       "id": "suppressive_fire",
       "jobName": "machinist",
       "level": "45",
       "name": "SUPPRESSIVE FIRE"
     },
     "surecast": {
-      "iconPath": "images/jobs/action/thaumaturge/08/surecast.png",
+      "iconPath": "/images/jobs/action/thaumaturge/08/surecast.png",
       "id": "surecast",
       "jobName": "thaumaturge",
       "level": "08",
       "name": "SURECAST"
     },
     "sustain": {
-      "iconPath": "images/jobs/action/arcanist/18/sustain.png",
+      "iconPath": "/images/jobs/action/arcanist/18/sustain.png",
       "id": "sustain",
       "jobName": "arcanist",
       "level": "18",
       "name": "SUSTAIN"
     },
     "swiftcast": {
-      "iconPath": "images/jobs/action/thaumaturge/26/swiftcast.png",
+      "iconPath": "/images/jobs/action/thaumaturge/26/swiftcast.png",
       "id": "swiftcast",
       "jobName": "thaumaturge",
       "level": "26",
       "name": "SWIFTCAST"
     },
     "swiftsong": {
-      "iconPath": "images/jobs/action/archer/22/swiftsong.png",
+      "iconPath": "/images/jobs/action/archer/22/swiftsong.png",
       "id": "swiftsong",
       "jobName": "archer",
       "level": "22",
       "name": "SWIFTSONG"
     },
     "sword_oath": {
-      "iconPath": "images/jobs/action/paladin/30/sword_oath.png",
+      "iconPath": "/images/jobs/action/paladin/30/sword_oath.png",
       "id": "sword_oath",
       "jobName": "paladin",
       "level": "30",
       "name": "SWORD OATH"
     },
     "synastry": {
-      "iconPath": "images/jobs/action/astrologian/50/synastry.png",
+      "iconPath": "/images/jobs/action/astrologian/50/synastry.png",
       "id": "synastry",
       "jobName": "astrologian",
       "level": "50",
       "name": "SYNASTRY"
     },
     "syphon_strike": {
-      "iconPath": "images/jobs/action/dark_knight/12/syphon_strike.png",
+      "iconPath": "/images/jobs/action/dark_knight/12/syphon_strike.png",
       "id": "syphon_strike",
       "jobName": "dark_knight",
       "level": "12",
       "name": "SYPHON STRIKE"
     },
     "system_configuration": {
-      "iconPath": "images/jobs/action/main_menu/00/system_configuration.png",
+      "iconPath": "/images/jobs/action/main_menu/00/system_configuration.png",
       "id": "system_configuration",
       "jobName": "main_menu",
       "level": "00",
       "name": "SYSTEM CONFIGURATION"
     },
     "target_back": {
-      "iconPath": "images/jobs/action/general/00/target_back.png",
+      "iconPath": "/images/jobs/action/general/00/target_back.png",
       "id": "target_back",
       "jobName": "general",
       "level": "00",
       "name": "TARGET BACK"
     },
     "target_forward": {
-      "iconPath": "images/jobs/action/general/00/target_forward.png",
+      "iconPath": "/images/jobs/action/general/00/target_forward.png",
       "id": "target_forward",
       "jobName": "general",
       "level": "00",
       "name": "TARGET FORWARD"
     },
     "teleport": {
-      "iconPath": "images/jobs/action/general/00/teleport.png",
+      "iconPath": "/images/jobs/action/general/00/teleport.png",
       "id": "teleport",
       "jobName": "general",
       "level": "00",
       "name": "TELEPORT"
     },
     "tempered_will": {
-      "iconPath": "images/jobs/action/gladiator/42/tempered_will.png",
+      "iconPath": "/images/jobs/action/gladiator/42/tempered_will.png",
       "id": "tempered_will",
       "jobName": "gladiator",
       "level": "42",
       "name": "TEMPERED WILL"
     },
     "ten": {
-      "iconPath": "images/jobs/action/ninja/30/ten.png",
+      "iconPath": "/images/jobs/action/ninja/30/ten.png",
       "id": "ten",
       "jobName": "ninja",
       "level": "30",
       "name": "TEN"
     },
     "testudo": {
-      "iconPath": "images/jobs/action/pvp/00/testudo.png",
+      "iconPath": "/images/jobs/action/pvp/00/testudo.png",
       "id": "testudo",
       "jobName": "pvp",
       "level": "00",
       "name": "TESTUDO"
     },
     "tetragrammaton": {
-      "iconPath": "images/jobs/action/white_mage/60/tetragrammaton.png",
+      "iconPath": "/images/jobs/action/white_mage/60/tetragrammaton.png",
       "id": "tetragrammaton",
       "jobName": "white_mage",
       "level": "60",
       "name": "TETRAGRAMMATON"
     },
     "the_wanderer's_minuet": {
-      "iconPath": "images/jobs/action/bard/52/the_wanderer's_minuet.png",
+      "iconPath": "/images/jobs/action/bard/52/the_wanderer's_minuet.png",
       "id": "the_wanderer's_minuet",
       "jobName": "bard",
       "level": "52",
       "name": "THE WANDERER'S MINUET"
     },
     "the_warden's_paean": {
-      "iconPath": "images/jobs/action/bard/58/the_warden's_paean.png",
+      "iconPath": "/images/jobs/action/bard/58/the_warden's_paean.png",
       "id": "the_warden's_paean",
       "jobName": "bard",
       "level": "58",
       "name": "THE WARDEN'S PAEAN"
     },
     "thrill_of_battle": {
-      "iconPath": "images/jobs/action/marauder/34/thrill_of_battle.png",
+      "iconPath": "/images/jobs/action/marauder/34/thrill_of_battle.png",
       "id": "thrill_of_battle",
       "jobName": "marauder",
       "level": "34",
       "name": "THRILL OF BATTLE"
     },
     "thrill_of_war": {
-      "iconPath": "images/jobs/action/pvp/00/thrill_of_war.png",
+      "iconPath": "/images/jobs/action/pvp/00/thrill_of_war.png",
       "id": "thrill_of_war",
       "jobName": "pvp",
       "level": "00",
       "name": "THRILL OF WAR"
     },
     "throwing_dagger": {
-      "iconPath": "images/jobs/action/rogue/15/throwing_dagger.png",
+      "iconPath": "/images/jobs/action/rogue/15/throwing_dagger.png",
       "id": "throwing_dagger",
       "jobName": "rogue",
       "level": "15",
       "name": "THROWING DAGGER"
     },
     "thunder": {
-      "iconPath": "images/jobs/action/thaumaturge/06/thunder.png",
+      "iconPath": "/images/jobs/action/thaumaturge/06/thunder.png",
       "id": "thunder",
       "jobName": "thaumaturge",
       "level": "06",
       "name": "THUNDER"
     },
     "thunder_ii": {
-      "iconPath": "images/jobs/action/thaumaturge/22/thunder_ii.png",
+      "iconPath": "/images/jobs/action/thaumaturge/22/thunder_ii.png",
       "id": "thunder_ii",
       "jobName": "thaumaturge",
       "level": "22",
       "name": "THUNDER II"
     },
     "thunder_iii": {
-      "iconPath": "images/jobs/action/thaumaturge/46/thunder_iii.png",
+      "iconPath": "/images/jobs/action/thaumaturge/46/thunder_iii.png",
       "id": "thunder_iii",
       "jobName": "thaumaturge",
       "level": "46",
       "name": "THUNDER III"
     },
     "time_dilation": {
-      "iconPath": "images/jobs/action/astrologian/56/time_dilation.png",
+      "iconPath": "/images/jobs/action/astrologian/56/time_dilation.png",
       "id": "time_dilation",
       "jobName": "astrologian",
       "level": "56",
       "name": "TIME DILATION"
     },
     "timers": {
-      "iconPath": "images/jobs/action/main_menu/00/timers.png",
+      "iconPath": "/images/jobs/action/main_menu/00/timers.png",
       "id": "timers",
       "jobName": "main_menu",
       "level": "00",
       "name": "TIMERS"
     },
     "tomahawk": {
-      "iconPath": "images/jobs/action/marauder/15/tomahawk.png",
+      "iconPath": "/images/jobs/action/marauder/15/tomahawk.png",
       "id": "tomahawk",
       "jobName": "marauder",
       "level": "15",
       "name": "TOMAHAWK"
     },
     "tornado_kick": {
-      "iconPath": "images/jobs/action/monk/60/tornado_kick.png",
+      "iconPath": "/images/jobs/action/monk/60/tornado_kick.png",
       "id": "tornado_kick",
       "jobName": "monk",
       "level": "60",
       "name": "TORNADO KICK"
     },
     "touch_of_death": {
-      "iconPath": "images/jobs/action/pugilist/15/touch_of_death.png",
+      "iconPath": "/images/jobs/action/pugilist/15/touch_of_death.png",
       "id": "touch_of_death",
       "jobName": "pugilist",
       "level": "15",
       "name": "TOUCH OF DEATH"
     },
     "transpose": {
-      "iconPath": "images/jobs/action/thaumaturge/04/transpose.png",
+      "iconPath": "/images/jobs/action/thaumaturge/04/transpose.png",
       "id": "transpose",
       "jobName": "thaumaturge",
       "level": "04",
       "name": "TRANSPOSE"
     },
     "tri-bind": {
-      "iconPath": "images/jobs/action/summoner/40/tri-bind.png",
+      "iconPath": "/images/jobs/action/summoner/40/tri-bind.png",
       "id": "tri-bind",
       "jobName": "summoner",
       "level": "40",
       "name": "TRI-BIND"
     },
     "tri-disaster": {
-      "iconPath": "images/jobs/action/summoner/56/tri-disaster.png",
+      "iconPath": "/images/jobs/action/summoner/56/tri-disaster.png",
       "id": "tri-disaster",
       "jobName": "summoner",
       "level": "56",
       "name": "TRI-DISASTER"
     },
     "trick_attack": {
-      "iconPath": "images/jobs/action/rogue/50/trick_attack.png",
+      "iconPath": "/images/jobs/action/rogue/50/trick_attack.png",
       "id": "trick_attack",
       "jobName": "rogue",
       "level": "50",
       "name": "TRICK ATTACK"
     },
     "true_strike": {
-      "iconPath": "images/jobs/action/pugilist/02/true_strike.png",
+      "iconPath": "/images/jobs/action/pugilist/02/true_strike.png",
       "id": "true_strike",
       "jobName": "pugilist",
       "level": "02",
       "name": "TRUE STRIKE"
     },
     "true_thrust": {
-      "iconPath": "images/jobs/action/lancer/01/true_thrust.png",
+      "iconPath": "/images/jobs/action/lancer/01/true_thrust.png",
       "id": "true_thrust",
       "jobName": "lancer",
       "level": "01",
       "name": "TRUE THRUST"
     },
     "turret_retrieval": {
-      "iconPath": "images/jobs/action/machinist/40/turret_retrieval.png",
+      "iconPath": "/images/jobs/action/machinist/40/turret_retrieval.png",
       "id": "turret_retrieval",
       "jobName": "machinist",
       "level": "40",
       "name": "TURRET RETRIEVAL"
     },
     "twin_snakes": {
-      "iconPath": "images/jobs/action/pugilist/18/twin_snakes.png",
+      "iconPath": "/images/jobs/action/pugilist/18/twin_snakes.png",
       "id": "twin_snakes",
       "jobName": "pugilist",
       "level": "18",
       "name": "TWIN SNAKES"
     },
     "ui_settings": {
-      "iconPath": "images/jobs/action/main_menu/00/ui_settings.png",
+      "iconPath": "/images/jobs/action/main_menu/00/ui_settings.png",
       "id": "ui_settings",
       "jobName": "main_menu",
       "level": "00",
       "name": "UI SETTINGS"
     },
     "unchained": {
-      "iconPath": "images/jobs/action/warrior/40/unchained.png",
+      "iconPath": "/images/jobs/action/warrior/40/unchained.png",
       "id": "unchained",
       "jobName": "warrior",
       "level": "40",
       "name": "UNCHAINED"
     },
     "unleash": {
-      "iconPath": "images/jobs/action/dark_knight/8/unleash.png",
+      "iconPath": "/images/jobs/action/dark_knight/8/unleash.png",
       "id": "unleash",
       "jobName": "dark_knight",
       "level": "8",
       "name": "UNLEASH"
     },
     "unmend": {
-      "iconPath": "images/jobs/action/dark_knight/15/unmend.png",
+      "iconPath": "/images/jobs/action/dark_knight/15/unmend.png",
       "id": "unmend",
       "jobName": "dark_knight",
       "level": "15",
       "name": "UNMEND"
     },
     "user_macros": {
-      "iconPath": "images/jobs/action/main_menu/00/user_macros.png",
+      "iconPath": "/images/jobs/action/main_menu/00/user_macros.png",
       "id": "user_macros",
       "jobName": "main_menu",
       "level": "00",
       "name": "USER MACROS"
     },
     "vengeance": {
-      "iconPath": "images/jobs/action/marauder/46/vengeance.png",
+      "iconPath": "/images/jobs/action/marauder/46/vengeance.png",
       "id": "vengeance",
       "jobName": "marauder",
       "level": "46",
       "name": "VENGEANCE"
     },
     "venomous_bite": {
-      "iconPath": "images/jobs/action/archer/06/venomous_bite.png",
+      "iconPath": "/images/jobs/action/archer/06/venomous_bite.png",
       "id": "venomous_bite",
       "jobName": "archer",
       "level": "06",
       "name": "VENOMOUS BITE"
     },
     "virus": {
-      "iconPath": "images/jobs/action/arcanist/12/virus.png",
+      "iconPath": "/images/jobs/action/arcanist/12/virus.png",
       "id": "virus",
       "jobName": "arcanist",
       "level": "12",
       "name": "VIRUS"
     },
     "vorpal_thrust": {
-      "iconPath": "images/jobs/action/lancer/04/vorpal_thrust.png",
+      "iconPath": "/images/jobs/action/lancer/04/vorpal_thrust.png",
       "id": "vorpal_thrust",
       "jobName": "lancer",
       "level": "04",
       "name": "VORPAL THRUST"
     },
     "weapon_throw": {
-      "iconPath": "images/jobs/action/pvp/00/weapon_throw.png",
+      "iconPath": "/images/jobs/action/pvp/00/weapon_throw.png",
       "id": "weapon_throw",
       "jobName": "pvp",
       "level": "00",
       "name": "WEAPON THROW"
     },
     "wheeling_thrust": {
-      "iconPath": "images/jobs/action/dragoon/58/wheeling_thrust.png",
+      "iconPath": "/images/jobs/action/dragoon/58/wheeling_thrust.png",
       "id": "wheeling_thrust",
       "jobName": "dragoon",
       "level": "58",
       "name": "WHEELING THRUST"
     },
     "whispering_dawn": {
-      "iconPath": "images/jobs/action/eos/01/whispering_dawn.png",
+      "iconPath": "/images/jobs/action/eos/01/whispering_dawn.png",
       "id": "whispering_dawn",
       "jobName": "eos",
       "level": "01",
       "name": "WHISPERING DAWN"
     },
     "wide_volley": {
-      "iconPath": "images/jobs/action/archer/50/wide_volley.png",
+      "iconPath": "/images/jobs/action/archer/50/wide_volley.png",
       "id": "wide_volley",
       "jobName": "archer",
       "level": "50",
       "name": "WIDE VOLLEY"
     },
     "wildfire": {
-      "iconPath": "images/jobs/action/machinist/38/wildfire.png",
+      "iconPath": "/images/jobs/action/machinist/38/wildfire.png",
       "id": "wildfire",
       "jobName": "machinist",
       "level": "38",
       "name": "WILDFIRE"
     },
     "windbite": {
-      "iconPath": "images/jobs/action/archer/30/windbite.png",
+      "iconPath": "/images/jobs/action/archer/30/windbite.png",
       "id": "windbite",
       "jobName": "archer",
       "level": "30",
       "name": "WINDBITE"
     },
     "wither": {
-      "iconPath": "images/jobs/action/pvp/00/wither.png",
+      "iconPath": "/images/jobs/action/pvp/00/wither.png",
       "id": "wither",
       "jobName": "pvp",
       "level": "00",
@@ -3575,97 +3575,27 @@
       ]
     }
   },
-  "crossBarSets": {
-    "0": [
-      {
-        "LAD": {
-          "id": "benefic"
-        },
-        "LAL": {
-          "id": "aspected_benefic"
-        },
-        "LAR": {
-          "id": "benefic_ii"
-        },
-        "LAU": {
-          "id": "essential_dignity"
-        },
-        "LDD": {
-          "id": "royal_road"
-        },
-        "LDL": {
-          "id": "spread"
-        },
-        "LDR": {
-          "id": "shuffle"
-        },
-        "LDU": {
-          "id": "draw"
-        },
-        "RAD": {
-          "id": "helios"
-        },
-        "RAL": {
-          "id": "aspected_helios"
-        },
-        "RAR": {
-          "id": "synastry"
-        },
-        "RAU": {
-          "id": "cleric_stance",
-          "macroInfo": {
-            "macroSteps": [
-              "/macroicon \"Cleric Stance\"",
-              "/ac \"Cleric Stance\" <me>",
-              "/chotbar change 2"
-            ],
-            "name": "Switch to Cleric Stance"
-          }
-        },
-        "RDD": {
-          "id": "swiftcast"
-        },
-        "RDL": {
-          "id": "exalted_detriment"
-        },
-        "RDR": {
-          "id": "time_dilation"
-        },
-        "RDU": {
-          "id": "disable",
-          "macroInfo": {
-            "macroSteps": [
-              "/macroicon \"Disable\"",
-              "/ac \"Disable\" <t>",
-              "/ac \"Disable\" <tt>"
-            ],
-            "name": "Disable Target's Target"
-          }
-        },
-        "setNumber": 1,
-        "type": "standard"
-      }
-    ]
-  },
   "sets": {
     "setMeta": {
       "0": {
         "crossBarsId": "0",
+        "kitId": "0",
         "description": "It's my astrologian set!",
         "editable": false,
         "job": "astrologian",
         "stars": 3,
         "name": "The Astrologian"
       },
-     "1": {
+      "1": {
         "crossBarsId": "1",
+        "kitId": "1",
         "description": "It's my bard set!",
         "editable": false,
         "job": "bard",
         "stars": 5,
         "name": "The Bard"
       }
-  },
+    },
     "setCrossBars": {
       "0": [
         {
@@ -3740,68 +3670,60 @@
       "1": [
         {
           "LAD": {
-            "id": "benefic"
+            "id": "quick_nock"
           },
           "LAL": {
-            "id": "aspected_benefic"
+            "id": "rain_of_death"
           },
           "LAR": {
-            "id": "benefic_ii"
+            "id": "wide_volley"
           },
           "LAU": {
-            "id": "essential_dignity"
+            "id": "bloodletter"
           },
           "LDD": {
-            "id": "royal_road"
+            "id": "sidewinder"
           },
           "LDL": {
-            "id": "spread"
+            "id": "flaming_arrow",
+            "macroInfo": {
+              "macroSteps": [
+                "/macroicon \"Flaming Arrow\"",
+                "/ac \"Flaming Arrow\" <t>",
+                "/ac \"Flaming Arrow\""
+              ],
+              "name": "Flaming Arrow"
+            }
           },
           "LDR": {
-            "id": "shuffle"
+            "id": "iron_jaws"
           },
           "LDU": {
-            "id": "draw"
+            "id": "misery's_end"
           },
           "RAD": {
-            "id": "helios"
+            "id": "straight_shot"
           },
           "RAL": {
-            "id": "aspected_helios"
+            "id": "windbite"
           },
           "RAR": {
-            "id": "synastry"
+            "id": "heavy_shot"
           },
           "RAU": {
-            "id": "cleric_stance",
-            "macroInfo": {
-              "macroSteps": [
-                "/macroicon \"Cleric Stance\"",
-                "/ac \"Cleric Stance\" <me>",
-                "/chotbar change 2"
-              ],
-              "name": "Switch to Cleric Stance"
-            }
+            "id": "venomous_bite"
           },
           "RDD": {
-            "id": "swiftcast"
+            "id": "raging_strikes"
           },
           "RDL": {
-            "id": "exalted_detriment"
+            "id": "barrage"
           },
           "RDR": {
-            "id": "time_dilation"
+            "id": "empyreal_arrow"
           },
           "RDU": {
-            "id": "disable",
-            "macroInfo": {
-              "macroSteps": [
-                "/macroicon \"Disable\"",
-                "/ac \"Disable\" <t>",
-                "/ac \"Disable\" <tt>"
-              ],
-              "name": "Disable Target's Target"
-            }
+            "id": "hawk's_eye"
           },
           "setNumber": 1,
           "type": "standard"

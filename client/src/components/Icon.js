@@ -68,8 +68,6 @@ class Icon extends Component {
     ev.dataTransfer.effectAllowed = 'move';
     ev.dataTransfer.setData("text/html", ev.currentTarget);
     ev.dataTransfer.setData('text', JSON.stringify(this.props.icon));
-
-    console.log('sending icon: ', ev.dataTransfer.getData('text'));
   }
 
   renderEmpty() {

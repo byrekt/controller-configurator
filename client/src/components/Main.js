@@ -14,9 +14,7 @@ class Main extends Component {
               <Switch>
                 <Route exact={true} path='/' component={Home} />
                 <Route path={'/browse'} component={Browse} />
-                <Route path={'/kits/:action/:kitId'} component={CharacterSet} />
-                {/*<Route path='/astrologian' component={Astrologian} />
-          <Route path='/summoner' component={Summoner}/>*/}
+                <Route path={'/kits/:action/:kitId'} component={CharacterSet} />\
               </Switch>
             </main>
           </Col>
