@@ -4,12 +4,39 @@ import firebase from 'firebase';
 import firebaseui from 'firebaseui';
 import 'firebaseui/dist/firebaseui.css';
 import { connect } from 'react-redux';
-import { getJobData, getActions, getJobActions } from '../actions';
+import { getJobData, getActions, signIn, signOut, getUserInfo } from '../actions';
 
-import Header from '../components/Header';
+import styled from 'styled-components';
+
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import Main from '../components/Main';
 
+const StyledHeader = styled.header`
+  .dropdown-menu {
+    padding: 0;
+  }
 
+  .firebaseui-card-content {
+    padding: 0;
+
+    .firebaseui-idp-list {
+      margin: 0;
+
+      .firebaseui-list-item {
+        margin-bottom: 0;
+
+        .firebaseui-idp-button {
+          padding: 6px;
+
+          .firebaseui-idp-text {
+            padding-left: 6px;
+          }
+        }
+      }  
+    }
+  }
+`
 // Handle authentication
 const config = {
   apiKey: "AIzaSyBNA4TDCGW9PqU5hKchhpki6w92-Up34gs",
@@ -20,33 +47,20 @@ const config = {
   messagingSenderId: "138718965587"
 };
 // get instance of database
-const app = firebase.initializeApp(config);
+firebase.initializeApp(config);
 // Initialize firebase UI
 const authUi = new firebaseui.auth.AuthUI(firebase.auth());
-//const ref = firebase.database().ref('/lastAccess');
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    console.log('user is logged in: ', user);
-  } else {
-    console.log('user is not logged in: ', user);
-  }
-});
 class FirebaseUI extends Component {
   componentDidMount() {
-    var self = this;
-    var uiConfig = {
+    const uiConfig = {
       'callbacks': {
         'signInSuccess': function (user) {
-          if (self.props.onSignIn) {
-            self.props.onSignIn(user);
-          }
           return false;
         }
       },
       'signInOptions': [
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        firebase.auth.EmailAuthProvider.PROVIDER_ID
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID
       ]
     };
     authUi.start('#firebaseui-auth', uiConfig);
@@ -64,23 +78,62 @@ class FirebaseUI extends Component {
 }
 
 
+const Header = ({ authenticated, doSignOut }) => (
+  <StyledHeader>
+    <Navbar>
+      <Nav>
+        <LinkContainer exact={true} to="/">
+          <NavItem eventKey={1}>Home</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/browse">
+          <NavItem eventKey={2}>Browse Kits</NavItem>
+        </LinkContainer>
+        {!authenticated &&
+          <NavDropdown eventKey={3} title="Sign In" id="basic-nav-dropdown">
+            <FirebaseUI />
+          </NavDropdown>}
+        {authenticated &&
+          <NavDropdown eventKey={3} title="User Menu" id="basic-nav-dropdown">
+            <LinkContainer to="/">
+              <MenuItem eventKey={3.1}>My Kits</MenuItem>
+            </LinkContainer>
+            <MenuItem eventKey={3.2} onClick={doSignOut}>Log Out</MenuItem>
+          </NavDropdown>}
+      </Nav>
+    </Navbar>
+    {authenticated &&
+      <div className={'hidden'}>
+        <FirebaseUI />
+      </div>
+    }
+  </StyledHeader>
+);
+
 // Gets data from "API"s and stores them in the redux store using the
 
 class App extends Component {
 
   componentDidMount() {
-    const dispatch = this.props.dispatch;
 
-    dispatch(getJobData());
-    dispatch(getActions());
+    this.props.getJobs();
+    this.props.getAllActions();
+
+    this.doSignOut = this.props.doSignOut.bind(this);
+
+    //const ref = firebase.database().ref('/lastAccess');
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.props.doSignIn(user);
+
+      }
+    });
   };
 
   render() {
     return (
       <div>
-        <Header />
+        <Header authenticated={this.props.authentication.uid} doSignOut={this.doSignOut} />
         <Main />
-        <FirebaseUI />
       </div>
     );
   }
@@ -89,16 +142,43 @@ class App extends Component {
 App.propTypes = {
   jobData: PropTypes.object,
   actionData: PropTypes.object,
-  dispatch: PropTypes.func.isRequired
+  authentication: PropTypes.object,
+  userInfo: PropTypes.object
 };
 
+App.defaultProps = {
+  authentication: {}
+}
+
 function mapStateToProps(state) {
-  const { jobData, actionData } = state;
+  const { jobData, actionData, authentication, userInfo } = state;
 
   return {
     jobData,
-    actionData
+    actionData,
+    authentication,
+    userInfo
   }
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispatchToProps(dispatch) {
+  return {
+    doSignOut: () => {
+      dispatch(signOut(firebase));
+    },
+    doSignIn: (user) => {
+      dispatch(signIn(user));
+    },
+    getJobs: () => {
+      dispatch(getJobData());
+    },
+    getAllActions: () => {
+      dispatch(getActions());
+    },
+    getUserInfo: () => {
+      dispatch(getUserInfo());
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

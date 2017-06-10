@@ -99,3 +99,44 @@ export const getSets = (id) => dispatch => {
       dispatch(receiveSets(json));
     });
 };
+
+const authenticateUser = user => ({
+  type: types.AUTHENTICATE_USER,
+  authentication: user
+});
+
+export const signIn = user => dispatch => {
+  dispatch(authenticateUser(user));
+}
+
+// Action creator for unauthenticating users
+const unauthenticateUser = () => ({
+  type: types.UNAUTHENTICATE_USER,
+  authentication: {}
+});
+/**
+ * Retrieves the array of character sets for use on the browse page.
+ * @param {object} firebase reference to the firebase instance
+ */
+export const signOut = firebase => dispatch => {
+  return firebase.auth().signOut().then(() => {
+    dispatch(unauthenticateUser());
+  });
+};
+
+// Action creator for getting user info
+const retrieveUserInfo = (info) => ({
+  type: types.RETRIEVE_USER_INFO,
+  userInfo: info
+});
+/**
+ * Retrieves the user's info
+ * @param {string} uid user's ID
+ */
+export const getUserInfo = uid => dispatch => {
+  return fetch(`/api/getUserInfo/${uid}`)
+    .then(response => response.json())
+    .then(json => {
+      dispatch(retrieveUserInfo(json));
+    });
+};

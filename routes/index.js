@@ -107,4 +107,10 @@ router.get('/getSetsDetails/:job?', function (req, res, next) {
   }
 });
 
+router.get('/getUserInfo/:uid', function(req, res, next) {
+  database.ref(`/userInfo/${req.params.uid}`).once('value').then((snapshot) => {
+    res.json(snapshot.val());
+  });
+})
+
 module.exports = router;

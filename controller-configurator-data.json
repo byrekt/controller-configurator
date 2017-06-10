@@ -3580,6 +3580,8 @@
       "0": {
         "crossBarsId": "0",
         "kitId": "0",
+        "creatorID": "0jrwwNPjcbQ6H8nBvT3USLBsvLE2",
+        "creatorName": "Supernova Squirrel", 
         "description": "It's my astrologian set!",
         "editable": false,
         "job": "astrologian",
@@ -3590,6 +3592,8 @@
         "crossBarsId": "1",
         "kitId": "1",
         "description": "It's my bard set!",
+        "creatorID": "0jrwwNPjcbQ6H8nBvT3USLBsvLE2",
+        "creatorName": "Supernova Squirrel", 
         "editable": false,
         "job": "bard",
         "stars": 5,
@@ -3729,6 +3733,11 @@
           "type": "standard"
         }
       ]
+    }
+  },
+  "userInfo": {
+    "0jrwwNPjcbQ6H8nBvT3USLBsvLE2": {
+      "displayName": "Supernova Squirrel"
     }
   }
 }
