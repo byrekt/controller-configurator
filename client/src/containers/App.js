@@ -23,18 +23,13 @@ const config = {
 const app = firebase.initializeApp(config);
 // Initialize firebase UI
 const authUi = new firebaseui.auth.AuthUI(firebase.auth());
-const ref = firebase.database().ref('/');
+//const ref = firebase.database().ref('/lastAccess');
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    ref.set(firebase.database.ServerValue.TIMESTAMP).then((error) => {
-      if (error) {
-        console.error(error);
-      }
-      else {
-        console.log("Timestamp written");
-      }
-    });
+    console.log('user is logged in: ', user);
+  } else {
+    console.log('user is not logged in: ', user);
   }
 });
 class FirebaseUI extends Component {

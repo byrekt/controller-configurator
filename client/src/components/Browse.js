@@ -12,7 +12,7 @@ class Browse extends Component {
   render() {
     return (
       <Grid>
-        {this.props.sets.map((kit) => {
+        {this.props.sets && this.props.sets.map((kit) => {
           return <Row key={kit.kitId}>
             <Col xs={4}>
               <Link to={`/kits/view/${kit.kitId}`}> {kit.name}</Link>
