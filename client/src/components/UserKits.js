@@ -10,9 +10,13 @@ class UserKits extends Component {
     this.props.onUserKits(this.props.match.params.uid);
   }
   render() {
+
+    const kits = this.props.sets;
+
     return (
       <Grid>
-        {this.props.sets && this.props.sets.map((kit) => {
+        {kits && Object.keys(kits).map((kit) => {
+          kit = kits[kit];
           return <Row key={kit.kitId}>
             <Col xs={3}>
               <Link to={`/kits/view/${kit.kitId}`}> {kit.name}</Link>
@@ -22,7 +26,7 @@ class UserKits extends Component {
             </Col>
             <Col xs={3}>
               {kit.creatorName}
-            </Col> 
+            </Col>
             <Col xs={3}>
               {kit.stars}
             </Col>
@@ -33,7 +37,7 @@ class UserKits extends Component {
   }
 }
 UserKits.propTypes = {
-  sets: PropTypes.array,
+  sets: PropTypes.object,
   onUserKits: PropTypes.func.isRequired
 };
 UserKits.defaultProps = {

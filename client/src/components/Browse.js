@@ -10,9 +10,11 @@ class Browse extends Component {
     this.props.onFilterSets();
   }
   render() {
+    const kits = this.props.sets;
     return (
       <Grid>
-        {this.props.sets && this.props.sets.map((kit) => {
+        {kits && Object.keys(kits).map((kit) => {
+          kit = kits[kit];
           return <Row key={kit.kitId}>
             <Col xs={3}>
               <Link to={`/kits/view/${kit.kitId}`}> {kit.name}</Link>
@@ -33,7 +35,7 @@ class Browse extends Component {
   }
 }
 Browse.propTypes = {
-  sets: PropTypes.array,
+  sets: PropTypes.object,
   onFilterSets: PropTypes.func.isRequired
 };
 Browse.defaultProps = {

@@ -127,4 +127,44 @@ router.get('/userKits/:uid', (req, res, next) => {
 
 })
 
+// Creates a new kit
+router.post('/saveKit', (req, res, next) => {
+  const uid = req.body.uid;
+
+  // Ensure that a user is authenticated
+  if (!uid) {
+    console.log(req.body);
+    res.json({ error: 'User not authenticated' });
+  } else {
+    try {
+
+      const set = req.body.set;
+      const crossBars = set.crossBars;
+
+      // Remove crossbars from the set object since we only want to insert meta data
+      delete set.crossBars;
+
+      // Write set meta info to DB
+      const setsDBRef = database.ref('sets');
+      // If this kit already has an ID, that means we're updating it
+      const kitId = (req.body.set.kitId) ? req.body.set.kitId : setsDBRef.child('setMeta').push().key;
+
+      set.creatorID = uid;
+      set.kitId = kitId;
+
+      let updates = {};
+      updates[`/setMeta/${kitId}`] = set;
+      updates[`/setCrossBars/${kitId}`] = crossBars;
+
+      console.log(updates);
+      setsDBRef.update(updates);
+
+      res.json({ status: "OK", set: req.body });
+    } catch (err) {
+      console.log(err);
+      res.json({error: "server error"});
+    }
+  }
+})
+
 module.exports = router;
