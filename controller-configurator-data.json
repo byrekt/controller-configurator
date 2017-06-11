@@ -3580,7 +3580,7 @@
       "0": {
         "crossBarsId": "0",
         "kitId": "0",
-        "creatorID": "0jrwwNPjcbQ6H8nBvT3USLBsvLE2",
+        "creatorID": "zKyoDM9gFhMff4eR0VYJRHSNzns1",
         "creatorName": "Supernova Squirrel", 
         "description": "It's my astrologian set!",
         "editable": false,
@@ -3592,8 +3592,19 @@
         "crossBarsId": "1",
         "kitId": "1",
         "description": "It's my bard set!",
-        "creatorID": "0jrwwNPjcbQ6H8nBvT3USLBsvLE2",
+        "creatorID": "zKyoDM9gFhMff4eR0VYJRHSNzns1",
         "creatorName": "Supernova Squirrel", 
+        "editable": false,
+        "job": "bard",
+        "stars": 5,
+        "name": "The Bard"
+      }, 
+      "2": {
+        "crossBarsId": "1",
+        "kitId": "2",
+        "description": "It's my other bard set!",
+        "creatorID": "28J3SCXShZa92oJBC6c8KNtqSjv2",
+        "creatorName": "Bron Al'Moon", 
         "editable": false,
         "job": "bard",
         "stars": 5,
@@ -3732,12 +3743,77 @@
           "setNumber": 1,
           "type": "standard"
         }
+      ],
+      "2": [
+        {
+          "LAD": {
+            "id": "quick_nock"
+          },
+          "LAL": {
+            "id": "rain_of_death"
+          },
+          "LAR": {
+            "id": "wide_volley"
+          },
+          "LAU": {
+            "id": "bloodletter"
+          },
+          "LDD": {
+            "id": "sidewinder"
+          },
+          "LDL": {
+            "id": "flaming_arrow",
+            "macroInfo": {
+              "macroSteps": [
+                "/macroicon \"Flaming Arrow\"",
+                "/ac \"Flaming Arrow\" <t>",
+                "/ac \"Flaming Arrow\""
+              ],
+              "name": "Flaming Arrow"
+            }
+          },
+          "LDR": {
+            "id": "iron_jaws"
+          },
+          "LDU": {
+            "id": "misery's_end"
+          },
+          "RAD": {
+            "id": "straight_shot"
+          },
+          "RAL": {
+            "id": "windbite"
+          },
+          "RAR": {
+            "id": "heavy_shot"
+          },
+          "RAU": {
+            "id": "venomous_bite"
+          },
+          "RDD": {
+            "id": "raging_strikes"
+          },
+          "RDL": {
+            "id": "barrage"
+          },
+          "RDR": {
+            "id": "empyreal_arrow"
+          },
+          "RDU": {
+            "id": "hawk's_eye"
+          },
+          "setNumber": 1,
+          "type": "standard"
+        }
       ]
     }
   },
   "userInfo": {
-    "0jrwwNPjcbQ6H8nBvT3USLBsvLE2": {
+    "zKyoDM9gFhMff4eR0VYJRHSNzns1": {
       "displayName": "Supernova Squirrel"
+    },
+    "28J3SCXShZa92oJBC6c8KNtqSjv2": {
+      "displayname": "Bron Al'Moon"
     }
   }
 }

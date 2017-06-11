@@ -17,7 +17,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onFilterSets: (job) => {
-      console.log('getSets called');
       dispatch(getSets(job));
     }
   }

@@ -100,6 +100,18 @@ export const getSets = (id) => dispatch => {
     });
 };
 
+/**
+ * Retrieves the user's kits
+ * @param {string} uid user's ID
+ */
+export const getUserKits = uid => dispatch => {
+  return fetch(`/api/userKits/${uid}`)
+    .then(response => response.json())
+    .then(json => {
+      dispatch(receiveSets(json));
+    });
+};
+
 const authenticateUser = user => ({
   type: types.AUTHENTICATE_USER,
   authentication: user
@@ -140,3 +152,4 @@ export const getUserInfo = uid => dispatch => {
       dispatch(retrieveUserInfo(json));
     });
 };
+

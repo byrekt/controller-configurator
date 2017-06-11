@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 import { Grid, Row, Col } from 'react-bootstrap';
 
-class Browse extends Component {
+class UserKits extends Component {
 
   componentWillMount() {
-    this.props.onFilterSets();
+    this.props.onUserKits(this.props.match.params.uid);
   }
   render() {
     return (
@@ -22,7 +22,7 @@ class Browse extends Component {
             </Col>
             <Col xs={3}>
               {kit.creatorName}
-            </Col>
+            </Col> 
             <Col xs={3}>
               {kit.stars}
             </Col>
@@ -32,12 +32,12 @@ class Browse extends Component {
     );
   }
 }
-Browse.propTypes = {
+UserKits.propTypes = {
   sets: PropTypes.array,
-  onFilterSets: PropTypes.func.isRequired
+  onUserKits: PropTypes.func.isRequired
 };
-Browse.defaultProps = {
+UserKits.defaultProps = {
   sets: []
 }
 
-export default Browse;
+export default UserKits;

@@ -107,10 +107,24 @@ router.get('/getSetsDetails/:job?', function (req, res, next) {
   }
 });
 
-router.get('/getUserInfo/:uid', function(req, res, next) {
+router.get('/getUserInfo/:uid', function (req, res, next) {
   database.ref(`/userInfo/${req.params.uid}`).once('value').then((snapshot) => {
     res.json(snapshot.val());
   });
+});
+
+// Returns a user's list of sets
+router.get('/userKits/:uid', (req, res, next) => {
+  const setRef = database.ref(`/sets/setMeta`);
+
+  setRef.orderByChild('creatorID')
+    .startAt(req.params.uid)
+    .endAt(req.params.uid)
+    .once('value', (snapshot) => {
+      const sets = snapshot.val();
+      res.json(sets);
+    });
+
 })
 
 module.exports = router;

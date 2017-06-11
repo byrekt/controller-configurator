@@ -53,6 +53,7 @@ const authUi = new firebaseui.auth.AuthUI(firebase.auth());
 
 class FirebaseUI extends Component {
   componentDidMount() {
+    
     const uiConfig = {
       'callbacks': {
         'signInSuccess': function (user) {
@@ -60,8 +61,9 @@ class FirebaseUI extends Component {
         }
       },
       'signInOptions': [
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID
-      ]
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      ],
+      'signInFlow': 'popup'
     };
     authUi.start('#firebaseui-auth', uiConfig);
   }
@@ -94,7 +96,7 @@ const Header = ({ authenticated, doSignOut }) => (
           </NavDropdown>}
         {authenticated &&
           <NavDropdown eventKey={3} title="User Menu" id="basic-nav-dropdown">
-            <LinkContainer to="/">
+            <LinkContainer to={`/userKits/${authenticated}`}>
               <MenuItem eventKey={3.1}>My Kits</MenuItem>
             </LinkContainer>
             <MenuItem eventKey={3.2} onClick={doSignOut}>Log Out</MenuItem>
@@ -113,8 +115,8 @@ const Header = ({ authenticated, doSignOut }) => (
 
 class App extends Component {
 
-  componentDidMount() {
-
+  constructor(props) {
+    super(props);
     this.props.getJobs();
     this.props.getAllActions();
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import Browse from '../containers/Browse';
+import UserKits from '../containers/UserKits';
 import CharacterSet from '../containers/CharacterSet';
 import { Grid, Row, Col } from 'react-bootstrap';
 class Main extends Component {
@@ -14,7 +15,8 @@ class Main extends Component {
               <Switch>
                 <Route exact={true} path='/' component={Home} />
                 <Route path={'/browse'} component={Browse} />
-                <Route path={'/kits/:action/:kitId'} component={CharacterSet} />\
+                <Route path={'/kits/:action/:kitId'} component={CharacterSet} />
+                <Route path={'/userKits/:uid'} component={UserKits} />
               </Switch>
             </main>
           </Col>
