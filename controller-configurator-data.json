@@ -3695,6 +3695,7 @@
             "name" : "Disable Target's Target"
           }
         },
+        "description" : "This bar is for some stuff",
         "setNumber" : 1,
         "type" : "standard"
       }, {
@@ -3750,13 +3751,14 @@
         "RDU" : {
           "id" : "hawk's_eye"
         },
+        "description" : "This bar is for other stuff",
         "setNumber" : 2,
         "type" : "standard"
       } ]
     },
     "setMeta" : {
       "-KmMxEcwsnussXEHZRJF" : {
-        "creatorID" : "zKyoDM9gFhMff4eR0VYJRHSNzns1",
+        "creatorId" : "zKyoDM9gFhMff4eR0VYJRHSNzns1",
         "creatorName" : "Supernova Squirrel",
         "description" : "It's my astrologian set!",
         "job" : "astrologian",
@@ -3764,7 +3766,7 @@
         "name" : "The Astrologian"
       },
       "-KmMzNE-u3yuHl8SvM1N" : {
-        "creatorID" : "zKyoDM9gFhMff4eR0VYJRHSNzns1",
+        "creatorId" : "zKyoDM9gFhMff4eR0VYJRHSNzns1",
         "creatorName" : "Supernova Squirrel",
         "description" : "It's my bard set!",
         "job" : "bard",
@@ -3772,12 +3774,13 @@
         "name" : "The Bard"
       },
       "-KmN-1DoaGp07CDr8YaO" : {
-        "creatorID" : "28J3SCXShZa92oJBC6c8KNtqSjv2",
+        "creatorId" : "28J3SCXShZa92oJBC6c8KNtqSjv2",
         "creatorName" : "Bron Al'Moon",
         "description" : "It's a set that doesn't make sense! A bard astro hybrid!",
         "job" : "bard",
         "kitId" : "-KmN-1DoaGp07CDr8YaO",
-        "name" : "The Bard"
+        "name" : "The Bard",
+        "stars" : 5
       }
     }
   },
