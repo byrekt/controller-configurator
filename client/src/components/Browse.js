@@ -17,7 +17,7 @@ class Browse extends Component {
           kit = kits[kit];
           return <Row key={kit.kitId}>
             <Col xs={3}>
-              <Link to={`/kits/view/${kit.kitId}`}> {kit.name}</Link>
+              <Link to={`/kits/${kit.kitId}`}> {kit.name}</Link>
             </Col>
             <Col xs={3}>
               {kit.job}

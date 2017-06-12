@@ -5,11 +5,12 @@ import { getCharacterSet, clearCurrentKit } from '../actions';
 // Gets data from "API"s and stores them in the redux store using the
 
 function mapStateToProps(state) {
-  const { characterSet, actionData } = state;
+  const { characterSet, actionData, authentication } = state;
 
   return {
     characterSet: characterSet,
-    actionsData: actionData
+    actionsData: actionData,
+    authentication: authentication
   }
 }
 

@@ -1,25 +1,11 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { Popover, OverlayTrigger } from 'react-bootstrap';
+import { DragSource } from 'react-dnd';
 
 // Information should be in format provided by https://github.com/xivdb/api/blob/master/Content-Action.md
-
-const EmptyIcon = styled('div') `
-    height: 40px;
-    width: 40px;
-    background-color: rgba(155, 155, 155, 0.3);
-    border-radius: 5px;
-    box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
-  `;
-
 const ActionIcon = styled('div') `
-    height: 40px;
-    width: 40px;
-    margin: 3px 1px;
-
-    text-transform: capitalize;
-
     &.macro::after{
       color: black;
       content: "❃";
@@ -32,71 +18,46 @@ const ActionIcon = styled('div') `
     }
 `;
 
+const iconSource = {
+  beginDrag(props) {
+    console.log('begin drag', props);
+    return {
+      icon: props.icon
+    };
+  }
+}
+
+function collect(connect, monitor) {
+  return {
+    connectDragSource: connect.dragSource(),
+  }
+}
+
 class Icon extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      icon: this.props.icon,
-      macroInfo: this.props.macroInfo
-    }
-
-    this.updateIcon = this.updateIcon.bind(this);
-    this.dragIcon = this.dragIcon.bind(this);
-    this.preventDefault = this.preventDefault.bind(this);
-  }
-
-  // Updates the icon in presentation and also I guess updates the state at some point
-  preventDefault(event) {
-    event.preventDefault();
-  };
-
-  updateIcon(ev) {
-    console.log(ev);
-    ev.preventDefault();
-    if (this.props.isReplaceable || !this.state.icon) {
-      const icon = JSON.parse(ev.dataTransfer.getData('text'));
-
-      this.setState({
-        icon: icon
-      });
-    }
-  };
-  // Called when the icon is dragged
-  dragIcon(ev) {
-    ev.dataTransfer.effectAllowed = 'move';
-    ev.dataTransfer.setData("text/html", ev.currentTarget);
-    ev.dataTransfer.setData('text', JSON.stringify(this.props.icon));
-  }
-
-  renderEmpty() {
-    return (<EmptyIcon onDragOver={this.preventDefault} onDrop={this.updateIcon}></EmptyIcon>);
-  }
-
-  renderIcon(icon, macroInfo) {
+  getPopover(icon) {
     return (
-      <OverlayTrigger placement="right" trigger={['hover', 'focus']}
-        overlay={this.getPopover(icon, macroInfo)}>
-        <img draggable="true" onDragOver={this.preventDefault} onDrop={this.updateIcon} onDragStart={this.dragIcon} src={icon.iconPath} alt="" />
-      </OverlayTrigger>
-    )
-  }
-
-  getPopover(icon, macroInfo) {
-    return (
-      <Popover id={icon.id} title={(macroInfo) ? macroInfo.name : ''}>
-        {(macroInfo) ? <pre>{macroInfo.macroSteps.join('\n')}</pre> : `${icon.name} ${(icon.level !== '00') ? `lvl ${icon.level}` : ''}`}
+      <Popover id={icon.id} title={(icon.macroInfo) ? icon.macroInfo.name : ''}>
+        {(icon.macroInfo) ? <pre>{icon.macroInfo.macroSteps.join('\n')}</pre> : `${icon.name} ${(icon.level !== '00') ? `lvl ${icon.level}` : ''}`}
       </Popover>
     )
   }
 
-
   render() {
-    return (
-      <ActionIcon className={(this.state.icon && this.state.macroInfo) ? 'macro' : ''}>
-        {(this.state.icon) ? this.renderIcon(this.state.icon, this.state.macroInfo) : this.renderEmpty()}
-      </ActionIcon>
+    const { connectDragSource, isDragging } = this.props;
+    let icon = <span/>;
+    if (this.props.icon) {
+      icon = <OverlayTrigger placement="right" trigger={['hover', 'focus']}
+        overlay={this.getPopover(this.props.icon)}>
+          <img src={this.props.icon.iconPath} alt="" />
+      </OverlayTrigger>
+    } 
+    return connectDragSource(
+      <div>
+        <ActionIcon className={(this.props.icon && this.props.icon.macroInfo) ? 'macro' : ''}>
+          {icon}
+        </ActionIcon>
+      </div>
     );
   }
 }
@@ -112,7 +73,8 @@ Icon.propTypes = {
       macroSteps: PropTypes.arrayOf(PropTypes.string)
     })
   }),
-  isReplaceable: PropTypes.bool
+  connectDragSource: PropTypes.func.isRequired,
+  isDragging: PropTypes.bool.isRequired
 }
 
-export default Icon;
+export default DragSource('action', iconSource, collect)(Icon);
