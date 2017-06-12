@@ -43,6 +43,40 @@ class CharacterSet extends Component {
     if (props.match && props.match.params && props.match.params.kitId) {
       props.onSetChange(props.match.params.kitId);
     }
+
+    this.moveAction = this.moveAction.bind(this);
+  }
+
+  moveAction(fromIcon, fromMacroInfo, fromSetNumber, fromPos, toIcon, toMacroInfo, toSetNumber, toPos) {
+    let state = this.state;
+    const crossBars = this.state.characterSet.crossBars;
+
+    console.log(fromIcon, fromMacroInfo, fromSetNumber, fromPos, toIcon, toMacroInfo, toSetNumber, toPos);
+    let action;
+    // If the icon isn't from a set, that means it's from the palette, so anything we drag it over will be replaced
+    if (!fromSetNumber) {
+      action = 'replace';
+    // If the icon is from a set and it's dragged over another filled icon, swap the icons
+    } else if (toIcon) {
+      action = 'swap';
+    // If the toIcon is empty, move the icon from one spot to another, clearing out it's old position
+    } else if (!toIcon){
+      action = 'move';
+    // If none of the previous are true, that means we've dragged icon off the bar and we need to delete the icon
+    } else {
+      action = 'clear';
+    }
+
+    console.log('action is: ', action);
+
+    // const crossBarIndex = crossBars.map((bar) => bar.setNumber).indexOf(setNumber);
+    // console.log('Moving', icon, 'to', pos, 'in', setNumber, 'aka index', crossBarIndex);
+
+    // state.characterSet.crossBars[crossBarIndex][pos] = {id: icon};
+    // if (macroInfo) {
+    //     state.characterSet.crossBars[crossBarIndex][pos].macroInfo = macroInfo;
+    // }
+    // this.setState(state);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -95,7 +129,7 @@ class CharacterSet extends Component {
                     {this.props.characterSet && this.props.actionsData && this.props.characterSet.crossBars &&
                       this.props.characterSet.crossBars.map((bar, index) => {
                         return (
-                          <CrossHotBar key={index} bar={bar} actionsData={this.props.actionsData} />
+                          <CrossHotBar key={index} bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction}/>
                         )
                       })
                     }
