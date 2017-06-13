@@ -117,7 +117,7 @@ router.get('/getUserInfo/:uid', function (req, res, next) {
 router.get('/userKits/:uid', (req, res, next) => {
   const setRef = database.ref(`/sets/setMeta`);
 
-  setRef.orderByChild('creatorID')
+  setRef.orderByChild('creatorId')
     .startAt(req.params.uid)
     .endAt(req.params.uid)
     .once('value', (snapshot) => {
@@ -149,7 +149,7 @@ router.post('/saveKit', (req, res, next) => {
       // If this kit already has an ID, that means we're updating it
       const kitId = (req.body.set.kitId) ? req.body.set.kitId : setsDBRef.child('setMeta').push().key;
 
-      set.creatorID = uid;
+      set.creatorId = uid;
       set.kitId = kitId;
 
       let updates = {};
