@@ -44,6 +44,8 @@ class CharacterSet extends Component {
       props.onSetChange(props.match.params.kitId);
     }
 
+    this.state = { characterSet: props.characterSet };
+
     this.moveAction = this.moveAction.bind(this);
   }
 
@@ -56,18 +58,40 @@ class CharacterSet extends Component {
     // If the icon isn't from a set, that means it's from the palette, so anything we drag it over will be replaced
     if (!fromSetNumber) {
       action = 'replace';
-    // If the icon is from a set and it's dragged over another filled icon, swap the icons
+      // If the icon is from a set and it's dragged over another filled icon, swap the icons
     } else if (toIcon) {
       action = 'swap';
-    // If the toIcon is empty, move the icon from one spot to another, clearing out it's old position
-    } else if (!toIcon){
+      // If the toIcon is empty, move the icon from one spot to another, clearing out it's old position
+    } else if (!toIcon) {
       action = 'move';
-    // If none of the previous are true, that means we've dragged icon off the bar and we need to delete the icon
+      // If none of the previous are true, that means we've dragged icon off the bar and we need to delete the icon
     } else {
       action = 'clear';
     }
 
     console.log('action is: ', action);
+
+    switch (action) {
+      case 'replace':
+        // TODO rewrite these using immutability-helpers
+        const state = this.state;
+        const toBarIndex = state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(toSetNumber);
+        state.characterSet.crossBars[toBarIndex][toPos] = { id: fromIcon };
+        if (fromMacroInfo) {
+          state.characterSet.crossBars[toBarIndex][toPos].macroInfo = fromMacroInfo;
+        }
+        this.setState(state);
+        console.log('state updated to: ', state);
+        break;
+      case 'swap':
+
+        break;
+      case 'move':
+
+        break;
+      default:
+
+    }
 
     // const crossBarIndex = crossBars.map((bar) => bar.setNumber).indexOf(setNumber);
     // console.log('Moving', icon, 'to', pos, 'in', setNumber, 'aka index', crossBarIndex);
@@ -95,17 +119,19 @@ class CharacterSet extends Component {
       }
     } else {
       this.setState({
-        characterSet: { crossBars: [{ setNumber: 1 }] },
         mode: 'create'
       });
     }
   }
-
+  componentWillUpdate(nextProps, nextState) {
+    console.log('component should update: ', nextProps, nextState);
+  }
   componentWillUnmount() {
     this.props.clearCurrentKit();
   }
 
   render() {
+    console.log('state in render: ', this.state, this.moveAction);
     return (
       <div>
         {this.state &&
@@ -126,21 +152,21 @@ class CharacterSet extends Component {
                 }
                 <Row>
                   <Col xs={12}>
-                    {this.props.characterSet && this.props.actionsData && this.props.characterSet.crossBars &&
-                      this.props.characterSet.crossBars.map((bar, index) => {
-                        return (
-                          <CrossHotBar key={index} bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction}/>
-                        )
-                      })
+                    {this.state.characterSet.crossBars && this.state.characterSet.crossBars.map((bar, index) => {
+                      console.log('bar', index, ' in render: ', bar);
+                      return (
+                        <CrossHotBar key={index} bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} />
+                      )
+                    })
                     }
                   </Col>
                 </Row>
               </Grid>
             </Col>
             <Col xs={4}>
-              {this.props.characterSet.job &&
+              {this.state.characterSet.job &&
                 //this.props.characterSet.editable &&
-                <Palette defaultPaletteId={this.props.characterSet.job} />
+                <Palette defaultPaletteId={this.state.characterSet.job} />
               }
             </Col>
           </Row>
@@ -175,6 +201,11 @@ CharacterSet.propTypes = {
   actionsData: PropTypes.object,
   onSetChange: PropTypes.func.isRequired,
   clearCurrentKit: PropTypes.func.isRequired
+}
+
+CharacterSet.defaultProps = {
+  actionsData: {},
+  characterSet: { name: '', crossBars: [{ setNumber: 1 }] }
 }
 
 export default DragDropContext(HTML5Backend)(CharacterSet);

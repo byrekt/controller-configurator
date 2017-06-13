@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "files": [],
+        "module": "amd",
+        "target": "ES7"
+    }
+}
