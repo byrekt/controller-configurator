@@ -4,8 +4,19 @@ import styled from 'styled-components';
 import { DropTarget } from 'react-dnd';
 
 const iconTarget = {
-  drop(props, monitor) {
-    console.log(props, monitor.getItem());
+  drop(props, monitor, component) {
+    console.log('iconTarget: ', props, monitor.getItem(), component);
+    const item = monitor.getItem();
+    const target = component.props.children;
+    props.moveAction(
+      item.iconId,
+      item.macroInfo,
+      item.setNumber,
+      item.position,
+      (target) ? target.props.icon.id : null,
+      (target && target.props.icon && target.props.icon.macroInfo) ? target.props.icon.macroInfo : null,
+      component.props.setNumber,
+      component.props.position);
   }
 };
 

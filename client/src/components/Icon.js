@@ -22,7 +22,10 @@ const iconSource = {
   beginDrag(props) {
     console.log('begin drag', props);
     return {
-      icon: props.icon
+      iconId: props.icon.id,
+      macroInfo: props.icon.macroInfo,
+      setNumber: props.setNumber,
+      position: props.position
     };
   }
 }
@@ -51,7 +54,7 @@ class Icon extends Component {
         overlay={this.getPopover(this.props.icon)}>
           <img src={this.props.icon.iconPath} alt="" />
       </OverlayTrigger>
-    } 
+    }
     return connectDragSource(
       <div>
         <ActionIcon className={(this.props.icon && this.props.icon.macroInfo) ? 'macro' : ''}>
@@ -73,8 +76,9 @@ Icon.propTypes = {
       macroSteps: PropTypes.arrayOf(PropTypes.string)
     })
   }),
+  setNumber: PropTypes.number,
+  position: PropTypes.string,
   connectDragSource: PropTypes.func.isRequired,
-  isDragging: PropTypes.bool.isRequired
 }
 
 export default DragSource('action', iconSource, collect)(Icon);
