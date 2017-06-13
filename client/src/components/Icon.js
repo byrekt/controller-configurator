@@ -27,6 +27,11 @@ const iconSource = {
       setNumber: props.setNumber,
       position: props.position
     };
+  },
+  endDrag(props, monitor) {
+    if (!monitor.didDrop()) {
+      props.clearAction(props.setNumber, props.position);
+    }
   }
 }
 
@@ -48,11 +53,11 @@ class Icon extends Component {
 
   render() {
     const { connectDragSource, isDragging } = this.props;
-    let icon = <span/>;
-    if (this.props.icon) {
+    let icon = <span />;
+    if (this.props.icon && this.props.icon !== 'empty') {
       icon = <OverlayTrigger placement="right" trigger={['hover', 'focus']}
         overlay={this.getPopover(this.props.icon)}>
-          <img src={this.props.icon.iconPath} alt="" />
+        <img src={this.props.icon.iconPath} alt="" />
       </OverlayTrigger>
     }
     return connectDragSource(

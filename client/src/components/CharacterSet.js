@@ -47,6 +47,15 @@ class CharacterSet extends Component {
     this.state = { characterSet: props.characterSet };
 
     this.moveAction = this.moveAction.bind(this);
+    this.clearAction = this.clearAction.bind(this);
+  }
+
+  clearAction(setNumber, position) {
+    let state = this.state;
+    const crossBars = this.state.characterSet.crossBars;
+    const fromBarIndex = state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(setNumber);
+    delete state.characterSet.crossBars[fromBarIndex][position];
+    this.setState(state);
   }
 
   moveAction(fromIcon, fromMacroInfo, fromSetNumber, fromPos, toIcon, toMacroInfo, toSetNumber, toPos) {
@@ -65,42 +74,46 @@ class CharacterSet extends Component {
     } else if (!toIcon) {
       action = 'move';
       // If none of the previous are true, that means we've dragged icon off the bar and we need to delete the icon
-    } else {
-      action = 'clear';
-    }
+    } 
 
     console.log('action is: ', action);
+
+    const toBarIndex = (toSetNumber) ? state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(toSetNumber) : -1;
+    const fromBarIndex = (fromSetNumber) ? state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(fromSetNumber) : -1;
 
     switch (action) {
       case 'replace':
         // TODO rewrite these using immutability-helpers
-        const state = this.state;
-        const toBarIndex = state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(toSetNumber);
         state.characterSet.crossBars[toBarIndex][toPos] = { id: fromIcon };
         if (fromMacroInfo) {
           state.characterSet.crossBars[toBarIndex][toPos].macroInfo = fromMacroInfo;
         }
         this.setState(state);
-        console.log('state updated to: ', state);
         break;
       case 'swap':
-
+        state.characterSet.crossBars[toBarIndex][toPos] = { id: fromIcon };
+        if (fromMacroInfo) {
+          state.characterSet.crossBars[toBarIndex][toPos].macroInfo = fromMacroInfo;
+        }
+        state.characterSet.crossBars[fromBarIndex][fromPos] = { id: toIcon };
+        if (toMacroInfo) {
+          state.characterSet.crossBars[fromBarIndex][fromPos].macroInfo = toMacroInfo;
+        }
+        this.setState(state);
         break;
       case 'move':
-
+        state.characterSet.crossBars[toBarIndex][toPos] = { id: fromIcon };
+        if (fromMacroInfo) {
+          state.characterSet.crossBars[toBarIndex][toPos].macroInfo = fromMacroInfo;
+        }
+        console.log('attempting to delete ', state.characterSet.crossBars[fromBarIndex][fromPos])
+        delete state.characterSet.crossBars[fromBarIndex][fromPos];
+        console.log('deleted?', state.characterSet.crossBars[fromBarIndex][fromPos])
+        console.log('stateAfterDelete: ', state);
+        this.setState(state);
         break;
       default:
-
     }
-
-    // const crossBarIndex = crossBars.map((bar) => bar.setNumber).indexOf(setNumber);
-    // console.log('Moving', icon, 'to', pos, 'in', setNumber, 'aka index', crossBarIndex);
-
-    // state.characterSet.crossBars[crossBarIndex][pos] = {id: icon};
-    // if (macroInfo) {
-    //     state.characterSet.crossBars[crossBarIndex][pos].macroInfo = macroInfo;
-    // }
-    // this.setState(state);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -155,7 +168,7 @@ class CharacterSet extends Component {
                     {this.state.characterSet.crossBars && this.state.characterSet.crossBars.map((bar, index) => {
                       console.log('bar', index, ' in render: ', bar);
                       return (
-                        <CrossHotBar key={index} bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} />
+                        <CrossHotBar key={index} bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} clearAction={this.clearAction}/>
                       )
                     })
                     }
