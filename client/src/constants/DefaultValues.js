@@ -1,0 +1,1 @@
+export const DEFAULT_SET =  { name: '', description: '', crossBars: [{ setNumber: 1 }], job: 'astrologian' };
