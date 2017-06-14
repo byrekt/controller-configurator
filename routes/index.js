@@ -162,7 +162,7 @@ router.post('/saveKit', (req, res, next) => {
       res.json({ status: "OK", set: req.body });
     } catch (err) {
       console.log(err);
-      res.json({error: "server error"});
+      res.json({ error: "server error" });
     }
   }
 })
