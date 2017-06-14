@@ -1,4 +1,5 @@
 import * as types from '../constants/ActionTypes';
+import { DEFAULT_SET } from '../constants/DefaultValues';
 
 // Action creator for job data
 const receiveJobData = jobData => ({
@@ -62,6 +63,10 @@ const receiveCharacterSet = characterSet => ({
  * @param {number|string} id the ID of the set to retrieve
  */
 export const getCharacterSet = (id) => dispatch => {
+  if (!id) {
+    dispatch(receiveCharacterSet(DEFAULT_SET));
+    return;
+  }
   return fetch(`/api/getSet/${id}`)
     .then(response => response.json())
     .then(json => {

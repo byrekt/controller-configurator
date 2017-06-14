@@ -60,7 +60,6 @@ class Palette extends Component {
   }
 
   handleChange(event) {
-    console.log('EVENT', event.target.value);
     this.setState({ selectedPaletteId: event.target.value });
     this.props.onJobChange(event.target.value);
   }

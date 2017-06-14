@@ -5,7 +5,6 @@ import { DropTarget } from 'react-dnd';
 
 const iconTarget = {
   drop(props, monitor, component) {
-    console.log('iconTarget: ', props, monitor.getItem(), component);
     const item = monitor.getItem();
     const target = component.props.children;
     props.moveAction(
@@ -37,6 +36,10 @@ const Container = styled('div') `
     img {
       margin-top: -1px;
       margin-left: -3px;
+    }
+
+    >div {
+      height: 44px;
     }
   `;
 

@@ -96,6 +96,9 @@ const Header = ({ authenticated, doSignOut }) => (
           </NavDropdown>}
         {authenticated &&
           <NavDropdown eventKey={3} title="User Menu" id="basic-nav-dropdown">
+            <LinkContainer to={`/newKit`}>
+              <MenuItem eventKey={3.1}>New Kit</MenuItem>
+            </LinkContainer>
             <LinkContainer to={`/userKits/${authenticated}`}>
               <MenuItem eventKey={3.1}>My Kits</MenuItem>
             </LinkContainer>

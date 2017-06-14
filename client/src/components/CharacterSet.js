@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import update from 'react-addons-update';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-bootstrap';
 import Icon from './Icon';
@@ -38,20 +39,53 @@ class CharacterSet extends Component {
 
   constructor(props) {
     super(props);
-
     // If a kitID is present, display the corresponding kit
     if (props.match && props.match.params && props.match.params.kitId) {
       props.onSetChange(props.match.params.kitId);
+    } else {
+      props.onSetChange();
     }
 
     this.state = { characterSet: props.characterSet };
 
     this.moveAction = this.moveAction.bind(this);
     this.clearAction = this.clearAction.bind(this);
+    this.onSetNameChange = this.onSetNameChange.bind(this);
+    this.onSetDescriptionChange = this.onSetDescriptionChange.bind(this);
+    this.addBar = this.addBar.bind(this);
+  }
+
+
+  componentWillReceiveProps(nextProps) {
+    console.log('flurp nextProps', nextProps);
+    if (nextProps.match.params.kitId) {
+      if (nextProps.authentication.uid === nextProps.characterSet.creatorId) {
+        this.setState({
+          characterSet: nextProps.characterSet,
+          mode: 'edit'
+        });
+      } else {
+        this.setState({
+          characterSet: nextProps.characterSet,
+          mode: 'view'
+        });
+      }
+    } else {
+      this.setState({
+        characterSet: nextProps.characterSet,
+        mode: 'create'
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    console.log('flurp clearing current kit');
+    this.props.clearCurrentKit();
   }
 
   clearAction(setNumber, position) {
     let state = this.state;
+    if (state.mode === 'view') return;
     const crossBars = this.state.characterSet.crossBars;
     const fromBarIndex = state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(setNumber);
     delete state.characterSet.crossBars[fromBarIndex][position];
@@ -60,9 +94,10 @@ class CharacterSet extends Component {
 
   moveAction(fromIcon, fromMacroInfo, fromSetNumber, fromPos, toIcon, toMacroInfo, toSetNumber, toPos) {
     let state = this.state;
+
+    if (state.mode === 'view') return;
     const crossBars = this.state.characterSet.crossBars;
 
-    console.log(fromIcon, fromMacroInfo, fromSetNumber, fromPos, toIcon, toMacroInfo, toSetNumber, toPos);
     let action;
     // If the icon isn't from a set, that means it's from the palette, so anything we drag it over will be replaced
     if (!fromSetNumber) {
@@ -74,9 +109,7 @@ class CharacterSet extends Component {
     } else if (!toIcon) {
       action = 'move';
       // If none of the previous are true, that means we've dragged icon off the bar and we need to delete the icon
-    } 
-
-    console.log('action is: ', action);
+    }
 
     const toBarIndex = (toSetNumber) ? state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(toSetNumber) : -1;
     const fromBarIndex = (fromSetNumber) ? state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(fromSetNumber) : -1;
@@ -106,45 +139,48 @@ class CharacterSet extends Component {
         if (fromMacroInfo) {
           state.characterSet.crossBars[toBarIndex][toPos].macroInfo = fromMacroInfo;
         }
-        console.log('attempting to delete ', state.characterSet.crossBars[fromBarIndex][fromPos])
         delete state.characterSet.crossBars[fromBarIndex][fromPos];
-        console.log('deleted?', state.characterSet.crossBars[fromBarIndex][fromPos])
-        console.log('stateAfterDelete: ', state);
         this.setState(state);
         break;
       default:
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  onSetNameChange(e) {
+    this.setState({
+      characterSet: update(this.state.characterSet, { name: { $set: e.target.value } })
+    });
+  }
+  onSetDescriptionChange(e) {
+    this.setState({
+      characterSet: update(this.state.characterSet, { description: { $set: e.target.value } })
+    });
+  }
 
-    if (Object.keys(nextProps.characterSet).length) {
-      if (nextProps.authentication.uid === nextProps.characterSet.creatorId) {
-        this.setState({
-          characterSet: nextProps.characterSet,
-          mode: 'edit'
-        });
-      } else {
-        this.setState({
-          characterSet: nextProps.characterSet,
-          mode: 'view'
-        });
+  addBar(setNumber) {
+    const emptyBar = { setNumber: setNumber };
+    this.setState({
+      characterSet: update(this.state.characterSet, {
+        crossBars: { $push: [emptyBar] }
+      })
+    });
+  }
+
+  renderAddBarButtons() {
+    let buttons = [];
+    if (!this.state.characterSet || !this.state.characterSet.crossBars) return;
+
+    const crossBarsSetNumbers = this.state.characterSet.crossBars.map(bar => bar.setNumber);
+    for (let i = 1; i <= 8; ++i) {
+      if (crossBarsSetNumbers.indexOf(i) < 0) {
+        buttons.push(<button key={i} onClick={() => { this.addBar(i) }}>Add {i}</button>);
       }
-    } else {
-      this.setState({
-        mode: 'create'
-      });
     }
-  }
-  componentWillUpdate(nextProps, nextState) {
-    console.log('component should update: ', nextProps, nextState);
-  }
-  componentWillUnmount() {
-    this.props.clearCurrentKit();
+    return buttons;
   }
 
   render() {
-    console.log('state in render: ', this.state, this.moveAction);
+    console.log('flurp state in render: ', this.state);
     return (
       <div>
         {this.state &&
@@ -153,32 +189,62 @@ class CharacterSet extends Component {
               <Grid>
                 <Row>
                   <Col xs={12}>
-                    {this.state.characterSet.name}
+                    {this.state.mode === 'view' && this.state.characterSet.name}
+                    {(this.state.mode === 'create' || this.state.mode === 'edit') &&
+                      <div>
+                        <label htmlFor="set-name">Set Name:</label>
+                        <input id="set-name" type="text" onChange={this.onSetNameChange} value={(this.state.characterSet) ? this.state.characterSet.name : ''} />
+                      </div>
+                    }
                   </Col>
                 </Row>
-                {this.state.characterSet.description &&
-                  <Row>
-                    <Col xs={12}>
-                      {this.state.characterSet.description}
-                    </Col>
-                  </Row>
-                }
                 <Row>
                   <Col xs={12}>
-                    {this.state.characterSet.crossBars && this.state.characterSet.crossBars.map((bar, index) => {
-                      console.log('bar', index, ' in render: ', bar);
-                      return (
-                        <CrossHotBar key={index} bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} clearAction={this.clearAction}/>
-                      )
-                    })
+                    {this.state.mode === 'view' && this.state.characterSet.description}
+                    {(this.state.mode === 'create' || this.state.mode === 'edit') &&
+                      <div>
+                        <label htmlFor="set-description">Set Description:</label>
+                        <input id="set-description" type="text" onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
+                      </div>
                     }
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12}>
+                    {this.state.characterSet && this.state.characterSet.crossBars && this.state.characterSet.crossBars.sort((a, b) => a.setNumber - b.setNumber).map((bar, index) => {
+                      return (
+                        <div key={index}>
+                          <Row>
+                            <Col xs={12} className="center-block">
+                              <h4>
+                                Set {bar.setNumber}
+                              </h4>
+                            </Col>
+                          </Row>
+                          {bar.description &&
+                            <Row>
+                              <Col xs={12}>
+                                {bar.description}
+                              </Col>
+                            </Row>
+                          }
+                          <CrossHotBar bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} clearAction={this.clearAction} />
+                        </div>
+                      )
+                    })}
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12}>
+                    <h4>Add Bars</h4>
+
+                    {this.renderAddBarButtons()}
                   </Col>
                 </Row>
               </Grid>
             </Col>
             <Col xs={4}>
-              {this.state.characterSet.job &&
-                //this.props.characterSet.editable &&
+              {this.state.characterSet && this.state.characterSet.job && (this.state.mode === 'create' || this.state.mode === 'edit') &&
                 <Palette defaultPaletteId={this.state.characterSet.job} />
               }
             </Col>
@@ -214,11 +280,6 @@ CharacterSet.propTypes = {
   actionsData: PropTypes.object,
   onSetChange: PropTypes.func.isRequired,
   clearCurrentKit: PropTypes.func.isRequired
-}
-
-CharacterSet.defaultProps = {
-  actionsData: {},
-  characterSet: { name: '', crossBars: [{ setNumber: 1 }] }
 }
 
 export default DragDropContext(HTML5Backend)(CharacterSet);

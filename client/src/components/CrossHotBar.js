@@ -82,21 +82,8 @@ class CrossHotBar extends Component {
     }
 
     render() {
-        console.log('CrossHotBar is being rerendered with: ', this.props.bar.setNumber, this.state)
         return (
             <div>
-                <Row>
-                    <Col xs={12} className="center-block">
-                        <h4>
-                            Set {this.props.bar.setNumber}
-                        </h4>
-                    </Col>
-                </Row>
-                {this.props.bar.description && <Row>
-                    <Col xs={12}>
-                        {this.props.bar.description}
-                    </Col>
-                </Row>}
                 <Row>
                     <Col xs={12}>
                         <CrossContainer>

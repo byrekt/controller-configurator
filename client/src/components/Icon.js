@@ -7,20 +7,19 @@ import { DragSource } from 'react-dnd';
 // Information should be in format provided by https://github.com/xivdb/api/blob/master/Content-Action.md
 const ActionIcon = styled('div') `
     &.macro::after{
-      color: black;
+      color: white;
       content: "❃";
       text-shadow: 2px 2px 8px white;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 16px;
       position: relative;
       bottom: 52px;
-      left: 30px;
+      left: 28px;
     }
 `;
 
 const iconSource = {
   beginDrag(props) {
-    console.log('begin drag', props);
     return {
       iconId: props.icon.id,
       macroInfo: props.icon.macroInfo,

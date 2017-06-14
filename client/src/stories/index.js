@@ -23,7 +23,6 @@ const foeRequiem = ActionList.filter((action => action.id === 115))[0];
 const bardJob = Jobs.filter(job => job.icon === 'bard')[0];
 const bardAbilities = ActionList.filter((action) => (action.classjob === bardJob.id || action.classjob === bardJob.classjob_parent) && action.icon);
 
-console.log(bardAbilities);
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Button', module)
