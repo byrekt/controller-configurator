@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CharacterSet from '../components/CharacterSet';
-import { getCharacterSet, clearCurrentKit } from '../actions';
+import { getCharacterSet, clearCurrentKit, updateKit } from '../actions';
 
 // Gets data from "API"s and stores them in the redux store using the
 
@@ -21,6 +21,9 @@ function mapDispatchToProps(dispatch) {
     },
     clearCurrentKit: () => {
       dispatch(clearCurrentKit());
+    },
+    saveKit: (kit, uid) => {
+      dispatch((updateKit(kit, uid)))
     }
   }
 }

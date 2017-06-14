@@ -1,4 +1,4 @@
-import { RECEIVE_CHARACTER_SET, REMOVE_CHARACTER_SET } from '../constants/ActionTypes';
+import { RECEIVE_CHARACTER_SET, REMOVE_CHARACTER_SET, SAVE_CHARACTER_SET } from '../constants/ActionTypes';
 import { DEFAULT_SET } from '../constants/DefaultValues';
 
 /**
@@ -10,6 +10,9 @@ const characterSet = (state = DEFAULT_SET, action) => {
       return action.characterSet;
     case REMOVE_CHARACTER_SET:
       return DEFAULT_SET;
+    case SAVE_CHARACTER_SET:
+    console.log('saved characte rset returning: ', action.characterSet);
+      return action.characterSet;
     default:
       return state;
   }

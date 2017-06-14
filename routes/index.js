@@ -130,6 +130,7 @@ router.get('/userKits/:uid', (req, res, next) => {
 // Creates a new kit
 router.post('/saveKit', (req, res, next) => {
   const uid = req.body.uid;
+  const kit = req.body.kit;
 
   // Ensure that a user is authenticated
   if (!uid) {
@@ -138,28 +139,29 @@ router.post('/saveKit', (req, res, next) => {
   } else {
     try {
 
-      const set = req.body.set;
-      const crossBars = set.crossBars;
+      const kit = req.body.kit;
+      const crossBars = kit.crossBars;
 
-      // Remove crossbars from the set object since we only want to insert meta data
-      delete set.crossBars;
+      // Remove crossbars from the kit object since we only want to insert meta data
+      delete kit.crossBars;
 
-      // Write set meta info to DB
-      const setsDBRef = database.ref('sets');
+      // Write kit meta info to DB
+      const kitsDBRef = database.ref('sets');
       // If this kit already has an ID, that means we're updating it
-      const kitId = (req.body.set.kitId) ? req.body.set.kitId : setsDBRef.child('setMeta').push().key;
+      const kitId = (req.body.kit.kitId) ? req.body.kit.kitId : kitsDBRef.child('setMeta').push().key;
 
-      set.creatorId = uid;
-      set.kitId = kitId;
+      kit.creatorId = uid;
+      kit.kitId = kitId;
 
       let updates = {};
-      updates[`/setMeta/${kitId}`] = set;
+      updates[`/setMeta/${kitId}`] = kit;
       updates[`/setCrossBars/${kitId}`] = crossBars;
 
       console.log(updates);
-      setsDBRef.update(updates);
+      kit.crossBars = crossBars;
+      kitsDBRef.update(updates);
 
-      res.json({ status: "OK", set: req.body });
+      res.json(kit);
     } catch (err) {
       console.log(err);
       res.json({ error: "server error" });

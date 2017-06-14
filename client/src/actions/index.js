@@ -73,6 +73,27 @@ export const getCharacterSet = (id) => dispatch => {
       dispatch(receiveCharacterSet(json));
     });
 };
+// Action creator for character set data
+const saveKit = characterSet => ({
+  type: types.SAVE_CHARACTER_SET,
+  characterSet: characterSet
+});
+export const updateKit = (kit, uid) => dispatch => {
+  const data = {kit: kit, uid: uid};
+  console.log('body in updateKit', data);
+  return fetch('/api/saveKit', {
+    method: "POST", 
+    body: JSON.stringify(data),
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => response.json())
+    .then(json => {
+      dispatch(saveKit(json));
+    });
+};
 
 // Action creator for removing kit data
 const removeCharacterSet = () => ({
