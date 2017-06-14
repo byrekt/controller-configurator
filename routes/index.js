@@ -113,6 +113,28 @@ router.get('/getUserInfo/:uid', function (req, res, next) {
   });
 });
 
+// Creates a new kit
+router.post('/updateUserName', (req, res, next) => {
+  const uid = req.body.uid;
+  const name = req.body.name;
+  // Ensure that a user is authenticated
+  if (!uid) {
+    res.json({ error: 'User not authenticated' });
+  } else {
+    try {
+      
+      const userInfoRef = database.ref(`userInfo/${uid}`).set({
+        displayName: name
+      });
+      res.json({displayName: name});
+
+    } catch (err) {
+      console.log(err);
+      res.json({ error: "server error" });
+    }
+  }
+})
+
 // Returns a user's list of sets
 router.get('/userKits/:uid', (req, res, next) => {
   const setRef = database.ref(`/sets/setMeta`);
@@ -134,7 +156,6 @@ router.post('/saveKit', (req, res, next) => {
 
   // Ensure that a user is authenticated
   if (!uid) {
-    console.log(req.body);
     res.json({ error: 'User not authenticated' });
   } else {
     try {
@@ -157,7 +178,6 @@ router.post('/saveKit', (req, res, next) => {
       updates[`/setMeta/${kitId}`] = kit;
       updates[`/setCrossBars/${kitId}`] = crossBars;
 
-      console.log(updates);
       kit.crossBars = crossBars;
       kitsDBRef.update(updates);
 

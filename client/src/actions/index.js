@@ -78,11 +78,10 @@ const saveKit = characterSet => ({
   type: types.SAVE_CHARACTER_SET,
   characterSet: characterSet
 });
-export const updateKit = (kit, uid) => dispatch => {
-  const data = {kit: kit, uid: uid};
-  console.log('body in updateKit', data);
+export const updateKit = (kit, uid, displayName) => dispatch => {
+  const data = { kit: kit, uid: uid };
   return fetch('/api/saveKit', {
-    method: "POST", 
+    method: "POST",
     body: JSON.stringify(data),
     headers: {
       'Accept': 'application/json',
@@ -106,7 +105,7 @@ const removeCharacterSet = () => ({
  * @param {number|string} id the ID of the set to retrieve
  */
 export const clearCurrentKit = () => dispatch => {
-    dispatch(removeCharacterSet());
+  dispatch(removeCharacterSet());
 };
 
 // Action creator for character set data
@@ -172,6 +171,7 @@ const retrieveUserInfo = (info) => ({
  * @param {string} uid user's ID
  */
 export const getUserInfo = uid => dispatch => {
+  if (!uid) dispatch(retrieveUserInfo({}));
   return fetch(`/api/getUserInfo/${uid}`)
     .then(response => response.json())
     .then(json => {
@@ -179,3 +179,22 @@ export const getUserInfo = uid => dispatch => {
     });
 };
 
+const userNameUpdate = (name) => ({
+  type: types.UPDATE_USER_NAME,
+  name: {displalyName: name}
+});
+export const updateUserDisplayName = (uid, displayName) => dispatch => {
+  const data = { name: displayName, uid: uid };
+  return fetch(`/api/updateUserName`, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => response.json())
+    .then(json => {
+      dispatch(userNameUpdate(json));
+    });
+};
