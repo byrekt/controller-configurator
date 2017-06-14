@@ -12,6 +12,8 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Main from '../components/Main';
 
+let userLoggedIn = false;
+
 const StyledHeader = styled.header`
   .dropdown-menu {
     padding: 0;
@@ -57,6 +59,7 @@ class FirebaseUI extends Component {
     const uiConfig = {
       'callbacks': {
         'signInSuccess': function (user) {
+          userLoggedIn = true;
           return false;
         }
       },
@@ -129,14 +132,19 @@ class App extends Component {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.props.doSignIn(user);
-
+        console.log('state changed!');
+        
       }
     });
   };
 
   render() {
+    console.log('user logged in?', userLoggedIn, this.props);
     return (
       <div>
+        {userLoggedIn && this.props.userInfo === null && 
+          <div>Need the user's name!</div>
+        }
         <Header authenticated={this.props.authentication.uid} doSignOut={this.doSignOut} />
         <Main />
       </div>
@@ -145,7 +153,7 @@ class App extends Component {
 };
 
 App.propTypes = {
-  jobData: PropTypes.object,
+  jobData: PropTypes.object, 
   actionData: PropTypes.object,
   authentication: PropTypes.object,
   userInfo: PropTypes.object
@@ -169,10 +177,13 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     doSignOut: () => {
+      userLoggedIn = false;
       dispatch(signOut(firebase));
     },
     doSignIn: (user) => {
+      userLoggedIn = true;
       dispatch(signIn(user));
+      dispatch(getUserInfo(user.uid));
     },
     getJobs: () => {
       dispatch(getJobData());
@@ -181,7 +192,6 @@ function mapDispatchToProps(dispatch) {
       dispatch(getActions());
     },
     getUserInfo: () => {
-      dispatch(getUserInfo());
     }
   }
 }

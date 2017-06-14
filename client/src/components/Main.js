@@ -6,6 +6,7 @@ import UserKits from '../containers/UserKits';
 import CharacterSet from '../containers/CharacterSet';
 import { Grid, Row, Col } from 'react-bootstrap';
 class Main extends Component {
+
   render() {
     return (
       <Grid>

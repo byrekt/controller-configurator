@@ -57,6 +57,11 @@ class CharacterSet extends Component {
 
 
     componentWillReceiveProps(nextProps) {
+
+        // If the kitId changes, make sure to reload the kit.
+        if (this.props.match.params.kitId !== nextProps.match.params.kitId) {
+            this.props.onSetChange(nextProps.match.params.kitId);
+        }
         if (nextProps.match.params.kitId) {
             if (nextProps.authentication.uid === nextProps.characterSet.creatorId) {
                 this.setState({
@@ -79,7 +84,7 @@ class CharacterSet extends Component {
 
     componentWillUnmount() {
         console.log('flurp clearing current kit');
-        this.props.clearCurrentKit();
+        //this.props.clearCurrentKit();
     }
 
     clearAction(setNumber, position) {
@@ -199,6 +204,15 @@ class CharacterSet extends Component {
                                 </Row>
                                 <Row>
                                     <Col xs={12}>
+                                      {this.state.mode === 'view' &&
+                                        <div>
+                                        Created by {this.state.characterSet.creatorName}
+                                        </div>
+                                      }
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={12}>
                                         {this.state.mode === 'view' && this.state.characterSet.description}
                                         {(this.state.mode === 'create' || this.state.mode === 'edit') &&
                                             <div>
@@ -243,8 +257,8 @@ class CharacterSet extends Component {
                                 <Row>
                                     <Col xs={12}>
                                         <h4>Actions</h4>
-                                        {(this.state.mode === 'edit' || this.state.mode === 'create') && 
-                                          <button onClick={() => {this.props.saveKit(this.state.characterSet, this.props.authentication.uid)}}>Save</button>
+                                        {(this.state.mode === 'edit' || this.state.mode === 'create') &&
+                                            <button onClick={() => { this.props.saveKit(this.state.characterSet, this.props.authentication.uid) }}>Save</button>
                                         }
                                     </Col>
                                 </Row>
