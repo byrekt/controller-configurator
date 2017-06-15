@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Popover, OverlayTrigger } from 'react-bootstrap';
+import { Popover, OverlayTrigger, Modal, Button } from 'react-bootstrap';
 import { DragSource } from 'react-dnd';
 
 // Information should be in format provided by https://github.com/xivdb/api/blob/master/Content-Action.md
@@ -42,12 +42,44 @@ function collect(connect, monitor) {
 
 class Icon extends Component {
 
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.state = { showMacroModal: false };
+  }
+
   getPopover(icon) {
     return (
       <Popover id={icon.id} title={(icon.macroInfo) ? icon.macroInfo.name : ''}>
-        {(icon.macroInfo) ? <pre>{icon.macroInfo.macroSteps.join('\n')}</pre> : `${icon.name} ${(icon.level !== '00') ? `lvl ${icon.level}` : ''}`}
+        {(icon.macroInfo) ? <pre id={`${icon.id}-macro-info`}>{icon.macroInfo.macroSteps.join('\n')}</pre> : `${icon.name} ${(icon.level !== '00') ? `lvl ${icon.level}` : ''}`}
       </Popover>
     )
+  }
+
+  handleClick(e) {
+    if (e.shiftKey && this.props.icon) {
+      console.log('shifted!');
+      this.setState({
+        showMacroModal: true
+      })
+    }
+    if (e.ctrlKey && this.props.icon && this.props.icon.macroInfo) {
+      let temp = document.createElement('textarea');
+      temp.value = this.props.icon.macroInfo.macroSteps.join('\n');
+      temp.setAttribute('id', 'temp-macro');
+      document.querySelector('#root').appendChild(temp);
+      document.querySelector(`#temp-macro`).select();
+      document.execCommand('copy');
+      temp.parentNode.removeChild(temp);
+    }
+    //this.props.addMacro(this.props.setNumber, this.props.position, this.state.macroInfo);
+  }
+
+  closeModal() {
+    this.setState({
+      showMacroModal: false
+    })
   }
 
   render() {
@@ -56,7 +88,7 @@ class Icon extends Component {
     if (this.props.icon && this.props.icon !== 'empty') {
       icon = <OverlayTrigger placement="right" trigger={['hover', 'focus']}
         overlay={this.getPopover(this.props.icon)}>
-        <img src={this.props.icon.iconPath} alt="" />
+        <img src={this.props.icon.iconPath} alt="" onClick={this.handleClick} />
       </OverlayTrigger>
     }
     return connectDragSource(
@@ -64,6 +96,22 @@ class Icon extends Component {
         <ActionIcon className={(this.props.icon && this.props.icon.macroInfo) ? 'macro' : ''}>
           {icon}
         </ActionIcon>
+        <Modal show={this.state.showMacroModal}>
+          <Modal.Header>
+            <Modal.Title>Modal title</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            One fine body...
+      </Modal.Body>
+
+          <Modal.Footer>
+            <Button onClick={this.closeModal}>Close</Button>
+            <Button bsStyle="primary">Save changes</Button>
+          </Modal.Footer>
+
+        </Modal>
+
       </div>
     );
   }
@@ -82,6 +130,7 @@ Icon.propTypes = {
   }),
   setNumber: PropTypes.number,
   position: PropTypes.string,
+  addMacro: PropTypes.func.isRequired,
   connectDragSource: PropTypes.func.isRequired,
 }
 

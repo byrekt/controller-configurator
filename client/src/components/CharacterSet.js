@@ -55,6 +55,7 @@ class CharacterSet extends Component {
     this.onDisplayNameChange = this.onDisplayNameChange.bind(this);
     this.saveKit = this.saveKit.bind(this);
     this.addBar = this.addBar.bind(this);
+    this.addMacro = this.addMacro.bind(this);
     this.handleJobChange = this.handleJobChange.bind(this);
   }
 
@@ -92,6 +93,14 @@ class CharacterSet extends Component {
     const fromBarIndex = state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(setNumber);
     delete state.characterSet.crossBars[fromBarIndex][position];
     this.setState(state);
+  }
+
+  addMacro(setNumber, position, macroInfo) {
+    const barIndex = this.state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(setNumber);
+
+    this.setState({
+      characterSet: update(this.state.characterSet, {crossBars: {[barIndex]: {[position]: {macroInfo: {$set: macroInfo}}}}})
+    });
   }
 
   moveAction(fromIcon, fromMacroInfo, fromSetNumber, fromPos, toIcon, toMacroInfo, toSetNumber, toPos) {
@@ -285,7 +294,7 @@ class CharacterSet extends Component {
                               </Col>
                             </Row>
                           }
-                          <CrossHotBar bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} clearAction={this.clearAction} />
+                          <CrossHotBar bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} clearAction={this.clearAction} addMacro={this.addMacro} />
                         </div>
                       )
                     })}

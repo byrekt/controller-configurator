@@ -90,80 +90,80 @@ class CrossHotBar extends Component {
                             <div className="cross">
                                 <div className="left-icon">
                                     <ActionContainer moveAction={this.props.moveAction} position={"LDL"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.LDL && <Icon icon={this.state.icons.LDL} position={"LDL"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.LDL && <Icon icon={this.state.icons.LDL} position={"LDL"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                 </div>
                                 <div className="middle-icons">
                                     <ActionContainer moveAction={this.props.moveAction} position={"LDU"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.LDU && <Icon icon={this.state.icons.LDU} position={"LDU"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.LDU && <Icon icon={this.state.icons.LDU} position={"LDU"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                     <ActionContainer moveAction={this.props.moveAction} position={"LDD"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.LDD && <Icon icon={this.state.icons.LDD} position={"LDD"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.LDD && <Icon icon={this.state.icons.LDD} position={"LDD"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                 </div>
                                 <div className="right-icon">
                                     <ActionContainer moveAction={this.props.moveAction} position={"LDR"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.LDR && <Icon icon={this.state.icons.LDR} position={"LDR"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.LDR && <Icon icon={this.state.icons.LDR} position={"LDR"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                 </div>
                             </div>
                             <div className="cross">
                                 <div className="left-icon">
                                     <ActionContainer moveAction={this.props.moveAction} position={"LAL"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.LAL && <Icon icon={this.state.icons.LAL} position={"LAL"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.LAL && <Icon icon={this.state.icons.LAL} position={"LAL"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                 </div>
                                 <div className="middle-icons">
                                     <ActionContainer moveAction={this.props.moveAction} position={"LAU"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.LAU && <Icon icon={this.state.icons.LAU} position={"LAU"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.LAU && <Icon icon={this.state.icons.LAU} position={"LAU"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                     <ActionContainer moveAction={this.props.moveAction} position={"LAD"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.LAD && <Icon icon={this.state.icons.LAD} position={"LAD"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.LAD && <Icon icon={this.state.icons.LAD} position={"LAD"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                 </div>
                                 <div className="right-icon">
                                     <ActionContainer moveAction={this.props.moveAction} position={"LAR"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.LAR && <Icon icon={this.state.icons.LAR} position={"LAR"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.LAR && <Icon icon={this.state.icons.LAR} position={"LAR"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                 </div>
                             </div>
                             <div className="cross">
                                 <div className="left-icon">
                                     <ActionContainer moveAction={this.props.moveAction} position={"RDL"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.RDL && <Icon icon={this.state.icons.RDL} position={"RDL"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.RDL && <Icon icon={this.state.icons.RDL} position={"RDL"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                 </div>
                                 <div className="middle-icons">
                                     <ActionContainer moveAction={this.props.moveAction} position={"RDU"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.RDU && <Icon icon={this.state.icons.RDU} position={"RDU"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.RDU && <Icon icon={this.state.icons.RDU} position={"RDU"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                     <ActionContainer moveAction={this.props.moveAction} position={"RDD"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.RDD && <Icon icon={this.state.icons.RDD} position={"RDD"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.RDD && <Icon icon={this.state.icons.RDD} position={"RDD"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                 </div>
                                 <div className="right-icon">
                                     <ActionContainer moveAction={this.props.moveAction} position={"RDR"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.RDR && <Icon icon={this.state.icons.RDR} position={"RDR"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.RDR && <Icon icon={this.state.icons.RDR} position={"RDR"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                 </div>
                             </div>
                             <div className="cross">
                                 <div className="left-icon">
                                     <ActionContainer moveAction={this.props.moveAction} position={"RAL"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.RAL && <Icon icon={this.state.icons.RAL} position={"RAL"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.RAL && <Icon icon={this.state.icons.RAL} position={"RAL"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                 </div>
                                 <div className="middle-icons">
                                     <ActionContainer moveAction={this.props.moveAction} position={"RAU"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.RAU && <Icon icon={this.state.icons.RAU} position={"RAU"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.RAU && <Icon icon={this.state.icons.RAU} position={"RAU"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                     <ActionContainer moveAction={this.props.moveAction} position={"RAD"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.RAD && <Icon icon={this.state.icons.RAD} position={"RAD"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.RAD && <Icon icon={this.state.icons.RAD} position={"RAD"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                 </div>
                                 <div className="right-icon">
                                     <ActionContainer moveAction={this.props.moveAction} position={"RAR"} setNumber={this.props.bar.setNumber}>
-                                        {this.state.icons.RAR && <Icon icon={this.state.icons.RAR} position={"RAR"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction}/>}
+                                        {this.state.icons.RAR && <Icon icon={this.state.icons.RAR} position={"RAR"} setNumber={this.props.bar.setNumber} clearAction={this.props.clearAction} addMacro={this.props.addMacro}/>}
                                     </ActionContainer>
                                 </div>
                             </div>
