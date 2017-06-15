@@ -52,12 +52,12 @@ router.get('/actions/:job', function (req, res, next) {
   relatedGroupIds.forEach((group) => {
     let groupActions = [];
     for (let action in actions) {
-      if (actions[action].jobName === group) {
+      if (actions[action].job === group) {
         groupActions.push(actions[action]);
       }
     };
     groupActions.sort((a, b) => {
-      return parseInt(a.level) - parseInt(b.level);
+      return parseInt(a.levelReq) - parseInt(b.levelReq);
     });
     jobActions[group] = groupActions;
   });

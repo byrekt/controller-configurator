@@ -27,15 +27,14 @@ function collect(connect, monitor) {
 }
 
 const Container = styled('div') `
-    height: 42px;
-    width: 42px;
+    height: 40px;
+    width: 40px;
     background-color: rgba(155, 155, 155, 0.3);
     border-radius: 5px;
     margin: 1px;
     box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
     img {
-      margin-top: -1px;
-      margin-left: -3px;
+
     }
 
     >div {

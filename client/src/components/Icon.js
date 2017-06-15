@@ -6,6 +6,9 @@ import { DragSource } from 'react-dnd';
 
 // Information should be in format provided by https://github.com/xivdb/api/blob/master/Content-Action.md
 const ActionIcon = styled('div') `
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+
     &.macro::after{
       color: white;
       content: "❃";
@@ -52,7 +55,7 @@ class Icon extends Component {
   getPopover(icon) {
     return (
       <Popover id={icon.id} title={(icon.macroInfo) ? icon.macroInfo.name : ''}>
-        {(icon.macroInfo) ? <pre id={`${icon.id}-macro-info`}>{icon.macroInfo.macroSteps.join('\n')}</pre> : `${icon.name} ${(icon.level !== '00') ? `lvl ${icon.level}` : ''}`}
+        {(icon.macroInfo) ? <pre id={`${icon.id}-macro-info`}>{icon.macroInfo.macroSteps.join('\n')}</pre> : `${icon.id} ${icon.name} ${(icon.level !== '00') ? `lvl ${icon.levelReq}` : ''}`}
       </Popover>
     )
   }
@@ -88,7 +91,7 @@ class Icon extends Component {
     if (this.props.icon && this.props.icon !== 'empty') {
       icon = <OverlayTrigger placement="right" trigger={['hover', 'focus']}
         overlay={this.getPopover(this.props.icon)}>
-        <img src={this.props.icon.iconPath} alt="" onClick={this.handleClick} />
+        <img src={`/images/icons/${this.props.icon.icon}`} alt="" onClick={this.handleClick} />
       </OverlayTrigger>
     }
     return connectDragSource(
