@@ -70,7 +70,8 @@ class Palette extends Component {
       <PaletteContainer>
         <select value={this.state.selectedPaletteId} onChange={this.handleChange}>
           {Object.keys(this.props.jobs).map((job) => {
-            return <option key={job} value={job}>{job}</option>
+            const jobObj = this.props.jobs[job];
+            return <option key={job} value={job}>{jobObj.name}</option>
           })}
         </select>
 

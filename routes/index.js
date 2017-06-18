@@ -47,7 +47,7 @@ router.get('/allActions', function (req, res, next) {
 router.get('/actions/:job', function (req, res, next) {
   let jobActions = {};
   const job = req.params.job;
-  Object.keys(actions).filter(action => actions[action].job === 'astrologian').map(action => {
+  Object.keys(actions).filter(action => actions[action].job === job).map(action => {
     const actionObj = actions[action];
     if (action.indexOf('pvpaction') > -1) {
       actionObj.category = 'PvP Actions';
@@ -89,6 +89,7 @@ router.get('/getActionsFromFileStructure', function (req, res, next) {
  */
 router.get('/getSetsDetails/:job?', function (req, res, next) {
   const setRef = database.ref(`/sets/setMeta`);
+  console.log(req.params.job);
   if (req.params.job) {
     setRef.orderByChild('job')
       .startAt(req.params.job)
