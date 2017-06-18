@@ -40,14 +40,15 @@ class Palette extends Component {
   }
 
   getJobPalette(actions) {
-    return actions.map((action) => {
-      return <Icon key={action.id} icon={action} />
+    return Object.keys(actions).map((action) => {
+      return <Icon key={action} icon={actions[action]} />
     });
   };
   getPalettes() {
-
+    console.log(this.props.jobActions);
     return Object.keys(this.props.jobActions).map((group) => {
       // Only show the group if there are actions in it.
+      console.log('group', this.props.jobActions[group]);
       return (
         <section key={group} className="group-container">
           <h3>{group}</h3>
@@ -90,7 +91,7 @@ Palette.propTypes = {
 };
 Palette.defaultProps = {
   jobs: {},
-  jobActions: []
+  jobActions: {}
 }
 
 export default Palette;

@@ -181,7 +181,7 @@ export const getUserInfo = uid => dispatch => {
 
 const userNameUpdate = (name) => ({
   type: types.UPDATE_USER_NAME,
-  name: {displalyName: name}
+  name: {displayName: name}
 });
 export const updateUserDisplayName = (uid, displayName) => dispatch => {
   const data = { name: displayName, uid: uid };

@@ -47,23 +47,22 @@ router.get('/allActions', function (req, res, next) {
 router.get('/actions/:job', function (req, res, next) {
   let jobActions = {};
   const job = req.params.job;
-  let relatedGroupIds = jobs[job].relatedActionGroupIds;
+  Object.keys(actions).filter(action => actions[action].job === 'astrologian').map(action => {
+    const actionObj = actions[action];
+    if (action.indexOf('pvpaction') > -1) {
+      actionObj.category = 'PvP Actions';
+    }
+    if (!jobActions[actionObj.category]) {
+      jobActions[actionObj.category] = {};
+    } 
+    actionObj.id = action;
 
-  relatedGroupIds.forEach((group) => {
-    let groupActions = [];
-    for (let action in actions) {
-      if (actions[action].job === group) {
-        groupActions.push(actions[action]);
-      }
-    };
-    groupActions.sort((a, b) => {
-      return parseInt(a.levelReq) - parseInt(b.levelReq);
-    });
-    jobActions[group] = groupActions;
+    jobActions[actionObj.category][action] = actionObj;
   });
-
+  console.log(jobActions);
   res.json(jobActions);
 });
+
 
 router.get('/getActionCategories', function (req, res, next) {
   res.json(actionCategories);

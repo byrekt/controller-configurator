@@ -8,6 +8,10 @@ import { DragSource } from 'react-dnd';
 const ActionIcon = styled('div') `
     border-radius: 5px;
     box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+    img {
+      width: 42px;
+      height: 42px;
+    }
 
     &.macro::after{
       color: white;
@@ -31,7 +35,7 @@ const iconSource = {
     };
   },
   endDrag(props, monitor) {
-    if (!monitor.didDrop()) {
+    if (!monitor.didDrop() && props.clearAction) {
       props.clearAction(props.setNumber, props.position);
     }
   }
@@ -55,7 +59,7 @@ class Icon extends Component {
   getPopover(icon) {
     return (
       <Popover id={icon.id} title={(icon.macroInfo) ? icon.macroInfo.name : ''}>
-        {(icon.macroInfo) ? <pre id={`${icon.id}-macro-info`}>{icon.macroInfo.macroSteps.join('\n')}</pre> : `${icon.id} ${icon.name} ${(icon.level !== '00') ? `lvl ${icon.levelReq}` : ''}`}
+        {(icon.macroInfo) ? <pre id={`${icon.id}-macro-info`}>{icon.macroInfo.macroSteps.join('\n')}</pre> : <div dangerouslySetInnerHTML={{__html: icon.tooltip}}/>}
       </Popover>
     )
   }
@@ -91,7 +95,7 @@ class Icon extends Component {
     if (this.props.icon && this.props.icon !== 'empty') {
       icon = <OverlayTrigger placement="right" trigger={['hover', 'focus']}
         overlay={this.getPopover(this.props.icon)}>
-        <img src={`/images/icons/${this.props.icon.icon}`} alt="" onClick={this.handleClick} />
+        <img src={`/${this.props.icon.icon}`} alt="" onClick={this.handleClick} />
       </OverlayTrigger>
     }
     return connectDragSource(
