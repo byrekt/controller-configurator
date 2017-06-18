@@ -2,14 +2,26 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Icon from './Icon';
 import PropTypes from 'prop-types';
+import { Panel, ButtonGroup, Button } from 'react-bootstrap';
+import { JOB_ORDER } from '../constants/DefaultValues';
 
 const PaletteContainer = styled('section') `
 
-  border: 1px solid black;
-  padding: 1rem;
-  max-width: 25rem;
+  .palette-job-buttons {
+    button {
+      padding: 0;
+      border: none;
+
+      img {
+        height: 42px;
+        width: 42px;
+      }
+    }
+
+  }
+
+
   .palette-actions-container {
-    max-width: 25rem;
     clear: right;
 
     .group-container {
@@ -17,7 +29,6 @@ const PaletteContainer = styled('section') `
       .palette-content {
         display: flex;
         flex-wrap: wrap;
-        width: 24rem;
 
 
         >div {
@@ -45,10 +56,8 @@ class Palette extends Component {
     });
   };
   getPalettes() {
-    console.log(this.props.jobActions);
     return Object.keys(this.props.jobActions).map((group) => {
       // Only show the group if there are actions in it.
-      console.log('group', this.props.jobActions[group]);
       return (
         <section key={group} className="group-container">
           <h3>{group}</h3>
@@ -60,24 +69,34 @@ class Palette extends Component {
     });
   }
 
-  handleChange(event) {
-    this.setState({ selectedPaletteId: event.target.value });
-    this.props.onJobChange(event.target.value);
+  handleChange(palette) {
+    this.setState({ selectedPaletteId: palette });
+    this.props.onJobChange(palette);
   }
 
   render() {
     return (
       <PaletteContainer>
-        <select value={this.state.selectedPaletteId} onChange={this.handleChange}>
-          {Object.keys(this.props.jobs).map((job) => {
-            const jobObj = this.props.jobs[job];
-            return <option key={job} value={job}>{jobObj.name}</option>
-          })}
-        </select>
+        <Panel>
+          <ButtonGroup className="palette-job-buttons">
+            {JOB_ORDER.map((job) => {
+              return (
+                <Button onClick={() => { this.handleChange(job) }}>
+                  <img src={`/icons/jobs/${job}.png`} />
+                </Button>
+              )
+            })}
+          </ButtonGroup>
 
-        <section className="palette-actions-container">
-          {this.getPalettes()}
-        </section>
+          <section className="palette-actions-container">
+            <header>
+              <h2>
+                {this.props.jobs[this.state.selectedPaletteId].name}
+              </h2>
+            </header>
+            {this.getPalettes()}
+          </section>
+        </Panel>
       </PaletteContainer>
     );
   }

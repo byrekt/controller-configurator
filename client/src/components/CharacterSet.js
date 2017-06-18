@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
 import styled from 'styled-components';
-import { Grid, Row, Col, Button } from 'react-bootstrap';
+import { Grid, Row, Col, Button, DropdownButton, MenuItem, ButtonGroup } from 'react-bootstrap';
 import Icon from './Icon';
 import ActionContainer from './ActionContainer';
 import CrossHotBar from './CrossHotBar';
@@ -9,6 +9,7 @@ import Palette from '../containers/Palette';
 import PropTypes from 'prop-types';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
+import { JOB_ORDER } from '../constants/DefaultValues';
 
 const CrossContainer = styled('section') `
   display: flex;
@@ -34,6 +35,33 @@ const CrossContainer = styled('section') `
     }
   }
 `;
+
+const CharacterSetContainer = styled('div') `
+
+  .button-group-jobs {
+    display: flex;
+    flex-wrap: wrap;
+    button {
+      padding: 0;
+      border: none;
+
+      img {
+        height: 42px;
+        width: 42px;
+
+         &.selected {
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
+  }
+
+  .selected-job-icon {
+    height: 42px;
+    width: 42px;
+  }
+`
 
 class CharacterSet extends Component {
 
@@ -169,9 +197,9 @@ class CharacterSet extends Component {
     });
   }
 
-  handleJobChange(e) {
+  handleJobChange(job) {
     this.setState({
-      characterSet: update(this.state.characterSet, { job: { $set: e.target.value } })
+      characterSet: update(this.state.characterSet, { job: { $set: job } })
     })
   }
 
@@ -214,7 +242,7 @@ class CharacterSet extends Component {
     const crossBarsSetNumbers = this.state.characterSet.crossBars.map(bar => bar.setNumber);
     for (let i = 1; i <= 8; ++i) {
       if (crossBarsSetNumbers.indexOf(i) < 0) {
-        buttons.push(<Button key={i} onClick={() => { this.addBar(i) }}>Add {i}</Button>);
+        buttons.push(<MenuItem eventKey={i} key={i} onClick={() => { this.addBar(i) }}>Set {i}</MenuItem>);
       }
     }
     return buttons;
@@ -227,124 +255,130 @@ class CharacterSet extends Component {
     const crossBarsSetNumbers = this.state.characterSet.crossBars.map(bar => bar.setNumber);
     for (let i = 1; i <= 8; ++i) {
       if (crossBarsSetNumbers.indexOf(i) >= 0) {
-        buttons.push(<Button key={i} onClick={() => { this.deleteBar(i) }}>Remove {i}</Button>);
+        buttons.push(<MenuItem eventKey={i} key={i} onClick={() => { this.deleteBar(i) }}>Set {i}</MenuItem>);
       }
     }
     return buttons;
   }
 
   renderJobOptions() {
-    let jobs = Object.keys(this.props.jobData).filter((job) => job !== 'other_actions').map((option, index) => <option key={index}>{option}</option>);
-
-    return jobs;
+    console.log(JOB_ORDER);
+    return (
+      <ButtonGroup className="button-group-jobs">
+        {JOB_ORDER.map((job) => {
+          return (
+            <Button onClick={() => { this.handleJobChange(job) }}>
+              <img src={`/icons/jobs/${job}.png`} className={(this.state.characterSet.job === job) ? 'selected' : ''} />
+            </Button>
+          )
+        })}
+      </ButtonGroup>
+    )
   }
 
   render() {
     return (
-      <div>
+      <CharacterSetContainer>
         {this.state &&
           <Row>
             <Col xs={8}>
-              <Grid>
+              <Row>
+                <Col xs={12}>
+                  {this.state.mode === 'view' && this.state.characterSet.name}
+                  {(this.state.mode === 'create' || this.state.mode === 'edit') &&
+                    <div>
+                      <label htmlFor="set-name">Set Name:</label>
+                      <input id="set-name" type="text" onChange={this.onSetNameChange} value={(this.state.characterSet) ? this.state.characterSet.name : ''} />
+                    </div>
+                  }
+                </Col>
+              </Row>
+              {this.state.mode === 'create' &&
                 <Row>
                   <Col xs={12}>
-                    {this.state.mode === 'view' && this.state.characterSet.name}
-                    {(this.state.mode === 'create' || this.state.mode === 'edit') &&
-                      <div>
-                        <label htmlFor="set-name">Set Name:</label>
-                        <input id="set-name" type="text" onChange={this.onSetNameChange} value={(this.state.characterSet) ? this.state.characterSet.name : ''} />
-                      </div>
-                    }
+                    <label>Job</label>
+                    {this.renderJobOptions()}
                   </Col>
                 </Row>
-                {this.state.mode === 'create' &&
-                  <Row>
-                    <Col xs={12}>
-                      <label htmlFor="job-select">Job</label>
-                      <select id="job-select" value={this.state.characterSet.job} onChange={this.handleJobChange}>
-                        {this.renderJobOptions()}
-                      </select>
-                    </Col>
-                  </Row>
-                }
-                {this.state.mode !== 'create' &&
-                  <Row>
-                    <Col xs={12}>
-                      Job: {this.state.characterSet.job}
-                    </Col>
-                  </Row>
-                }
+              }
+              {this.state.mode !== 'create' &&
                 <Row>
                   <Col xs={12}>
-                    {this.state.mode === 'create' && !this.props.userInfo &&
-                      <div>
-                        <label htmlFor="display-name">Your display name:</label>
-                        <input id="display-name" type="text" onChange={this.onDisplayNameChange} value={(this.state.displayName) ? this.state.displayName : ''} />
-                      </div>
-                    }
-                    {(this.state.characterSet.creatorName || this.props.userInfo) &&
-                      <div>Created by {this.state.characterSet.creatorName || this.props.userInfo.displayName}</div>
-                    }
+                    Job: <img src={`/icons/jobs/${this.state.characterSet.job}.png`} className="selected-job-icon"/>
                   </Col>
                 </Row>
-                <Row>
-                  <Col xs={12}>
-                    {this.state.mode === 'view' && this.state.characterSet.description}
-                    {(this.state.mode === 'create' || this.state.mode === 'edit') &&
-                      <div>
-                        <label htmlFor="set-description">Set Description:</label>
-                        <br />
-                        <textarea id="set-description" onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
-                      </div>
-                    }
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-                    {this.state.characterSet && this.state.characterSet.crossBars && this.state.characterSet.crossBars.sort((a, b) => a.setNumber - b.setNumber).map((bar, index) => {
-                      return (
-                        <div key={index}>
+              }
+              <Row>
+                <Col xs={12}>
+                  {this.state.mode === 'create' && !this.props.userInfo &&
+                    <div>
+                      <label htmlFor="display-name">Your display name:</label>
+                      <input id="display-name" type="text" onChange={this.onDisplayNameChange} value={(this.state.displayName) ? this.state.displayName : ''} />
+                    </div>
+                  }
+                  {(this.state.characterSet.creatorName || this.props.userInfo) &&
+                    <div>Created by {this.state.characterSet.creatorName || this.props.userInfo.displayName}</div>
+                  }
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12}>
+                  {this.state.mode === 'view' && this.state.characterSet.description}
+                  {(this.state.mode === 'create' || this.state.mode === 'edit') &&
+                    <div>
+                      <label htmlFor="set-description">Set Description:</label>
+                      <br />
+                      <textarea id="set-description" onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
+                    </div>
+                  }
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12}>
+                  {this.state.characterSet && this.state.characterSet.crossBars && this.state.characterSet.crossBars.sort((a, b) => a.setNumber - b.setNumber).map((bar, index) => {
+                    return (
+                      <div key={index}>
+                        <Row>
+                          <Col xs={12} className="center-block">
+                            <h4>
+                              Set {bar.setNumber}
+                            </h4>
+                          </Col>
+                        </Row>
+                        {bar.description &&
                           <Row>
-                            <Col xs={12} className="center-block">
-                              <h4>
-                                Set {bar.setNumber}
-                              </h4>
+                            <Col xs={12}>
+                              {bar.description}
                             </Col>
                           </Row>
-                          {bar.description &&
-                            <Row>
-                              <Col xs={12}>
-                                {bar.description}
-                              </Col>
-                            </Row>
-                          }
-                          <CrossHotBar bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} clearAction={this.clearAction} addMacro={this.addMacro} />
-                        </div>
-                      )
-                    })}
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-                    <h4>Add Bars</h4>
-                    {this.renderAddBarButtons()}
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-                    <h4>Remove Bars</h4>
-                    {this.renderRemoveBarButtons()}
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-                    <h4>Actions</h4>
-                    {(this.state.mode === 'edit' || this.state.mode === 'create') &&
-                      <button onClick={this.saveKit}>Save</button>
-                    }
-                  </Col>
-                </Row>
-              </Grid>
+                        }
+                        <CrossHotBar bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} clearAction={this.clearAction} addMacro={this.addMacro} />
+                      </div>
+                    )
+                  })}
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12}>
+                  <h4>Add and Remove Bars</h4>
+                  <ButtonGroup>
+                    <DropdownButton title="Add Bars">
+                      {this.renderAddBarButtons()}
+                    </DropdownButton>
+                    <DropdownButton title="Remove Bars">
+                      {this.renderRemoveBarButtons()}
+                    </DropdownButton>
+                  </ButtonGroup>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12}>
+                  <h4>Actions</h4>
+                  {(this.state.mode === 'edit' || this.state.mode === 'create') &&
+                    <Button onClick={this.saveKit}>Save</Button>
+                  }
+                </Col>
+              </Row>
             </Col>
             <Col xs={4}>
               {this.state.characterSet && this.state.characterSet.job && (this.state.mode === 'create' || this.state.mode === 'edit') &&
@@ -353,7 +387,7 @@ class CharacterSet extends Component {
             </Col>
           </Row>
         }
-      </div>
+      </CharacterSetContainer>
     );
   }
 }
