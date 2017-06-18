@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Button } from 'react-bootstrap';
 import Icon from './Icon';
 import ActionContainer from './ActionContainer';
 import CrossHotBar from './CrossHotBar';
@@ -55,6 +55,7 @@ class CharacterSet extends Component {
     this.onDisplayNameChange = this.onDisplayNameChange.bind(this);
     this.saveKit = this.saveKit.bind(this);
     this.addBar = this.addBar.bind(this);
+    this.deleteBar = this.deleteBar.bind(this);
     this.addMacro = this.addMacro.bind(this);
     this.handleJobChange = this.handleJobChange.bind(this);
   }
@@ -99,7 +100,7 @@ class CharacterSet extends Component {
     const barIndex = this.state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(setNumber);
 
     this.setState({
-      characterSet: update(this.state.characterSet, {crossBars: {[barIndex]: {[position]: {macroInfo: {$set: macroInfo}}}}})
+      characterSet: update(this.state.characterSet, { crossBars: { [barIndex]: { [position]: { macroInfo: { $set: macroInfo } } } } })
     });
   }
 
@@ -188,6 +189,16 @@ class CharacterSet extends Component {
     });
   }
 
+  deleteBar(setNumber) {
+    const crossBars = this.state.characterSet.crossBars.filter(crossBar => crossBar.setNumber !== setNumber);
+
+    this.setState({
+      characterSet: update(this.state.characterSet, {
+        crossBars: { $set: crossBars }
+      })
+    });
+  }
+
   saveKit() {
     let characterSet = this.state.characterSet;
     if (!characterSet.creatorName) {
@@ -203,7 +214,20 @@ class CharacterSet extends Component {
     const crossBarsSetNumbers = this.state.characterSet.crossBars.map(bar => bar.setNumber);
     for (let i = 1; i <= 8; ++i) {
       if (crossBarsSetNumbers.indexOf(i) < 0) {
-        buttons.push(<button key={i} onClick={() => { this.addBar(i) }}>Add {i}</button>);
+        buttons.push(<Button key={i} onClick={() => { this.addBar(i) }}>Add {i}</Button>);
+      }
+    }
+    return buttons;
+  }
+
+  renderRemoveBarButtons() {
+    let buttons = [];
+    if (!this.state.characterSet || !this.state.characterSet.crossBars) return;
+
+    const crossBarsSetNumbers = this.state.characterSet.crossBars.map(bar => bar.setNumber);
+    for (let i = 1; i <= 8; ++i) {
+      if (crossBarsSetNumbers.indexOf(i) >= 0) {
+        buttons.push(<Button key={i} onClick={() => { this.deleteBar(i) }}>Remove {i}</Button>);
       }
     }
     return buttons;
@@ -304,6 +328,12 @@ class CharacterSet extends Component {
                   <Col xs={12}>
                     <h4>Add Bars</h4>
                     {this.renderAddBarButtons()}
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12}>
+                    <h4>Remove Bars</h4>
+                    {this.renderRemoveBarButtons()}
                   </Col>
                 </Row>
                 <Row>

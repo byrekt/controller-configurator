@@ -59,8 +59,19 @@ class Icon extends Component {
   getPopover(icon) {
     return (
       <Popover id={icon.id} title={(icon.macroInfo) ? icon.macroInfo.name : ''}>
-        {(icon.macroInfo) ? <pre id={`${icon.id}-macro-info`}>{icon.macroInfo.macroSteps.join('\n')}</pre> : <div dangerouslySetInnerHTML={{__html: icon.tooltip}}/>}
+        {(icon.macroInfo) ? <pre id={`${icon.id}-macro-info`}>{icon.macroInfo.macroSteps.join('\n')}</pre> : this.getActionTooltip(icon)}
       </Popover>
+    )
+  }
+
+  getActionTooltip(icon) {
+    return (
+      <section>
+        <header>
+          <h4>{icon.name}</h4>
+        </header>
+        <div dangerouslySetInnerHTML={{ __html: icon.tooltip }} />
+      </section>
     )
   }
 
