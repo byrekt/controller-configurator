@@ -81,7 +81,7 @@ class Palette extends Component {
           <ButtonGroup className="palette-job-buttons">
             {JOB_ORDER.map((job) => {
               return (
-                <Button onClick={() => { this.handleChange(job) }}>
+                <Button key={job} onClick={() => { this.handleChange(job) }}>
                   <img src={`/icons/jobs/${job}.png`} />
                 </Button>
               )
@@ -91,7 +91,7 @@ class Palette extends Component {
           <section className="palette-actions-container">
             <header>
               <h2>
-                {this.props.jobs[this.state.selectedPaletteId].name}
+                {this.props.jobs[this.state.selectedPaletteId] && this.props.jobs[this.state.selectedPaletteId].name}
               </h2>
             </header>
             {this.getPalettes()}

@@ -101,7 +101,7 @@ class Icon extends Component {
   }
 
   render() {
-    const { connectDragSource, isDragging } = this.props;
+    const { connectDragSource } = this.props;
     let icon = <span />;
     if (this.props.icon && this.props.icon !== 'empty') {
       icon = <OverlayTrigger placement="right" trigger={['hover', 'focus']}
@@ -148,7 +148,7 @@ Icon.propTypes = {
   }),
   setNumber: PropTypes.number,
   position: PropTypes.string,
-  addMacro: PropTypes.func.isRequired,
+  //addMacro: PropTypes.func.isRequired,
   connectDragSource: PropTypes.func.isRequired,
 }
 

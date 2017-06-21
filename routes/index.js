@@ -3,9 +3,8 @@ var jobUtils = require('../utils/jobUtils');
 var admin = require('firebase-admin');
 var router = express.Router();
 var offlineServer;
-const OFFLINE_UID = 'zKyoDM9gFhMff4eR0VYJRHSNzns1';
 var database;
-const OFFLINE_MODE = false;
+const OFFLINE_MODE = true;
 var serviceAccount = require('../../controller-configurator-firebase-adminsdk-0za72-5bf37e6d3b.json');
 
 
@@ -86,8 +85,8 @@ router.get('/getActionCategories', function (req, res, next) {
 router.get('/getSet/:id', function (req, res, next) {
 
   if (OFFLINE_MODE) {
-    let kit = offlineServer.setMeta[req.params.id];
-    let crossBars = offlineServer.setCrossBars[req.params.id];
+    let kit = offlineServer.sets.setMeta[req.params.id];
+    let crossBars = offlineServer.sets.setCrossBars[req.params.id];
     kit.crossBars = crossBars;
     res.json(kit);
   }
@@ -128,21 +127,23 @@ router.get('/getSetsDetails/:job?', function (req, res, next) {
   }
 
   // Live Mode
-  const setRef = database.ref(`/sets/setMeta`);
-  if (req.params.job) {
-    setRef.orderByChild('job')
-      .startAt(req.params.job)
-      .endAt(req.params.job)
-      .once('value', (snapshot) => {
-        const sets = snapshot.val();
-        res.json(sets.filter(set => set !== null));
-      });
-  } else {
-    setRef
-      .once('value', (snapshot) => {
-        const sets = snapshot.val();
-        res.json(sets);
-      });
+  else {
+    const setRef = database.ref(`/sets/setMeta`);
+    if (req.params.job) {
+      setRef.orderByChild('job')
+        .startAt(req.params.job)
+        .endAt(req.params.job)
+        .once('value', (snapshot) => {
+          const sets = snapshot.val();
+          res.json(sets.filter(set => set !== null));
+        });
+    } else {
+      setRef
+        .once('value', (snapshot) => {
+          const sets = snapshot.val();
+          res.json(sets);
+        });
+    }
   }
 });
 
@@ -151,10 +152,12 @@ router.get('/getUserInfo/:uid', function (req, res, next) {
   if (OFFLINE_MODE) {
     res.json(offlineServer.userInfo[req.params.uid]);
   }
+  else {
 
-  database.ref(`/userInfo/${req.params.uid}`).once('value').then((snapshot) => {
-    res.json(snapshot.val());
-  });
+    database.ref(`/userInfo/${req.params.uid}`).once('value').then((snapshot) => {
+      res.json(snapshot.val());
+    });
+  }
 });
 
 // Creates a new kit
@@ -168,7 +171,7 @@ router.post('/updateUserName', (req, res, next) => {
   } else {
     try {
       if (OFFLINE_MODE) {
-        offlineServer.userInfo[OFFLINE_UID].displayName = name;
+        offlineServer.userInfo[uid].displayName = name;
       } else {
         const userInfoRef = database.ref(`userInfo/${uid}`).set({
           displayName: name
@@ -190,22 +193,21 @@ router.get('/userKits/:uid', (req, res, next) => {
   if (OFFLINE_MODE) {
     let kits = offlineServer.sets.setMeta;
     for (let kit in kits) {
-      if (kits[kit].creatorId !== OFFLINE_UID) delete kits[kit];
+      if (kits[kit].creatorId !== req.params.uid) delete kits[kit];
     }
     res.json(kits)
+  } else {
+    const setRef = database.ref(`/sets/setMeta`);
+
+    setRef.orderByChild('creatorId')
+      .startAt(req.params.uid)
+      .endAt(req.params.uid)
+      .once('value', (snapshot) => {
+        const sets = snapshot.val();
+        res.json(sets);
+      });
   }
-
-  const setRef = database.ref(`/sets/setMeta`);
-
-  setRef.orderByChild('creatorId')
-    .startAt(req.params.uid)
-    .endAt(req.params.uid)
-    .once('value', (snapshot) => {
-      const sets = snapshot.val();
-      res.json(sets);
-    });
-
-})
+});
 
 // Creates a new kit
 router.post('/saveKit', (req, res, next) => {
@@ -229,7 +231,7 @@ router.post('/saveKit', (req, res, next) => {
         let kits = offlineServer.sets;
         const kitId = 'foobar';
 
-        kit.creatorId = OFFLINE_UID;
+        kit.creatorId = req.params.uid;
         kit.kitId = kitId;
 
         offlineServer.sets.setMeta[kitId] = kit;

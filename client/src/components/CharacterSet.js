@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
 import styled from 'styled-components';
-import { Grid, Row, Col, Button, DropdownButton, MenuItem, ButtonGroup } from 'react-bootstrap';
-import Icon from './Icon';
-import ActionContainer from './ActionContainer';
+import { Row, Col, Button, DropdownButton, MenuItem, ButtonGroup } from 'react-bootstrap';
 import CrossHotBar from './CrossHotBar';
 import Palette from '../containers/Palette';
 import PropTypes from 'prop-types';
@@ -11,30 +9,6 @@ import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { JOB_ORDER } from '../constants/DefaultValues';
 
-const CrossContainer = styled('section') `
-  display: flex;
-  flex-direction: row;
-
-  .cross {
-    display: flex;
-    margin: 0.25rem;
-
-    .middle-icons {
-      display: flex;
-      flex-direction: column;
-    }
-    .left-icon, .right-icon {
-      align-self: center;
-    }
-
-    .left-icon {
-      margin-right: 2px;
-    }
-    .right-icon {
-      margin-left: 2px;
-    }
-  }
-`;
 
 const CharacterSetContainer = styled('div') `
 
@@ -118,7 +92,6 @@ class CharacterSet extends Component {
   clearAction(setNumber, position) {
     let state = this.state;
     if (state.mode === 'view') return;
-    const crossBars = this.state.characterSet.crossBars;
     const fromBarIndex = state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(setNumber);
     delete state.characterSet.crossBars[fromBarIndex][position];
     this.setState(state);
@@ -136,7 +109,6 @@ class CharacterSet extends Component {
     let state = this.state;
 
     if (state.mode === 'view') return;
-    const crossBars = this.state.characterSet.crossBars;
 
     let action;
     // If the icon isn't from a set, that means it's from the palette, so anything we drag it over will be replaced
@@ -267,7 +239,7 @@ class CharacterSet extends Component {
       <ButtonGroup className="button-group-jobs">
         {JOB_ORDER.map((job) => {
           return (
-            <Button onClick={() => { this.handleJobChange(job) }}>
+            <Button key={job} onClick={() => { this.handleJobChange(job) }}>
               <img src={`/icons/jobs/${job}.png`} className={(this.state.characterSet.job === job) ? 'selected' : ''} />
             </Button>
           )
@@ -362,10 +334,10 @@ class CharacterSet extends Component {
                 <Col xs={12}>
                   <h4>Add and Remove Bars</h4>
                   <ButtonGroup>
-                    <DropdownButton title="Add Bars">
+                    <DropdownButton id="add-cross-bars" title="Add Bars">
                       {this.renderAddBarButtons()}
                     </DropdownButton>
-                    <DropdownButton title="Remove Bars">
+                    <DropdownButton id="remove-cross-bars" title="Remove Bars">
                       {this.renderRemoveBarButtons()}
                     </DropdownButton>
                   </ButtonGroup>

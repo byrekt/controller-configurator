@@ -12,6 +12,8 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Main from '../components/Main';
 
+const OFFLINE_MODE = true;
+
 const StyledHeader = styled.header`
   .dropdown-menu {
     padding: 0;
@@ -33,7 +35,7 @@ const StyledHeader = styled.header`
             padding-left: 6px;
           }
         }
-      }  
+      }
     }
   }
 `
@@ -46,30 +48,38 @@ const config = {
   storageBucket: "controller-configurator.appspot.com",
   messagingSenderId: "138718965587"
 };
+let authUi;
 // get instance of database
-firebase.initializeApp(config);
-// Initialize firebase UI
-const authUi = new firebaseui.auth.AuthUI(firebase.auth());
+if (!OFFLINE_MODE) {
+  firebase.initializeApp(config);
+  // Initialize firebase UI
+  authUi = new firebaseui.auth.AuthUI(firebase.auth());
+}
 
 class FirebaseUI extends Component {
   componentDidMount() {
-    
-    const uiConfig = {
-      'callbacks': {
-        'signInSuccess': function (user) {
-          return false;
-        }
-      },
-      'signInOptions': [
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      ],
-      'signInFlow': 'popup'
-    };
-    authUi.start('#firebaseui-auth', uiConfig);
+
+    if (!OFFLINE_MODE) {
+      const uiConfig = {
+        'callbacks': {
+          'signInSuccess': function (user) {
+            return false;
+          }
+        },
+        'signInOptions': [
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        ],
+        'signInFlow': 'popup'
+      };
+      authUi.start('#firebaseui-auth', uiConfig);
+    }
   }
 
   componentWillUnmount() {
-    authUi.reset();
+    if (!OFFLINE_MODE) {
+
+      authUi.reset();
+    }
   }
 
   render() {
@@ -106,7 +116,7 @@ const Header = ({ authenticated, doSignOut }) => (
           </NavDropdown>}
       </Nav>
     </Navbar>
-    {authenticated &&
+    {authenticated && !OFFLINE_MODE &&
       <div className={'hidden'}>
         <FirebaseUI />
       </div>
@@ -126,11 +136,19 @@ class App extends Component {
     this.doSignOut = this.props.doSignOut.bind(this);
 
     //const ref = firebase.database().ref('/lastAccess');
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.props.doSignIn(user);
+    if (!OFFLINE_MODE) {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          this.props.doSignIn(user);
+        }
+      });
+    } else {
+      let mockAuth = {
+        uid: 'zKyoDM9gFhMff4eR0VYJRHSNzns1'
       }
-    });
+
+      this.props.doSignIn(mockAuth);
+    }
   };
 
   render() {
@@ -144,7 +162,7 @@ class App extends Component {
 };
 
 App.propTypes = {
-  jobData: PropTypes.object, 
+  jobData: PropTypes.object,
   actionData: PropTypes.object,
   authentication: PropTypes.object,
   userInfo: PropTypes.object
@@ -168,9 +186,11 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     doSignOut: () => {
-      dispatch(signOut(firebase));
-      dispatch(getUserInfo(null));
-      window.location.href =  '/';
+      if (!OFFLINE_MODE) {
+        dispatch(signOut(firebase));
+        dispatch(getUserInfo(null));
+        window.location.href = '/';
+      }
     },
     doSignIn: (user) => {
       dispatch(signIn(user));

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Icon from './Icon';
 import styled from 'styled-components';
 import ActionContainer from './ActionContainer';
@@ -76,7 +76,7 @@ class CrossHotBar extends Component {
 
                 actionState[position] = icon;
             }
-        }); 
+        });
 
         return actionState;
     }
