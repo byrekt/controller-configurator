@@ -2,30 +2,46 @@ var express = require('express');
 var jobUtils = require('../utils/jobUtils');
 var admin = require('firebase-admin');
 var router = express.Router();
+var offlineServer;
+const OFFLINE_UID = 'zKyoDM9gFhMff4eR0VYJRHSNzns1';
 var database;
-
+const OFFLINE_MODE = false;
 var serviceAccount = require('../../controller-configurator-firebase-adminsdk-0za72-5bf37e6d3b.json');
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://controller-configurator.firebaseio.com"
-});
 
-database = admin.database();
+if (!OFFLINE_MODE) {
+
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://controller-configurator.firebaseio.com"
+  });
+  database = admin.database();
+}
+
 
 // get job data
 var jobs;
 var actions;
 var actionCategories;
-database.ref('/actions').once('value').then(function (snapshot) {
-  actions = snapshot.val();
-});
-database.ref('/actionGroups').once('value').then(function (snapshot) {
-  actionCategories = snapshot.val();
-});
-database.ref('/jobs').once('value').then(function (snapshot) {
-  jobs = snapshot.val();
-});
+
+if (!OFFLINE_MODE) {
+
+  database.ref('/actions').once('value').then(function (snapshot) {
+    actions = snapshot.val();
+  });
+  database.ref('/actionGroups').once('value').then(function (snapshot) {
+    actionCategories = snapshot.val();
+  });
+  database.ref('/jobs').once('value').then(function (snapshot) {
+    jobs = snapshot.val();
+  });
+} else {
+  offlineServer = require('../controller-configurator-data.json');
+
+  actions = offlineServer.actions;
+  actionCategories = offlineServer.actionGroups;
+  jobs = offlineServer.jobs;
+}
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -54,12 +70,11 @@ router.get('/actions/:job', function (req, res, next) {
     }
     if (!jobActions[actionObj.category]) {
       jobActions[actionObj.category] = {};
-    } 
+    }
     actionObj.id = action;
 
     jobActions[actionObj.category][action] = actionObj;
   });
-  console.log(jobActions);
   res.json(jobActions);
 });
 
@@ -69,6 +84,14 @@ router.get('/getActionCategories', function (req, res, next) {
 });
 
 router.get('/getSet/:id', function (req, res, next) {
+
+  if (OFFLINE_MODE) {
+    let kit = offlineServer.setMeta[req.params.id];
+    let crossBars = offlineServer.setCrossBars[req.params.id];
+    kit.crossBars = crossBars;
+    res.json(kit);
+  }
+
   const ref = database.ref(`/sets`);
 
   ref.child(`setMeta/${req.params.id}`).once('value', (setMeta) => {
@@ -88,8 +111,24 @@ router.get('/getActionsFromFileStructure', function (req, res, next) {
  * :job corresponds to optional job filter
  */
 router.get('/getSetsDetails/:job?', function (req, res, next) {
+
+  if (OFFLINE_MODE) {
+    // OFFLINE MODE
+    let kits = Object.assign({}, offlineServer.sets.setMeta);
+
+    if (req.params.job) {
+      for (let kit in kits) {
+        if (kits[kit].job !== req.params.job) {
+          delete kits[kit];
+        }
+      }
+    }
+    res.json(kits);
+
+  }
+
+  // Live Mode
   const setRef = database.ref(`/sets/setMeta`);
-  console.log(req.params.job);
   if (req.params.job) {
     setRef.orderByChild('job')
       .startAt(req.params.job)
@@ -108,6 +147,11 @@ router.get('/getSetsDetails/:job?', function (req, res, next) {
 });
 
 router.get('/getUserInfo/:uid', function (req, res, next) {
+
+  if (OFFLINE_MODE) {
+    res.json(offlineServer.userInfo[req.params.uid]);
+  }
+
   database.ref(`/userInfo/${req.params.uid}`).once('value').then((snapshot) => {
     res.json(snapshot.val());
   });
@@ -118,15 +162,19 @@ router.post('/updateUserName', (req, res, next) => {
   const uid = req.body.uid;
   const name = req.body.name;
   // Ensure that a user is authenticated
-  if (!uid) {
+
+  if (!uid && !OFFLINE_MODE) {
     res.json({ error: 'User not authenticated' });
   } else {
     try {
-      
-      const userInfoRef = database.ref(`userInfo/${uid}`).set({
-        displayName: name
-      });
-      res.json({displayName: name});
+      if (OFFLINE_MODE) {
+        offlineServer.userInfo[OFFLINE_UID].displayName = name;
+      } else {
+        const userInfoRef = database.ref(`userInfo/${uid}`).set({
+          displayName: name
+        });
+      }
+      res.json({ displayName: name });
 
     } catch (err) {
       console.log(err);
@@ -137,6 +185,16 @@ router.post('/updateUserName', (req, res, next) => {
 
 // Returns a user's list of sets
 router.get('/userKits/:uid', (req, res, next) => {
+
+  // TODO make this so we don't have to have a hardcoded UID. Will require front end changes
+  if (OFFLINE_MODE) {
+    let kits = offlineServer.sets.setMeta;
+    for (let kit in kits) {
+      if (kits[kit].creatorId !== OFFLINE_UID) delete kits[kit];
+    }
+    res.json(kits)
+  }
+
   const setRef = database.ref(`/sets/setMeta`);
 
   setRef.orderByChild('creatorId')
@@ -155,7 +213,7 @@ router.post('/saveKit', (req, res, next) => {
   const kit = req.body.kit;
 
   // Ensure that a user is authenticated
-  if (!uid) {
+  if (!uid && !OFFLINE_MODE) {
     res.json({ error: 'User not authenticated' });
   } else {
     try {
@@ -166,20 +224,34 @@ router.post('/saveKit', (req, res, next) => {
       // Remove crossbars from the kit object since we only want to insert meta data
       delete kit.crossBars;
 
-      // Write kit meta info to DB
-      const kitsDBRef = database.ref('sets');
-      // If this kit already has an ID, that means we're updating it
-      const kitId = (req.body.kit.kitId) ? req.body.kit.kitId : kitsDBRef.child('setMeta').push().key;
+      if (OFFLINE_MODE) {
+        // Write kit meta info to DB
+        let kits = offlineServer.sets;
+        const kitId = 'foobar';
 
-      kit.creatorId = uid;
-      kit.kitId = kitId;
+        kit.creatorId = OFFLINE_UID;
+        kit.kitId = kitId;
 
-      let updates = {};
-      updates[`/setMeta/${kitId}`] = kit;
-      updates[`/setCrossBars/${kitId}`] = crossBars;
+        offlineServer.sets.setMeta[kitId] = kit;
+        offlineServer.sets.setCrossBars[kitId] = crossBars;
 
-      kit.crossBars = crossBars;
-      kitsDBRef.update(updates);
+        kit.crossBars = crossBars;
+      } else {
+        // Write kit meta info to DB
+        const kitsDBRef = database.ref('sets');
+        // If this kit already has an ID, that means we're updating it
+        const kitId = (req.body.kit.kitId) ? req.body.kit.kitId : kitsDBRef.child('setMeta').push().key;
+
+        kit.creatorId = uid;
+        kit.kitId = kitId;
+
+        let updates = {};
+        updates[`/setMeta/${kitId}`] = kit;
+        updates[`/setCrossBars/${kitId}`] = crossBars;
+
+        kit.crossBars = crossBars;
+        kitsDBRef.update(updates);
+      }
 
       res.json(kit);
     } catch (err) {
