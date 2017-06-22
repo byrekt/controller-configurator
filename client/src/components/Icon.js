@@ -6,8 +6,6 @@ import { DragSource } from 'react-dnd';
 
 // Information should be in format provided by https://github.com/xivdb/api/blob/master/Content-Action.md
 const ActionIcon = styled('div') `
-    border-radius: 5px;
-    box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
     img {
       width: 38px;
       height: 38px;
@@ -20,8 +18,8 @@ const ActionIcon = styled('div') `
       font-weight: bold;
       font-size: 16px;
       position: relative;
-      bottom: 52px;
-      left: 28px;
+      bottom: 43px;
+      left: 24px;
     }
 `;
 
@@ -63,7 +61,13 @@ class Icon extends Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.state = { showMacroModal: false, macroName: props.icon.name, macroInfo: `/macroicon "${props.icon.name}"` };
+    this.saveMacro = this.saveMacro.bind(this);
+
+    this.updateMacroName = this.updateMacroName.bind(this);
+    this.updateMacroSteps = this.updateMacroSteps.bind(this);
+
+    let macroInfo = props.icon.macroInfo || { name: props.icon.name, macroSteps: `/macroicon "${props.icon.name}"` };
+    this.state = { showMacroModal: false, macroName: macroInfo.name, macroInfo: macroInfo.macroSteps };
   }
 
   getPopover(icon) {
@@ -79,10 +83,10 @@ class Icon extends Component {
     const tooltipContent = icon.tooltip.split('<br>');
 
     if (icon.recast) {
-      tooltipContent.unshift(`Recast: ${icon.recast}`)
+      tooltipContent.unshift(`Recast: ${icon.recast}`);
     }
     if (icon.cast) {
-      tooltipContent.unshift(`Cast: ${icon.recast}`)
+      tooltipContent.unshift(`Cast: ${icon.recast}`);
     }
 
     const sexyTooltipContent = tooltipContent.map(tip => {
@@ -114,7 +118,7 @@ class Icon extends Component {
         showMacroModal: true
       })
     }
-    if (e.ctrlKey && this.props.icon && this.props.icon.macroInfo) {
+    if ((e.ctrlKey || e.metaKey) && this.props.icon && this.props.icon.macroInfo) {
       let temp = document.createElement('textarea');
       temp.value = this.props.icon.macroInfo.macroSteps.join('\n');
       temp.setAttribute('id', 'temp-macro');
@@ -123,13 +127,43 @@ class Icon extends Component {
       document.execCommand('copy');
       temp.parentNode.removeChild(temp);
     }
-    //this.props.addMacro(this.props.setNumber, this.props.position, this.state.macroInfo);
+  }
+  updateMacroName(e) {
+    this.setState({
+      macroName: e.target.value
+    });
   }
 
-  closeModal() {
+  updateMacroSteps(e) {
     this.setState({
-      showMacroModal: false
-    })
+      macroInfo: e.target.value
+    });
+  }
+
+  saveMacro() {
+    console.log(this.state.macroInfo);
+    const macroInfo = {};
+    macroInfo.name = this.state.macroName;
+    macroInfo.macroSteps = this.state.macroInfo.split('\n');
+    console.log(macroInfo);
+    this.props.addMacro(this.props.setNumber, this.props.position, macroInfo);
+    this.closeModal(true);
+  }
+
+  closeModal(save = false) {
+    if (save) {
+      this.setState({
+        showMacroModal: false
+      })
+    }
+    else {
+      const macroInfo = this.props.icon.macroInfo || { name: this.props.icon.name, macroSteps: `/macroicon "${this.props.icon.name}"` };
+      this.setState({
+        showMacroModal: false,
+        macroName: macroInfo.name,
+        macroInfo: macroInfo.macroSteps
+      })
+    }
   }
 
   render() {
@@ -157,13 +191,12 @@ class Icon extends Component {
             <Form>
               <FormGroup controlId="macroName">
                 <ControlLabel>Name</ControlLabel>
-                {' '}
-                <FormControl type="text" value={this.state.macroName}/>
+                <FormControl type="text" onChange={this.updateMacroName} value={this.state.macroName} />
               </FormGroup>
 
               <FormGroup controlId="formControlsTextarea">
                 <ControlLabel>Macro Steps</ControlLabel>
-                <FormControl componentClass="textarea" value={this.state.macroInfo}/>
+                <FormControl componentClass="textarea" onChange={this.updateMacroSteps} value={this.state.macroInfo} />
               </FormGroup>
 
 
@@ -171,8 +204,8 @@ class Icon extends Component {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button onClick={this.closeModal}>Close</Button>
-            <Button bsStyle="primary">Save changes</Button>
+            <Button onClick={() => this.closeModal()}>Close</Button>
+            <Button onClick={() => this.saveMacro()} bsStyle="primary">Save changes</Button>
           </Modal.Footer>
 
         </Modal>

@@ -105,6 +105,7 @@ class CharacterSet extends Component {
   }
 
   addMacro(setNumber, position, macroInfo) {
+    console.log(setNumber, position, macroInfo);
     const barIndex = this.state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(setNumber);
 
     this.setState({
