@@ -1,4 +1,4 @@
-export const DEFAULT_SET =  { name: '', description: '', crossBars: [{ setNumber: 1 }], job: 'astrologian' };
+export const DEFAULT_SET =  { name: '', description: '', crossBars: [{ setNumber: 1 }], job: 'paladin' };
 
 export const JOB_ORDER = [
   'paladin',

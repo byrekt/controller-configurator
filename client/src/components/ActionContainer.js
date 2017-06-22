@@ -26,8 +26,8 @@ function collect(connect, monitor) {
 }
 
 const Container = styled('div') `
-    height: 40px;
-    width: 40px;
+    height: 38px;
+    width: 38px;
     background-color: rgba(155, 155, 155, 0.3);
     border-radius: 5px;
     margin: 1px;

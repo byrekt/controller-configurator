@@ -8,13 +8,22 @@ import { JOB_ORDER } from '../constants/DefaultValues';
 const PaletteContainer = styled('section') `
 
   .palette-job-buttons {
+    display: flex;
+    flex-wrap: wrap;
     button {
-      padding: 0;
+      padding: 4px;
       border: none;
 
       img {
         height: 42px;
         width: 42px;
+      }
+      &.selected {
+        padding: 0px;
+        img {
+          height: 50px;
+          width: 50px;
+        }
       }
     }
 
@@ -32,7 +41,15 @@ const PaletteContainer = styled('section') `
 
 
         >div {
-          margin: 5px 5px 5px 0;
+          margin: 5px;
+          height: 38px;
+          width: 38px;
+          >div {
+            >img {
+              height: 38px;
+              width: 38px;
+            }
+          }
         }
       }
     }
@@ -81,8 +98,8 @@ class Palette extends Component {
           <ButtonGroup className="palette-job-buttons">
             {JOB_ORDER.map((job) => {
               return (
-                <Button key={job} onClick={() => { this.handleChange(job) }}>
-                  <img src={`/icons/jobs/${job}.png`} />
+                <Button key={job} onClick={() => { this.handleChange(job) }}  className={(this.state.selectedPaletteId === job) ? 'selected' : ''}>
+                  <img src={`/icons/jobs/${job}.png`} alt={`${job} Icon`}/>
                 </Button>
               )
             })}

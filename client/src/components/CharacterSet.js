@@ -16,14 +16,16 @@ const CharacterSetContainer = styled('div') `
     display: flex;
     flex-wrap: wrap;
     button {
-      padding: 0;
+      padding: 4px;
       border: none;
 
       img {
         height: 42px;
         width: 42px;
-
-         &.selected {
+      }
+      &.selected {
+        padding: 0px;
+        img {
           height: 50px;
           width: 50px;
         }
@@ -239,8 +241,8 @@ class CharacterSet extends Component {
       <ButtonGroup className="button-group-jobs">
         {JOB_ORDER.map((job) => {
           return (
-            <Button key={job} onClick={() => { this.handleJobChange(job) }}>
-              <img src={`/icons/jobs/${job}.png`} className={(this.state.characterSet.job === job) ? 'selected' : ''} />
+            <Button key={job} onClick={() => { this.handleJobChange(job) }} className={(this.state.characterSet.job === job) ? 'selected' : ''}>
+              <img src={`/icons/jobs/${job}.png`} alt={`${job} Icon`}/>
             </Button>
           )
         })}
@@ -276,7 +278,7 @@ class CharacterSet extends Component {
               {this.state.mode !== 'create' &&
                 <Row>
                   <Col xs={12}>
-                    Job: <img src={`/icons/jobs/${this.state.characterSet.job}.png`} className="selected-job-icon"/>
+                    Job: <img src={`/icons/jobs/${this.state.characterSet.job}.png`} alt={`${this.state.characterSet.job} Icon`} className="selected-job-icon"/>
                   </Col>
                 </Row>
               }
