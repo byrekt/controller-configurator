@@ -43,6 +43,8 @@ class CharacterSet extends Component {
 
   constructor(props) {
     super(props);
+
+    console.log('constructor called');
     // If a kitID is present, display the corresponding kit
     if (props.match && props.match.params && props.match.params.kitId) {
       props.onSetChange(props.match.params.kitId);
@@ -51,6 +53,8 @@ class CharacterSet extends Component {
     }
 
     this.state = { characterSet: props.characterSet, displayName: '', mode: 'view' };
+
+    this.getInitialState(props);
 
     this.moveAction = this.moveAction.bind(this);
     this.clearAction = this.clearAction.bind(this);
@@ -66,28 +70,29 @@ class CharacterSet extends Component {
 
 
   componentWillReceiveProps(nextProps) {
+    console.log('willRecieveProps called');
 
-    // If the kitId changes, make sure to reload the kit.
-    if (this.props.match.params.kitId !== nextProps.match.params.kitId) {
-      this.props.onSetChange(nextProps.match.params.kitId);
-    }
-    if (nextProps.match.params.kitId) {
-      if (nextProps.authentication.uid === nextProps.characterSet.creatorId) {
-        this.setState({
-          characterSet: nextProps.characterSet,
+    this.getInitialState(nextProps);
+  }
+
+  getInitialState(props) {
+    if (props.match.params.kitId) {
+      if (props.authentication.uid === props.characterSet.creatorId) {
+        this.state = {
+          characterSet: props.characterSet,
           mode: 'edit'
-        });
+        };
       } else {
-        this.setState({
-          characterSet: nextProps.characterSet,
+        this.state = {
+          characterSet: props.characterSet,
           mode: 'view'
-        });
+        };
       }
     } else {
-      this.setState({
-        characterSet: nextProps.characterSet,
+      this.state = {
+        characterSet: props.characterSet,
         mode: 'create'
-      });
+      };
     }
   }
 
@@ -242,7 +247,7 @@ class CharacterSet extends Component {
         {JOB_ORDER.map((job) => {
           return (
             <Button key={job} onClick={() => { this.handleJobChange(job) }} className={(this.state.characterSet.job === job) ? 'selected' : ''}>
-              <img src={`/icons/jobs/${job}.png`} alt={`${job} Icon`}/>
+              <img src={`/icons/jobs/${job}.png`} alt={`${job} Icon`} />
             </Button>
           )
         })}
@@ -251,6 +256,7 @@ class CharacterSet extends Component {
   }
 
   render() {
+    console.log('state', this.state, 'props:', this.props);
     return (
       <CharacterSetContainer>
         {this.state &&
@@ -278,7 +284,7 @@ class CharacterSet extends Component {
               {this.state.mode !== 'create' &&
                 <Row>
                   <Col xs={12}>
-                    Job: <img src={`/icons/jobs/${this.state.characterSet.job}.png`} alt={`${this.state.characterSet.job} Icon`} className="selected-job-icon"/>
+                    Job: <img src={`/icons/jobs/${this.state.characterSet.job}.png`} alt={`${this.state.characterSet.job} Icon`} className="selected-job-icon" />
                   </Col>
                 </Row>
               }

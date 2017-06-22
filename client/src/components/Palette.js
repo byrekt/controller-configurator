@@ -31,10 +31,11 @@ const PaletteContainer = styled('section') `
 
 
   .palette-actions-container {
+    height: 312px;
+    overflow-y: scroll;
     clear: right;
 
     .group-container {
-      text-align: center;
       .palette-content {
         display: flex;
         flex-wrap: wrap;

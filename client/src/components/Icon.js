@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Popover, OverlayTrigger, Modal, Button } from 'react-bootstrap';
+import { Popover, OverlayTrigger, Modal, Button, Form, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import { DragSource } from 'react-dnd';
 
 // Information should be in format provided by https://github.com/xivdb/api/blob/master/Content-Action.md
@@ -22,6 +22,16 @@ const ActionIcon = styled('div') `
       position: relative;
       bottom: 52px;
       left: 28px;
+    }
+`;
+
+const ActionTooltip = styled('section') `
+
+    .tooltip-tip {
+      margin-bottom: 0.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 `;
 
@@ -53,7 +63,7 @@ class Icon extends Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.state = { showMacroModal: false };
+    this.state = { showMacroModal: false, macroName: props.icon.name, macroInfo: `/macroicon "${props.icon.name}"` };
   }
 
   getPopover(icon) {
@@ -65,19 +75,41 @@ class Icon extends Component {
   }
 
   getActionTooltip(icon) {
+
+    const tooltipContent = icon.tooltip.split('<br>');
+
+    if (icon.recast) {
+      tooltipContent.unshift(`Recast: ${icon.recast}`)
+    }
+    if (icon.cast) {
+      tooltipContent.unshift(`Cast: ${icon.recast}`)
+    }
+
+    const sexyTooltipContent = tooltipContent.map(tip => {
+      // If the tip has a colon in it, let's bold what's before the colon;
+      if (tip.indexOf(':') !== -1) {
+        const tipContent = tip.split(':');
+        tipContent[0] = `<strong>${tipContent[0]}</strong>`;
+        tip = tipContent.join(':');
+      }
+      return `<div class="tooltip-tip">${tip}</div>`;
+    });
+
+    const sexyTooltip = sexyTooltipContent.join('');
+
+
     return (
-      <section>
+      <ActionTooltip>
         <header>
           <h4>{icon.name}</h4>
         </header>
-        <div dangerouslySetInnerHTML={{ __html: icon.tooltip }} />
-      </section>
+        <div dangerouslySetInnerHTML={{ __html: sexyTooltip }} />
+      </ActionTooltip>
     )
   }
 
   handleClick(e) {
-    if (e.shiftKey && this.props.icon) {
-      console.log('shifted!');
+    if (e.shiftKey && this.props.icon && this.props.addMacro) {
       this.setState({
         showMacroModal: true
       })
@@ -116,12 +148,27 @@ class Icon extends Component {
         </ActionIcon>
         <Modal show={this.state.showMacroModal}>
           <Modal.Header>
-            <Modal.Title>Modal title</Modal.Title>
+            <Modal.Title>
+              Macro Editor
+            </Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
-            One fine body...
-      </Modal.Body>
+            <Form>
+              <FormGroup controlId="macroName">
+                <ControlLabel>Name</ControlLabel>
+                {' '}
+                <FormControl type="text" value={this.state.macroName}/>
+              </FormGroup>
+
+              <FormGroup controlId="formControlsTextarea">
+                <ControlLabel>Macro Steps</ControlLabel>
+                <FormControl componentClass="textarea" value={this.state.macroInfo}/>
+              </FormGroup>
+
+
+            </Form>
+          </Modal.Body>
 
           <Modal.Footer>
             <Button onClick={this.closeModal}>Close</Button>
