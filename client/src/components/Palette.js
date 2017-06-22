@@ -31,7 +31,7 @@ const PaletteContainer = styled('section') `
 
 
   .palette-actions-container {
-    height: 312px;
+    height: 720px;
     overflow-y: scroll;
     clear: right;
 
@@ -97,7 +97,7 @@ class Palette extends Component {
       )
     });
   }
-
+  // TODO Make the palette an affixed container
   render() {
     return (
       <PaletteContainer>
