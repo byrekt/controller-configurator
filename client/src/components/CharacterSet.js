@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
 import styled from 'styled-components';
-import { Row, Col, Button, DropdownButton, MenuItem, ButtonGroup } from 'react-bootstrap';
+import { Row, Col, Button, DropdownButton, MenuItem, ButtonGroup, Form, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import CrossHotBar from './CrossHotBar';
 import Palette from '../containers/Palette';
 import PropTypes from 'prop-types';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-import { JOB_ORDER } from '../constants/DefaultValues';
+import { JOB_ORDER, DEFAULT_SET } from '../constants/DefaultValues';
 
 
 const CharacterSetContainer = styled('div') `
@@ -52,9 +52,26 @@ class CharacterSet extends Component {
       props.onSetChange();
     }
 
-    this.state = { characterSet: props.characterSet, displayName: '', mode: 'view' };
+    //this.state = { characterSet: props.characterSet, displayName: '', mode: 'view' };
 
-    this.getInitialState(props);
+    if (props.match.params.kitId) {
+      if (props.authentication.uid === props.characterSet.creatorId) {
+        this.state = {
+          characterSet: props.characterSet,
+          mode: 'edit'
+        };
+      } else {
+        this.state = {
+          characterSet: props.characterSet,
+          mode: 'view'
+        };
+      }
+    } else {
+      this.state = {
+        characterSet: DEFAULT_SET,
+        mode: 'create'
+      };
+    }
 
     this.moveAction = this.moveAction.bind(this);
     this.clearAction = this.clearAction.bind(this);
@@ -70,29 +87,24 @@ class CharacterSet extends Component {
 
 
   componentWillReceiveProps(nextProps) {
-    console.log('willRecieveProps called');
 
-    this.getInitialState(nextProps);
-  }
-
-  getInitialState(props) {
-    if (props.match.params.kitId) {
-      if (props.authentication.uid === props.characterSet.creatorId) {
-        this.state = {
-          characterSet: props.characterSet,
+    if (nextProps.match.params.kitId) {
+      if (nextProps.authentication.uid === nextProps.characterSet.creatorId) {
+        this.setState({
+          characterSet: nextProps.characterSet,
           mode: 'edit'
-        };
+        });
       } else {
-        this.state = {
-          characterSet: props.characterSet,
+        this.setState({
+          characterSet: nextProps.characterSet,
           mode: 'view'
-        };
+        });
       }
     } else {
-      this.state = {
-        characterSet: props.characterSet,
+      this.setState({
+        characterSet: DEFAULT_SET,
         mode: 'create'
-      };
+      });
     }
   }
 
@@ -105,7 +117,6 @@ class CharacterSet extends Component {
   }
 
   addMacro(setNumber, position, macroInfo) {
-    console.log(setNumber, position, macroInfo);
     const barIndex = this.state.characterSet.crossBars.map(bar => bar.setNumber).indexOf(setNumber);
 
     this.setState({
@@ -242,7 +253,6 @@ class CharacterSet extends Component {
   }
 
   renderJobOptions() {
-    console.log(JOB_ORDER);
     return (
       <ButtonGroup className="button-group-jobs">
         {JOB_ORDER.map((job) => {
@@ -260,114 +270,122 @@ class CharacterSet extends Component {
     console.log('state', this.state, 'props:', this.props);
     return (
       <CharacterSetContainer>
-        {this.state &&
-          <Row>
-            <Col xs={8}>
-              <Row>
-                <Col xs={12}>
-                  {this.state.mode === 'view' && this.state.characterSet.name}
-                  {(this.state.mode === 'create' || this.state.mode === 'edit') &&
-                    <div>
-                      <label htmlFor="set-name">Set Name:</label>
-                      <input id="set-name" type="text" onChange={this.onSetNameChange} value={(this.state.characterSet) ? this.state.characterSet.name : ''} />
-                    </div>
-                  }
-                </Col>
-              </Row>
-              {this.state.mode === 'create' &&
+        <Form>
+          {this.state &&
+            <Row>
+              <Col xs={8}>
                 <Row>
                   <Col xs={12}>
-                    <label>Job</label>
-                    {this.renderJobOptions()}
+                    {this.state.mode === 'view' && this.state.characterSet.name}
+                    {(this.state.mode === 'create' || this.state.mode === 'edit') &&
+                      <FormGroup controlId="kitName">
+                        <ControlLabel>Kit Name</ControlLabel>
+                        <FormControl type="text" onChange={this.onSetNameChange} value={(this.state.characterSet) ? this.state.characterSet.name : ''} />
+                      </FormGroup>
+                    }
                   </Col>
                 </Row>
-              }
-              {this.state.mode !== 'create' &&
                 <Row>
                   <Col xs={12}>
-                    Job: <img src={`/icons/jobs/${this.state.characterSet.job}.png`} alt={`${this.state.characterSet.job} Icon`} className="selected-job-icon" />
+                    <FormGroup>
+                      <ControlLabel>Job</ControlLabel>
+                      {this.state.mode === 'create' &&
+                        this.renderJobOptions()
+                      }
+                      {this.state.mode !== 'create' &&
+                        <FormControl.Static>
+                          <img src={`/icons/jobs/${this.state.characterSet.job}.png`} alt={`${this.state.characterSet.job} Icon`} className="selected-job-icon" />
+                        </FormControl.Static>
+                      }
+                    </FormGroup>
                   </Col>
                 </Row>
-              }
-              <Row>
-                <Col xs={12}>
-                  {this.state.mode === 'create' && !this.props.userInfo &&
-                    <div>
-                      <label htmlFor="display-name">Your display name:</label>
-                      <input id="display-name" type="text" onChange={this.onDisplayNameChange} value={(this.state.displayName) ? this.state.displayName : ''} />
-                    </div>
-                  }
-                  {(this.state.characterSet.creatorName || this.props.userInfo) &&
-                    <div>Created by {this.state.characterSet.creatorName || this.props.userInfo.displayName}</div>
-                  }
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={12}>
-                  {this.state.mode === 'view' && this.state.characterSet.description}
-                  {(this.state.mode === 'create' || this.state.mode === 'edit') &&
-                    <div>
-                      <label htmlFor="set-description">Set Description:</label>
-                      <br />
-                      <textarea id="set-description" onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
-                    </div>
-                  }
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={12}>
-                  {this.state.characterSet && this.state.characterSet.crossBars && this.state.characterSet.crossBars.sort((a, b) => a.setNumber - b.setNumber).map((bar, index) => {
-                    return (
-                      <div key={index}>
-                        <Row>
-                          <Col xs={12} className="center-block">
-                            <h4>
-                              Set {bar.setNumber}
-                            </h4>
-                          </Col>
-                        </Row>
-                        {bar.description &&
+                <Row>
+                  <Col xs={12}>
+                    <FormGroup controlId="user-display-name">
+                      <ControlLabel>Created By</ControlLabel>
+                      {this.state.mode === 'create' && !this.props.userInfo &&
+                        <FormControl type="text" onChange={this.onDisplayNameChange} value={(this.state.displayName) ? this.state.displayName : ''} />
+                      }
+                      {(this.state.characterSet.creatorName || this.props.userInfo) &&
+                        <FormControl.Static>{this.state.characterSet.creatorName || this.props.userInfo.displayName}</FormControl.Static>
+                      }
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12}>
+                    <FormGroup controlId="kit-description">
+                      <ControlLabel>
+                        Description
+                      </ControlLabel>
+                      {(this.state.mode === 'create' || this.state.mode === 'edit') &&
+                        <FormControl componentClass="textarea" onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
+                      }
+                      {this.state.mode === 'view' &&
+                        <FormControl.Static>
+                          ${this.state.characterSet.description}
+                        </FormControl.Static>
+                      }
+                    </FormGroup>
+
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12}>
+                    {this.state.characterSet && this.state.characterSet.crossBars && this.state.characterSet.crossBars.sort((a, b) => a.setNumber - b.setNumber).map((bar, index) => {
+                      return (
+                        <div key={index}>
                           <Row>
-                            <Col xs={12}>
-                              {bar.description}
+                            <Col xs={12} className="center-block">
+                              <h4>
+                                Set {bar.setNumber}
+                              </h4>
                             </Col>
                           </Row>
-                        }
-                        <CrossHotBar bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} clearAction={this.clearAction} addMacro={this.addMacro} />
-                      </div>
-                    )
-                  })}
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={12}>
-                  <h4>Add and Remove Bars</h4>
-                  <ButtonGroup>
-                    <DropdownButton id="add-cross-bars" title="Add Bars">
-                      {this.renderAddBarButtons()}
-                    </DropdownButton>
-                    <DropdownButton id="remove-cross-bars" title="Remove Bars">
-                      {this.renderRemoveBarButtons()}
-                    </DropdownButton>
-                  </ButtonGroup>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={12}>
-                  <h4>Actions</h4>
-                  {(this.state.mode === 'edit' || this.state.mode === 'create') &&
-                    <Button onClick={this.saveKit}>Save</Button>
-                  }
-                </Col>
-              </Row>
-            </Col>
-            <Col xs={4}>
-              {this.state.characterSet && this.state.characterSet.job && (this.state.mode === 'create' || this.state.mode === 'edit') &&
-                <Palette defaultPaletteId={this.state.characterSet.job} />
-              }
-            </Col>
-          </Row>
-        }
+                          {bar.description &&
+                            <Row>
+                              <Col xs={12}>
+                                {bar.description}
+                              </Col>
+                            </Row>
+                          }
+                          <CrossHotBar bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} clearAction={this.clearAction} addMacro={this.addMacro} />
+                        </div>
+                      )
+                    })}
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12}>
+                    <h4>Add and Remove Bars</h4>
+                    <ButtonGroup>
+                      <DropdownButton id="add-cross-bars" title="Add Bars">
+                        {this.renderAddBarButtons()}
+                      </DropdownButton>
+                      <DropdownButton id="remove-cross-bars" title="Remove Bars">
+                        {this.renderRemoveBarButtons()}
+                      </DropdownButton>
+                    </ButtonGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12}>
+                    <h4>Actions</h4>
+                    {(this.state.mode === 'edit' || this.state.mode === 'create') &&
+                      <Button onClick={this.saveKit}>Save</Button>
+                    }
+                  </Col>
+                </Row>
+              </Col>
+              <Col xs={4}>
+                {this.state.characterSet && this.state.characterSet.job && (this.state.mode === 'create' || this.state.mode === 'edit') &&
+                  <Palette defaultPaletteId={this.state.characterSet.job} />
+                }
+              </Col>
+            </Row>
+          }
+        </Form>
       </CharacterSetContainer>
     );
   }
