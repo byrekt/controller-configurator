@@ -62,10 +62,21 @@ class Palette extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedPaletteId: this.props.defaultPaletteId
+      selectedPaletteId: this.props.paletteId
     }
-    this.props.onJobChange(this.props.defaultPaletteId);
-    this.handleChange = this.handleChange.bind(this);
+
+    props.onJobChange(this.props.paletteId);
+  }
+
+  // Change this to a lifecycle method that WON't infinitely rerender.
+  componentWillReceiveProps(nextProps) {
+    console.log('nextProps', nextProps);
+    if (nextProps.paletteId !== this.state.selectedPaletteId) {
+      this.setState({
+        selectedPaletteId: nextProps.paletteId
+      })
+      nextProps.onJobChange(nextProps.paletteId);
+    }
   }
 
   getJobPalette(actions) {
@@ -87,25 +98,10 @@ class Palette extends Component {
     });
   }
 
-  handleChange(palette) {
-    this.setState({ selectedPaletteId: palette });
-    this.props.onJobChange(palette);
-  }
-
   render() {
     return (
       <PaletteContainer>
         <Panel>
-          <ButtonGroup className="palette-job-buttons">
-            {JOB_ORDER.map((job) => {
-              return (
-                <Button key={job} onClick={() => { this.handleChange(job) }}  className={(this.state.selectedPaletteId === job) ? 'selected' : ''}>
-                  <img src={`/icons/jobs/${job}.png`} alt={`${job} Icon`}/>
-                </Button>
-              )
-            })}
-          </ButtonGroup>
-
           <section className="palette-actions-container">
             <header>
               <h2>
@@ -124,7 +120,7 @@ class Palette extends Component {
 Palette.propTypes = {
   jobs: PropTypes.object,
   jobActions: PropTypes.object,
-  defaultPaletteId: PropTypes.string,
+  paletteId: PropTypes.string,
   onJobChange: PropTypes.func.isRequired
 };
 Palette.defaultProps = {

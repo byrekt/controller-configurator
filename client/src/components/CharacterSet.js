@@ -343,13 +343,6 @@ class CharacterSet extends Component {
                               </h4>
                             </Col>
                           </Row>
-                          {bar.description &&
-                            <Row>
-                              <Col xs={12}>
-                                {bar.description}
-                              </Col>
-                            </Row>
-                          }
                           <CrossHotBar bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} clearAction={this.clearAction} addMacro={this.addMacro} />
                         </div>
                       )
@@ -380,7 +373,7 @@ class CharacterSet extends Component {
               </Col>
               <Col xs={4}>
                 {this.state.characterSet && this.state.characterSet.job && (this.state.mode === 'create' || this.state.mode === 'edit') &&
-                  <Palette defaultPaletteId={this.state.characterSet.job} />
+                  <Palette paletteId={this.state.characterSet.job} />
                 }
               </Col>
             </Row>
