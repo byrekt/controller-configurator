@@ -74,7 +74,10 @@ class FirebaseUI extends Component {
       authUi.start('#firebaseui-auth', uiConfig);
     }
   }
-
+  /**
+   * If the app is not in offline mode, we need to reset the authentication functionality
+   * when the component is unmounted.
+   */
   componentWillUnmount() {
     if (!OFFLINE_MODE) {
 
@@ -89,7 +92,13 @@ class FirebaseUI extends Component {
   }
 }
 
-
+/**
+ * Stateless component responsible for rendering the header with navigation.
+ *
+ * @param {Object} authenticated the object returned from firebase authentication corresponding
+ * to the user
+ * @param {function} doSignOut closure action to perform the sign-out steps
+ */
 const Header = ({ authenticated, doSignOut }) => (
   <StyledHeader>
     <Navbar>
@@ -124,8 +133,9 @@ const Header = ({ authenticated, doSignOut }) => (
   </StyledHeader>
 );
 
-// Gets data from "API"s and stores them in the redux store using the
-
+/**
+ * Handles application level state for the application.
+ */
 class App extends Component {
 
   constructor(props) {

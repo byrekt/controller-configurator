@@ -5,6 +5,9 @@ import Browse from '../containers/Browse';
 import UserKits from '../containers/UserKits';
 import CharacterSet from '../containers/CharacterSet';
 import { Grid, Row, Col } from 'react-bootstrap';
+/**
+ * Contains all of the routing logic for the application.
+ */
 class Main extends Component {
 
   render() {

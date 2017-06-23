@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
 import styled from 'styled-components';
-import { Row, Col, Button, DropdownButton, MenuItem, ButtonGroup, Form, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+import { Row, Col, Button, DropdownButton, MenuItem, ButtonGroup, Form, FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap';
 import CrossHotBar from './CrossHotBar';
 import Palette from '../containers/Palette';
 import PropTypes from 'prop-types';
@@ -38,22 +38,23 @@ const CharacterSetContainer = styled('div') `
     width: 42px;
   }
 `
-
+/**
+ * This overly large component serves as an interface for users to create, modify, and view character
+ * kits.
+ */
 class CharacterSet extends Component {
 
   constructor(props) {
     super(props);
 
-    console.log('constructor called');
     // If a kitID is present, display the corresponding kit
     if (props.match && props.match.params && props.match.params.kitId) {
       props.onSetChange(props.match.params.kitId);
     } else {
       props.onSetChange();
     }
-
-    //this.state = { characterSet: props.characterSet, displayName: '', mode: 'view' };
-
+    // If the kit ID is present, let's initialize state based on
+    // whether the user is the creator of the kit.
     if (props.match.params.kitId) {
       if (props.authentication.uid === props.characterSet.creatorId) {
         this.state = {
@@ -183,6 +184,7 @@ class CharacterSet extends Component {
     });
   }
   onSetDescriptionChange(e) {
+    console.log('onSetDescription:', e.target.value);
     this.setState({
       characterSet: update(this.state.characterSet, { description: { $set: e.target.value } })
     });
@@ -223,7 +225,11 @@ class CharacterSet extends Component {
     if (!characterSet.creatorName) {
       characterSet.creatorName = this.state.displayName;
     }
-    this.props.saveKit(this.state.characterSet, this.props.authentication.uid, this.state.displayName);
+    if (this.checkForm()) {
+      this.props.saveKit(this.state.characterSet, this.props.authentication.uid, this.state.displayName);
+    } else {
+      window.scroll(0, 0);
+    }
   }
 
   renderAddBarButtons() {
@@ -266,8 +272,33 @@ class CharacterSet extends Component {
     )
   }
 
+  getKitNameValidationState() {
+    const length = this.state.characterSet.name.length;
+    if (length < 10) {
+      return 'error';
+    } else {
+      return 'success';
+    }
+  }
+
+  getDisplayNameValidationState() {
+    const length = this.state.characterSet.creatorName.length;
+    console.log('length of display name:', length);
+    if (length < 10) {
+      return 'error';
+    } else {
+      return 'success';
+    }
+  }
+
+  checkForm() {
+    if (this.getKitNameValidationState() === 'success' && this.getDisplayNameValidationState() === 'success') {
+      return true;
+    }
+    return false;
+  }
+
   render() {
-    console.log('state', this.state, 'props:', this.props);
     return (
       <CharacterSetContainer>
         <Form>
@@ -278,9 +309,11 @@ class CharacterSet extends Component {
                   <Col xs={12}>
                     {this.state.mode === 'view' && this.state.characterSet.name}
                     {(this.state.mode === 'create' || this.state.mode === 'edit') &&
-                      <FormGroup controlId="kitName">
+                      <FormGroup controlId="kitName" validationState={this.getKitNameValidationState()}>
                         <ControlLabel>Kit Name</ControlLabel>
+                        <HelpBlock>Enter a kit name indicative of what's great about your setup.</HelpBlock>
                         <FormControl type="text" onChange={this.onSetNameChange} value={(this.state.characterSet) ? this.state.characterSet.name : ''} />
+                        <FormControl.Feedback />
                       </FormGroup>
                     }
                   </Col>
@@ -302,25 +335,35 @@ class CharacterSet extends Component {
                 </Row>
                 <Row>
                   <Col xs={12}>
-                    <FormGroup controlId="user-display-name">
+                    <FormGroup controlId="userDisplayName" validationState={this.getDisplayNameValidationState}>
                       <ControlLabel>Created By</ControlLabel>
                       {this.state.mode === 'create' && !this.props.userInfo &&
-                        <FormControl type="text" onChange={this.onDisplayNameChange} value={(this.state.displayName) ? this.state.displayName : ''} />
+                        <div>
+                          <HelpBlock>Since you haven't given us a display name yet, what would you like to be known as to other users?</HelpBlock>
+                          <FormControl type="text" onChange={this.onDisplayNameChange} value={(this.state.displayName) ? this.state.displayName : ''} />
+                          <FormControl.Feedback />
+                        </div>
                       }
                       {(this.state.characterSet.creatorName || this.props.userInfo) &&
-                        <FormControl.Static>{this.state.characterSet.creatorName || this.props.userInfo.displayName}</FormControl.Static>
+                        <FormControl.Static value={this.state.characterSet.creatorName || this.props.userInfo.displayName}>{this.state.characterSet.creatorName || this.props.userInfo.displayName}</FormControl.Static>
                       }
                     </FormGroup>
                   </Col>
                 </Row>
                 <Row>
                   <Col xs={12}>
-                    <FormGroup controlId="kit-description">
+                    <FormGroup controlId="kitDescription">
                       <ControlLabel>
-                        Description
+                        Description (Optional, but highly recommended)
                       </ControlLabel>
+
                       {(this.state.mode === 'create' || this.state.mode === 'edit') &&
-                        <FormControl componentClass="textarea" onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
+                        <div>
+                          <HelpBlock>Let user's of your kit know if there is any additional information required to use your kit effectively.
+                            This could include WXHB setting assumptions, reasoning for placement, any concerns you may have, etc.</HelpBlock>
+                          <FormControl componentClass="textarea" onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
+                          <FormControl.Feedback />
+                        </div>
                       }
                       {this.state.mode === 'view' &&
                         <FormControl.Static>

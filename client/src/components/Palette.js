@@ -6,49 +6,33 @@ import { Panel, ButtonGroup, Button } from 'react-bootstrap';
 import { JOB_ORDER } from '../constants/DefaultValues';
 
 const PaletteContainer = styled('section') `
-
-  .palette-job-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    button {
-      padding: 4px;
-      border: none;
-
-      img {
-        height: 42px;
-        width: 42px;
-      }
-      &.selected {
-        padding: 0px;
-        img {
-          height: 50px;
-          width: 50px;
-        }
-      }
-    }
-
+  .panel {
+    max-height: 85vh;
+    position: fixed;
+    width: 25vw;
+    overflow: hidden;
   }
 
-
   .palette-actions-container {
-    height: 720px;
-    overflow-y: scroll;
-    clear: right;
 
-    .group-container {
-      .palette-content {
-        display: flex;
-        flex-wrap: wrap;
+    .palettes {
+      overflow-y: scroll;
+      max-height: 65vh;
+      .group-container {
+        .palette-content {
+          display: flex;
+          flex-wrap: wrap;
 
 
-        >div {
-          margin: 5px;
-          height: 38px;
-          width: 38px;
           >div {
-            >img {
-              height: 38px;
-              width: 38px;
+            margin: 5px;
+            height: 38px;
+            width: 38px;
+            >div {
+              >img {
+                height: 38px;
+                width: 38px;
+              }
             }
           }
         }
@@ -108,7 +92,9 @@ class Palette extends Component {
                 {this.props.jobs[this.state.selectedPaletteId] && this.props.jobs[this.state.selectedPaletteId].name}
               </h2>
             </header>
-            {this.getPalettes()}
+            <section className="palettes">
+              {this.getPalettes()}
+            </section>
           </section>
         </Panel>
       </PaletteContainer>

@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 
 import { Grid, Row, Col } from 'react-bootstrap';
 
+/**
+ * Displays the list of character kits currently viewable. Takes in a
+ */
 class Browse extends Component {
 
   componentWillMount() {

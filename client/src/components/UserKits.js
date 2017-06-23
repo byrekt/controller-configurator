@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 
 import { Grid, Row, Col } from 'react-bootstrap';
 
+/**
+ * Renders the list of the current user's kits.
+ */
 class UserKits extends Component {
 
   componentWillMount() {
