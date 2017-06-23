@@ -15,8 +15,40 @@ import Main from '../components/Main';
 const OFFLINE_MODE = true;
 
 const StyledHeader = styled.header`
+  .navbar {
+    border-radius: 10px;
+    border: 7px ridge white;
+    background: linear-gradient(#5050cd, #01002d);
+  }
+
+  .navbar-default {
+    .navbar-nav {
+      >li {
+        background-color: none;
+        >a {
+          color: white;
+        }
+        &:hover::before {
+          background-image: url(/icons/misc/cursor.png);
+          background-size: 17px 20px;
+          width: 17px;
+          height: 20px;
+          display: inline-block;
+          position: absolute;
+          top: 20px;
+          content: "";
+          left: -5px;
+        }
+      }
+    }
+  }
+
+
   .dropdown-menu {
-    padding: 0;
+    color: white;
+    border-radius: 10px;
+    border: 7px ridge white;
+    background: linear-gradient(#5050cd, #01002d);
   }
 
   .firebaseui-card-content {

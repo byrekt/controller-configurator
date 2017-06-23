@@ -11,13 +11,19 @@ import { JOB_ORDER, DEFAULT_SET } from '../constants/DefaultValues';
 
 
 const CharacterSetContainer = styled('div') `
-
+  .help-block {
+    color: #cdcdcd;
+  }
+  .form-control {
+    background-color: #cdcdcd;
+  }
   .button-group-jobs {
     display: flex;
     flex-wrap: wrap;
     button {
       padding: 4px;
       border: none;
+      background-color: transparent;
 
       img {
         height: 42px;
@@ -37,6 +43,13 @@ const CharacterSetContainer = styled('div') `
     height: 42px;
     width: 42px;
   }
+`
+
+const CharacterSetContent = styled('div') `
+    border-radius: 10px;
+    border: 7px ridge white;
+    background: linear-gradient(#5050cd, #01002d);
+    padding: 1rem;
 `
 /**
  * This overly large component serves as an interface for users to create, modify, and view character
@@ -274,11 +287,13 @@ class CharacterSet extends Component {
 
   getKitNameValidationState() {
     const length = this.state.characterSet.name.length;
+    if (length === 0) {
+      return null;
+    }
     if (length < 10) {
       return 'error';
-    } else {
-      return 'success';
     }
+    return null;
   }
 
   getDisplayNameValidationState() {
@@ -292,7 +307,7 @@ class CharacterSet extends Component {
   }
 
   checkForm() {
-    if (this.getKitNameValidationState() === 'success' && this.getDisplayNameValidationState() === 'success') {
+    if (this.getKitNameValidationState() !== 'error' && this.getDisplayNameValidationState() !== 'error') {
       return true;
     }
     return false;
@@ -305,115 +320,120 @@ class CharacterSet extends Component {
           {this.state &&
             <Row>
               <Col xs={8}>
-                <Row>
-                  <Col xs={12}>
-                    {this.state.mode === 'view' && this.state.characterSet.name}
-                    {(this.state.mode === 'create' || this.state.mode === 'edit') &&
-                      <FormGroup controlId="kitName" validationState={this.getKitNameValidationState()}>
-                        <ControlLabel>Kit Name</ControlLabel>
-                        <HelpBlock>Enter a kit name indicative of what's great about your setup.</HelpBlock>
-                        <FormControl type="text" onChange={this.onSetNameChange} value={(this.state.characterSet) ? this.state.characterSet.name : ''} />
-                        <FormControl.Feedback />
-                      </FormGroup>
-                    }
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-                    <FormGroup>
-                      <ControlLabel>Job</ControlLabel>
-                      {this.state.mode === 'create' &&
-                        this.renderJobOptions()
-                      }
-                      {this.state.mode !== 'create' &&
-                        <FormControl.Static>
-                          <img src={`/icons/jobs/${this.state.characterSet.job}.png`} alt={`${this.state.characterSet.job} Icon`} className="selected-job-icon" />
-                        </FormControl.Static>
-                      }
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-                    <FormGroup controlId="userDisplayName" validationState={this.getDisplayNameValidationState}>
-                      <ControlLabel>Created By</ControlLabel>
-                      {this.state.mode === 'create' && !this.props.userInfo &&
-                        <div>
-                          <HelpBlock>Since you haven't given us a display name yet, what would you like to be known as to other users?</HelpBlock>
-                          <FormControl type="text" onChange={this.onDisplayNameChange} value={(this.state.displayName) ? this.state.displayName : ''} />
+
+                <CharacterSetContent>
+                  <Row>
+                    <Col xs={12}>
+                      {this.state.mode === 'view' && this.state.characterSet.name}
+                      {(this.state.mode === 'create' || this.state.mode === 'edit') &&
+                        <FormGroup controlId="kitName" validationState={this.getKitNameValidationState()}>
+                          <ControlLabel>Kit Name</ControlLabel>
+                          <HelpBlock>Enter a kit name indicative of what's great about your setup.</HelpBlock>
+                          <FormControl type="text" onChange={this.onSetNameChange} value={(this.state.characterSet) ? this.state.characterSet.name : ''} />
                           <FormControl.Feedback />
-                        </div>
+                        </FormGroup>
                       }
-                      {(this.state.characterSet.creatorName || this.props.userInfo) &&
-                        <FormControl.Static value={this.state.characterSet.creatorName || this.props.userInfo.displayName}>{this.state.characterSet.creatorName || this.props.userInfo.displayName}</FormControl.Static>
-                      }
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-                    <FormGroup controlId="kitDescription">
-                      <ControlLabel>
-                        Description (Optional, but highly recommended)
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      <FormGroup>
+                        <ControlLabel>Job</ControlLabel>
+                        {this.state.mode === 'create' &&
+                          this.renderJobOptions()
+                        }
+                        {this.state.mode !== 'create' &&
+                          <FormControl.Static>
+                            <img src={`/icons/jobs/${this.state.characterSet.job}.png`} alt={`${this.state.characterSet.job} Icon`} className="selected-job-icon" />
+                          </FormControl.Static>
+                        }
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      <FormGroup controlId="userDisplayName" validationState={this.getDisplayNameValidationState}>
+                        <ControlLabel>Created By</ControlLabel>
+                        {this.state.mode === 'create' && !this.props.userInfo &&
+                          <div>
+                            <HelpBlock>Since you haven't given us a display name yet, what would you like to be known as to other users?</HelpBlock>
+                            <FormControl type="text" onChange={this.onDisplayNameChange} value={(this.state.displayName) ? this.state.displayName : ''} />
+                            <FormControl.Feedback />
+                          </div>
+                        }
+                        {(this.state.characterSet.creatorName || this.props.userInfo) &&
+                          <FormControl.Static value={this.state.characterSet.creatorName || this.props.userInfo.displayName}>{this.state.characterSet.creatorName || this.props.userInfo.displayName}</FormControl.Static>
+                        }
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      <FormGroup controlId="kitDescription">
+                        <ControlLabel>
+                          Description (Optional, but highly recommended)
                       </ControlLabel>
 
-                      {(this.state.mode === 'create' || this.state.mode === 'edit') &&
-                        <div>
-                          <HelpBlock>Let user's of your kit know if there is any additional information required to use your kit effectively.
+                        {(this.state.mode === 'create' || this.state.mode === 'edit') &&
+                          <div>
+                            <HelpBlock>Let user's of your kit know if there is any additional information required to use your kit effectively.
                             This could include WXHB setting assumptions, reasoning for placement, any concerns you may have, etc.</HelpBlock>
-                          <FormControl componentClass="textarea" onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
-                          <FormControl.Feedback />
-                        </div>
-                      }
-                      {this.state.mode === 'view' &&
-                        <FormControl.Static>
-                          ${this.state.characterSet.description}
-                        </FormControl.Static>
-                      }
-                    </FormGroup>
+                            <FormControl componentClass="textarea" onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
+                            <FormControl.Feedback />
+                          </div>
+                        }
+                        {this.state.mode === 'view' &&
+                          <FormControl.Static>
+                            ${this.state.characterSet.description}
+                          </FormControl.Static>
+                        }
+                      </FormGroup>
 
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-                    {this.state.characterSet && this.state.characterSet.crossBars && this.state.characterSet.crossBars.sort((a, b) => a.setNumber - b.setNumber).map((bar, index) => {
-                      return (
-                        <div key={index}>
-                          <Row>
-                            <Col xs={12} className="center-block">
-                              <h4>
-                                Set {bar.setNumber}
-                              </h4>
-                            </Col>
-                          </Row>
-                          <CrossHotBar bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} clearAction={this.clearAction} addMacro={this.addMacro} />
-                        </div>
-                      )
-                    })}
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-                    <h4>Add and Remove Bars</h4>
-                    <ButtonGroup>
-                      <DropdownButton id="add-cross-bars" title="Add Bars">
-                        {this.renderAddBarButtons()}
-                      </DropdownButton>
-                      <DropdownButton id="remove-cross-bars" title="Remove Bars">
-                        {this.renderRemoveBarButtons()}
-                      </DropdownButton>
-                    </ButtonGroup>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-                    <h4>Actions</h4>
-                    {(this.state.mode === 'edit' || this.state.mode === 'create') &&
-                      <Button onClick={this.saveKit}>Save</Button>
-                    }
-                  </Col>
-                </Row>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      {this.state.characterSet && this.state.characterSet.crossBars && this.state.characterSet.crossBars.sort((a, b) => a.setNumber - b.setNumber).map((bar, index) => {
+                        return (
+                          <div key={index}>
+                            <Row>
+                              <Col xs={12} className="center-block">
+                                <h4>
+                                  Set {bar.setNumber}
+                                </h4>
+                              </Col>
+                            </Row>
+                            <CrossHotBar bar={bar} actionsData={this.props.actionsData} moveAction={this.moveAction} clearAction={this.clearAction} addMacro={this.addMacro} />
+                          </div>
+                        )
+                      })}
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      <h4>Add and Remove Bars</h4>
+                      <ButtonGroup>
+                        <DropdownButton id="add-cross-bars" title="Add Bars">
+                          {this.renderAddBarButtons()}
+                        </DropdownButton>
+                        <DropdownButton id="remove-cross-bars" title="Remove Bars">
+                          {this.renderRemoveBarButtons()}
+                        </DropdownButton>
+                      </ButtonGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      <h4>Actions</h4>
+                      {(this.state.mode === 'edit' || this.state.mode === 'create') &&
+                        <Button onClick={this.saveKit}>Save</Button>
+                      }
+                    </Col>
+                  </Row>
+
+                </CharacterSetContent>
               </Col>
+
               <Col xs={4}>
                 {this.state.characterSet && this.state.characterSet.job && (this.state.mode === 'create' || this.state.mode === 'edit') &&
                   <Palette paletteId={this.state.characterSet.job} />

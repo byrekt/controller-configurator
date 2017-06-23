@@ -13,8 +13,8 @@ const PaletteContainer = styled('section') `
     color: white;
     overflow: hidden;
     border-radius: 10px;
-    border: 2px ridge #ebcf86;
-    background: linear-gradient(to bottom right, #aaaaaa, #343434);
+    border: 7px ridge white;
+    background: linear-gradient(#5050cd, #01002d);
   }
 
   .palette-actions-container {
