@@ -10,7 +10,11 @@ const PaletteContainer = styled('section') `
     max-height: 85vh;
     position: fixed;
     width: 25vw;
+    color: white;
     overflow: hidden;
+    border-radius: 10px;
+    border: 2px ridge #ebcf86;
+    background: linear-gradient(to bottom right, #aaaaaa, #343434);
   }
 
   .palette-actions-container {
@@ -32,6 +36,7 @@ const PaletteContainer = styled('section') `
               >img {
                 height: 38px;
                 width: 38px;
+                box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
               }
             }
           }
