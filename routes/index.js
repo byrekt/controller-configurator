@@ -4,7 +4,7 @@ var admin = require('firebase-admin');
 var router = express.Router();
 var offlineServer;
 var database;
-const OFFLINE_MODE = true;
+const OFFLINE_MODE = false;
 var serviceAccount = require('../../controller-configurator-firebase-adminsdk-0za72-5bf37e6d3b.json');
 
 

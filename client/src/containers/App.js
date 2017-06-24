@@ -12,9 +12,13 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Main from '../components/Main';
 
-const OFFLINE_MODE = true;
+const OFFLINE_MODE = false;
 
 const StyledHeader = styled.header`
+
+  .popover-content {
+    color: yellow;
+  }
   .navbar {
     border-radius: 10px;
     border: 7px ridge white;

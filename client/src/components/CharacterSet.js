@@ -297,8 +297,8 @@ class CharacterSet extends Component {
   }
 
   getDisplayNameValidationState() {
-    const length = this.state.characterSet.creatorName.length;
-    console.log('length of display name:', length);
+    console.log('state in validation: ', this.state);
+    const length = (this.state.characterSet.creatorName || '').length;
     if (length < 10) {
       return 'error';
     } else {
@@ -352,7 +352,7 @@ class CharacterSet extends Component {
                   </Row>
                   <Row>
                     <Col xs={12}>
-                      <FormGroup controlId="userDisplayName" validationState={this.getDisplayNameValidationState}>
+                      <FormGroup controlId="userDisplayName" validationState={this.getDisplayNameValidationState()}>
                         <ControlLabel>Created By</ControlLabel>
                         {this.state.mode === 'create' && !this.props.userInfo &&
                           <div>
