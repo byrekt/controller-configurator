@@ -6,7 +6,6 @@
     "start": "concurrently \"yarn run server\" \"yarn run install\"",
     "server": "node ./bin/www",
     "install": "cd client && yarn install && yarn build && cd ..",
-    "build": "concurrently \"yarn build\" \"yarn run install\"",
     "client": "yarn run install"
   },
   "dependencies": {
