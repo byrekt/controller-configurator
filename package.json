@@ -1,12 +1,12 @@
 {
   "name": "controller-configurator",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node app.js",
-    "install": "cd client && npm install run build && cd ..",
-    "client": "node start-client.js"
+    "start": "concurrently \"yarn run server\" \"yarn run install\"",
+    "server": "node ./bin/www",
+    "install": "cd client && yarn install && yarn build && cd ..",
+    "client": "yarn run install"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
