@@ -30,6 +30,6 @@
      "test": "react-scripts test --env=jsdom",
      "eject": "react-scripts eject",
      "storybook": "start-storybook -p 9009 -s public"
-   },
+   }, 
    "proxy": "https://fathomless-oasis-95481.herokuapp.com/"
  }
