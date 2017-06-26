@@ -8,8 +8,7 @@ const OFFLINE_MODE = false;
 
 var serviceAccount;
 
-console.log(process.env.FIREBASE_TYPE);
-if (process.env.FIREBASE_TYPE) {
+if (process.env.FIREBASE_PRIVATE_KEY) {
   serviceAccount =
     {
       "type": process.env.FIREBASE_TYPE,
