@@ -28,20 +28,24 @@ const StyledHeader = styled.header`
   .navbar-default {
     .navbar-nav {
       >li {
-        background-color: none;
+        background-color: transparent;
         >a {
           color: white;
         }
-        &:hover::before {
-          background-image: url(/icons/misc/cursor.png);
-          background-size: 17px 20px;
-          width: 17px;
-          height: 20px;
-          display: inline-block;
-          position: absolute;
-          top: 20px;
-          content: "";
-          left: -5px;
+        &.active&:hover, &:hover {
+          color: white;
+          background-color: transparent;
+          &::before {
+            background-image: url(/icons/misc/cursor.png);
+            background-size: 17px 20px;
+            width: 17px;
+            height: 20px;
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            content: "";
+            left: -5px;
+          }
         }
       }
     }
