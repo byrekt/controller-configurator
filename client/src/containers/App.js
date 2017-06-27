@@ -15,10 +15,6 @@ import Main from '../components/Main';
 const OFFLINE_MODE = false;
 
 const StyledHeader = styled.header`
-
-  .popover-content {
-    color: yellow;
-  }
   .navbar {
     &.navbar-default {
       background-color: black;
@@ -39,13 +35,13 @@ const StyledHeader = styled.header`
           color: white;
         }
         &.active, &.open {
-          background-color: transparent;
+          background-color: rgba(0, 0, 0, 0.2);
           a {
             background-color: transparent;
             color: white;
           }
         }
-        &:hover, &:active {
+        &:hover{
           &::before {
             background-image: url(/icons/misc/cursor.png);
             background-size: 17px 20px;
@@ -65,9 +61,19 @@ const StyledHeader = styled.header`
 
   .dropdown-menu {
     color: white;
-    border-radius: 10px;
+    border-radius: 10px !important;    
+    box-shadow: 1px 0px 2px 2px rgba(0, 0, 0, .8);
     border: 7px ridge white;
     background: linear-gradient(#5050cd, #01002d);
+    
+    >ul {
+      >li {
+        &:hover, &.active {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+      }
+    }
+
   }
 
   .firebaseui-card-content {

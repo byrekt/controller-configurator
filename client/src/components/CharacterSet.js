@@ -12,8 +12,6 @@ import { JOB_ORDER, DEFAULT_SET } from '../constants/DefaultValues';
 
 const CharacterSetContainer = styled('div') `
 
-  font-family: 'finalFantasy', Times, serif;
-
   .help-block {
     color: #cdcdcd;
   }
@@ -38,7 +36,7 @@ const CharacterSetContainer = styled('div') `
         padding: 0px;
         img {
           height: 50px;
-          width: 50px;
+          width: 50px; 
         }
       }
     }
@@ -86,8 +84,12 @@ class CharacterSet extends Component {
         };
       }
     } else {
+      let newKit = DEFAULT_SET;
+      if (this.props.userInfo && this.props.userInfo.displayName) {
+        newKit.creatorName = this.props.userInfo.displayName;
+      }
       this.state = {
-        characterSet: DEFAULT_SET,
+        characterSet: newKit,
         mode: 'create'
       };
     }
@@ -120,8 +122,12 @@ class CharacterSet extends Component {
         });
       }
     } else {
+      let newKit = DEFAULT_SET;
+      if (this.props.userInfo && this.props.userInfo.displayName) {
+        newKit.creatorName = this.props.userInfo.displayName;
+      }
       this.setState({
-        characterSet: DEFAULT_SET,
+        characterSet: newKit,
         mode: 'create'
       });
     }
@@ -245,6 +251,8 @@ class CharacterSet extends Component {
     }
     if (this.checkForm()) {
       this.props.saveKit(this.state.characterSet, this.props.authentication.uid, this.state.displayName);
+      window.location = `/userKits/${this.props.authentication.uid}`;
+      
     } else {
       window.scroll(0, 0);
     }
@@ -302,7 +310,10 @@ class CharacterSet extends Component {
   }
 
   getDisplayNameValidationState() {
-    console.log('state in validation: ', this.state);
+    if (this.state.mode === 'edit' || (this.state.mode === 'create' && this.props.userInfo && this.props.userInfo.displayName)) {
+      return null;
+    }
+
     const length = (this.state.characterSet.creatorName || '').length;
     if (length < 10) {
       return 'error';
@@ -367,7 +378,7 @@ class CharacterSet extends Component {
                           </div>
                         }
                         {(this.state.characterSet.creatorName || this.props.userInfo) &&
-                          <FormControl.Static value={this.state.characterSet.creatorName || this.props.userInfo.displayName}>{this.state.characterSet.creatorName || this.props.userInfo.displayName}</FormControl.Static>
+                          <FormControl.Static type="text" value={this.state.characterSet.creatorName || this.props.userInfo.displayName}>{this.state.characterSet.creatorName || this.props.userInfo.displayName}</FormControl.Static>
                         }
                       </FormGroup>
                     </Col>
@@ -417,21 +428,19 @@ class CharacterSet extends Component {
                   <Row>
                     <Col xs={12}>
                       <h4>Add and Remove Bars</h4>
-                      <ButtonGroup>
-                        <DropdownButton id="add-cross-bars" title="Add Bars">
-                          {this.renderAddBarButtons()}
-                        </DropdownButton>
-                        <DropdownButton id="remove-cross-bars" title="Remove Bars">
-                          {this.renderRemoveBarButtons()}
-                        </DropdownButton>
-                      </ButtonGroup>
+                      <DropdownButton id="add-cross-bars" dropup title="Add Bars" className="fancy-button">
+                        {this.renderAddBarButtons()}
+                      </DropdownButton>
+                      <DropdownButton id="remove-cross-bars" dropup title="Remove Bars" className="fancy-button">
+                        {this.renderRemoveBarButtons()}
+                      </DropdownButton>
                     </Col>
                   </Row>
                   <Row>
                     <Col xs={12}>
                       <h4>Actions</h4>
                       {(this.state.mode === 'edit' || this.state.mode === 'create') &&
-                        <Button onClick={this.saveKit}>Save</Button>
+                        <Button onClick={this.saveKit} className="fancy-button">Save</Button>
                       }
                     </Col>
                   </Row>
