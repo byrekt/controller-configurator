@@ -11,6 +11,9 @@ import { JOB_ORDER, DEFAULT_SET } from '../constants/DefaultValues';
 
 
 const CharacterSetContainer = styled('div') `
+
+  font-family: 'finalFantasy', Times, serif;
+
   .help-block {
     color: #cdcdcd;
   }

@@ -12,7 +12,7 @@ const ActionIcon = styled('div') `
     }
 
     &.macro::after{
-      color: white;
+      color: black;
       content: "❃";
       text-shadow: 2px 2px 8px white;
       font-weight: bold;
@@ -72,7 +72,7 @@ class Icon extends Component {
 
   getPopover(icon) {
     return (
-      <Popover id={icon.id} title={(icon.macroInfo) ? icon.macroInfo.name : ''}>
+      <Popover id={icon.id} title={(icon.macroInfo) ? icon.macroInfo.name : ''} style={{color: 'black'}}>
         {(icon.macroInfo) ? <pre id={`${icon.id}-macro-info`}>{icon.macroInfo.macroSteps.join('\n')}</pre> : this.getActionTooltip(icon)}
       </Popover>
     )
