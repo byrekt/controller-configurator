@@ -12,7 +12,7 @@ const ActionIcon = styled('div') `
     }
 
     &.macro::after{
-      color: black;
+      color: white;
       content: "❃";
       text-shadow: 2px 2px 8px white;
       font-weight: bold;

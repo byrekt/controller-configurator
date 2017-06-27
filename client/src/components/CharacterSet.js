@@ -18,7 +18,9 @@ const CharacterSetContainer = styled('div') `
     color: #cdcdcd;
   }
   .form-control {
-    background-color: #cdcdcd;
+    background-color: rgba(155, 155, 155, 0.3);
+    color: white;
+    border: none;
   }
   .button-group-jobs {
     display: flex;
