@@ -20,9 +20,15 @@ const StyledHeader = styled.header`
     color: yellow;
   }
   .navbar {
-    border-radius: 10px;
-    border: 7px ridge white;
-    background: linear-gradient(#5050cd, #01002d);
+    &.navbar-default {
+      background-color: black;
+      border: none;
+    }
+    >div.container {
+      border-radius: 10px;
+      border: 7px ridge white;
+      background: linear-gradient(#5050cd, #01002d);
+    }
   }
 
   .navbar-default {
@@ -32,9 +38,14 @@ const StyledHeader = styled.header`
         >a {
           color: white;
         }
-        &.active&:hover, &:hover {
-          color: white;
+        &.active, &.open {
           background-color: transparent;
+          a {
+            background-color: transparent;
+            color: white;
+          }
+        }
+        &:hover, &:active {
           &::before {
             background-image: url(/icons/misc/cursor.png);
             background-size: 17px 20px;
@@ -141,7 +152,7 @@ class FirebaseUI extends Component {
  */
 const Header = ({ authenticated, doSignOut }) => (
   <StyledHeader>
-    <Navbar>
+    <Navbar className="container">
       <Nav>
         <LinkContainer exact={true} to="/">
           <NavItem eventKey={1}>Home</NavItem>

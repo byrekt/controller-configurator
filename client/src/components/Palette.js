@@ -9,7 +9,7 @@ const PaletteContainer = styled('section') `
   .panel {
     max-height: 85vh;
     position: fixed;
-    width: 25vw;
+    width: 39rem;
     color: white;
     overflow: hidden;
     border-radius: 10px;
@@ -26,7 +26,6 @@ const PaletteContainer = styled('section') `
         .palette-content {
           display: flex;
           flex-wrap: wrap;
-
 
           >div {
             margin: 5px;
