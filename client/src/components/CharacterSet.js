@@ -315,7 +315,7 @@ class CharacterSet extends Component {
     }
 
     const length = (this.state.characterSet.creatorName || '').length;
-    if (length < 10) {
+    if (length < 3) {
       return 'error';
     } else {
       return 'success';
