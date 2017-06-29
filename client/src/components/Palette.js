@@ -58,7 +58,6 @@ class Palette extends Component {
 
   // Change this to a lifecycle method that WON't infinitely rerender.
   componentWillReceiveProps(nextProps) {
-    console.log('nextProps', nextProps);
     if (nextProps.paletteId !== this.state.selectedPaletteId) {
       this.setState({
         selectedPaletteId: nextProps.paletteId
