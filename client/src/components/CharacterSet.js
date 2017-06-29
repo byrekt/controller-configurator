@@ -300,9 +300,7 @@ class CharacterSet extends Component {
 
   getKitNameValidationState() {
     const length = this.state.characterSet.name.length;
-    if (length === 0) {
-      return null;
-    }
+
     if (length < 10) {
       return 'error';
     }
