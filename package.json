@@ -7,8 +7,7 @@
     "server": "node ./bin/www",
     "install": "cd client && yarn install && yarn build && cd ..",
     "client": "yarn run install",
-    "client-start": "cd client && yarn start",
-    "local": "concurrently \"yarn start\" \"yarn run client-start\""
+    "client-start": "cd client && yarn start"
   },
   "dependencies": {
     "body-parser": "~1.17.1",

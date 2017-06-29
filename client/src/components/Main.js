@@ -8,6 +8,9 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const ContentContainer = styled('div') `
+
+  margin-top: 1rem;
+  
   .fancy-button {
     border: none;
     border-radius: 21px;
@@ -39,21 +42,19 @@ class Main extends Component {
   render() {
     return (
       <ContentContainer>
-        <Grid>
-          <Row>
-            <Col xs={12}>
-              <main>
-                <Switch>
-                  <Route exact={true} path='/' component={Home} />
-                  <Route path={'/browse'} component={Browse} />
-                  <Route path={'/userKits/:uid'} component={UserKits} />
-                  <Route path={'/kits/:kitId'} component={CharacterSet} />
-                  <Route path={'/newKit'} component={CharacterSet} />
-                </Switch>
-              </main>
-            </Col>
-          </Row>
-        </Grid>
+        <Row>
+          <Col xs={12}>
+            <main>
+              <Switch>
+                <Route exact={true} path='/' component={Home} />
+                <Route path={'/browse'} component={Browse} />
+                <Route path={'/userKits/:uid'} component={UserKits} />
+                <Route path={'/kits/:kitId'} component={CharacterSet} />
+                <Route path={'/newKit'} component={CharacterSet} />
+              </Switch>
+            </main>
+          </Col>
+        </Row>
       </ContentContainer>
     );
   }

@@ -17,7 +17,7 @@ class UserKits extends Component {
     const kits = this.props.sets;
 
     return (
-      <Grid>
+      <div>
         {kits && Object.keys(kits).map((kit) => {
           kit = kits[kit];
           return <Row key={kit.kitId}>
@@ -35,7 +35,7 @@ class UserKits extends Component {
             </Col>
           </Row>
         })}
-      </Grid>
+      </div>
     );
   }
 }

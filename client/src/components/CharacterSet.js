@@ -15,6 +15,11 @@ const CharacterSetContainer = styled('div') `
   .help-block {
     color: #cdcdcd;
   }
+  .has-error {
+    .control-label {
+      color: #ff3333;
+    }
+  }
   .form-control {
     background-color: rgba(155, 155, 155, 0.3);
     color: white;
@@ -313,7 +318,7 @@ class CharacterSet extends Component {
     }
 
     const length = (this.state.characterSet.creatorName || '').length;
-    if (length < 3) {
+    if (length < 3 && length > 32) {
       return 'error';
     } else {
       return 'success';
@@ -390,7 +395,7 @@ class CharacterSet extends Component {
 
                         {(this.state.mode === 'create' || this.state.mode === 'edit') &&
                           <div>
-                            <HelpBlock>Let user's of your kit know if there is any additional information required to use your kit effectively.
+                            <HelpBlock>Let users of your kit know if there is any additional information required to use your kit effectively.
                             This could include WXHB setting assumptions, reasoning for placement, any concerns you may have, etc.</HelpBlock>
                             <FormControl componentClass="textarea" onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
                             <FormControl.Feedback />
@@ -446,7 +451,7 @@ class CharacterSet extends Component {
                 </CharacterSetContent>
               </Col>
 
-              <Col xs={4}>
+              <Col xs={4} style={{"padding-left": 0}}>
                 {this.state.characterSet && this.state.characterSet.job && (this.state.mode === 'create' || this.state.mode === 'edit') &&
                   <Palette paletteId={this.state.characterSet.job} />
                 }

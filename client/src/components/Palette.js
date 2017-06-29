@@ -9,7 +9,7 @@ const PaletteContainer = styled('section') `
   .panel {
     max-height: 85vh;
     position: fixed;
-    width: 39rem;
+    width: 37.5rem;
     color: white;
     overflow: hidden;
     border-radius: 10px;

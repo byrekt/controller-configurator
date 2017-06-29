@@ -8,26 +8,31 @@ import { getJobData, getActions, signIn, signOut, getUserInfo } from '../actions
 
 import styled from 'styled-components';
 
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Row, Col, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Main from '../components/Main';
 
 const OFFLINE_MODE = false;
 
+const Logo = styled.div`
+  text-align: right;
+  padding-right: 3rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  text-shadow: -4px 4px 0px rgb(14, 14, 14), 7px 7px 0px rgba(0, 0, 0, 0.2);
+`
+
 const StyledHeader = styled.header`
-  .navbar {
-    &.navbar-default {
-      background-color: black;
-      border: none;
-    }
-    >div.container {
-      border-radius: 10px;
-      border: 7px ridge white;
-      background: linear-gradient(#5050cd, #01002d);
-    }
-  }
+
+  background-color: black;
+  border-radius: 10px;
+  border: 7px ridge white;
+  background: linear-gradient(#5050cd, #01002d);
 
   .navbar-default {
+    background-color: transparent;
+    border: 0;
+    margin-bottom: 0;
     .navbar-nav {
       >li {
         background-color: transparent;
@@ -158,30 +163,39 @@ class FirebaseUI extends Component {
  */
 const Header = ({ authenticated, doSignOut }) => (
   <StyledHeader>
-    <Navbar className="container">
-      <Nav>
-        <LinkContainer exact={true} to="/">
-          <NavItem eventKey={1}>Home</NavItem>
-        </LinkContainer>
-        <LinkContainer to="/browse">
-          <NavItem eventKey={2}>Browse Kits</NavItem>
-        </LinkContainer>
-        {!authenticated &&
-          <NavDropdown eventKey={3} title="Sign In" id="basic-nav-dropdown">
-            <FirebaseUI />
-          </NavDropdown>}
-        {authenticated &&
-          <NavDropdown eventKey={3} title="User Menu" id="basic-nav-dropdown">
-            <LinkContainer to={`/newKit`}>
-              <MenuItem eventKey={3.1}>New Kit</MenuItem>
+    <Row>
+      <Col xs={6}>
+        <Navbar>
+          <Nav>
+            <LinkContainer exact={true} to="/">
+              <NavItem eventKey={1}>Home</NavItem>
             </LinkContainer>
-            <LinkContainer to={`/userKits/${authenticated}`}>
-              <MenuItem eventKey={3.1}>My Kits</MenuItem>
+            <LinkContainer to="/browse">
+              <NavItem eventKey={2}>Browse Kits</NavItem>
             </LinkContainer>
-            <MenuItem eventKey={3.2} onClick={doSignOut}>Log Out</MenuItem>
-          </NavDropdown>}
-      </Nav>
-    </Navbar>
+            {!authenticated &&
+              <NavDropdown eventKey={3} title="Sign In" id="basic-nav-dropdown">
+                <FirebaseUI />
+              </NavDropdown>}
+            {authenticated &&
+              <NavDropdown eventKey={3} title="User Menu" id="basic-nav-dropdown">
+                <LinkContainer to={`/newKit`}>
+                  <MenuItem eventKey={3.1}>New Kit</MenuItem>
+                </LinkContainer>
+                <LinkContainer to={`/userKits/${authenticated}`}>
+                  <MenuItem eventKey={3.1}>My Kits</MenuItem>
+                </LinkContainer>
+                <MenuItem eventKey={3.2} onClick={doSignOut}>Log Out</MenuItem>
+              </NavDropdown>}
+          </Nav>
+        </Navbar>
+      </Col>
+      <Col xs={6}>
+        <Logo>
+          Supernova Squirrel's Controller Configurator
+        </Logo>
+      </Col>
+    </Row>
     {authenticated && !OFFLINE_MODE &&
       <div className={'hidden'}>
         <FirebaseUI />
@@ -220,7 +234,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <Header authenticated={this.props.authentication.uid} doSignOut={this.doSignOut} />
         <Main />
       </div>
