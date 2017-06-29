@@ -17,3 +17,17 @@ export const JOB_ORDER = [
   'summoner',
   'red_mage'
 ]
+
+export const CATEGORY_ORDER = [
+  'Job Actions',
+  'Role Actions',
+  'Pet Actions (Eos)',
+  'Pet Actions (Selene)',
+  'Pet Actions (Emerald Carbuncle)',
+  'Pet Actions (Topaz Carbuncle)',
+  'Pet Actions (Garuda-Egi)',
+  'Pet Actions (Ifrit-Egi)',
+  'Pet Actions (Titan-Egi)',
+  'PvP Actions',
+  'Additional PvP Actions'
+]

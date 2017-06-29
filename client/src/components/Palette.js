@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Icon from './Icon';
 import PropTypes from 'prop-types';
 import { Panel, ButtonGroup, Button } from 'react-bootstrap';
-import { JOB_ORDER } from '../constants/DefaultValues';
+import { JOB_ORDER, CATEGORY_ORDER } from '../constants/DefaultValues';
 
 const PaletteContainer = styled('section') `
   .panel {
@@ -72,17 +72,19 @@ class Palette extends Component {
     });
   };
   getPalettes() {
-    return Object.keys(this.props.jobActions).map((group) => {
-      // Only show the group if there are actions in it.
-      return (
-        <section key={group} className="group-container">
-          <h3>{group}</h3>
-          <div className="palette-content">
-            {this.getJobPalette(this.props.jobActions[group])}
-          </div>
-        </section>
-      )
-    });
+    return CATEGORY_ORDER.map((category) => {
+      if (this.props.jobActions[category]) {
+        const group = category;
+        return (
+          <section key={group} className="group-container">
+            <h3>{group}</h3>
+            <div className="palette-content">
+              {this.getJobPalette(this.props.jobActions[group])}
+            </div>
+          </section>
+        )
+      }
+    })
   }
   // TODO Make the palette an affixed container
   render() {
