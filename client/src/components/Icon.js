@@ -65,6 +65,8 @@ class Icon extends Component {
 
     this.updateMacroName = this.updateMacroName.bind(this);
     this.updateMacroSteps = this.updateMacroSteps.bind(this);
+    this.disableTooltips = this.disableTooltips.bind(this);
+    this.enableTooltips = this.enableTooltips.bind(this);
 
     let macroInfo = props.icon.macroInfo || { name: props.icon.name, macroSteps: `/macroicon "${props.icon.name}"` };
     this.state = { showMacroModal: false, macroName: macroInfo.name, macroInfo: macroInfo.macroSteps };
@@ -72,7 +74,7 @@ class Icon extends Component {
 
   getPopover(icon) {
     return (
-      <Popover id={icon.id} title={(icon.macroInfo) ? icon.macroInfo.name : ''} style={{color: 'black'}}>
+      <Popover id={icon.id} title={(icon.macroInfo) ? icon.macroInfo.name : ''} className={(this.state.disableTooltips) ? 'hidden' : ''} style={{ color: 'black' }}>
         {(icon.macroInfo) ? <pre id={`${icon.id}-macro-info`}>{icon.macroInfo.macroSteps.join('\n')}</pre> : this.getActionTooltip(icon)}
       </Popover>
     )
@@ -166,13 +168,25 @@ class Icon extends Component {
     }
   }
 
+  disableTooltips() {
+    this.setState({
+      disableTooltips: true
+    });
+  }
+
+  enableTooltips() {
+    this.setState({
+      disableTooltips: false
+    });
+  }
+
   render() {
     const { connectDragSource } = this.props;
     let icon = <span />;
     if (this.props.icon && this.props.icon !== 'empty') {
       icon = <OverlayTrigger placement="right" trigger={['hover', 'focus']}
         overlay={this.getPopover(this.props.icon)}>
-        <img src={`/${this.props.icon.icon}`} alt="" onClick={this.handleClick} />
+        <img src={`/${this.props.icon.icon}`} alt="" onDragStart={this.disableTooltips} onDragEnd={this.enableTooltips} onClick={this.handleClick} />
       </OverlayTrigger>
     }
     return connectDragSource(
