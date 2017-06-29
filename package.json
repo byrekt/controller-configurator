@@ -7,7 +7,8 @@
     "server": "node ./bin/www",
     "install": "cd client && yarn install && yarn build && cd ..",
     "client": "yarn run install",
-    "client-start": "cd client && yarn start"
+    "client-start": "cd client && yarn start",
+    "local": "concurrently \"yarn start\" \"yarn run client-start\""
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -18,11 +19,12 @@
     "express": "~4.15.2",
     "firebase": "^4.1.1",
     "firebase-admin": "^5.0.0",
-    "firebase-server": "^0.10.1",
     "firebaseui": "^2.1.1",
+    "global": "^4.3.2",
     "jade": "~1.11.0",
     "morgan": "~1.8.1",
     "react-addons-update": "^15.6.0",
+    "react-scripts": "^1.0.10",
     "serve-favicon": "~2.4.2"
   }
 }
