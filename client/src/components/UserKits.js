@@ -10,7 +10,7 @@ const BrowseContainer = styled('div') `
     border: 7px ridge white;
     background: linear-gradient(#5050cd, #01002d);
     min-height: 80vh;
-    padding: 3rem;
+    padding: 1rem 3rem;
 
     a {
       color: white;
@@ -22,7 +22,7 @@ const BrowseContainer = styled('div') `
 
     .row {
       border-bottom: 1px solid white;
-      padding-bottom: 1.5rem;
+      padding: 1.5rem 0;
     }
 `;
 /**
