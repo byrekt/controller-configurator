@@ -259,7 +259,7 @@ class CharacterSet extends Component {
       window.location = `/userKits/${this.props.authentication.uid}`;
 
     } else {
-      window.scroll(0, 0);
+      alert('Saved!');
     }
   }
 
