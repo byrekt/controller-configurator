@@ -208,12 +208,12 @@ class Icon extends Component {
             <Form>
               <FormGroup controlId="macroName">
                 <ControlLabel>Name</ControlLabel>
-                <FormControl type="text" onChange={this.updateMacroName} value={this.state.macroName} />
+                <FormControl type="text" maxLength={256} onChange={this.updateMacroName} value={this.state.macroName} />
               </FormGroup>
 
               <FormGroup controlId="formControlsTextarea">
                 <ControlLabel>Macro Steps</ControlLabel>
-                <FormControl componentClass="textarea" onChange={this.updateMacroSteps} value={this.state.macroInfo} />
+                <FormControl componentClass="textarea" maxLength={900} onChange={this.updateMacroSteps} value={this.state.macroInfo} />
               </FormGroup>
 
 

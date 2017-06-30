@@ -348,7 +348,7 @@ class CharacterSet extends Component {
                         <FormGroup controlId="kitName" validationState={this.getKitNameValidationState()}>
                           <ControlLabel>Kit Name</ControlLabel>
                           <HelpBlock>Enter a kit name indicative of what's great about your setup.</HelpBlock>
-                          <FormControl type="text" onChange={this.onSetNameChange} value={(this.state.characterSet) ? this.state.characterSet.name : ''} />
+                          <FormControl type="text" maxLength={256} onChange={this.onSetNameChange} value={(this.state.characterSet) ? this.state.characterSet.name : ''} />
                           <FormControl.Feedback />
                         </FormGroup>
                       }
@@ -376,7 +376,7 @@ class CharacterSet extends Component {
                         {this.state.mode === 'create' && !this.props.userInfo &&
                           <div>
                             <HelpBlock>Since you haven't given us a display name yet, what would you like to be known as to other users?</HelpBlock>
-                            <FormControl type="text" onChange={this.onDisplayNameChange} value={(this.state.displayName) ? this.state.displayName : ''} />
+                            <FormControl type="text" maxLength={32} onChange={this.onDisplayNameChange} value={(this.state.displayName) ? this.state.displayName : ''} />
                             <FormControl.Feedback />
                           </div>
                         }
@@ -397,7 +397,7 @@ class CharacterSet extends Component {
                           <div>
                             <HelpBlock>Let users of your kit know if there is any additional information required to use your kit effectively.
                             This could include WXHB setting assumptions, reasoning for placement, any concerns you may have, etc.</HelpBlock>
-                            <FormControl componentClass="textarea" onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
+                            <FormControl componentClass="textarea" maxLength={1000} style={{"max-width": "716px", 'min-height': '132px'}} onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
                             <FormControl.Feedback />
                           </div>
                         }
