@@ -12,6 +12,11 @@ import { JOB_ORDER, DEFAULT_SET } from '../constants/DefaultValues';
 
 const CharacterSetContainer = styled('div') `
 
+  pre {
+    white-space: pre-line;
+    word-wrap: break-word;
+  }
+
   .help-block {
     color: #cdcdcd;
   }
