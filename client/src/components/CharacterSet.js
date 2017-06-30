@@ -257,7 +257,7 @@ class CharacterSet extends Component {
     if (this.checkForm()) {
       this.props.saveKit(this.state.characterSet, this.props.authentication.uid, this.state.displayName);
       window.location = `/userKits/${this.props.authentication.uid}`;
-      
+
     } else {
       window.scroll(0, 0);
     }
@@ -438,30 +438,34 @@ class CharacterSet extends Component {
                       })}
                     </Col>
                   </Row>
-                  <Row>
-                    <Col xs={12}>
-                      <h4>Add and Remove Bars</h4>
-                      <DropdownButton id="add-cross-bars" dropup title="Add Bars" className="fancy-button">
-                        {this.renderAddBarButtons()}
-                      </DropdownButton>
-                      <DropdownButton id="remove-cross-bars" dropup title="Remove Bars" className="fancy-button">
-                        {this.renderRemoveBarButtons()}
-                      </DropdownButton>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={12}>
-                      <h4>Actions</h4>
-                      {(this.state.mode === 'edit' || this.state.mode === 'create') &&
-                        <Button onClick={this.saveKit} className="fancy-button">Save</Button>
-                      }
-                    </Col>
-                  </Row>
+                  {this.state.mode === 'create' || this.state.mode === 'edit' &&
+                    <Row>
+                      <Col xs={12}>
+                        <h4>Add and Remove Bars</h4>
+                        <DropdownButton id="add-cross-bars" dropup title="Add Bars" className="fancy-button">
+                          {this.renderAddBarButtons()}
+                        </DropdownButton>
+                        <DropdownButton id="remove-cross-bars" dropup title="Remove Bars" className="fancy-button">
+                          {this.renderRemoveBarButtons()}
+                        </DropdownButton>
+                      </Col>
+                    </Row>
+                  }
+                  {this.state.mode === 'create' || this.state.mode === 'edit' &&
+                    <Row>
+                      <Col xs={12}>
+                        <h4>Actions</h4>
+                        {(this.state.mode === 'edit' || this.state.mode === 'create') &&
+                          <Button onClick={this.saveKit} className="fancy-button">Save</Button>
+                        }
+                      </Col>
+                    </Row>
+                  }
 
                 </CharacterSetContent>
               </Col>
 
-              <Col xs={4} style={{"padding-left": 0}}>
+              <Col xs={4} style={{ "padding-left": 0 }}>
                 {this.state.characterSet && this.state.characterSet.job && (this.state.mode === 'create' || this.state.mode === 'edit') &&
                   <Palette paletteId={this.state.characterSet.job} />
                 }
