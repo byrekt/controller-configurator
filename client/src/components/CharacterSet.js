@@ -415,7 +415,9 @@ class CharacterSet extends Component {
                     <Col xs={12}>
                       Macro Tips:
                       <ul>
-                        <li>Shift + Click on an action in the cross bar to convert it to a macro.</li>
+                        {(this.state.mode === 'create' || this.state.mode === 'edit') &&
+                          <li>Shift + Click on an action in the cross bar to convert it to a macro.</li>
+                        }
                         <li>Ctrl (or Cmd) + Click copies a macro to your clipboard so you can paste into FFXIV.</li>
                       </ul>
                     </Col>
@@ -438,7 +440,7 @@ class CharacterSet extends Component {
                       })}
                     </Col>
                   </Row>
-                  {this.state.mode === 'create' || this.state.mode === 'edit' &&
+                  {(this.state.mode === 'create' || this.state.mode === 'edit') &&
                     <Row>
                       <Col xs={12}>
                         <h4>Add and Remove Bars</h4>
@@ -451,7 +453,7 @@ class CharacterSet extends Component {
                       </Col>
                     </Row>
                   }
-                  {this.state.mode === 'create' || this.state.mode === 'edit' &&
+                  {(this.state.mode === 'create' || this.state.mode === 'edit') &&
                     <Row>
                       <Col xs={12}>
                         <h4>Actions</h4>
