@@ -402,12 +402,22 @@ class CharacterSet extends Component {
                           </div>
                         }
                         {this.state.mode === 'view' &&
-                          <FormControl.Static>
-                            ${this.state.characterSet.description}
-                          </FormControl.Static>
+                          <pre className="static-description">
+                            {this.state.characterSet.description}
+                          </pre>
                         }
                       </FormGroup>
 
+                    </Col>
+                  </Row>
+
+                  <Row>
+                    <Col xs={12}>
+                      Macro Tips:
+                      <ul>
+                        <li>Shift + Click on an action in the cross bar to convert it to a macro.</li>
+                        <li>Ctrl (or Cmd) + Click copies a macro to your clipboard so you can paste into FFXIV.</li>
+                      </ul>
                     </Col>
                   </Row>
                   <Row>
