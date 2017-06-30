@@ -3,12 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "concurrently \"yarn run server\" \"yarn run install\"",
+    "start": "yarn run server",
     "server": "node ./bin/www",
-    "install": "cd client && yarn install && yarn build && cd ..",
-    "client": "yarn run install",
-    "client-start": "cd client && yarn start",
-    "local": "concurrently \"yarn start\" \"yarn run client-start\""
+    "install": "yarn install "
   },
   "dependencies": {
     "body-parser": "~1.17.1",
