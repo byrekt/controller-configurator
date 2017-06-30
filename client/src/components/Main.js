@@ -44,15 +44,13 @@ class Main extends Component {
       <ContentContainer>
         <Row>
           <Col xs={12}>
-            <main>
-              <Switch>
-                <Route exact={true} path='/' component={Home} />
-                <Route path={'/browse'} component={Browse} />
-                <Route path={'/userKits/:uid'} component={UserKits} />
-                <Route path={'/kits/:kitId'} component={CharacterSet} />
-                <Route path={'/newKit'} component={CharacterSet} />
-              </Switch>
-            </main>
+            <Switch>
+              <Route exact={true} path='/' component={Home} />
+              <Route path={'/browse'} component={Browse} />
+              <Route path={'/userKits/:uid'} component={UserKits} />
+              <Route path={'/kits/:kitId'} component={CharacterSet} />
+              <Route path={'/newKit'} component={CharacterSet} />
+            </Switch>
           </Col>
         </Row>
       </ContentContainer>

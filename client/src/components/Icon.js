@@ -197,37 +197,35 @@ class Icon extends Component {
         <ActionIcon className={(this.props.icon && this.props.icon.macroInfo) ? 'macro' : ''}>
           {icon}
         </ActionIcon>
-        <MacroModal>
-          <Modal show={this.state.showMacroModal}>
-            <Modal.Header>
-              <Modal.Title>
-                Macro Editor
+        <Modal show={this.state.showMacroModal} style={{color: 'black'}}>
+          <Modal.Header>
+            <Modal.Title>
+              Macro Editor
             </Modal.Title>
-            </Modal.Header>
+          </Modal.Header>
 
-            <Modal.Body>
-              <Form>
-                <FormGroup controlId="macroName">
-                  <ControlLabel>Name</ControlLabel>
-                  <FormControl type="text" onChange={this.updateMacroName} value={this.state.macroName} />
-                </FormGroup>
+          <Modal.Body>
+            <Form>
+              <FormGroup controlId="macroName">
+                <ControlLabel>Name</ControlLabel>
+                <FormControl type="text" onChange={this.updateMacroName} value={this.state.macroName} />
+              </FormGroup>
 
-                <FormGroup controlId="formControlsTextarea">
-                  <ControlLabel>Macro Steps</ControlLabel>
-                  <FormControl componentClass="textarea" onChange={this.updateMacroSteps} value={this.state.macroInfo} />
-                </FormGroup>
+              <FormGroup controlId="formControlsTextarea">
+                <ControlLabel>Macro Steps</ControlLabel>
+                <FormControl componentClass="textarea" onChange={this.updateMacroSteps} value={this.state.macroInfo} />
+              </FormGroup>
 
 
-              </Form>
-            </Modal.Body>
+            </Form>
+          </Modal.Body>
 
-            <Modal.Footer>
-              <Button onClick={() => this.closeModal()}>Close</Button>
-              <Button onClick={() => this.saveMacro()} bsStyle="primary">Save changes</Button>
-            </Modal.Footer>
+          <Modal.Footer>
+            <Button onClick={() => this.closeModal()}>Close</Button>
+            <Button onClick={() => this.saveMacro()} bsStyle="primary">Save changes</Button>
+          </Modal.Footer>
 
-          </Modal>
-        </MacroModal>
+        </Modal>
       </div>
     );
   }
