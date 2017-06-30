@@ -256,10 +256,10 @@ class CharacterSet extends Component {
     }
     if (this.checkForm()) {
       this.props.saveKit(this.state.characterSet, this.props.authentication.uid, this.state.displayName);
-      window.location = `/userKits/${this.props.authentication.uid}`;
+      alert('Saved!');
 
     } else {
-      alert('Saved!');
+      window.scroll(0, 0);
     }
   }
 
