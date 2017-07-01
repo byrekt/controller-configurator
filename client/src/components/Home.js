@@ -25,6 +25,12 @@ class Home extends Component {
             <ul>
               <li>
                 <section>
+                  <header>June 30th, 2017, part 2</header>
+                  <p>Made macro indicators easier to see and hopefully added general actions. We'll see.</p>
+                </section>
+              </li>
+              <li>
+                <section>
                   <header>June 30th, 2017</header>
                   <p>Alpha version released...with a lot of known issues. Look over there -> for the list of issues</p>
                 </section>
