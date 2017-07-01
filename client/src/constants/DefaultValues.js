@@ -28,6 +28,9 @@ export const CATEGORY_ORDER = [
   'Pet Actions (Garuda-Egi)',
   'Pet Actions (Ifrit-Egi)',
   'Pet Actions (Titan-Egi)',
+  'Pet Management',
+  'General Actions',
   'PvP Actions',
-  'Additional PvP Actions'
+  'Additional PvP Actions',
+  'Adrenaline Rush'
 ]
