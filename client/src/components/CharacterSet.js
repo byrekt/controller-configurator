@@ -15,7 +15,8 @@ const CharacterSetContainer = styled('div') `
   pre {
     white-space: pre-line;
     word-wrap: break-word;
-  }
+    word-break: normal;
+  }git st
 
   .help-block {
     color: #cdcdcd;
@@ -402,7 +403,7 @@ class CharacterSet extends Component {
                           <div>
                             <HelpBlock>Let users of your kit know if there is any additional information required to use your kit effectively.
                             This could include WXHB setting assumptions, reasoning for placement, any concerns you may have, etc.</HelpBlock>
-                            <FormControl componentClass="textarea" maxLength={1000} style={{"max-width": "716px", 'min-height': '132px'}} onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
+                            <FormControl componentClass="textarea" maxLength={2000} style={{"max-width": "716px", 'min-height': '132px'}} onChange={this.onSetDescriptionChange} value={(this.state.characterSet) ? this.state.characterSet.description : ''} />
                             <FormControl.Feedback />
                           </div>
                         }
