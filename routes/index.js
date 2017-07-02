@@ -122,7 +122,7 @@ router.get('/getSetsDetails/:job?', function (req, res, next) {
             delete sets[set];
           }
         }
-        res.json();
+        res.json(sets);
       });
   } else {
     setRef
