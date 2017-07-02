@@ -12,8 +12,6 @@ import { Row, Col, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-boo
 import { LinkContainer } from 'react-router-bootstrap';
 import Main from '../components/Main';
 
-const OFFLINE_MODE = false;
-
 const Logo = styled.div`
   text-align: right;
   padding-right: 3rem;
@@ -112,39 +110,34 @@ const config = {
 };
 let authUi;
 // get instance of database
-if (!OFFLINE_MODE) {
-  firebase.initializeApp(config);
-  // Initialize firebase UI
-  authUi = new firebaseui.auth.AuthUI(firebase.auth());
-}
-
+firebase.initializeApp(config);
+// Initialize firebase UI
+authUi = new firebaseui.auth.AuthUI(firebase.auth());
 class FirebaseUI extends Component {
   componentDidMount() {
 
-    if (!OFFLINE_MODE) {
-      const uiConfig = {
-        'callbacks': {
-          'signInSuccess': function (user) {
-            return false;
-          }
-        },
-        'signInOptions': [
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        ],
-        'signInFlow': 'popup'
-      };
-      authUi.start('#firebaseui-auth', uiConfig);
-    }
+    const uiConfig = {
+      'callbacks': {
+        'signInSuccess': function (user) {
+          return false;
+        }
+      },
+      'signInOptions': [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      ],
+      'signInFlow': 'popup'
+    };
+    authUi.start('#firebaseui-auth', uiConfig);
+
   }
   /**
    * If the app is not in offline mode, we need to reset the authentication functionality
    * when the component is unmounted.
    */
   componentWillUnmount() {
-    if (!OFFLINE_MODE) {
 
-      authUi.reset();
-    }
+    authUi.reset();
+
   }
 
   render() {
@@ -196,7 +189,7 @@ const Header = ({ authenticated, doSignOut }) => (
         </Logo>
       </Col>
     </Row>
-    {authenticated && !OFFLINE_MODE &&
+    {authenticated &&
       <div className={'hidden'}>
         <FirebaseUI />
       </div>
@@ -216,20 +209,12 @@ class App extends Component {
 
     this.doSignOut = this.props.doSignOut.bind(this);
 
-    //const ref = firebase.database().ref('/lastAccess');
-    if (!OFFLINE_MODE) {
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          this.props.doSignIn(user);
-        }
-      });
-    } else {
-      let mockAuth = {
-        uid: 'zKyoDM9gFhMff4eR0VYJRHSNzns1'
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.props.doSignIn(user);
       }
+    });
 
-      this.props.doSignIn(mockAuth);
-    }
   };
 
   render() {
@@ -267,11 +252,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     doSignOut: () => {
-      if (!OFFLINE_MODE) {
-        dispatch(signOut(firebase));
-        dispatch(getUserInfo(null));
-        window.location.href = '/';
-      }
+      dispatch(signOut(firebase));
+      dispatch(getUserInfo(null));
+      window.location.href = '/';
     },
     doSignIn: (user) => {
       dispatch(signIn(user));
