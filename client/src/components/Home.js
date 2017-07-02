@@ -114,26 +114,40 @@ class Home extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} className="home-page-col">
-            <header><h3>Bugs and Upcoming Enhancements</h3></header>
+          <Col xs={6} className="home-page-col">
+            <header><h3>Known Bugs</h3></header>
             <ul>
               <li>
                 Swapping actions sometimes doesn't work and just deletes both.
               </li>
               <li>
-                No way to filter list of kits on the browse page.
+                Multiple macros can't be created with the same icon on a kit.
               </li>
               <li>
-                So many design changes need to be made.
+                State of kit page and macro modal doesn't always get cleared out when it should.
+              </li>
+              <li>
+                Saving a new kit doesn't correctly redirect to that kit's page and instead stays on the /newKit page and clears it out. It still saves the kit, but it's frustrating having to go to /userKits to get back to the one you were modifying.
+              </li>
+            </ul>
+          </Col>
+          <Col xs={6} className="home-page-col">
+            <header><h3>Upcoming Enhancements</h3></header>
+            <ul>
+              <li>
+                Swapping actions sometimes doesn't work and just deletes both.
+              </li>
+              <li>
+                Filtering on browse page
+              </li>
+              <li>
+                Design updates
               </li>
               <li>
                 Ability to generate a macro that can be run to generate the cross bars in the game.
               </li>
               <li>
                 Ability to clone kits.
-              </li>
-              <li>
-                Need to at least make kits viewable in mobile.
               </li>
               <li>
                 Make the page more responsive to screen sizes.
