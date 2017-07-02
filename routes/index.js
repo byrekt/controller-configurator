@@ -117,7 +117,12 @@ router.get('/getSetsDetails/:job?', function (req, res, next) {
       .endAt(req.params.job)
       .once('value', (snapshot) => {
         const sets = snapshot.val();
-        res.json(sets.filter(set => set !== null));
+        for(set in sets) {
+          if (sets[set].job !== req.params.job) {
+            delete sets[set];
+          }
+        }
+        res.json();
       });
   } else {
     setRef

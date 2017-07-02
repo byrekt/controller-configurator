@@ -26,6 +26,24 @@ class Home extends Component {
               <li>
                 <section>
                   <header>July 2nd, 2017</header>
+                  <p>Yay, version 0.2 is now released. It includes:
+                    <ul>
+                      <li>
+                        Featured kits (temporarily just ones I've picked)
+                      </li>
+                      <li>
+                        Filtering by Job
+                      </li>
+                      <li>
+                        Clicking on a user's name will show all kits by that person.
+                      </li>
+                    </ul>
+                  </p>
+                </section>
+              </li>
+              <li>
+                <section>
+                  <header>July 2nd, 2017</header>
                   <p>Reddit user Loksley asked: "Have you considered adding DoH/DoL as well?"<br />
                     My Answer: <br />
                     "Okay this will be a little technical. Originally I planned on having everything. The problem is I need a source of information. I originally started before the job guide came out. I intended on using data ripped from the actual game files like other sites use. Mapping meta data about the actions became a huge struggle though. <br /><br />
@@ -134,9 +152,6 @@ class Home extends Component {
           <Col xs={6} className="home-page-col">
             <header><h3>Upcoming Enhancements</h3></header>
             <ul>
-              <li>
-                Filtering on browse page
-              </li>
               <li>
                 Design updates
               </li>

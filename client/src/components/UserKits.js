@@ -15,6 +15,15 @@ const BrowseContainer = styled('div') `
     .row {
       border-bottom: 1px solid white;
       padding: 1.5rem 0;
+      &.heading {
+        border-bottom: 2px solid white;
+        padding: 1rem 0 0;
+      }
+    }
+    
+    .browse-job-icon {
+      height: 3rem;
+      margin: -1rem 0;
     }
 `;
 /**
@@ -28,19 +37,31 @@ class UserKits extends Component {
   render() {
 
     const kits = this.props.sets;
-
+    const firstKit = kits[Object.keys(kits).filter((kit, index) => index === 0)];
     return (
       <BrowseContainer>
+        <h4>Kits created by {firstKit.creatorName}</h4>
+        <Row className="heading">
+          <Col xs={1}>
+            <h5>Job</h5>
+          </Col>
+          <Col xs={7}>
+            <h5>Kit Name</h5>
+          </Col>
+          <Col xs={4}>
+            <h5>Creator</h5>
+          </Col>
+        </Row>
         {kits && Object.keys(kits).map((kit) => {
           kit = kits[kit];
           return <Row key={kit.kitId}>
-            <Col xs={6}>
+            <Col xs={1}>
+              <img className="browse-job-icon" src={`/icons/jobs/${kit.job}.png`} alt={`${kit.job} Icon`} />
+            </Col>
+            <Col xs={7}>
               <Link to={`/kits/${kit.kitId}`}> {kit.name}</Link>
             </Col>
-            <Col xs={3}>
-              {kit.job}
-            </Col>
-            <Col xs={3}>
+            <Col xs={4}>
               {kit.creatorName}
             </Col>
           </Row>
