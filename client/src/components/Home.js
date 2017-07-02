@@ -20,43 +20,11 @@ class Home extends Component {
     return (
       <HomepageContent>
         <Row>
-          <Col xs={4} className="home-page-col">
-            <header><h3>News</h3></header>
-            <ul>
-              <li>
-                <section>
-                  <header>July 2nd, 2017</header>
-                  <p>Reddit user Loksley asked: "Have you considered adding DoH/DoL as well?"<br />
-                    My Answer: <br />
-                    "Okay this will be a little technical. Originally I planned on having everything. The problem is I need a source of information. I originally started before the job guide came out. I intended on using data ripped from the actual game files like other sites use. Mapping meta data about the actions became a huge struggle though. <br />
-                    Then they released the Job Guide. That thing is amazing. The information is very well laid out. I was able to write a script that pulled that information from the HTML and download the icons in an hour. I'm a front-end engineer, so I was able to pick out the structure of the site really easily (thanks to the people that created that job site making it so uniformly structured). It took another hour to update my app to use this newly formatted information. I did all this while waiting on my Rauhban Ex queue to pop.<br />
-                    Unfortunately, they only have information for the DoW and DoW jobs. Which is why originally I didn't even have General Actions on there. I had to manually generate those with another script.<br />
-                    That being said, though...yes I do want to add them. I just need to take the time to find an easily scrape-able site and make sure I'm not breaking any rules by using their information. I figured Square Enix wouldn't mind me scraping their site because they usually make this information available in their fan-kit...which sadly they don't regularly update."<br />
-                  </p>
-                </section>
-              </li>
-              <li>
-                <section>
-                  <header>June 30th, 2017, part 2</header>
-                  <p>Made macro indicators easier to see and hopefully added general actions. We'll see.</p>
-                </section>
-              </li>
-              <li>
-                <section>
-                  <header>June 30th, 2017</header>
-                  <p>Alpha version released...with a lot of known issues. Look over there -> for the list of issues</p>
-                </section>
-              </li>
-            </ul>
-          </Col>
-          <Col xs={4} className="home-page-col">
+          <Col xs={6} className="home-page-col">
             <header><h3>Bugs and Upcoming Enhancements</h3></header>
             <ul>
               <li>
                 Swapping actions sometimes doesn't work and just deletes both.
-              </li>
-              <li>
-                General actions like Sprint and Limit Break are not yet available.
               </li>
               <li>
                 No way to filter list of kits on the browse page.
@@ -77,11 +45,23 @@ class Home extends Component {
                 Make the page more responsive to screen sizes.
               </li>
               <li>
-                Try and make the site work on the PS4 browser.
+                Make the site work on the PS4 browser.
+              </li>
+              <li>
+                DoH and DoL kits.
+              </li>
+              <li>
+                Ability to delete a kit.
+              </li>
+              <li>
+                Home page will have list of featured kits. There will be two featured kits for each job. One that has the most "likes" of all time, and one that has the most likes in the last month.
+              </li>
+              <li>
+                Ability to "like" kits. This will factor in to sorting and also will be used to figure out which kits are displayed on the home page. 
               </li>
             </ul>
           </Col>
-          <Col xs={4} className="home-page-col">
+          <Col xs={6} className="home-page-col">
             <header><h3>Featured Kits</h3></header>
             Right now these are ones that I personally pick. However, once I implement "likes", this will be a breakdown of the highest rated kits per job.<br />
             These two sets are evolutions of my guides from <a href="https://sites.google.com/site/ffxivcontrollerguide/">my SCH/SMN controller guide</a>.
@@ -122,7 +102,7 @@ class Home extends Component {
             <a href="/kits/-Ko0Tt6yesEOT-eHNmcU">I Am Sam I Am</a>            
             <br />
             <br />
-            I'll definitely be using this bard kit by Chena Mang of Tonberry:
+            I'll definitely be using this bard kit by Chena Mang of Tonberry: <br />
             <a href="/kits/-Kny7tPj3jUA6bEftyLP">Song-along</a>
             <br />
             <br />
@@ -143,6 +123,37 @@ class Home extends Component {
             I love this white mage kit by Mumushu. I may replace my own white mage kit in game with this one.
             <br />
             <a href="/kits/-KnvJY6gkOFrAn843r1R">White Mage</a>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={6} className="home-page-col">
+            <header><h3>News</h3></header>
+            <ul>
+              <li>
+                <section>
+                  <header>July 2nd, 2017</header>
+                  <p>Reddit user Loksley asked: "Have you considered adding DoH/DoL as well?"<br />
+                    My Answer: <br />
+                    "Okay this will be a little technical. Originally I planned on having everything. The problem is I need a source of information. I originally started before the job guide came out. I intended on using data ripped from the actual game files like other sites use. Mapping meta data about the actions became a huge struggle though. <br /><br />
+                    Then they released the Job Guide. That thing is amazing. The information is very well laid out. I was able to write a script that pulled that information from the HTML and download the icons in an hour. I'm a front-end engineer, so I was able to pick out the structure of the site really easily (thanks to the people that created that job site making it so uniformly structured). It took another hour to update my app to use this newly formatted information. I did all this while waiting on my Rauhban Ex queue to pop.<br /><br />
+                    Unfortunately, they only have information for the DoW and DoW jobs. Which is why originally I didn't even have General Actions on there. I had to manually generate those with another script.<br /><br />
+                    That being said, though...yes I do want to add them. I just need to take the time to find an easily scrape-able site and make sure I'm not breaking any rules by using their information. I figured Square Enix wouldn't mind me scraping their site because they usually make this information available in their fan-kit...which sadly they don't regularly update."<br /><br />
+                  </p>
+                </section>
+              </li>
+              <li>
+                <section>
+                  <header>June 30th, 2017, part 2</header>
+                  <p>Made macro indicators easier to see and hopefully added general actions. We'll see.</p>
+                </section>
+              </li>
+              <li>
+                <section>
+                  <header>June 30th, 2017</header>
+                  <p>Alpha version released...with a lot of known issues. Look over there -> for the list of issues</p>
+                </section>
+              </li>
+            </ul>
           </Col>
         </Row>
       </HomepageContent>
