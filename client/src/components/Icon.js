@@ -150,11 +150,9 @@ class Icon extends Component {
   }
 
   saveMacro() {
-    console.log(this.state.macroInfo);
     const macroInfo = {};
     macroInfo.name = this.state.macroName;
     macroInfo.macroSteps = this.state.macroInfo.split('\n');
-    console.log(macroInfo);
     this.props.addMacro(this.props.setNumber, this.props.position, macroInfo);
     this.closeModal(true);
   }

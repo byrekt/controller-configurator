@@ -219,7 +219,6 @@ class CharacterSet extends Component {
     });
   }
   onSetDescriptionChange(e) {
-    console.log('onSetDescription:', e.target.value);
     this.setState({
       characterSet: update(this.state.characterSet, { description: { $set: e.target.value } })
     });

@@ -4,7 +4,6 @@ var admin = require('firebase-admin');
 var router = express.Router();
 var offlineServer;
 var database;
-const OFFLINE_MODE = false;
 
 var serviceAccount;
 
@@ -27,40 +26,28 @@ if (process.env.FIREBASE_PRIVATE_KEY) {
 }
 
 
-
-if (!OFFLINE_MODE) {
-
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://controller-configurator.firebaseio.com"
-  });
-  database = admin.database();
-}
-
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://controller-configurator.firebaseio.com"
+});
+database = admin.database();
 
 // get job data
 var jobs;
 var actions;
 var actionCategories;
 
-if (!OFFLINE_MODE) {
 
-  database.ref('/actions').once('value').then(function (snapshot) {
-    actions = snapshot.val();
-  });
-  database.ref('/actionGroups').once('value').then(function (snapshot) {
-    actionCategories = snapshot.val();
-  });
-  database.ref('/jobs').once('value').then(function (snapshot) {
-    jobs = snapshot.val();
-  });
-} else {
-  offlineServer = require('../controller-configurator-data.json');
+database.ref('/actions').once('value').then(function (snapshot) {
+  actions = snapshot.val();
+});
+database.ref('/actionGroups').once('value').then(function (snapshot) {
+  actionCategories = snapshot.val();
+});
+database.ref('/jobs').once('value').then(function (snapshot) {
+  jobs = snapshot.val();
+});
 
-  actions = offlineServer.actions;
-  actionCategories = offlineServer.actionGroups;
-  jobs = offlineServer.jobs;
-}
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -104,13 +91,6 @@ router.get('/getActionCategories', function (req, res, next) {
 
 router.get('/getSet/:id', function (req, res, next) {
 
-  if (OFFLINE_MODE) {
-    let kit = offlineServer.sets.setMeta[req.params.id];
-    let crossBars = offlineServer.sets.setCrossBars[req.params.id];
-    kit.crossBars = crossBars;
-    res.json(kit);
-  }
-
   const ref = database.ref(`/sets`);
 
   ref.child(`setMeta/${req.params.id}`).once('value', (setMeta) => {
@@ -130,54 +110,28 @@ router.get('/getActionsFromFileStructure', function (req, res, next) {
  * :job corresponds to optional job filter
  */
 router.get('/getSetsDetails/:job?', function (req, res, next) {
-
-  if (OFFLINE_MODE) {
-    // OFFLINE MODE
-    let kits = Object.assign({}, offlineServer.sets.setMeta);
-
-    if (req.params.job) {
-      for (let kit in kits) {
-        if (kits[kit].job !== req.params.job) {
-          delete kits[kit];
-        }
-      }
-    }
-    res.json(kits);
-
-  }
-
-  // Live Mode
-  else {
-    const setRef = database.ref(`/sets/setMeta`);
-    if (req.params.job) {
-      setRef.orderByChild('job')
-        .startAt(req.params.job)
-        .endAt(req.params.job)
-        .once('value', (snapshot) => {
-          const sets = snapshot.val();
-          res.json(sets.filter(set => set !== null));
-        });
-    } else {
-      setRef
-        .once('value', (snapshot) => {
-          const sets = snapshot.val();
-          res.json(sets);
-        });
-    }
+  const setRef = database.ref(`/sets/setMeta`);
+  if (req.params.job) {
+    setRef.orderByChild('job')
+      .startAt(req.params.job)
+      .endAt(req.params.job)
+      .once('value', (snapshot) => {
+        const sets = snapshot.val();
+        res.json(sets.filter(set => set !== null));
+      });
+  } else {
+    setRef
+      .once('value', (snapshot) => {
+        const sets = snapshot.val();
+        res.json(sets);
+      });
   }
 });
 
 router.get('/getUserInfo/:uid', function (req, res, next) {
-
-  if (OFFLINE_MODE) {
-    res.json(offlineServer.userInfo[req.params.uid]);
-  }
-  else {
-
-    database.ref(`/userInfo/${req.params.uid}`).once('value').then((snapshot) => {
-      res.json(snapshot.val());
-    });
-  }
+  database.ref(`/userInfo/${req.params.uid}`).once('value').then((snapshot) => {
+    res.json(snapshot.val());
+  });
 });
 
 // Creates a new kit
@@ -186,17 +140,14 @@ router.post('/updateUserName', (req, res, next) => {
   const name = req.body.name;
   // Ensure that a user is authenticated
 
-  if (!uid && !OFFLINE_MODE) {
+  if (!uid) {
     res.json({ error: 'User not authenticated' });
   } else {
     try {
-      if (OFFLINE_MODE) {
-        offlineServer.userInfo[uid].displayName = name;
-      } else {
-        const userInfoRef = database.ref(`userInfo/${uid}`).set({
-          displayName: name
-        });
-      }
+      const userInfoRef = database.ref(`userInfo/${uid}`).set({
+        displayName: name
+      });
+
       res.json({ displayName: name });
 
     } catch (err) {
@@ -210,23 +161,16 @@ router.post('/updateUserName', (req, res, next) => {
 router.get('/userKits/:uid', (req, res, next) => {
 
   // TODO make this so we don't have to have a hardcoded UID. Will require front end changes
-  if (OFFLINE_MODE) {
-    let kits = offlineServer.sets.setMeta;
-    for (let kit in kits) {
-      if (kits[kit].creatorId !== req.params.uid) delete kits[kit];
-    }
-    res.json(kits)
-  } else {
-    const setRef = database.ref(`/sets/setMeta`);
 
-    setRef.orderByChild('creatorId')
-      .startAt(req.params.uid)
-      .endAt(req.params.uid)
-      .once('value', (snapshot) => {
-        const sets = snapshot.val();
-        res.json(sets);
-      });
-  }
+  const setRef = database.ref(`/sets/setMeta`);
+
+  setRef.orderByChild('creatorId')
+    .startAt(req.params.uid)
+    .endAt(req.params.uid)
+    .once('value', (snapshot) => {
+      const sets = snapshot.val();
+      res.json(sets);
+    });
 });
 
 // Creates a new kit
@@ -235,7 +179,7 @@ router.post('/saveKit', (req, res, next) => {
   const kit = req.body.kit;
 
   // Ensure that a user is authenticated
-  if (!uid && !OFFLINE_MODE) {
+  if (!uid) {
     res.json({ error: 'User not authenticated' });
   } else {
     try {
@@ -246,34 +190,20 @@ router.post('/saveKit', (req, res, next) => {
       // Remove crossbars from the kit object since we only want to insert meta data
       delete kit.crossBars;
 
-      if (OFFLINE_MODE) {
-        // Write kit meta info to DB
-        let kits = offlineServer.sets;
-        const kitId = 'foobar';
+      // Write kit meta info to DB
+      const kitsDBRef = database.ref('sets');
+      // If this kit already has an ID, that means we're updating it
+      const kitId = (req.body.kit.kitId) ? req.body.kit.kitId : kitsDBRef.child('setMeta').push().key;
 
-        kit.creatorId = req.params.uid;
-        kit.kitId = kitId;
+      kit.creatorId = uid;
+      kit.kitId = kitId;
 
-        offlineServer.sets.setMeta[kitId] = kit;
-        offlineServer.sets.setCrossBars[kitId] = crossBars;
+      let updates = {};
+      updates[`/setMeta/${kitId}`] = kit;
+      updates[`/setCrossBars/${kitId}`] = crossBars;
 
-        kit.crossBars = crossBars;
-      } else {
-        // Write kit meta info to DB
-        const kitsDBRef = database.ref('sets');
-        // If this kit already has an ID, that means we're updating it
-        const kitId = (req.body.kit.kitId) ? req.body.kit.kitId : kitsDBRef.child('setMeta').push().key;
-
-        kit.creatorId = uid;
-        kit.kitId = kitId;
-
-        let updates = {};
-        updates[`/setMeta/${kitId}`] = kit;
-        updates[`/setCrossBars/${kitId}`] = crossBars;
-
-        kit.crossBars = crossBars;
-        kitsDBRef.update(updates);
-      }
+      kit.crossBars = crossBars;
+      kitsDBRef.update(updates);
 
       res.json(kit);
     } catch (err) {
