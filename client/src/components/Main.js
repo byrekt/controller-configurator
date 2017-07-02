@@ -10,6 +10,18 @@ import styled from 'styled-components';
 const ContentContainer = styled('div') `
 
   margin-top: 1rem;
+
+  a {
+    color: white;
+    
+    border-bottom: 1px white dotted;
+    text-decoration: none;
+
+    &:hover, &:active {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+    }
+  }
   
   .fancy-button {
     border: none;

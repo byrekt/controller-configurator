@@ -12,14 +12,6 @@ const BrowseContainer = styled('div') `
     min-height: 80vh;
     padding: 1rem 3rem;
 
-    a {
-      color: white;
-
-      &:hover, &:active {
-        color: rgba(255, 255, 255, 0.6);
-      }
-    }
-
     .row {
       border-bottom: 1px solid white;
       padding: 1.5rem 0;

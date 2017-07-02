@@ -213,4 +213,11 @@ router.post('/saveKit', (req, res, next) => {
   }
 })
 
+// Registers a favorite
+router.post('/addToFavorites', (req, res, next) => {
+  const uid = req.body.uid;
+  const kitId = req.body.kitId;
+
+})
+
 module.exports = router;
