@@ -135,9 +135,6 @@ class Home extends Component {
             <header><h3>Upcoming Enhancements</h3></header>
             <ul>
               <li>
-                Swapping actions sometimes doesn't work and just deletes both.
-              </li>
-              <li>
                 Filtering on browse page
               </li>
               <li>
