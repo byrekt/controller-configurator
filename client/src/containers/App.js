@@ -21,7 +21,7 @@ const Logo = styled.div`
 `
 
 const StyledHeader = styled.header`
-
+  margin-top: 1rem;
   background-color: black;
   border-radius: 10px;
   border: 7px ridge white;
