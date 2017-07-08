@@ -207,6 +207,7 @@ class Icon extends Component {
           </Modal.Header>
 
           <Modal.Body>
+            <a href="http://na.finalfantasyxiv.com/lodestone/playguide/win/text_command/" target="_blank">See macro guide here</a> <br/><br/>
             <Form>
               <FormGroup controlId="macroName">
                 <ControlLabel>Name</ControlLabel>
@@ -222,7 +223,7 @@ class Icon extends Component {
             </Form>
           </Modal.Body>
 
-          <Modal.Footer>
+          <Modal.Footer> 
             <Button onClick={() => this.closeModal()}>Close</Button>
             <Button onClick={() => this.saveMacro()} bsStyle="primary">Save changes</Button>
           </Modal.Footer>
